@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { navLinks } from '../../data/franchiseLandingData';
+import { scrollToLandingTarget } from '../../utils/scrollToLandingTarget';
 
 const HEADER_H = 64; // px — chiều cao header (h-16)
 
@@ -10,13 +11,19 @@ export default function Header() {
 
   // ── Scroll shadow ────────────────────────────────────────────
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 12);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const root = document.querySelector('.landing-main');
+    const scrollTarget = root || window;
+    const getScrollTop = () => root ? root.scrollTop : window.scrollY;
+    const handleScroll = () => setScrolled(getScrollTop() > 12);
+
+    handleScroll();
+    scrollTarget.addEventListener('scroll', handleScroll, { passive: true });
+    return () => scrollTarget.removeEventListener('scroll', handleScroll);
   }, []);
 
   // ── Active section via IntersectionObserver ──────────────────
   useEffect(() => {
+    const root = document.querySelector('.landing-main');
     const sectionIds = navLinks
       .map((l) => l.href.replace('#', ''))
       .filter(Boolean);
@@ -32,6 +39,7 @@ export default function Header() {
           if (entry.isIntersecting) setActiveHref(`#${id}`);
         },
         {
+          root,
           rootMargin: `-${HEADER_H}px 0px -55% 0px`,
           threshold: 0,
         }
@@ -49,8 +57,7 @@ export default function Header() {
     setMenuOpen(false);
     const el = document.querySelector(href);
     if (el) {
-      const y = el.getBoundingClientRect().top + window.scrollY - HEADER_H;
-      window.scrollTo({ top: y, behavior: 'smooth' });
+      scrollToLandingTarget(el);
     }
   };
 
@@ -65,8 +72,8 @@ export default function Header() {
 
           {/* Logo */}
           <a
-            href="#tong-quan"
-            onClick={(e) => handleNavClick(e, '#tong-quan')}
+            href="#hero"
+            onClick={(e) => handleNavClick(e, '#hero')}
             className="flex items-center gap-2.5 flex-shrink-0 focus:outline-none"
             aria-label="Về trang chủ"
           >
@@ -101,8 +108,8 @@ export default function Header() {
           {/* CTA + Mobile toggle */}
           <div className="flex items-center gap-3">
             <a
-              href="#cta"
-              onClick={(e) => handleNavClick(e, '#cta')}
+              href="#lien-he"
+              onClick={(e) => handleNavClick(e, '#lien-he')}
               className="hidden sm:inline-flex items-center px-4 py-2 bg-[#1E3A8A] hover:bg-[#1E40AF]
                 text-white text-[13px] font-semibold rounded-md
                 transition-all duration-200 hover:-translate-y-px hover:shadow-md"
@@ -153,8 +160,8 @@ export default function Header() {
               );
             })}
             <a
-              href="#cta"
-              onClick={(e) => handleNavClick(e, '#cta')}
+              href="#lien-he"
+              onClick={(e) => handleNavClick(e, '#lien-he')}
               className="mt-2 py-2.5 px-3 bg-[#1E3A8A] hover:bg-[#1E40AF] transition-colors
                 text-white text-[14px] font-semibold rounded-md text-center"
             >

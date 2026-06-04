@@ -6,25 +6,30 @@ export default function PartnerRequirements() {
   const listRef = useFadeUpChildren();
 
   return (
-    <section className="py-24 bg-white">
+    <section className="bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div ref={titleRef} className="fade-up max-w-xl mb-12">
+        {/* Title */}
+        <div ref={titleRef} className="fade-up max-w-3xl mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F7F8FA] border border-[#E5E7EB]
             rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
-            Điều kiện hợp tác
+            Đối tác phù hợp
           </div>
-          <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight">
-            Đối tác phù hợp với mô hình
+          <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight mb-4">
+            Dành cho đối tác muốn phát triển thị trường giáo dục địa phương
           </h2>
+          <p className="text-[15px] text-[#4B5563] leading-relaxed max-w-2xl">
+            Keytech AI phù hợp với các doanh nghiệp, hộ kinh doanh hoặc đội ngũ địa phương có năng lực phát triển trường học, tổ chức triển khai và chăm sóc khách hàng.
+          </p>
         </div>
 
-        <div ref={listRef} className="grid sm:grid-cols-2 gap-4 max-w-4xl">
+        {/* List of requirements */}
+        <div ref={listRef} className="grid sm:grid-cols-2 gap-3 max-w-4xl mb-5">
           {requirementItems.map((item, i) => (
             <div
               key={i}
               className={`fade-up fade-up-delay-${(i % 3) + 1} flex items-start gap-3.5 bg-[#F7F8FA] border border-[#E5E7EB]
-                rounded-xl px-5 py-4`}
+                rounded-lg px-5 py-3.5`}
             >
               <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#F0F4FF] border border-[#D1E2FF] flex items-center justify-center mt-0.5">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -35,6 +40,11 @@ export default function PartnerRequirements() {
             </div>
           ))}
         </div>
+
+        {/* Footnote */}
+        <p className="text-[12px] text-[#9CA3AF] max-w-4xl">
+          * Các điều kiện pháp lý, tài chính và phạm vi hợp tác sẽ được tư vấn chi tiết trong quá trình làm việc với đối tác.
+        </p>
 
       </div>
     </section>

@@ -1,14 +1,17 @@
 import { useFadeUp } from '../../hooks/useFadeUp';
 import { deploymentImages } from '../../data/franchiseLandingData';
+import ScrollNext from './ScrollNext';
 
-// Nhân đôi array để tạo loop liền mạch
-const doubled = [...deploymentImages, ...deploymentImages];
+const marqueeImages = deploymentImages.length < 10
+  ? [...deploymentImages, ...deploymentImages]
+  : deploymentImages;
 
 function ImageCard({ img }) {
   return (
     <div
-      className="flex-shrink-0 w-[280px] sm:w-[320px] mx-2 bg-white border border-[#E5E7EB] rounded-[18px] overflow-hidden
-        hover:-translate-y-1 hover:shadow-[0_6px_20px_rgba(0,0,0,0.1)] transition-all duration-300 cursor-default"
+      className="flex-shrink-0 w-[280px] sm:w-[320px] mx-2 bg-white border border-[#E5E7EB] rounded-[20px] overflow-hidden
+        shadow-[0_4px_14px_rgba(15,23,42,0.06)] hover:shadow-[0_8px_22px_rgba(15,23,42,0.10)]
+        transition-shadow duration-300 cursor-default"
     >
       <div className="w-full h-[190px] bg-[#F3F4F6] overflow-hidden">
         <img
@@ -28,7 +31,6 @@ function ImageCard({ img }) {
       </div>
       <div className="px-4 py-3">
         <div className="text-[13px] font-semibold text-[#0F172A] truncate">{img.title}</div>
-        <div className="text-[11.5px] text-[#6B7280] mt-0.5">{img.description}</div>
       </div>
     </div>
   );
@@ -38,27 +40,26 @@ export default function DeploymentTimeline() {
   const titleRef = useFadeUp();
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="bg-[#F8FAFC] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={titleRef} className="fade-up mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F7F8FA] border border-[#E5E7EB]
+        <div ref={titleRef} className="fade-up mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB]
             rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
             Thực tế triển khai
           </div>
           <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight mb-3">
-            Dấu ấn triển khai thực tế
+            Những trường đã triển khai
           </h2>
           <p className="text-[15px] text-[#4B5563] max-w-2xl leading-relaxed">
-            Hệ thống được triển khai theo quy trình từ khảo sát, thiết kế điểm lắp, thi công,
-            nhập liệu, tập huấn đến bàn giao vận hành.
+            Hình ảnh thực tế từ các điểm trường đã lắp đặt và vận hành hệ thống Camera AI điểm danh Keytech AI.
           </p>
         </div>
       </div>
 
       {/* Desktop: marquee */}
       <div className="marquee-wrapper hidden sm:block">
-        <div className="marquee-track py-3">
-          {doubled.map((img, i) => (
+        <div className="marquee-track py-2">
+          {marqueeImages.map((img, i) => (
             <ImageCard key={i} img={img} />
           ))}
         </div>
@@ -74,6 +75,8 @@ export default function DeploymentTimeline() {
           ))}
         </div>
       </div>
+
+      <ScrollNext href="#kiem-chung" />
     </section>
   );
 }

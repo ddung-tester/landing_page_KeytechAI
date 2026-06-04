@@ -1,66 +1,72 @@
 import { useFadeUp, useFadeUpChildren } from '../../hooks/useFadeUp';
-import { securityItems } from '../../data/franchiseLandingData';
+import { securityCards } from '../../data/franchiseLandingData';
+
+function Icon({ index }) {
+  if (index === 0) {
+    return (
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M10 2a6 6 0 00-6 6c0 4.5 6 9.5 6 9.5s6-5 6-9.5a6 6 0 00-6-6z" stroke="#1E3A8A" strokeWidth="1.6" strokeLinejoin="round"/>
+        <circle cx="10" cy="8" r="2.5" stroke="#1E3A8A" strokeWidth="1.6"/>
+      </svg>
+    );
+  }
+
+  if (index === 1) {
+    return (
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <circle cx="10" cy="10" r="8" stroke="#1E3A8A" strokeWidth="1.6"/>
+        <path d="M7 10l2 2 4-4" stroke="#1E3A8A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    );
+  }
+
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M3.5 10c0-3.5 2.5-6 6.5-6s6.5 2.5 6.5 6c0 4-4.5 7.5-6.5 7.5S3.5 14 3.5 10z" stroke="#1E3A8A" strokeWidth="1.6" strokeLinejoin="round"/>
+      <path d="M7.5 10l1.5 1.5 3.5-3.5" stroke="#1E3A8A" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
 
 export default function DataSecuritySection() {
   const titleRef = useFadeUp();
   const listRef = useFadeUpChildren();
 
   return (
-    <section className="py-24 bg-[#F7F8FA]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-
-          {/* Title + desc */}
+    <section className="bg-[#F6FBF7]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid lg:grid-cols-[0.88fr_1.12fr] gap-7 lg:gap-10 items-center">
           <div ref={titleRef} className="fade-up">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB]
               rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
-              Hợp tác an toàn & Bảo mật thông tin
+              Tiêu chuẩn dữ liệu
             </div>
-            <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight mb-5">
-              Hợp tác an toàn & Bảo mật thông tin là cam kết hàng đầu
+            <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight mb-4">
+              Tiêu chuẩn dữ liệu rõ ràng khi triển khai tại trường học
             </h2>
-            <p className="text-[14.5px] text-[#4B5563] leading-relaxed mb-6">
-              Dữ liệu học sinh, phụ huynh, giáo viên và nhà trường phải được quản lý đúng phạm vi dự án,
-              phân quyền rõ ràng và không sử dụng sai mục đích.
+            <p className="text-[14.5px] text-[#4B5563] leading-relaxed max-w-xl">
+              Hệ thống được thiết kế để nhà trường, phụ huynh và đối tác vận hành dữ liệu điểm danh theo đúng vai trò, đúng mục đích và dễ kiểm soát.
             </p>
-
-            {/* Shield icon block */}
-            <div className="flex items-center gap-4 bg-white border border-[#E5E7EB] rounded-xl p-5">
-              <div className="w-12 h-12 rounded-full bg-[#F0F4FF] flex items-center justify-center flex-shrink-0">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2l9 4v6c0 5-4 8.5-9 10C7 20.5 3 17 3 12V6l9-4z" stroke="#1E3A8A" strokeWidth="1.6" strokeLinejoin="round"/>
-                  <path d="M9 12l2 2 4-4" stroke="#1E3A8A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <div>
-                <div className="text-[13.5px] font-semibold text-[#0F172A]">Cam kết bảo mật bắt buộc</div>
-                <div className="text-[12.5px] text-[#6B7280] mt-0.5">
-                  Mọi nhân sự, cộng tác viên và đơn vị thi công phụ có tiếp xúc dữ liệu phải ký cam kết.
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Checklist */}
-          <div ref={listRef} className="space-y-3">
-            {securityItems.map((item, i) => (
+          <div ref={listRef} className="grid sm:grid-cols-3 lg:grid-cols-1 gap-3">
+            {securityCards.map((card, i) => (
               <div
                 key={i}
-                className={`fade-up fade-up-delay-${i + 1} flex items-start gap-3.5 bg-white border border-[#E5E7EB]
-                  rounded-xl px-5 py-4`}
+                className={`fade-up fade-up-delay-${i + 1} flex items-start gap-4 bg-white border border-[#E5E7EB]
+                  rounded-lg p-4 hover:border-[#1E3A8A] hover:shadow-[0_4px_16px_rgba(30,58,138,0.05)]
+                  transition-all duration-300`}
               >
-                <div className="flex-shrink-0 mt-0.5">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <circle cx="9" cy="9" r="8" stroke="#DC2626" strokeWidth="1.2" opacity="0.4"/>
-                    <path d="M6 9h6" stroke="#DC2626" strokeWidth="1.6" strokeLinecap="round"/>
-                  </svg>
+                <div className="w-9 h-9 rounded-lg bg-[#F0F4FF] flex items-center justify-center flex-shrink-0">
+                  <Icon index={i} />
                 </div>
-                <p className="text-[13.5px] text-[#374151] leading-relaxed">{item}</p>
+                <div>
+                  <h3 className="text-[14px] font-bold text-[#0F172A] mb-1">{card.title}</h3>
+                  <p className="text-[13px] text-[#556987] leading-relaxed">{card.desc}</p>
+                </div>
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>

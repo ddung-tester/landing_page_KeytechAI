@@ -1,11 +1,11 @@
-import { navLinks } from '../../data/franchiseLandingData';
+import { scrollToLandingTarget } from '../../utils/scrollToLandingTarget';
 
 const footerLinks = [
-  { label: "Cơ hội đầu tư",       href: "#opportunity" },
-  { label: "Mô hình doanh thu",   href: "#revenue" },
-  { label: "Quy trình triển khai", href: "#roadmap" },
-  { label: "Hợp tác an toàn & Bảo mật", href: "#security" },
-  { label: "Liên hệ",            href: "#cta" },
+  { label: "Công nghệ Camera AI",       href: "#cong-nghe" },
+  { label: "Trường đã triển khai", href: "#truong-da-trien-khai" },
+  { label: "Mô hình doanh thu",   href: "#doanh-thu" },
+  { label: "Tiêu chuẩn dữ liệu", href: "#du-lieu" },
+  { label: "Liên hệ",            href: "#lien-he" },
 ];
 
 export default function Footer() {
@@ -14,7 +14,9 @@ export default function Footer() {
   const handleNav = (e, href) => {
     e.preventDefault();
     const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (!el) return;
+
+    scrollToLandingTarget(el);
   };
 
   return (
@@ -34,7 +36,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-[13px] text-[#94A3B8] leading-relaxed max-w-xs">
-              Giải pháp Camera AI điểm danh và an ninh trường học theo mô hình hợp tác đầu tư,
+              Giải pháp Camera AI điểm danh trường học theo mô hình hợp tác đầu tư,
               chuyển giao quy trình và nhượng quyền khai thác.
             </p>
           </div>
@@ -82,8 +84,8 @@ export default function Footer() {
 
             <div className="mt-6">
               <a
-                href="#cta"
-                onClick={(e) => handleNav(e, '#cta')}
+                href="#lien-he"
+                onClick={(e) => handleNav(e, '#lien-he')}
                 className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#1E3A8A] hover:bg-[#1E40AF] transition-colors duration-200 text-white text-[13px] font-semibold rounded-lg
                   hover:bg-[#1E40AF] hover:-translate-y-px transition-all duration-200"
               >
@@ -103,7 +105,7 @@ export default function Footer() {
             © {year} Keytech AI / VNS. Toàn bộ nội dung mang tính tham chiếu.
           </p>
           <p className="text-[12px] text-[#64748B]">
-            Số liệu tài chính là tham chiếu, không phải cam kết doanh thu hoặc lợi nhuận.
+            Số liệu tài chính dùng để tham khảo khi xây dựng phương án hợp tác.
           </p>
         </div>
 

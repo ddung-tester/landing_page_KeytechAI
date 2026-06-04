@@ -6,10 +6,10 @@ export default function PartnerRoadmap() {
   const stepsRef = useFadeUpChildren();
 
   return (
-    <section id="roadmap" className="py-24 bg-white">
+    <section className="bg-[#F4F7FC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div ref={titleRef} className="fade-up max-w-xl mb-14">
+        <div ref={titleRef} className="fade-up max-w-xl mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F7F8FA] border border-[#E5E7EB]
             rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
             Lộ trình đối tác
@@ -20,12 +20,12 @@ export default function PartnerRoadmap() {
         </div>
 
         {/* Vertical timeline */}
-        <div ref={stepsRef} className="relative max-w-3xl">
+        <div ref={stepsRef} className="relative max-w-4xl">
           {/* Line */}
           <div className="absolute left-[19px] top-0 bottom-0 w-0.5 bg-[#E5E7EB]" />
 
-          <div className="space-y-6">
-            {roadmapSteps.map((step, i) => (
+          <div className="space-y-4">
+            {roadmapSteps.slice(0, 4).map((step, i) => (
               <div
                 key={i}
                 className={`fade-up fade-up-delay-${i + 1} relative flex items-start gap-5`}
@@ -37,7 +37,7 @@ export default function PartnerRoadmap() {
                 </div>
 
                 {/* Card */}
-                <div className="flex-1 bg-white border border-[#E5E7EB] rounded-xl p-5 mb-2
+                <div className="flex-1 bg-white/95 border border-[#D1E2FF] rounded-xl p-4 mb-1
                   hover:border-[#1E3A8A] hover:shadow-[0_4px_16px_rgba(30,58,138,0.07)] transition-all duration-300">
                   <div className="flex flex-wrap items-center gap-3 mb-2">
                     <span className="inline-block bg-[#F0F4FF] text-[#1E3A8A] text-[11px] font-bold px-2.5 py-1 rounded-full tracking-wide">

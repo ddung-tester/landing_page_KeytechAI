@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useFadeUpChildren } from '../../hooks/useFadeUp';
 import { heroStats } from '../../data/franchiseLandingData';
+import ScrollNext from './ScrollNext';
+import { scrollToLandingTarget } from '../../utils/scrollToLandingTarget';
 
 function StatCard({ stat }) {
   return (
@@ -50,16 +52,7 @@ const HERO_SLIDES = [
 // Scroll indicator arrow SVG
 function ScrollIndicator() {
   return (
-    <div className="flex flex-col items-center gap-1.5 text-[#9CA3AF] select-none">
-      <span className="text-[11px] font-medium tracking-wide">Cuộn để khám phá mô hình hợp tác</span>
-      <svg
-        width="16" height="20" viewBox="0 0 16 20" fill="none"
-        className="animate-bounce-slow"
-      >
-        <path d="M8 1v14M3 11l5 5 5-5" stroke="currentColor" strokeWidth="1.6"
-          strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    </div>
+    <ScrollNext href="#cong-nghe" />
   );
 }
 
@@ -81,15 +74,15 @@ export default function HeroSection() {
 
   return (
     <section
-      id="tong-quan"
-      className="bg-[#F7F8FA] flex flex-col"
-      style={{ minHeight: 'calc(100vh - 64px)', scrollMarginTop: '64px' }}
+      id="hero"
+      className="landing-section snap-section bg-[#F4F7FC] flex flex-col"
+      style={{ minHeight: 'calc(100vh - 64px)', scrollMarginTop: 0 }}
     >
       <div className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full
-        flex flex-col justify-center py-16 sm:py-20 lg:py-24">
+        flex flex-col justify-center py-10 sm:py-12 lg:py-14">
 
         {/* Two-column layout */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-14">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-8">
 
           {/* LEFT: Text */}
           <div>
@@ -115,10 +108,11 @@ export default function HeroSection() {
 
             <div className="flex flex-wrap gap-3">
               <a
-                href="#cta"
+                href="#lien-he"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.querySelector('#cta')?.scrollIntoView({ behavior: 'smooth' });
+                  const target = document.querySelector('#lien-he');
+                  scrollToLandingTarget(target);
                 }}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E3A8A]
                   hover:bg-[#1E40AF] text-white font-semibold text-[14px] rounded-lg
@@ -131,10 +125,11 @@ export default function HeroSection() {
                 </svg>
               </a>
               <a
-                href="#revenue"
+                href="#doanh-thu"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.querySelector('#revenue')?.scrollIntoView({ behavior: 'smooth' });
+                  const target = document.querySelector('#doanh-thu');
+                  scrollToLandingTarget(target);
                 }}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white
                   border border-[#E5E7EB] text-[#374151] font-semibold text-[14px] rounded-lg

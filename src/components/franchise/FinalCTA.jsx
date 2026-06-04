@@ -73,22 +73,21 @@ export default function FinalCTA() {
   };
 
   return (
-    <section id="cta" className="py-24 bg-white">
+    <section className="bg-[#F8FAFC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
 
           {/* Title */}
-          <div ref={titleRef} className="fade-up text-center mb-12">
+          <div ref={titleRef} className="fade-up text-center mb-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F7F8FA] border border-[#E5E7EB]
               rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
               Đăng ký tư vấn
             </div>
             <h2 className="text-[28px] sm:text-[36px] font-extrabold text-[#0F172A] leading-tight mb-4">
-              Sẵn sàng phát triển thị trường<br className="hidden sm:block" />
-              Camera AI điểm danh tại địa phương?
+              Sẵn sàng khai thác thị trường Camera AI điểm danh tại địa phương?
             </h2>
-            <p className="text-[15px] text-[#4B5563] leading-relaxed max-w-xl mx-auto">
-              Nhận hồ sơ hợp tác, mô hình tài chính tham chiếu và tư vấn khu vực triển khai phù hợp.
+            <p className="text-[15px] text-[#4B5563] leading-relaxed max-w-2xl mx-auto">
+              Nhận hồ sơ hợp tác, mô hình doanh thu tham chiếu và tư vấn khu vực triển khai phù hợp với năng lực của bạn.
             </p>
           </div>
 
@@ -109,7 +108,7 @@ export default function FinalCTA() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="bg-[#F7F8FA] border border-[#E5E7EB] rounded-2xl p-8 sm:p-10"
+                className="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 shadow-[0_10px_30px_rgba(15,23,42,0.06)]"
               >
                 <div className="grid sm:grid-cols-2 gap-5 mb-5">
 

@@ -48,24 +48,26 @@ export default function SupportSection() {
   const cardsRef = useFadeUpChildren();
 
   return (
-    <section id="support" className="py-24 bg-[#F7F8FA]">
+    <section className="bg-[#F8FAFC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div ref={titleRef} className="fade-up max-w-xl mb-12">
+        <div ref={titleRef} className="fade-up max-w-xl mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB]
             rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
             Hỗ trợ đại lý
           </div>
           <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight">
-            Đồng hành từ chuyển giao đến vận hành
+            VNS/Keytech đồng hành để đại lý dễ bắt đầu và mở rộng
           </h2>
         </div>
 
-        <div ref={cardsRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {supportItems.map((item, i) => (
+        <div ref={cardsRef} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {supportItems
+            .filter((item) => ['badge', 'training', 'support', 'shield'].includes(item.icon))
+            .map((item, i) => (
             <div
               key={i}
-              className={`fade-up fade-up-delay-${(i % 3) + 1} group bg-white border border-[#E5E7EB] rounded-xl p-6
+              className={`fade-up fade-up-delay-${(i % 3) + 1} group bg-white border border-[#E5E7EB] rounded-xl p-5
                 hover:border-[#1E3A8A] hover:shadow-[0_4px_16px_rgba(30,58,138,0.08)] transition-all duration-300`}
             >
               <div className="w-10 h-10 rounded-lg bg-[#F0F4FF] flex items-center justify-center mb-4

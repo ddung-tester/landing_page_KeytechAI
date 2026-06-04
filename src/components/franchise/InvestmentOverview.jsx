@@ -6,25 +6,30 @@ export default function InvestmentOverview() {
   const cardsRef = useFadeUpChildren();
 
   return (
-    <section className="py-24 bg-white">
+    <section className="bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div ref={titleRef} className="fade-up max-w-xl mb-12">
+        <div ref={titleRef} className="fade-up max-w-xl mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F7F8FA] border border-[#E5E7EB]
             rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
             Quy mô đầu tư
           </div>
           <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight">
-            Quy mô đầu tư được chuẩn hóa theo từng trường
+            Quy mô đầu tư rõ ràng, tiềm năng danh mục dễ tính toán
           </h2>
         </div>
 
+        <p className="fade-up text-[15px] text-[#4B5563] leading-relaxed max-w-2xl -mt-4 mb-8">
+          Đại lý có thể bắt đầu với danh mục trường mục tiêu, tính toán thiết bị theo từng điểm trường
+          và mở rộng theo năng lực phát triển thị trường địa phương.
+        </p>
+
         {/* Highlight cards */}
-        <div ref={cardsRef} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+        <div ref={cardsRef} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {investmentHighlights.map((item, i) => (
             <div
               key={i}
-              className={`fade-up fade-up-delay-${i + 1} bg-[#F7F8FA] border border-[#E5E7EB] rounded-xl p-6`}
+              className={`fade-up fade-up-delay-${i + 1} bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl p-5`}
             >
               <div className="text-[22px] sm:text-[24px] font-extrabold text-[#0F172A] leading-tight tracking-tight">
                 {item.value}
@@ -36,7 +41,7 @@ export default function InvestmentOverview() {
         </div>
 
         {/* Breakdown table */}
-        <div className="bg-[#F7F8FA] border border-[#E5E7EB] rounded-xl overflow-hidden">
+        <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl overflow-hidden">
           <div className="px-6 py-4 border-b border-[#E5E7EB]">
             <div className="text-[13px] font-semibold text-[#374151]">Cơ cấu đầu tư tham chiếu</div>
           </div>
@@ -54,7 +59,7 @@ export default function InvestmentOverview() {
         </div>
 
         <p className="mt-4 text-[12px] text-[#9CA3AF] leading-relaxed">
-          * Mức đầu tư thực tế có thể thay đổi theo số học sinh, số cổng, hạ tầng mạng, điều kiện thi công và khảo sát thực tế.
+          * Mức đầu tư thực tế được tư vấn theo số học sinh, số cổng, hạ tầng mạng và phương án triển khai từng trường.
         </p>
 
       </div>

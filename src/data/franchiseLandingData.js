@@ -4,7 +4,7 @@
 // ============================================================
 
 export const heroStats = [
-  { value: "250+",     label: "Trường học đã triển khai" },
+  { value: "250+",     label: "Trường học trong danh mục triển khai" },
   { value: "70%",      label: "Doanh thu thực thu cho đại lý" },
   { value: "1,4 tỷ/năm học", label: "Doanh thu tham chiếu danh mục đại lý", sub: "Theo quy mô tham chiếu 10 trường." },
   { value: "5 năm",    label: "Bảo hành camera AI" },
@@ -14,7 +14,7 @@ export const opportunityItems = [
   {
     icon: "school",
     title: "Nhà trường",
-    desc: "Tăng năng lực quản lý học sinh ra/vào trường hiệu quả hơn.",
+    desc: "Có thêm công cụ điểm danh tự động, thông tin rõ ràng cho vận hành hằng ngày.",
   },
   {
     icon: "family",
@@ -29,15 +29,15 @@ export const opportunityItems = [
   {
     icon: "digital",
     title: "Chuyển đổi số",
-    desc: "Ứng dụng AI vào quản trị trường học theo hướng thực tiễn.",
+    desc: "Công nghệ đã đóng gói, dễ chuyển giao và phù hợp triển khai theo từng trường.",
   },
 ];
 
 export const proofStats = [
   {
     icon: "check-circle",
-    stat: "100+ trường học",
-    desc: "Đã triển khai, lắp đặt và bàn giao hệ thống tại nhiều địa phương.",
+    stat: "250+ trường học",
+    desc: "Danh mục triển khai và làm việc thực tế tại nhiều địa phương.",
   },
   {
     icon: "bar-chart",
@@ -52,86 +52,39 @@ export const proofStats = [
   {
     icon: "document",
     stat: "Quy trình chuyển giao",
-    desc: "Có tài liệu đào tạo, hướng dẫn và vận hành cho đại lý.",
+    desc: "Có tài liệu đào tạo, hướng dẫn vận hành và kịch bản triển khai cho đại lý.",
   },
 ];
 
 // Đường dẫn tương đối từ /public — đặt ảnh vào /public/assets/...
 export const deploymentImages = [
   {
-    src: "/assets/lắp đặt tại cổng trường.png",
-    title: "Lắp đặt tại cổng trường",
-    description: "Lắp đặt camera AI",
+    src: "/assets/vd_nhung_trg_da_lap_dat/THCS Kim An.jpg",
+    title: "THCS Kim An",
   },
   {
-    src: "/assets/lắp đặt tại sân trường.jpg",
-    title: "Lắp đặt tại sân trường",
-    description: "Lắp đặt tại sân trường",
+    src: "/assets/vd_nhung_trg_da_lap_dat/THCS Lê Lợi.jpg",
+    title: "THCS Lê Lợi",
   },
   {
-    src: "/assets/ảnh cam.jpg",
-    title: "Camera AI nhận diện",
-    description: "Thiết bị camera AI",
+    src: "/assets/vd_nhung_trg_da_lap_dat/THCS Phương Trung.jpg",
+    title: "THCS Phương Trung",
   },
   {
-    src: "/assets/vd_nhung_trg_da_lap_dat/1.jpg",
-    title: "Khảo sát cổng trường",
-    description: "Khảo sát hiện trạng",
+    src: "/assets/vd_nhung_trg_da_lap_dat/THCS Đỗ Ngọc Du.jpg",
+    title: "THCS Đỗ Ngọc Du",
   },
   {
-    src: "/assets/vd_nhung_trg_da_lap_dat/2.jpg",
-    title: "Cấu hình hệ thống",
-    description: "Cấu hình camera",
+    src: "/assets/vd_nhung_trg_da_lap_dat/Tiểu học Bình Minh A.jpg",
+    title: "Tiểu học Bình Minh A",
   },
   {
-    src: "/assets/vd_nhung_trg_da_lap_dat/3.jpg",
-    title: "Tập huấn vận hành",
-    description: "Đào tạo nhà trường",
+    src: "/assets/vd_nhung_trg_da_lap_dat/Tiểu học Cao Viên.jpg",
+    title: "Tiểu học Cao Viên",
   },
   {
-    src: "/assets/vd_nhung_trg_da_lap_dat/4.jpg",
-    title: "Bàn giao giải pháp",
-    description: "Nghiệm thu bàn giao",
-  },
-  {
-    src: "/assets/vd_nhung_trg_da_lap_dat/5.jpg",
-    title: "Nghiệm thu hệ thống",
-    description: "Kiểm tra hệ thống",
-  },
-  {
-    src: "/assets/vd_nhung_trg_da_lap_dat/6.jpg",
-    title: "Lắp đặt thiết bị",
-    description: "Thi công lắp đặt",
-  },
-  {
-    src: "/assets/vd_nhung_trg_da_lap_dat/7.jpg",
-    title: "Vận hành thực tế",
-    description: "Vận hành hệ thống",
-  },
-  {
-    src: "/assets/vd_nhung_trg_da_lap_dat/8.jpg",
-    title: "Hỗ trợ sau triển khai",
-    description: "Chăm sóc sau bàn giao",
-  },
-  {
-    src: "/assets/Hội thảo/Hội thảo 1.jpg",
-    title: "Hội thảo đối tác",
-    description: "Hội thảo triển khai",
-  },
-  {
-    src: "/assets/Hội thảo/Hội thảo 2.jpg",
-    title: "Đào tạo đại lý",
-    description: "Tập huấn đại lý",
-  },
-  {
-    src: "/assets/Hội thảo/Hội thảo 3.jpg",
-    title: "Hội nghị đối tác",
-    description: "Hội nghị chuyển giao",
-  },
-  {
-    src: "/assets/Hội thảo_hero.jpg",
-    title: "Sự kiện ra mắt",
-    description: "Ra mắt giải pháp",
+    src: "/assets/vd_nhung_trg_da_lap_dat/Tiểu học Thanh Cao.jpg",
+    title: "Tiểu học Thanh Cao",
   },
 ];
 
@@ -139,7 +92,7 @@ export const solutionFeatures = [
   {
     icon: "camera",
     title: "Camera AI nhận diện khuôn mặt",
-    desc: "Ghi nhận học sinh ra/vào tại khu vực kiểm soát.",
+    desc: "Ghi nhận học sinh ra/vào tại cổng trường theo luồng tự động.",
   },
   {
     icon: "check",
@@ -177,7 +130,7 @@ export const investmentHighlights = [
   {
     value: "10",
     unit: "trường giai đoạn đầu",
-    label: "Quy mô tối thiểu đề xuất cho đại lý.",
+    label: "Danh mục mục tiêu giúp đại lý tạo doanh thu tham chiếu hấp dẫn.",
   },
   {
     value: "1.060.000.000đ",
@@ -194,7 +147,7 @@ export const investmentBreakdown = [
 ];
 
 export const processSteps = [
-  { step: "01", title: "Khảo sát hiện trạng",  desc: "Đánh giá cổng trường, vị trí kiểm soát, hạ tầng mạng." },
+  { step: "01", title: "Khảo sát hiện trạng",  desc: "Đánh giá cổng trường, vị trí lắp đặt, hạ tầng mạng." },
   { step: "02", title: "Tư vấn mô hình",        desc: "Đề xuất phương án triển khai phù hợp từng trường." },
   { step: "03", title: "Thiết kế điểm lắp",     desc: "Xác định vị trí camera AI, góc nhận diện, vật tư." },
   { step: "04", title: "Thi công lắp đặt",      desc: "Lắp camera, phụ kiện, dây mạng, nguồn và cấu hình." },
@@ -205,11 +158,11 @@ export const processSteps = [
 ];
 
 export const roadmapSteps = [
-  { time: "30 ngày",  title: "Khởi động",   desc: "Hoàn thành đào tạo, nhận thiết bị, lập danh sách trường mục tiêu." },
-  { time: "60 ngày",  title: "Thị trường",  desc: "Khảo sát/làm việc tối thiểu 10 trường." },
-  { time: "90 ngày",  title: "Ký kết",      desc: "Ký kết hoặc triển khai tối thiểu 3 trường." },
-  { time: "180 ngày", title: "Mở rộng",     desc: "Triển khai tối thiểu 10 trường." },
-  { time: "12 tháng", title: "Phát triển",  desc: "Mở rộng theo năng lực và khu vực được xác nhận." },
+  { time: "30 ngày",  title: "Khởi động",   desc: "Hoàn thành đào tạo, nhận bộ tài liệu và lập danh sách trường mục tiêu." },
+  { time: "60 ngày",  title: "Mở thị trường",  desc: "Làm việc với danh mục trường ưu tiên và tư vấn phương án triển khai phù hợp." },
+  { time: "90 ngày",  title: "Triển khai đầu tiên",      desc: "Chốt các điểm trường tiềm năng, chuẩn bị thiết bị và kế hoạch lắp đặt." },
+  { time: "180 ngày", title: "Mở rộng danh mục",     desc: "Phát triển danh mục 10 trường theo năng lực địa phương và tiến độ thực tế." },
+  { time: "12 tháng", title: "Tăng trưởng",  desc: "Mở rộng khu vực, tối ưu vận hành và phát triển doanh thu định kỳ." },
 ];
 
 export const supportItems = [
@@ -236,38 +189,50 @@ export const supportItems = [
   {
     icon: "shield",
     title: "Bảo hành camera AI 5 năm",
-    desc: "Áp dụng theo chính sách và điều kiện bảo hành.",
+    desc: "Tạo sự yên tâm cho đại lý khi tư vấn và triển khai thiết bị tại trường.",
   },
   {
     icon: "report",
     title: "Đối soát doanh thu",
-    desc: "Hỗ trợ kiểm soát, báo cáo và minh bạch doanh thu.",
+    desc: "Hỗ trợ báo cáo, đối soát và theo dõi doanh thu theo quy trình rõ ràng.",
   },
 ];
 
 export const requirementItems = [
-  "Có pháp nhân doanh nghiệp, hộ kinh doanh hoặc đăng ký kinh doanh hợp pháp.",
-  "Có văn phòng hoặc địa điểm kinh doanh rõ ràng.",
-  "Có nhân sự phụ trách thị trường, kỹ thuật triển khai, chăm sóc khách hàng.",
-  "Có năng lực tài chính đầu tư tối thiểu từ 10 công trình trường học trở lên.",
-  "Có quan hệ, kết nối hoặc khả năng phát triển trường học tại địa phương.",
-  "Cam kết tuân thủ thương hiệu, quy trình kỹ thuật, bảo mật dữ liệu và nghĩa vụ tài chính.",
+  "Có năng lực kết nối và phát triển trường học tại địa phương.",
+  "Có đội ngũ phụ trách thị trường, kỹ thuật triển khai và chăm sóc khách hàng.",
+  "Sẵn sàng đầu tư theo quy mô danh mục trường học mục tiêu.",
+  "Có định hướng kinh doanh dịch vụ công nghệ giáo dục dài hạn."
 ];
 
-export const securityItems = [
-  "Không sao chép dữ liệu học sinh ra ngoài hệ thống nếu chưa được phép.",
-  "Không cung cấp dữ liệu cho bên thứ ba.",
-  "Không sử dụng hình ảnh học sinh để quảng cáo/truyền thông khi chưa được chấp thuận hợp lệ.",
-  "Không khai thác dữ liệu học sinh cho mục đích thương mại ngoài phạm vi dự án.",
-  "Không để nhân sự không có thẩm quyền tiếp cận dữ liệu.",
-  "Nhân sự/cộng tác viên/đơn vị thi công phụ phải ký cam kết bảo mật nếu có tiếp xúc dữ liệu.",
+export const securityCards = [
+  {
+    title: "Phân quyền rõ ràng",
+    desc: "Tài khoản và dữ liệu được quản lý theo vai trò vận hành của nhà trường, đại lý và hệ thống."
+  },
+  {
+    title: "Dữ liệu phục vụ đúng mục đích",
+    desc: "Thông tin điểm danh được sử dụng cho quản lý học sinh, thông báo phụ huynh và báo cáo vận hành."
+  },
+  {
+    title: "Tăng niềm tin khi làm việc với trường",
+    desc: "Quy trình dữ liệu rõ ràng giúp đại lý tư vấn chuyên nghiệp hơn với nhà trường và phụ huynh."
+  }
+];
+
+export const detailedSecurityItems = [
+  "Dữ liệu học sinh được lưu trữ trên hệ thống chuyên dụng và phân quyền theo vai trò vận hành.",
+  "Thông tin điểm danh phục vụ quản lý học sinh, thông báo phụ huynh và báo cáo cho nhà trường.",
+  "Hình ảnh và thông tin học sinh được sử dụng theo phạm vi thống nhất với nhà trường.",
+  "Đại lý được hướng dẫn quy trình dữ liệu để tư vấn chuyên nghiệp khi triển khai.",
+  "Các tiêu chuẩn pháp lý và phạm vi phối hợp được tư vấn chi tiết trong quá trình làm việc."
 ];
 
 export const navLinks = [
-  { label: "Cơ hội đầu tư",       href: "#opportunity" },
-  { label: "Công nghệ",            href: "#technology" },
-  { label: "Mô hình doanh thu",   href: "#revenue" },
-  { label: "Lộ trình triển khai", href: "#roadmap" },
-  { label: "Hỗ trợ đại lý",      href: "#support" },
-  { label: "Liên hệ",            href: "#cta" },
+  { label: "Công nghệ",            href: "#cong-nghe" },
+  { label: "Trường đã triển khai", href: "#truong-da-trien-khai" },
+  { label: "Doanh thu",            href: "#doanh-thu" },
+  { label: "Đầu tư",               href: "#dau-tu" },
+  { label: "Hỗ trợ",               href: "#ho-tro" },
+  { label: "Liên hệ",              href: "#lien-he" },
 ];

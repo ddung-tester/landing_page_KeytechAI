@@ -17,6 +17,7 @@
   html {
     scroll-behavior: smooth;
     font-size: 16px;
+    scroll-padding-top: 80px;
   }
 
   body {
@@ -104,6 +105,93 @@
 .fade-up-delay-5 { transition-delay: 0.5s; }
 .fade-up-delay-6 { transition-delay: 0.6s; }
 
+@media (min-width: 1024px) {
+  body {
+    overflow: hidden;
+  }
+
+  .landing-main {
+    height: calc(100vh - 64px);
+    margin-top: 64px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scroll-padding-top: 0;
+    scroll-snap-type: none;
+    padding-top: 0;
+    overscroll-behavior-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .snap-section {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+    min-height: calc(100vh - 64px);
+    overflow: hidden;
+  }
+
+  .snap-section > section {
+    min-height: calc(100vh - 64px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: clamp(28px, 4vh, 52px);
+    padding-bottom: clamp(28px, 4vh, 52px);
+  }
+
+  #hero {
+    height: calc(100vh - 64px);
+    overflow: hidden;
+  }
+
+  #hero > div:first-child {
+    min-height: 0;
+  }
+
+  .snap-section > section h2 {
+    font-size: clamp(26px, 2.35vw, 34px);
+  }
+
+  .snap-section > section .scroll-next {
+    margin-top: clamp(18px, 2.5vh, 32px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .landing-main {
+    padding-top: 64px;
+  }
+
+  .landing-section,
+  .snap-section {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .landing-main {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+  }
+
+  .fade-up,
+  .fade-up.visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .marquee-track,
+  .animate-slide-progress,
+  .animate-bounce-slow {
+    animation: none;
+  }
+}
+
 /* ─── SLIDE PROGRESS ANIMATION ────────────────────────────── */
 @keyframes slideProgress {
   from { width: 0%; }
@@ -125,5 +213,5 @@
 /* ─── SECTION DIVIDERS ───────────────────────────────────── */
 /* Thin top border between alternating sections */
 section + section {
-  border-top: 1px solid #F1F5F9;
+  border-top: 1px solid #EEF2F7;
 }

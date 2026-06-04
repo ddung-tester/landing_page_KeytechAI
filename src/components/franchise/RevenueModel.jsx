@@ -28,10 +28,10 @@ export default function RevenueModel() {
   }, []);
 
   return (
-    <section id="revenue" className="py-24 bg-[#F7F8FA]">
+    <section className="bg-[#F4F7FC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div ref={titleRef} className="fade-up max-w-2xl mb-12">
+        <div ref={titleRef} className="fade-up max-w-2xl mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB] rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
             Mô hình doanh thu
           </div>
@@ -39,14 +39,16 @@ export default function RevenueModel() {
             Đại lý hưởng <span className="text-[#166534]">70%</span> doanh thu thực thu
           </h2>
           <p className="text-[14.5px] text-[#4B5563] leading-relaxed">
-            Doanh thu được phân chia trên phí dịch vụ tham chiếu <strong>20.000đ/học sinh/tháng</strong> (thu thực tế theo thỏa thuận phù hợp với từng trường và phụ huynh), chưa bao gồm VAT, sau khi loại trừ các khoản chưa thu, hoàn trả, giảm trừ hoặc điều chỉnh hợp lệ nếu có.
+            Mô hình chia sẻ doanh thu dựa trên phí dịch vụ tham chiếu <strong>20.000đ/học sinh/tháng</strong>.
+            Đại lý tập trung phát triển trường học và chăm sóc khách hàng địa phương, VNS/Keytech đồng hành
+            nền tảng công nghệ, phần mềm, server/cloud và quy trình vận hành.
           </p>
         </div>
 
         <div ref={sectionRef} className="grid lg:grid-cols-2 gap-8 items-start">
 
           {/* Revenue bar */}
-          <div ref={barRef} className="bg-white border border-[#E5E7EB] rounded-xl p-7">
+          <div ref={barRef} className="bg-white border border-[#E5E7EB] rounded-xl p-6">
             <div className="mb-6">
               <div className="text-[13px] font-medium text-[#6B7280] mb-3">Phân chia doanh thu thực thu</div>
               {/* 70% bar */}
@@ -81,14 +83,14 @@ export default function RevenueModel() {
 
             <div className="border-t border-[#F3F4F6] pt-5">
               <div className="text-[11.5px] text-[#9CA3AF] font-medium">
-                * Tính trên doanh thu thực thu, chưa VAT, sau loại trừ các khoản điều chỉnh hợp lệ.
+                * Số liệu dùng để xây dựng phương án kinh doanh tham chiếu theo từng khu vực.
               </div>
             </div>
           </div>
 
           {/* Example card */}
           <div className="space-y-4">
-            <div className="bg-white border border-[#E5E7EB] rounded-xl p-7">
+            <div className="bg-white border border-[#E5E7EB] rounded-xl p-6">
               <div className="text-[11.5px] font-semibold text-[#1E3A8A] uppercase tracking-wide mb-4">
                 Ví dụ tham chiếu — 1 trường 1.000 học sinh
               </div>
@@ -110,15 +112,16 @@ export default function RevenueModel() {
               </div>
             </div>
 
-            <div className="bg-[#FFFBEB] border border-[#FDE68A] rounded-xl p-5">
+            <div className="bg-[#F0F4FF] border border-[#D1E2FF] rounded-xl p-5">
               <div className="flex gap-3">
                 <svg className="flex-shrink-0 mt-0.5" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <circle cx="8" cy="8" r="7" stroke="#D97706" strokeWidth="1.4"/>
-                  <path d="M8 5v4M8 11v.5" stroke="#D97706" strokeWidth="1.6" strokeLinecap="round"/>
+                  <circle cx="8" cy="8" r="7" stroke="#1E3A8A" strokeWidth="1.4"/>
+                  <circle cx="8" cy="5" r="0.75" fill="#1E3A8A"/>
+                  <path d="M8 8v3" stroke="#1E3A8A" strokeWidth="1.6" strokeLinecap="round"/>
                 </svg>
-                <p className="text-[12.5px] text-[#92400E] leading-relaxed">
-                  Các con số trên là cơ sở phương án kinh doanh <strong>tham chiếu</strong>, không phải cam kết doanh thu hoặc lợi nhuận.
-                  Kết quả thực tế phụ thuộc số học sinh, tỷ lệ sử dụng, mức phí, khu vực, năng lực triển khai và thỏa thuận với nhà trường.
+                <p className="text-[12.5px] text-[#1E3A8A] leading-relaxed">
+                  Các con số trên là cơ sở xây dựng phương án kinh doanh <strong>tham chiếu</strong>.
+                  Kết quả thực tế phụ thuộc số học sinh, tỷ lệ sử dụng, mức phí, khu vực và năng lực triển khai.
                 </p>
               </div>
             </div>

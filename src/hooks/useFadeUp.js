@@ -10,6 +10,18 @@ export function useFadeUp(threshold = 0.15) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    const root = document.querySelector('.landing-main');
+
+    const ensureVisibleIfInView = () => {
+      const rootRect = root?.getBoundingClientRect() ?? {
+        top: 0,
+        bottom: window.innerHeight,
+      };
+      const rect = el.getBoundingClientRect();
+      if (rect.top < rootRect.bottom && rect.bottom > rootRect.top) {
+        el.classList.add('visible');
+      }
+    };
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -18,11 +30,15 @@ export function useFadeUp(threshold = 0.15) {
           observer.disconnect();
         }
       },
-      { threshold }
+      { root, threshold }
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+    const timer = window.setTimeout(ensureVisibleIfInView, 80);
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(timer);
+    };
   }, [threshold]);
 
   return ref;
@@ -38,9 +54,14 @@ export function useFadeUpChildren(threshold = 0.1) {
   useEffect(() => {
     const container = ref.current;
     if (!container) return;
+    const root = document.querySelector('.landing-main');
 
     const children = container.querySelectorAll('.fade-up');
     const observers = [];
+    const rootRect = root?.getBoundingClientRect() ?? {
+      top: 0,
+      bottom: window.innerHeight,
+    };
 
     children.forEach((child) => {
       const observer = new IntersectionObserver(
@@ -50,13 +71,25 @@ export function useFadeUpChildren(threshold = 0.1) {
             observer.disconnect();
           }
         },
-        { threshold }
+        { root, threshold }
       );
       observer.observe(child);
       observers.push(observer);
     });
 
-    return () => observers.forEach((o) => o.disconnect());
+    const timer = window.setTimeout(() => {
+      children.forEach((child) => {
+        const rect = child.getBoundingClientRect();
+        if (rect.top < rootRect.bottom && rect.bottom > rootRect.top) {
+          child.classList.add('visible');
+        }
+      });
+    }, 80);
+
+    return () => {
+      observers.forEach((o) => o.disconnect());
+      window.clearTimeout(timer);
+    };
   }, [threshold]);
 
   return ref;

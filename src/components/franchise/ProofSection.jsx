@@ -34,17 +34,17 @@ export default function ProofSection() {
   const cardsRef = useFadeUpChildren();
 
   return (
-    <section className="py-24 bg-[#F7F8FA]">
+    <section className="bg-[#F6FBF7]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Title */}
-        <div ref={titleRef} className="fade-up max-w-2xl mb-12">
+        <div ref={titleRef} className="fade-up max-w-2xl mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB]
             rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
             Bằng chứng triển khai
           </div>
           <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight mb-4">
-            Không bắt đầu từ ý tưởng — mô hình đã có triển khai thực tế
+            Mô hình đã được kiểm chứng bằng triển khai thực tế
           </h2>
         </div>
 
@@ -53,7 +53,7 @@ export default function ProofSection() {
           {proofStats.map((item, i) => (
             <div
               key={i}
-              className={`fade-up fade-up-delay-${i + 1} bg-white border border-[#E5E7EB] rounded-xl p-6
+              className={`fade-up fade-up-delay-${i + 1} bg-white border border-[#E5E7EB] rounded-xl p-5
                 hover:shadow-[0_4px_16px_rgba(0,0,0,0.07)] transition-shadow duration-300`}
             >
               <div className="w-10 h-10 rounded-lg bg-[#F0F9F1] flex items-center justify-center mb-4">
