@@ -79,7 +79,7 @@ export default function FinalCTA() {
 
           {/* Title */}
           <div ref={titleRef} className="fade-up text-center mb-12">
-            <div className="text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
+            <div className="text-[11px] font-semibold text-[#C039B4] uppercase tracking-widest mb-3">
               Đăng ký tư vấn
             </div>
             <h2 className="text-[28px] sm:text-[36px] font-extrabold text-[#0F172A] leading-tight mb-4">
@@ -126,7 +126,7 @@ export default function FinalCTA() {
                       placeholder="Nguyễn Văn A"
                       className={`w-full px-4 py-3 bg-white border rounded-lg text-[14px] text-[#0F172A] placeholder-[#9CA3AF]
                         outline-none transition-colors duration-200
-                        focus:border-[#1E3A8A] focus:ring-2 focus:ring-[#EEF2FF]
+                        focus:border-[#C039B4] focus:ring-2 focus:ring-[#FDF4FD]
                         ${errors.name ? 'border-red-400' : 'border-[#E5E7EB]'}`}
                     />
                     {errors.name && (
@@ -148,7 +148,7 @@ export default function FinalCTA() {
                       placeholder="0901 234 567"
                       className={`w-full px-4 py-3 bg-white border rounded-lg text-[14px] text-[#0F172A] placeholder-[#9CA3AF]
                         outline-none transition-colors duration-200
-                        focus:border-[#1E3A8A] focus:ring-2 focus:ring-[#EEF2FF]
+                        focus:border-[#C039B4] focus:ring-2 focus:ring-[#FDF4FD]
                         ${errors.phone ? 'border-red-400' : 'border-[#E5E7EB]'}`}
                     />
                     {errors.phone && (
@@ -169,7 +169,7 @@ export default function FinalCTA() {
                     onChange={handleChange}
                     className={`w-full px-4 py-3 bg-white border rounded-lg text-[14px] text-[#0F172A]
                       outline-none transition-colors duration-200 appearance-none cursor-pointer
-                      focus:border-[#1E3A8A] focus:ring-2 focus:ring-[#EEF2FF]
+                      focus:border-[#C039B4] focus:ring-2 focus:ring-[#FDF4FD]
                       ${errors.region ? 'border-red-400' : 'border-[#E5E7EB]'}
                       ${!form.region ? 'text-[#9CA3AF]' : ''}`}
                   >
@@ -187,7 +187,7 @@ export default function FinalCTA() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3.5 bg-[#1E3A8A] text-white font-semibold text-[15px] rounded-lg
+                  className="w-full py-3.5 bg-gradient-to-r from-[#C039B4] to-[#4582F2] transition-all duration-300 hover:opacity-90 text-white font-semibold text-[15px] rounded-lg
                     hover:-translate-y-px hover:shadow-lg transition-all duration-200
                     disabled:opacity-60 disabled:cursor-not-allowed disabled:translate-y-0"
                 >

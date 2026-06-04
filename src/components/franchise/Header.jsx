@@ -28,14 +28,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-2.5 flex-shrink-0">
-            <div className="w-8 h-8 bg-[#1E3A8A] rounded-md flex items-center justify-center">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <rect x="2" y="2" width="6" height="6" rx="1" fill="white" opacity="0.9"/>
-                <rect x="10" y="2" width="6" height="6" rx="1" fill="white" opacity="0.6"/>
-                <rect x="2" y="10" width="6" height="6" rx="1" fill="white" opacity="0.6"/>
-                <rect x="10" y="10" width="6" height="6" rx="1" fill="white" opacity="0.9"/>
-              </svg>
-            </div>
+            <img src="/keytech_logo.png" alt="Keytech Logo" className="h-9 w-auto object-contain" />
             <div className="leading-tight">
               <div className="text-[#0F172A] font-semibold text-[15px] tracking-tight">Keytech AI</div>
               <div className="text-[#6B7280] text-[10px] font-medium tracking-wide uppercase">VNS Partnership</div>
@@ -49,7 +42,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-[13.5px] font-medium text-[#4B5563] hover:text-[#1E3A8A] transition-colors duration-200"
+                className="text-[13.5px] font-medium text-[#4B5563] hover:text-[#C039B4] transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -61,7 +54,7 @@ export default function Header() {
             <a
               href="#cta"
               onClick={(e) => handleNavClick(e, '#cta')}
-              className="hidden sm:inline-flex items-center px-4 py-2 bg-[#1E3A8A] text-white text-[13px] font-semibold rounded-md
+              className="hidden sm:inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#C039B4] to-[#4582F2] transition-all duration-300 hover:opacity-90 text-white text-[13px] font-semibold rounded-md
                 hover:-translate-y-px hover:shadow-md transition-all duration-200"
             >
               Đăng ký tư vấn
@@ -95,7 +88,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="py-2.5 px-3 text-[14px] font-medium text-[#374151] hover:text-[#1E3A8A] hover:bg-[#F7F8FA] rounded-md transition-colors"
+                className="py-2.5 px-3 text-[14px] font-medium text-[#374151] hover:text-[#C039B4] hover:bg-[#F7F8FA] rounded-md transition-colors"
               >
                 {link.label}
               </a>
@@ -103,7 +96,7 @@ export default function Header() {
             <a
               href="#cta"
               onClick={(e) => handleNavClick(e, '#cta')}
-              className="mt-2 py-2.5 px-3 bg-[#1E3A8A] text-white text-[14px] font-semibold rounded-md text-center"
+              className="mt-2 py-2.5 px-3 bg-gradient-to-r from-[#C039B4] to-[#4582F2] transition-all duration-300 hover:opacity-90 text-white text-[14px] font-semibold rounded-md text-center"
             >
               Đăng ký tư vấn
             </a>

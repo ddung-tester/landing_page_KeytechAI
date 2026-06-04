@@ -17,14 +17,14 @@ const iconMap = {
   ),
   clock: (
     <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-      <circle cx="11" cy="11" r="9" stroke="#1E3A8A" strokeWidth="1.6"/>
-      <path d="M11 7v4l2.5 2.5" stroke="#1E3A8A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="11" cy="11" r="9" stroke="#C039B4" strokeWidth="1.6"/>
+      <path d="M11 7v4l2.5 2.5" stroke="#C039B4" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   ),
   document: (
     <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-      <rect x="4" y="2" width="14" height="18" rx="2" stroke="#1E3A8A" strokeWidth="1.5"/>
-      <path d="M8 7h6M8 11h6M8 15h4" stroke="#1E3A8A" strokeWidth="1.4" strokeLinecap="round"/>
+      <rect x="4" y="2" width="14" height="18" rx="2" stroke="#C039B4" strokeWidth="1.5"/>
+      <path d="M8 7h6M8 11h6M8 15h4" stroke="#C039B4" strokeWidth="1.4" strokeLinecap="round"/>
     </svg>
   ),
 };
@@ -39,7 +39,7 @@ export default function ProofSection() {
 
         {/* Title */}
         <div ref={titleRef} className="fade-up max-w-2xl mb-12">
-          <div className="text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
+          <div className="text-[11px] font-semibold text-[#C039B4] uppercase tracking-widest mb-3">
             Bằng chứng triển khai
           </div>
           <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight mb-4">

@@ -27,14 +27,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 bg-[#1E3A8A] rounded-md flex items-center justify-center">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <rect x="2" y="2" width="6" height="6" rx="1" fill="white" opacity="0.9"/>
-                  <rect x="10" y="2" width="6" height="6" rx="1" fill="white" opacity="0.5"/>
-                  <rect x="2" y="10" width="6" height="6" rx="1" fill="white" opacity="0.5"/>
-                  <rect x="10" y="10" width="6" height="6" rx="1" fill="white" opacity="0.9"/>
-                </svg>
-              </div>
+              <img src="/keytech_logo.png" alt="Keytech Logo" className="h-9 w-auto object-contain" />
               <div>
                 <div className="font-semibold text-[15px] tracking-tight">Keytech AI</div>
                 <div className="text-[#94A3B8] text-[10px] font-medium tracking-wide uppercase">VNS Partnership</div>
@@ -91,8 +84,8 @@ export default function Footer() {
               <a
                 href="#cta"
                 onClick={(e) => handleNav(e, '#cta')}
-                className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#1E3A8A] text-white text-[13px] font-semibold rounded-lg
-                  hover:bg-[#1e40af] hover:-translate-y-px transition-all duration-200"
+                className="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-[#C039B4] to-[#4582F2] transition-all duration-300 hover:opacity-90 text-white text-[13px] font-semibold rounded-lg
+                  hover:bg-[#A62CA0] hover:-translate-y-px transition-all duration-200"
               >
                 Đăng ký tư vấn ngay
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

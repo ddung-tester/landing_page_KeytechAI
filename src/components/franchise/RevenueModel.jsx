@@ -32,7 +32,7 @@ export default function RevenueModel() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div ref={titleRef} className="fade-up max-w-2xl mb-12">
-          <div className="text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
+          <div className="text-[11px] font-semibold text-[#C039B4] uppercase tracking-widest mb-3">
             Mô hình doanh thu
           </div>
           <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight mb-4">
@@ -90,7 +90,7 @@ export default function RevenueModel() {
           {/* Example card */}
           <div className="space-y-4">
             <div className="bg-white border border-[#E5E7EB] rounded-xl p-7">
-              <div className="text-[11.5px] font-semibold text-[#1E3A8A] uppercase tracking-wide mb-4">
+              <div className="text-[11.5px] font-semibold text-[#C039B4] uppercase tracking-wide mb-4">
                 Ví dụ tham chiếu — 1 trường 1.000 học sinh
               </div>
 
