@@ -4,9 +4,9 @@
 // ============================================================
 
 export const heroStats = [
-  { value: "100+",     label: "Trường học đã triển khai" },
-  { value: "70%",      label: "Doanh thu cho đại lý" },
-  { value: "20.000đ",  label: "Phí tham chiếu/học sinh/tháng" },
+  { value: "250+",     label: "Trường học đã triển khai" },
+  { value: "70%",      label: "Doanh thu thực thu cho đại lý" },
+  { value: "1,4 tỷ/năm học", label: "Doanh thu tham chiếu danh mục đại lý", sub: "Theo quy mô tham chiếu 10 trường." },
   { value: "5 năm",    label: "Bảo hành camera AI" },
 ];
 
@@ -265,6 +265,7 @@ export const securityItems = [
 
 export const navLinks = [
   { label: "Cơ hội đầu tư",       href: "#opportunity" },
+  { label: "Công nghệ",            href: "#technology" },
   { label: "Mô hình doanh thu",   href: "#revenue" },
   { label: "Lộ trình triển khai", href: "#roadmap" },
   { label: "Hỗ trợ đại lý",      href: "#support" },

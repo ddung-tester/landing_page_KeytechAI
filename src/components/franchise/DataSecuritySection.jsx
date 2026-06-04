@@ -6,18 +6,19 @@ export default function DataSecuritySection() {
   const listRef = useFadeUpChildren();
 
   return (
-    <section className="py-20 bg-[#F7F8FA]">
+    <section className="py-24 bg-[#F7F8FA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
 
           {/* Title + desc */}
           <div ref={titleRef} className="fade-up">
-            <div className="text-[11px] font-semibold text-[#C039B4] uppercase tracking-widest mb-3">
-              Bảo mật dữ liệu
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB]
+              rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
+              Hợp tác an toàn & Bảo mật thông tin
             </div>
             <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight mb-5">
-              Bảo mật dữ liệu là yêu cầu bắt buộc
+              Hợp tác an toàn & Bảo mật thông tin là cam kết hàng đầu
             </h2>
             <p className="text-[14.5px] text-[#4B5563] leading-relaxed mb-6">
               Dữ liệu học sinh, phụ huynh, giáo viên và nhà trường phải được quản lý đúng phạm vi dự án,
@@ -26,10 +27,10 @@ export default function DataSecuritySection() {
 
             {/* Shield icon block */}
             <div className="flex items-center gap-4 bg-white border border-[#E5E7EB] rounded-xl p-5">
-              <div className="w-12 h-12 rounded-full bg-[#FDF4FD] flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 rounded-full bg-[#F0F4FF] flex items-center justify-center flex-shrink-0">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2l9 4v6c0 5-4 8.5-9 10C7 20.5 3 17 3 12V6l9-4z" stroke="#C039B4" strokeWidth="1.6" strokeLinejoin="round"/>
-                  <path d="M9 12l2 2 4-4" stroke="#C039B4" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 2l9 4v6c0 5-4 8.5-9 10C7 20.5 3 17 3 12V6l9-4z" stroke="#1E3A8A" strokeWidth="1.6" strokeLinejoin="round"/>
+                  <path d="M9 12l2 2 4-4" stroke="#1E3A8A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
               <div>

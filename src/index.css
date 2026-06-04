@@ -103,3 +103,27 @@
 .fade-up-delay-4 { transition-delay: 0.4s; }
 .fade-up-delay-5 { transition-delay: 0.5s; }
 .fade-up-delay-6 { transition-delay: 0.6s; }
+
+/* ─── SLIDE PROGRESS ANIMATION ────────────────────────────── */
+@keyframes slideProgress {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+.animate-slide-progress {
+  animation: slideProgress linear forwards;
+}
+
+/* ─── SCROLL INDICATOR BOUNCE ───────────────────────────── */
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(5px); }
+}
+.animate-bounce-slow {
+  animation: bounceSlow 2s ease-in-out infinite;
+}
+
+/* ─── SECTION DIVIDERS ───────────────────────────────────── */
+/* Thin top border between alternating sections */
+section + section {
+  border-top: 1px solid #F1F5F9;
+}

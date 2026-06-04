@@ -6,11 +6,12 @@ export default function InvestmentOverview() {
   const cardsRef = useFadeUpChildren();
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div ref={titleRef} className="fade-up max-w-xl mb-12">
-          <div className="text-[11px] font-semibold text-[#C039B4] uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F7F8FA] border border-[#E5E7EB]
+            rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
             Quy mô đầu tư
           </div>
           <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight">
@@ -28,7 +29,7 @@ export default function InvestmentOverview() {
               <div className="text-[22px] sm:text-[24px] font-extrabold text-[#0F172A] leading-tight tracking-tight">
                 {item.value}
               </div>
-              <div className="text-[12px] text-[#C039B4] font-semibold mt-0.5 mb-2">{item.unit}</div>
+              <div className="text-[12px] text-[#1E3A8A] font-semibold mt-0.5 mb-2">{item.unit}</div>
               <p className="text-[12.5px] text-[#6B7280] leading-snug">{item.label}</p>
             </div>
           ))}

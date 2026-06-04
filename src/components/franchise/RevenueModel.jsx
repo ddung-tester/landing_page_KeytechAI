@@ -28,19 +28,18 @@ export default function RevenueModel() {
   }, []);
 
   return (
-    <section id="revenue" className="py-20 bg-[#F7F8FA]">
+    <section id="revenue" className="py-24 bg-[#F7F8FA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div ref={titleRef} className="fade-up max-w-2xl mb-12">
-          <div className="text-[11px] font-semibold text-[#C039B4] uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB] rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
             Mô hình doanh thu
           </div>
           <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight mb-4">
             Đại lý hưởng <span className="text-[#166534]">70%</span> doanh thu thực thu
           </h2>
           <p className="text-[14.5px] text-[#4B5563] leading-relaxed">
-            Doanh thu được phân chia trên phí điểm danh/an ninh trường học thực thu, chưa bao gồm VAT,
-            sau khi loại trừ các khoản chưa thu, hoàn trả, giảm trừ hoặc điều chỉnh hợp lệ nếu có.
+            Doanh thu được phân chia trên phí dịch vụ tham chiếu <strong>20.000đ/học sinh/tháng</strong> (thu thực tế theo thỏa thuận phù hợp với từng trường và phụ huynh), chưa bao gồm VAT, sau khi loại trừ các khoản chưa thu, hoàn trả, giảm trừ hoặc điều chỉnh hợp lệ nếu có.
           </p>
         </div>
 
@@ -90,7 +89,7 @@ export default function RevenueModel() {
           {/* Example card */}
           <div className="space-y-4">
             <div className="bg-white border border-[#E5E7EB] rounded-xl p-7">
-              <div className="text-[11.5px] font-semibold text-[#C039B4] uppercase tracking-wide mb-4">
+              <div className="text-[11.5px] font-semibold text-[#1E3A8A] uppercase tracking-wide mb-4">
                 Ví dụ tham chiếu — 1 trường 1.000 học sinh
               </div>
 

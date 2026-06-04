@@ -4,8 +4,8 @@ const roles = [
   {
     tag: "Công nghệ & Vận hành",
     title: "VNS / Keytech AI",
-    color: "border-[#C039B4]",
-    tagColor: "bg-[#FDF4FD] text-[#C039B4]",
+    color: "border-[#1E3A8A]",
+    tagColor: "bg-[#F0F4FF] text-[#1E3A8A]",
     revenue: "30%",
     revenueLabel: "doanh thu thực thu",
     items: [
@@ -45,11 +45,12 @@ export default function PartnershipModel() {
   const titleRef = useFadeUp();
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div ref={titleRef} className="fade-up max-w-xl mb-12">
-          <div className="text-[11px] font-semibold text-[#C039B4] uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F7F8FA] border border-[#E5E7EB]
+            rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
             Mô hình hợp tác
           </div>
           <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight">
@@ -81,7 +82,7 @@ export default function PartnershipModel() {
                   <li key={j} className="flex items-start gap-2.5">
                     <svg className="flex-shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 14 14" fill="none">
                       <circle cx="7" cy="7" r="6" stroke="#CBD5E1" strokeWidth="1.2"/>
-                      <path d="M4.5 7l2 2 3-3" stroke="#C039B4" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M4.5 7l2 2 3-3" stroke="#1E3A8A" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                     <span className="text-[13px] text-[#374151] leading-snug">{item}</span>
                   </li>

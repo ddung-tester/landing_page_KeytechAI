@@ -4,7 +4,7 @@ const footerLinks = [
   { label: "Cơ hội đầu tư",       href: "#opportunity" },
   { label: "Mô hình doanh thu",   href: "#revenue" },
   { label: "Quy trình triển khai", href: "#roadmap" },
-  { label: "Bảo mật dữ liệu",    href: "#security" },
+  { label: "Hợp tác an toàn & Bảo mật", href: "#security" },
   { label: "Liên hệ",            href: "#cta" },
 ];
 
@@ -84,8 +84,8 @@ export default function Footer() {
               <a
                 href="#cta"
                 onClick={(e) => handleNav(e, '#cta')}
-                className="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-[#C039B4] to-[#4582F2] transition-all duration-300 hover:opacity-90 text-white text-[13px] font-semibold rounded-lg
-                  hover:bg-[#A62CA0] hover:-translate-y-px transition-all duration-200"
+                className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#1E3A8A] hover:bg-[#1E40AF] transition-colors duration-200 text-white text-[13px] font-semibold rounded-lg
+                  hover:bg-[#1E40AF] hover:-translate-y-px transition-all duration-200"
               >
                 Đăng ký tư vấn ngay
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

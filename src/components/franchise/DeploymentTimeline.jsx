@@ -38,10 +38,11 @@ export default function DeploymentTimeline() {
   const titleRef = useFadeUp();
 
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={titleRef} className="fade-up mb-10">
-          <div className="text-[11px] font-semibold text-[#C039B4] uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F7F8FA] border border-[#E5E7EB]
+            rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
             Thực tế triển khai
           </div>
           <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight mb-3">
