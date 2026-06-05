@@ -3,11 +3,11 @@ import { roadmapSteps } from '../../data/franchiseLandingData';
 import ScrollNext from './ScrollNext';
 
 const STEP_COLORS = [
-  { bg: '#1E3A8A', light: '#EEF2FF', border: '#C7D7FD' },
-  { bg: '#1D4ED8', light: '#EFF6FF', border: '#BFDBFE' },
-  { bg: '#0369A1', light: '#E0F2FE', border: '#BAE6FD' },
-  { bg: '#0F766E', light: '#CCFBF1', border: '#99F6E4' },
-  { bg: '#7C3AED', light: '#F5F3FF', border: '#DDD6FE' },
+  { bg: '#D946EF', light: '#FBE7F7', border: '#FCE1F5' }, // Pink
+  { bg: '#A855F7', light: '#F5F3FF', border: '#DDD6FE' }, // Purple
+  { bg: '#60A5FA', light: '#EFF6FF', border: '#BFDBFE' }, // Blue
+  { bg: '#3B82F6', light: '#EFF6FF', border: '#DBEAFE' }, // Blue accent
+  { bg: '#059669', light: '#ECFDF5', border: '#A7F3D0' }, // Green
 ];
 
 const ICONS = ['🚀', '📣', '🏗️', '📈', '🌏'];
@@ -17,13 +17,13 @@ export default function PartnerRoadmap() {
   const stepsRef = useFadeUpChildren();
 
   return (
-    <section className="bg-[#F4F7FC] flex flex-col justify-center">
+    <section className="page-about border-t border-[#DDD6FE] flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
         {/* ── Header ── */}
         <div ref={titleRef} className="fade-up mb-8 sm:mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB]
-            rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#DDD6FE]
+            rounded-full text-[11px] font-semibold text-[#A855F7] uppercase tracking-widest mb-3">
             Lộ trình đối tác
           </div>
           <h2 className="text-[26px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight max-w-lg">
@@ -38,7 +38,7 @@ export default function PartnerRoadmap() {
         <div ref={stepsRef} className="relative">
 
           {/* Connector line — desktop only */}
-          <div className="hidden lg:block absolute top-[52px] left-0 right-0 h-0.5 bg-gradient-to-r from-[#1E3A8A]/20 via-[#1E3A8A]/40 to-[#7C3AED]/20 z-0" />
+          <div className="hidden lg:block absolute top-[52px] left-0 right-0 h-0.5 bg-gradient-to-r from-[#D946EF]/20 via-[#A855F7]/40 to-[#60A5FA]/20 z-0" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 relative z-10">
             {roadmapSteps.map((step, i) => {

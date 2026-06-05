@@ -33,12 +33,12 @@ const HERO_SLIDES = [
   {
     src: '/assets/hero-conference.jpg',
     title: 'Hội nghị đối tác chiến lược',
-    desc: 'Cơ chế hợp tác chia sẻ doanh thu 70/30 và lộ trình đồng hành bền vững.',
+    desc: 'Đột phá thu nhập thụ động với cơ chế chia sẻ doanh thu 70/30 hấp dẫn hàng đầu thị trường, cam kết đồng hành và bảo vệ quyền lợi đối tác trọn đời.',
   },
   {
     src: '/assets/hero-deployment.jpg',
     title: 'Triển khai lắp đặt thực tế',
-    desc: 'Giải pháp đã được bàn giao và vận hành ổn định tại hơn 100+ trường học.',
+    desc: 'Giải pháp đã được bàn giao và vận hành ổn định tại hơn 250+ trường học.',
   },
 ];
 
@@ -68,8 +68,8 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="landing-section snap-section bg-[#F4F7FC] flex flex-col"
-      style={{ minHeight: 'calc(100vh - 64px)', scrollMarginTop: 0 }}
+      className="landing-section snap-section page-home flex flex-col"
+      style={{ minHeight: 'calc(100vh - 76px)', scrollMarginTop: 0 }}
     >
       <div className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full
         flex flex-col justify-center py-6 sm:py-8 lg:py-10">
@@ -81,8 +81,8 @@ export default function HeroSection() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5
               bg-white border border-[#E5E7EB] rounded-full mb-6 shadow-sm">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#1E3A8A]" />
-              <span className="text-[11.5px] font-semibold text-[#1E3A8A] tracking-wide uppercase">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#A855F7]" />
+              <span className="text-[11.5px] font-semibold text-[#A855F7] tracking-wide uppercase">
                 Cơ hội hợp tác &amp; nhượng quyền khai thác
               </span>
             </div>
@@ -90,7 +90,7 @@ export default function HeroSection() {
             <h1 className="text-[32px] sm:text-[40px] lg:text-[44px] font-extrabold
               text-[#0F172A] leading-[1.15] tracking-tight mb-5">
               Nhượng quyền<br />
-              <span className="text-[#1E3A8A]">Camera AI</span> điểm danh<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D946EF] to-[#60A5FA]">Camera AI</span> điểm danh<br />
               trường học
             </h1>
 
@@ -107,14 +107,12 @@ export default function HeroSection() {
                   const target = document.querySelector('#lien-he');
                   scrollToLandingTarget(target);
                 }}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E3A8A]
-                  hover:bg-[#1E40AF] text-white font-semibold text-[14px] rounded-lg
-                  transition-all duration-200 hover:-translate-y-px hover:shadow-md"
+                className="inline-flex items-center gap-2 px-6 py-3 btn-brand-primary text-white font-semibold text-[14px] rounded-full"
               >
                 Nhận hồ sơ hợp tác
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8"
-                    strokeLinecap="round" strokeLinejoin="round"/>
+                    strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
               <a
@@ -125,8 +123,8 @@ export default function HeroSection() {
                   scrollToLandingTarget(target);
                 }}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white
-                  border border-[#E5E7EB] text-[#374151] font-semibold text-[14px] rounded-lg
-                  hover:border-[#1E3A8A] hover:text-[#1E3A8A] hover:-translate-y-px
+                  border border-[#E5E7EB] text-[#374151] font-semibold text-[14px] rounded-full
+                  hover:border-[#A855F7] hover:text-[#A855F7] hover:-translate-y-px
                   transition-all duration-200"
               >
                 Xem mô hình doanh thu
@@ -142,18 +140,17 @@ export default function HeroSection() {
                 {HERO_SLIDES.map((slide, index) => (
                   <div
                     key={index}
-                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                      index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                    }`}
+                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                      }`}
                   >
                     {imgErrors[index] ? (
                       /* Fallback khi ảnh lỗi */
                       <div className="w-full h-full flex flex-col items-center justify-center
                         bg-[#1E3A8A] text-white gap-3 px-6">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                          <rect x="4" y="12" width="32" height="22" rx="3" stroke="rgba(255,255,255,0.5)" strokeWidth="1.6"/>
-                          <circle cx="20" cy="23" r="6" stroke="rgba(255,255,255,0.6)" strokeWidth="1.5"/>
-                          <path d="M14 12V10a4 4 0 014-4h4a4 4 0 014 4v2" stroke="rgba(255,255,255,0.4)" strokeWidth="1.4"/>
+                          <rect x="4" y="12" width="32" height="22" rx="3" stroke="rgba(255,255,255,0.5)" strokeWidth="1.6" />
+                          <circle cx="20" cy="23" r="6" stroke="rgba(255,255,255,0.6)" strokeWidth="1.5" />
+                          <path d="M14 12V10a4 4 0 014-4h4a4 4 0 014 4v2" stroke="rgba(255,255,255,0.4)" strokeWidth="1.4" />
                         </svg>
                         <div className="text-[15px] font-semibold text-center leading-snug">{slide.title}</div>
                         <div className="text-[12px] text-slate-300 text-center">{slide.desc}</div>
@@ -195,9 +192,8 @@ export default function HeroSection() {
                     <button
                       key={index}
                       onClick={() => setCurrentSlide(index)}
-                      className={`h-1.5 rounded-full transition-all duration-300 ${
-                        index === currentSlide ? 'bg-white w-3.5' : 'bg-white/40 w-1.5 hover:bg-white/70'
-                      }`}
+                      className={`h-1.5 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-white w-3.5' : 'bg-white/40 w-1.5 hover:bg-white/70'
+                        }`}
                       aria-label={`Chuyển sang ảnh ${index + 1}`}
                     />
                   ))}

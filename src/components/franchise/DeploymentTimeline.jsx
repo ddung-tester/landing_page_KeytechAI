@@ -15,11 +15,11 @@ const DEPLOY_STATS = [
 function ImageCard({ img }) {
   return (
     <div
-      className="flex-shrink-0 w-[280px] sm:w-[340px] mx-2 bg-white border border-[#E5E7EB] rounded-[16px] overflow-hidden
-        shadow-[0_4px_14px_rgba(15,23,42,0.06)] hover:shadow-[0_8px_22px_rgba(15,23,42,0.10)]
+      className="flex-shrink-0 w-[280px] sm:w-[340px] mx-2 bg-white border border-[#DBEAFE] rounded-[16px] overflow-hidden
+        shadow-[0_4px_14px_rgba(30,58,138,0.04)] hover:shadow-[0_8px_22px_rgba(30,58,138,0.08)]
         transition-shadow duration-300 cursor-default"
     >
-      <div className="w-full h-[210px] bg-[#F3F4F6] overflow-hidden">
+      <div className="w-full h-[210px] bg-[#EFF6FF] overflow-hidden">
         <img
           src={img.src}
           alt={img.title}
@@ -47,13 +47,13 @@ export default function DeploymentTimeline() {
   const titleRef = useFadeUp();
 
   return (
-    <section className="bg-[#F8FAFC] overflow-hidden flex flex-col justify-center">
+    <section className="page-news border-t border-[#DBEAFE] overflow-hidden flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div ref={titleRef} className="fade-up">
           {/* Title row + stats */}
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB]
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#DBEAFE]
                 rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
                 Thực tế triển khai
               </div>
@@ -68,7 +68,7 @@ export default function DeploymentTimeline() {
             {/* Stat pills */}
             <div className="flex gap-3 flex-shrink-0">
               {DEPLOY_STATS.map((s, i) => (
-                <div key={i} className="bg-white border border-[#E5E7EB] rounded-xl px-4 py-3 text-center shadow-[0_1px_4px_rgba(0,0,0,0.04)]">
+                <div key={i} className="bg-white border border-[#DBEAFE] rounded-xl px-4 py-3 text-center shadow-[0_1px_4px_rgba(0,0,0,0.04)]">
                   <div className="text-[20px] font-extrabold text-[#1E3A8A] leading-none">{s.value}</div>
                   <div className="text-[11px] text-[#6B7280] mt-1 font-medium whitespace-nowrap">{s.label}</div>
                 </div>

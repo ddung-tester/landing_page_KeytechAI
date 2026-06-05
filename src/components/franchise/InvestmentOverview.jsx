@@ -10,7 +10,7 @@ export default function InvestmentOverview() {
   const rightRef = useFadeUp();
 
   return (
-    <section className="bg-white flex flex-col justify-center">
+    <section className="page-auth border-t border-[#E2E8F0] flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
         <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 lg:gap-12 items-center">
@@ -18,8 +18,8 @@ export default function InvestmentOverview() {
           {/* LEFT: Title + highlight cards */}
           <div>
             <div ref={titleRef} className="fade-up mb-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F7F8FA] border border-[#E5E7EB]
-                rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E2E8F0]
+                rounded-full text-[11px] font-semibold text-[#A855F7] uppercase tracking-widest mb-3">
                 Quy mô đầu tư
               </div>
               <h2 className="text-[26px] sm:text-[30px] font-extrabold text-[#0F172A] leading-tight mb-2">
@@ -36,12 +36,12 @@ export default function InvestmentOverview() {
               {investmentHighlights.map((item, i) => (
                 <div
                   key={i}
-                  className={`fade-up fade-up-delay-${i + 1} bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl p-4`}
+                  className={`fade-up fade-up-delay-${i + 1} bg-white border border-[#E2E8F0] rounded-xl p-4 shadow-sm`}
                 >
                   <div className="text-[20px] sm:text-[22px] font-extrabold text-[#0F172A] leading-tight tracking-tight">
                     {item.value}
                   </div>
-                  <div className="text-[11px] text-[#1E3A8A] font-semibold mt-0.5 mb-1.5">{item.unit}</div>
+                  <div className="text-[11px] text-[#A855F7] font-semibold mt-0.5 mb-1.5">{item.unit}</div>
                   <p className="text-[12px] text-[#6B7280] leading-snug">{item.label}</p>
                 </div>
               ))}
@@ -50,7 +50,7 @@ export default function InvestmentOverview() {
 
           {/* RIGHT: Installation image */}
           <div ref={rightRef} className="fade-up flex justify-center lg:justify-end">
-            <div className="w-full max-w-[680px] rounded-xl border border-[#E5E7EB] bg-white p-2 shadow-[0_4px_18px_rgba(15,23,42,0.08)]">
+            <div className="w-full max-w-[680px] rounded-xl border border-[#E2E8F0] bg-white p-2 shadow-[0_4px_18px_rgba(15,23,42,0.08)]">
               <img
                 src={SCHOOL_INSTALL_IMAGE_SRC}
                 alt="Lap dat Camera AI tai san truong"

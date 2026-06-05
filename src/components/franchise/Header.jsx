@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { navLinks } from '../../data/franchiseLandingData';
 import { scrollToLandingTarget } from '../../utils/scrollToLandingTarget';
 
-const HEADER_H = 64; // px — chiều cao header (h-16)
+const HEADER_H = 76; // px — chiều cao header (h-19)
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -64,7 +64,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#E5E7EB]
-        transition-shadow duration-300 ${scrolled ? 'shadow-md' : 'shadow-none'}`}
+      transition-shadow duration-300 ${scrolled ? 'shadow-md' : 'shadow-none'}`}
       style={{ height: `${HEADER_H}px` }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
@@ -74,14 +74,14 @@ export default function Header() {
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, '#hero')}
-            className="flex items-center gap-2.5 flex-shrink-0 focus:outline-none"
+            className="flex items-center gap-3 flex-shrink-0 focus:outline-none"
             aria-label="Về trang chủ"
           >
-            <img src="/keytech_logo.png" alt="Keytech Logo" className="h-9 w-auto object-contain" />
-            <div className="leading-tight">
-              <div className="text-[#0F172A] font-semibold text-[15px] tracking-tight">Keytech AI</div>
-              <div className="text-[#6B7280] text-[10px] font-medium tracking-wide uppercase">VNS Partnership</div>
-            </div>
+            <img src="/keytech_logo.png" alt="Keytech Logo" className="h-14 w-auto object-contain" />
+            <div className="h-5 w-px bg-[#E5E7EB]" />
+            <span className="text-[10px] font-extrabold tracking-widest text-[#A855F7] uppercase bg-[#FCE1F5] px-2 py-0.5 rounded-md">
+              Partnership
+            </span>
           </a>
 
           {/* Desktop Nav */}
@@ -93,10 +93,10 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`px-3 py-1.5 rounded-md text-[13.5px] font-medium transition-colors duration-200
+                  className={`px-3 py-1.5 rounded-md text-[13.5px] font-semibold transition-colors duration-200
                     ${isActive
-                      ? 'text-[#1E3A8A] bg-[#F0F4FF]'
-                      : 'text-[#4B5563] hover:text-[#1E3A8A] hover:bg-[#F7F8FA]'
+                      ? 'text-[#A855F7] bg-[#FBE7F7]'
+                      : 'text-[#4B5563] hover:text-[#A855F7] hover:bg-[#FBE7F7]/50'
                     }`}
                 >
                   {link.label}
@@ -110,9 +110,8 @@ export default function Header() {
             <a
               href="#lien-he"
               onClick={(e) => handleNavClick(e, '#lien-he')}
-              className="hidden sm:inline-flex items-center px-4 py-2 bg-[#1E3A8A] hover:bg-[#1E40AF]
-                text-white text-[13px] font-semibold rounded-md
-                transition-all duration-200 hover:-translate-y-px hover:shadow-md"
+              className="hidden sm:inline-flex items-center px-4.5 py-2.5 btn-brand-primary
+                text-white text-[13px] font-semibold"
             >
               Đăng ký tư vấn
             </a>
@@ -149,10 +148,10 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`py-2.5 px-3 text-[14px] font-medium rounded-md transition-colors
+                  className={`py-2.5 px-3 text-[14px] font-semibold rounded-md transition-colors
                     ${isActive
-                      ? 'text-[#1E3A8A] bg-[#F0F4FF]'
-                      : 'text-[#374151] hover:text-[#1E3A8A] hover:bg-[#F7F8FA]'
+                      ? 'text-[#A855F7] bg-[#FBE7F7]'
+                      : 'text-[#374151] hover:text-[#A855F7] hover:bg-[#FBE7F7]/50'
                     }`}
                 >
                   {link.label}
@@ -162,8 +161,8 @@ export default function Header() {
             <a
               href="#lien-he"
               onClick={(e) => handleNavClick(e, '#lien-he')}
-              className="mt-2 py-2.5 px-3 bg-[#1E3A8A] hover:bg-[#1E40AF] transition-colors
-                text-white text-[14px] font-semibold rounded-md text-center"
+              className="mt-2 py-2.5 px-3 btn-brand-primary transition-colors
+                text-white text-[14px] font-semibold text-center"
             >
               Đăng ký tư vấn
             </a>

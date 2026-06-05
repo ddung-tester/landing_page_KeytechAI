@@ -5,27 +5,27 @@ import ScrollNext from './ScrollNext';
 const iconMap = {
   'check-circle': (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="10" stroke="#166534" strokeWidth="1.6"/>
-      <path d="M7 12l3.5 3.5L17 8" stroke="#166534" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="12" cy="12" r="10" stroke="#FFFFFF" strokeWidth="1.6"/>
+      <path d="M7 12l3.5 3.5L17 8" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   ),
   'bar-chart': (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <rect x="3" y="13" width="4.5" height="8" rx="1" stroke="#1E3A8A" strokeWidth="1.5"/>
-      <rect x="9.75" y="8" width="4.5" height="13" rx="1" stroke="#1E3A8A" strokeWidth="1.5"/>
-      <rect x="16.5" y="3" width="4.5" height="18" rx="1" stroke="#1E3A8A" strokeWidth="1.5"/>
+      <rect x="3" y="13" width="4.5" height="8" rx="1" stroke="#FFFFFF" strokeWidth="1.5"/>
+      <rect x="9.75" y="8" width="4.5" height="13" rx="1" stroke="#FFFFFF" strokeWidth="1.5"/>
+      <rect x="16.5" y="3" width="4.5" height="18" rx="1" stroke="#FFFFFF" strokeWidth="1.5"/>
     </svg>
   ),
   clock: (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="10" stroke="#1E3A8A" strokeWidth="1.6"/>
-      <path d="M12 7v5l3 3" stroke="#1E3A8A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="12" cy="12" r="10" stroke="#FFFFFF" strokeWidth="1.6"/>
+      <path d="M12 7v5l3 3" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   ),
   document: (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <rect x="4" y="2" width="16" height="20" rx="2" stroke="#1E3A8A" strokeWidth="1.5"/>
-      <path d="M8 8h8M8 12h8M8 16h5" stroke="#1E3A8A" strokeWidth="1.4" strokeLinecap="round"/>
+      <rect x="4" y="2" width="16" height="20" rx="2" stroke="#FFFFFF" strokeWidth="1.5"/>
+      <path d="M8 8h8M8 12h8M8 16h5" stroke="#FFFFFF" strokeWidth="1.4" strokeLinecap="round"/>
     </svg>
   ),
 };
@@ -39,9 +39,10 @@ const BIG_STATS = [
 export default function ProofSection() {
   const titleRef = useFadeUp();
   const cardsRef = useFadeUpChildren();
+  const statsRef = useFadeUpChildren();
 
   return (
-    <section className="bg-[#F6FBF7] flex flex-col justify-center">
+    <section className="page-guide border-t border-[#CFFAFE] flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
         {/* Two-column layout */}
@@ -50,8 +51,8 @@ export default function ProofSection() {
           {/* LEFT: Title + big stats */}
           <div>
             <div ref={titleRef} className="fade-up mb-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB]
-                rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#CFFAFE]
+                rounded-full text-[11px] font-semibold text-[#A855F7] uppercase tracking-widest mb-3">
                 Bằng chứng triển khai
               </div>
               <h2 className="text-[26px] sm:text-[30px] font-extrabold text-[#0F172A] leading-tight mb-3">
@@ -63,14 +64,14 @@ export default function ProofSection() {
             </div>
 
             {/* Big stats */}
-            <div className="grid grid-cols-3 gap-4">
+            <div ref={statsRef} className="grid grid-cols-3 gap-4">
               {BIG_STATS.map((stat, i) => (
                 <div
                   key={i}
-                  className="fade-up bg-white rounded-xl border border-[#E5E7EB] p-4
+                  className="fade-up bg-white rounded-xl border border-[#CFFAFE] p-4
                     shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
                 >
-                  <div className="text-[28px] font-extrabold text-[#1E3A8A] leading-none mb-1">
+                  <div className="text-[28px] font-extrabold text-[#A855F7] leading-none mb-1">
                     {stat.value}
                   </div>
                   <div className="text-[13px] font-bold text-[#0F172A] mb-0.5">{stat.label}</div>
@@ -85,10 +86,10 @@ export default function ProofSection() {
             {proofStats.map((item, i) => (
               <div
                 key={i}
-                className={`fade-up fade-up-delay-${i + 1} bg-white border border-[#E5E7EB] rounded-xl p-5
-                  hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:border-[#D1E2FF] transition-all duration-300`}
+                className={`fade-up fade-up-delay-${i + 1} bg-white border border-[#CFFAFE] rounded-xl p-5
+                  hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:border-[#06B6D4] transition-all duration-300`}
               >
-                <div className="w-11 h-11 rounded-xl bg-[#F0F9F1] flex items-center justify-center mb-4">
+                <div className="w-11 h-11 rounded-full bg-gradient-to-r from-[#D946EF] to-[#60A5FA] flex items-center justify-center mb-4 shadow-sm">
                   {iconMap[item.icon]}
                 </div>
                 <div className="text-[15px] font-bold text-[#0F172A] mb-2">{item.stat}</div>

@@ -30,6 +30,79 @@
   }
 }
 
+:root {
+  --primary-purple: #8B5CF6;
+  --primary-blue: #1E3A8A;
+  --primary-pink: #EC4899;
+  --soft-border: rgba(229, 231, 235, 0.8);
+  
+  --brand-gradient: linear-gradient(90deg, #D946EF 0%, #60A5FA 100%);
+  --brand-purple: #A855F7;
+  --brand-pink: #D946EF;
+  --brand-blue: #60A5FA;
+  --brand-soft-pink: #FCE1F5;
+  --brand-soft-pink-2: #FBE7F7;
+}
+
+/* Brand Button Utility */
+.btn-brand-primary {
+  background: var(--brand-gradient) !important;
+  color: #ffffff !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 4px 14px rgba(217, 70, 239, 0.15), 0 4px 14px rgba(96, 165, 250, 0.15) !important;
+  border: none !important;
+  transition: all 0.2s ease-in-out !important;
+}
+.btn-brand-primary:hover {
+  filter: brightness(1.05) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(217, 70, 239, 0.25), 0 6px 20px rgba(96, 165, 250, 0.25) !important;
+}
+
+/* Page themes mapping */
+.page-home {
+  background: linear-gradient(135deg, #F7F2FF 0%, #EFF7FF 100%) !important;
+  --page-accent: #3B82F6;
+  --card-bg: #ffffff;
+  --soft-border: #E5E7EB;
+}
+
+.page-products {
+  background: var(--brand-soft-pink) !important;
+  --page-accent: #D946EF;
+  --card-bg: #ffffff;
+  --soft-border: #FBE7F7;
+}
+
+.page-news {
+  background: linear-gradient(135deg, #EFF6FF 0%, #F8FBFF 100%) !important;
+  --page-accent: #3B82F6;
+  --card-bg: #ffffff;
+  --soft-border: #DBEAFE;
+}
+
+.page-guide {
+  background: linear-gradient(135deg, #ECFEFF 0%, #F0FDFA 100%) !important;
+  --page-accent: #06B6D4;
+  --card-bg: #ffffff;
+  --soft-border: #CFFAFE;
+}
+
+.page-about {
+  background: linear-gradient(135deg, #F5F3FF 0%, #FAF5FF 100%) !important;
+  --page-accent: #8B5CF6;
+  --card-bg: #ffffff;
+  --soft-border: #DDD6FE;
+}
+
+.page-auth {
+  background: linear-gradient(135deg, #ffffff 0%, #F8FAFC 100%) !important;
+  --page-accent: #1E3A8A;
+  --card-bg: #ffffff;
+  --soft-border: #E2E8F0;
+}
+
+
 /* ─── SCROLLBAR ──────────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 6px;
@@ -111,8 +184,8 @@
   }
 
   .landing-main {
-    height: calc(100vh - 64px);
-    margin-top: 64px;
+    height: calc(100vh - 76px);
+    margin-top: 76px;
     overflow-y: auto;
     scroll-behavior: smooth;
     scroll-padding-top: 0;

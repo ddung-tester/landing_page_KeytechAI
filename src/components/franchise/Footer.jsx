@@ -28,12 +28,12 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
-              <img src="/keytech_logo.png" alt="Keytech Logo" className="h-9 w-auto object-contain" />
-              <div>
-                <div className="font-semibold text-[15px] tracking-tight">Keytech AI</div>
-                <div className="text-[#94A3B8] text-[10px] font-medium tracking-wide uppercase">VNS Partnership</div>
-              </div>
+            <div className="flex items-center gap-3 mb-4">
+              <img src="/keytech_logo.png" alt="Keytech Logo" className="h-14 w-auto object-contain" />
+              <div className="h-5 w-px bg-[#334155]" />
+              <span className="text-[10px] font-extrabold tracking-widest text-[#FCE1F5] uppercase bg-[#A855F7]/30 px-2 py-0.5 rounded-md">
+                Partnership
+              </span>
             </div>
             <p className="text-[13px] text-[#94A3B8] leading-relaxed max-w-xs">
               Giải pháp Camera AI điểm danh trường học theo mô hình hợp tác đầu tư,
@@ -86,8 +86,7 @@ export default function Footer() {
               <a
                 href="#lien-he"
                 onClick={(e) => handleNav(e, '#lien-he')}
-                className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#1E3A8A] hover:bg-[#1E40AF] transition-colors duration-200 text-white text-[13px] font-semibold rounded-lg
-                  hover:bg-[#1E40AF] hover:-translate-y-px transition-all duration-200"
+                className="inline-flex items-center gap-2 px-5 py-3 btn-brand-primary transition-all duration-200 text-white text-[13px] font-semibold rounded-full"
               >
                 Đăng ký tư vấn ngay
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

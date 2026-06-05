@@ -70,20 +70,20 @@ export default function FinalCTA() {
   };
 
   return (
-    <section className="bg-[#0F172A] flex flex-col justify-center">
+    <section className="page-auth border-t border-[#E2E8F0] flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-14 items-center">
 
           {/* LEFT: Trust content */}
           <div ref={leftRef} className="fade-up">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20
-              rounded-full text-[11px] font-semibold text-blue-300 uppercase tracking-widest mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E2E8F0]
+              rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4 shadow-sm">
               Đăng ký tư vấn
             </div>
-            <h2 className="text-[26px] sm:text-[32px] font-extrabold text-white leading-tight mb-3">
+            <h2 className="text-[26px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight mb-3">
               Sẵn sàng khai thác thị trường Camera AI điểm danh tại địa phương?
             </h2>
-            <p className="text-[14px] text-slate-400 leading-relaxed mb-6">
+            <p className="text-[14px] text-[#4B5563] leading-relaxed mb-6">
               Nhận hồ sơ hợp tác, mô hình doanh thu tham chiếu và tư vấn khu vực phù hợp với năng lực của bạn.
             </p>
 
@@ -91,12 +91,12 @@ export default function FinalCTA() {
             <div className="space-y-3 mb-6">
               {OFFER_LIST.map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#1E40AF] flex items-center justify-center mt-0.5">
+                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#3B82F6] flex items-center justify-center mt-0.5 shadow-sm">
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                       <path d="M2 5l2 2 4-4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
-                  <span className="text-[13.5px] text-slate-300 leading-snug">{item}</span>
+                  <span className="text-[13.5px] text-[#374151] leading-snug">{item}</span>
                 </div>
               ))}
             </div>
@@ -104,9 +104,9 @@ export default function FinalCTA() {
             {/* Stats row */}
             <div className="flex gap-4 flex-wrap">
               {TRUST_ITEMS.map((s, i) => (
-                <div key={i} className="bg-white/5 border border-white/10 rounded-xl px-4 py-3">
-                  <div className="text-[22px] font-extrabold text-white leading-none">{s.value}</div>
-                  <div className="text-[11px] text-slate-400 mt-1">{s.label}</div>
+                <div key={i} className="bg-white border border-[#E2E8F0] rounded-xl px-4 py-3 shadow-sm">
+                  <div className="text-[22px] font-extrabold text-[#1E3A8A] leading-none">{s.value}</div>
+                  <div className="text-[11px] text-[#6B7280] mt-1">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -129,7 +129,7 @@ export default function FinalCTA() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="bg-white border border-[#E2E8F0] rounded-2xl p-6 shadow-[0_20px_60px_rgba(0,0,0,0.25)]"
+                className="bg-white border border-[#E2E8F0] rounded-2xl p-6 shadow-[0_8px_30px_rgba(30,58,138,0.06)]"
               >
                 <div className="text-[15px] font-bold text-[#0F172A] mb-5">Thông tin liên hệ</div>
 
@@ -198,11 +198,10 @@ export default function FinalCTA() {
                 </div>
 
                 {/* Submit */}
-                <button
+                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3 bg-[#1E3A8A] hover:bg-[#1E40AF] transition-all duration-200 text-white font-semibold text-[14.5px] rounded-lg
-                    hover:-translate-y-px hover:shadow-lg
+                  className="w-full py-3 btn-brand-primary transition-all duration-200 text-white font-semibold text-[14.5px] rounded-full
                     disabled:opacity-60 disabled:cursor-not-allowed disabled:translate-y-0"
                 >
                   {loading ? (

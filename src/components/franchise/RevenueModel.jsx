@@ -27,13 +27,13 @@ export default function RevenueModel() {
   }, []);
 
   return (
-    <section className="bg-[#F4F7FC] flex flex-col justify-center">
+    <section className="page-about border-t border-[#DDD6FE] flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
         {/* Heading */}
         <div ref={titleRef} className="fade-up max-w-2xl mb-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB]
-            rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#DDD6FE]
+            rounded-full text-[11px] font-semibold text-[#A855F7] uppercase tracking-widest mb-3">
             Mô hình doanh thu
           </div>
           <h2 className="text-[26px] sm:text-[30px] font-extrabold text-[#0F172A] leading-tight mb-3">
@@ -49,7 +49,7 @@ export default function RevenueModel() {
         <div ref={sectionRef} className="grid lg:grid-cols-2 gap-5 items-stretch">
 
           {/* LEFT: Revenue split bars */}
-          <div className="bg-white border border-[#E5E7EB] rounded-xl p-6 flex flex-col justify-center gap-5">
+          <div className="bg-white border border-[#DDD6FE] rounded-xl p-6 flex flex-col justify-center gap-5">
             <div className="text-[12px] font-semibold text-[#6B7280] uppercase tracking-widest">
               Phân chia doanh thu thực thu
             </div>
@@ -86,10 +86,10 @@ export default function RevenueModel() {
           </div>
 
           {/* RIGHT: Example table */}
-          <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden flex flex-col">
+          <div className="bg-white border border-[#DDD6FE] rounded-xl overflow-hidden flex flex-col">
             {/* Card header */}
-            <div className="bg-[#1E3A8A] px-6 py-4">
-              <div className="text-[10.5px] font-bold text-blue-200 uppercase tracking-widest mb-0.5">
+            <div className="bg-gradient-to-r from-[#D946EF] to-[#60A5FA] px-6 py-4 shadow-sm">
+              <div className="text-[10.5px] font-bold text-white uppercase tracking-widest mb-0.5 opacity-90">
                 Ví dụ tham chiếu
               </div>
               <div className="text-[15px] font-bold text-white">1 trường · 1.000 học sinh</div>

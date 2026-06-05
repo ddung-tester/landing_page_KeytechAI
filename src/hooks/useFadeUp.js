@@ -8,36 +8,47 @@ export function useFadeUp(threshold = 0.15) {
   const ref = useRef(null);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const root = document.querySelector('.landing-main');
+    let observer;
+    let timer;
+    let retryTimer;
 
-    const ensureVisibleIfInView = () => {
-      const rootRect = root?.getBoundingClientRect() ?? {
-        top: 0,
-        bottom: window.innerHeight,
-      };
-      const rect = el.getBoundingClientRect();
-      if (rect.top < rootRect.bottom && rect.bottom > rootRect.top) {
-        el.classList.add('visible');
+    const init = () => {
+      const el = ref.current;
+      if (!el) return;
+      const root = document.querySelector('.landing-main');
+      if (!root) {
+        retryTimer = window.setTimeout(init, 50);
+        return;
       }
+
+      const ensureVisibleIfInView = () => {
+        const rootRect = root.getBoundingClientRect();
+        const rect = el.getBoundingClientRect();
+        if (rect.top < rootRect.bottom && rect.bottom > rootRect.top) {
+          el.classList.add('visible');
+        }
+      };
+
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            el.classList.add('visible');
+            observer.disconnect();
+          }
+        },
+        { root, threshold }
+      );
+
+      observer.observe(el);
+      timer = window.setTimeout(ensureVisibleIfInView, 80);
     };
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add('visible');
-          observer.disconnect();
-        }
-      },
-      { root, threshold }
-    );
+    init();
 
-    observer.observe(el);
-    const timer = window.setTimeout(ensureVisibleIfInView, 80);
     return () => {
-      observer.disconnect();
+      if (observer) observer.disconnect();
       window.clearTimeout(timer);
+      window.clearTimeout(retryTimer);
     };
   }, [threshold]);
 
@@ -52,45 +63,55 @@ export function useFadeUpChildren(threshold = 0.1) {
   const ref = useRef(null);
 
   useEffect(() => {
-    const container = ref.current;
-    if (!container) return;
-    const root = document.querySelector('.landing-main');
+    let observers = [];
+    let timer;
+    let retryTimer;
 
-    const children = container.querySelectorAll('.fade-up');
-    const observers = [];
-    const rootRect = root?.getBoundingClientRect() ?? {
-      top: 0,
-      bottom: window.innerHeight,
+    const init = () => {
+      const container = ref.current;
+      if (!container) return;
+      const root = document.querySelector('.landing-main');
+      if (!root) {
+        retryTimer = window.setTimeout(init, 50);
+        return;
+      }
+
+      const children = container.querySelectorAll('.fade-up');
+      const rootRect = root.getBoundingClientRect();
+
+      children.forEach((child) => {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              child.classList.add('visible');
+              observer.disconnect();
+            }
+          },
+          { root, threshold }
+        );
+        observer.observe(child);
+        observers.push(observer);
+      });
+
+      timer = window.setTimeout(() => {
+        children.forEach((child) => {
+          const rect = child.getBoundingClientRect();
+          if (rect.top < rootRect.bottom && rect.bottom > rootRect.top) {
+            child.classList.add('visible');
+          }
+        });
+      }, 80);
     };
 
-    children.forEach((child) => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            child.classList.add('visible');
-            observer.disconnect();
-          }
-        },
-        { root, threshold }
-      );
-      observer.observe(child);
-      observers.push(observer);
-    });
-
-    const timer = window.setTimeout(() => {
-      children.forEach((child) => {
-        const rect = child.getBoundingClientRect();
-        if (rect.top < rootRect.bottom && rect.bottom > rootRect.top) {
-          child.classList.add('visible');
-        }
-      });
-    }, 80);
+    init();
 
     return () => {
       observers.forEach((o) => o.disconnect());
       window.clearTimeout(timer);
+      window.clearTimeout(retryTimer);
     };
   }, [threshold]);
 
   return ref;
 }
+
