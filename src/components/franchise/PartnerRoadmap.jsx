@@ -1,57 +1,97 @@
 import { useFadeUp, useFadeUpChildren } from '../../hooks/useFadeUp';
 import { roadmapSteps } from '../../data/franchiseLandingData';
+import ScrollNext from './ScrollNext';
+
+const STEP_COLORS = [
+  { bg: '#1E3A8A', light: '#EEF2FF', border: '#C7D7FD' },
+  { bg: '#1D4ED8', light: '#EFF6FF', border: '#BFDBFE' },
+  { bg: '#0369A1', light: '#E0F2FE', border: '#BAE6FD' },
+  { bg: '#0F766E', light: '#CCFBF1', border: '#99F6E4' },
+  { bg: '#7C3AED', light: '#F5F3FF', border: '#DDD6FE' },
+];
+
+const ICONS = ['🚀', '📣', '🏗️', '📈', '🌏'];
 
 export default function PartnerRoadmap() {
   const titleRef = useFadeUp();
   const stepsRef = useFadeUpChildren();
 
   return (
-    <section className="bg-[#F4F7FC]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#F4F7FC] flex flex-col justify-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
-        <div ref={titleRef} className="fade-up max-w-xl mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F7F8FA] border border-[#E5E7EB]
-            rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
+        {/* ── Header ── */}
+        <div ref={titleRef} className="fade-up mb-8 sm:mb-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB]
+            rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
             Lộ trình đối tác
           </div>
-          <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight">
+          <h2 className="text-[26px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight max-w-lg">
             Lộ trình khởi động rõ ràng cho đối tác
           </h2>
+          <p className="mt-2 text-[13.5px] text-[#6B7280] max-w-md">
+            Từ ngày đầu ký kết đến khi vận hành danh mục 10 trường — mỗi giai đoạn đều có mục tiêu cụ thể.
+          </p>
         </div>
 
-        {/* Vertical timeline */}
-        <div ref={stepsRef} className="relative max-w-4xl">
-          {/* Line */}
-          <div className="absolute left-[19px] top-0 bottom-0 w-0.5 bg-[#E5E7EB]" />
+        {/* ── Timeline cards ── */}
+        <div ref={stepsRef} className="relative">
 
-          <div className="space-y-4">
-            {roadmapSteps.slice(0, 4).map((step, i) => (
-              <div
-                key={i}
-                className={`fade-up fade-up-delay-${i + 1} relative flex items-start gap-5`}
-              >
-                {/* Circle */}
-                <div className="relative z-10 w-10 h-10 rounded-full bg-[#1E3A8A] hover:bg-[#1E40AF] transition-colors duration-200 border-4 border-white shadow-[0_0_0_1px_#E5E7EB]
-                  flex items-center justify-center flex-shrink-0">
-                  <span className="text-[10px] font-bold text-white leading-none">{i + 1}</span>
-                </div>
+          {/* Connector line — desktop only */}
+          <div className="hidden lg:block absolute top-[52px] left-0 right-0 h-0.5 bg-gradient-to-r from-[#1E3A8A]/20 via-[#1E3A8A]/40 to-[#7C3AED]/20 z-0" />
 
-                {/* Card */}
-                <div className="flex-1 bg-white/95 border border-[#D1E2FF] rounded-xl p-4 mb-1
-                  hover:border-[#1E3A8A] hover:shadow-[0_4px_16px_rgba(30,58,138,0.07)] transition-all duration-300">
-                  <div className="flex flex-wrap items-center gap-3 mb-2">
-                    <span className="inline-block bg-[#F0F4FF] text-[#1E3A8A] text-[11px] font-bold px-2.5 py-1 rounded-full tracking-wide">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 relative z-10">
+            {roadmapSteps.map((step, i) => {
+              const color = STEP_COLORS[i] || STEP_COLORS[0];
+              return (
+                <div
+                  key={i}
+                  className={`fade-up fade-up-delay-${i + 1} group flex flex-col`}
+                >
+                  {/* Step badge */}
+                  <div className="flex items-center gap-3 mb-3 lg:flex-col lg:items-center lg:gap-2">
+                    <div
+                      className="w-10 h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center
+                        flex-shrink-0 shadow-lg ring-4 ring-white text-[18px] lg:text-[20px]
+                        transition-transform duration-300 group-hover:-translate-y-1"
+                      style={{ backgroundColor: color.bg }}
+                    >
+                      <span>{ICONS[i]}</span>
+                    </div>
+                    <span
+                      className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wide lg:text-center"
+                      style={{ backgroundColor: color.light, color: color.bg, border: `1px solid ${color.border}` }}
+                    >
                       {step.time}
                     </span>
-                    <span className="text-[15px] font-bold text-[#0F172A]">{step.title}</span>
                   </div>
-                  <p className="text-[13.5px] text-[#6B7280] leading-relaxed">{step.desc}</p>
+
+                  {/* Card */}
+                  <div
+                    className="flex-1 bg-white rounded-2xl p-4 shadow-sm
+                      transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1"
+                    style={{ border: `1px solid ${color.border}` }}
+                  >
+                    <div
+                      className="text-[11px] font-black uppercase tracking-widest mb-1"
+                      style={{ color: color.bg }}
+                    >
+                      Giai đoạn {i + 1}
+                    </div>
+                    <h3 className="text-[14px] sm:text-[15px] font-bold text-[#0F172A] mb-2 leading-snug">
+                      {step.title}
+                    </h3>
+                    <p className="text-[12px] sm:text-[12.5px] text-[#6B7280] leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
+        <ScrollNext href="#lien-he" />
       </div>
     </section>
   );

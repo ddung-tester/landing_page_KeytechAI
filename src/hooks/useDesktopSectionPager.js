@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 
-const WHEEL_THRESHOLD = 45;
+const WHEEL_THRESHOLD = 80;
 const SCROLL_DURATION_MS = 760;
-const WHEEL_BUFFER_RESET_MS = 80;
+const WHEEL_BUFFER_RESET_MS = 200;
+const COOLDOWN_MS = 900;
 
 function easeOutCubic(t) {
   return 1 - ((1 - t) ** 3);
@@ -39,6 +40,7 @@ export function useDesktopSectionPager() {
     let wheelBuffer = 0;
     let bufferTimer;
     let animationFrame;
+    let lastScrollTime = 0;
 
     const getSections = () => (
       Array.from(root.querySelectorAll('.snap-section'))
@@ -100,6 +102,10 @@ export function useDesktopSectionPager() {
 
       if (isAnimating) return;
 
+      // Cooldown: chặn cuộn liên tiếp quá nhanh
+      const now = performance.now();
+      if (now - lastScrollTime < COOLDOWN_MS) return;
+
       wheelBuffer += event.deltaY;
       window.clearTimeout(bufferTimer);
       bufferTimer = window.setTimeout(() => {
@@ -117,6 +123,7 @@ export function useDesktopSectionPager() {
       );
 
       if (nextIndex !== currentIndex) {
+        lastScrollTime = now;
         scrollToSection(nextIndex);
       }
     };

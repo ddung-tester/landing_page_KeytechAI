@@ -6,7 +6,7 @@
 export const heroStats = [
   { value: "250+",     label: "Trường học trong danh mục triển khai" },
   { value: "70%",      label: "Doanh thu thực thu cho đại lý" },
-  { value: "1,4 tỷ/năm học", label: "Doanh thu tham chiếu danh mục đại lý", sub: "Theo quy mô tham chiếu 10 trường." },
+  { value: "1,4 tỷ/năm học", label: "Doanh thu tham chiếu danh mục đại lý" },
   { value: "5 năm",    label: "Bảo hành camera AI" },
 ];
 

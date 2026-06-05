@@ -47,55 +47,57 @@ export default function TechnologySection() {
   const cardsRef = useFadeUpChildren();
 
   return (
-    <section className="bg-white border-t border-[#DBEAFE]">
+    <section className="bg-white border-t border-[#DBEAFE] flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div ref={titleRef} className="fade-up max-w-3xl mb-7 lg:mb-8">
+        <div ref={titleRef} className="fade-up max-w-3xl mb-4 lg:mb-5">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F7F8FA] border border-[#E5E7EB]
-            rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
+            rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
             Công nghệ Camera AI
           </div>
-          <h2 className="text-[28px] sm:text-[34px] font-extrabold text-[#0F172A] leading-tight mb-4">
+          <h2 className="text-[26px] sm:text-[30px] font-extrabold text-[#0F172A] leading-tight mb-2">
             Camera AI điểm danh cho trường học
           </h2>
-          <p className="text-[15px] text-[#4B5563] leading-relaxed max-w-2xl">
+          <p className="text-[14px] text-[#4B5563] leading-relaxed max-w-2xl">
             Camera AI kết hợp phần mềm nhận diện và dashboard quản trị để tự động ghi nhận học sinh ra/vào, cập nhật dữ liệu điểm danh và hỗ trợ thông báo phụ huynh.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-[0.92fr_1.08fr] gap-7 lg:gap-10 items-center">
-          <div ref={cardsRef} className="grid sm:grid-cols-3 lg:grid-cols-1 gap-4">
+        <div className="grid lg:grid-cols-[0.92fr_1.08fr] gap-5 lg:gap-8 items-center">
+          <div ref={cardsRef} className="grid sm:grid-cols-3 lg:grid-cols-1 gap-3">
             {TECH_FEATURES.map((feat, i) => (
               <div
                 key={i}
                 className={`fade-up fade-up-delay-${i + 1} group bg-white border border-[#E5E7EB]
-                  rounded-xl p-5 hover:border-[#1E3A8A] hover:shadow-[0_4px_16px_rgba(30,58,138,0.08)]
+                  rounded-xl p-4 hover:border-[#1E3A8A] hover:shadow-[0_4px_16px_rgba(30,58,138,0.08)]
                   transition-all duration-300`}
               >
-                <div className="w-10 h-10 rounded-lg bg-[#F0F4FF] flex items-center justify-center
-                  mb-4 group-hover:bg-[#D1E2FF] transition-colors">
+                <div className="w-9 h-9 rounded-lg bg-[#F0F4FF] flex items-center justify-center
+                  mb-3 group-hover:bg-[#D1E2FF] transition-colors">
                   {feat.icon}
                 </div>
-                <h3 className="text-[13.5px] font-bold text-[#0F172A] mb-1.5 leading-snug">
+                <h3 className="text-[13px] font-bold text-[#0F172A] mb-1 leading-snug">
                   {feat.title}
                 </h3>
-                <p className="text-[12.5px] text-[#6B7280] leading-relaxed">{feat.desc}</p>
+                <p className="text-[12px] text-[#6B7280] leading-relaxed">{feat.desc}</p>
               </div>
             ))}
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="w-full max-w-[520px] rounded-[20px] border border-[#E5E7EB] shadow-[0_4px_24px_rgba(0,0,0,0.08)] overflow-hidden">
+            <div className="w-full max-w-[480px] rounded-[16px] border border-[#E5E7EB] bg-[#F8FAFC] shadow-[0_4px_24px_rgba(0,0,0,0.08)] overflow-hidden">
               <img
                 src={CAM_IMAGE_SRC}
                 alt="Camera AI điểm danh trường học - Keytech AI"
-                className="w-full h-[260px] sm:h-[320px] lg:h-[360px] object-cover"
+                className="w-full object-contain"
+                style={{ height: 'clamp(180px, 30vh, 300px)' }}
                 loading="lazy"
                 onError={(e) => {
                   e.target.style.display = 'none';
                   e.target.parentElement.classList.add(
                     'flex', 'items-center', 'justify-center',
-                    'min-h-[260px]', 'bg-[#F7F8FA]'
+                    'bg-[#F7F8FA]'
                   );
+                  e.target.parentElement.style.height = 'clamp(180px, 30vh, 300px)';
                   const msg = document.createElement('div');
                   msg.className = 'text-[#94A3B8] text-[13px] text-center px-6';
                   msg.textContent = 'Camera AI điểm danh trường học';

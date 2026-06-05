@@ -6,19 +6,25 @@ const marqueeImages = deploymentImages.length < 10
   ? [...deploymentImages, ...deploymentImages]
   : deploymentImages;
 
+const DEPLOY_STATS = [
+  { value: '250+', label: 'Trường học' },
+  { value: '7+', label: 'Tỉnh thành' },
+  { value: '100%', label: 'Vận hành ổn định' },
+];
+
 function ImageCard({ img }) {
   return (
     <div
-      className="flex-shrink-0 w-[280px] sm:w-[320px] mx-2 bg-white border border-[#E5E7EB] rounded-[20px] overflow-hidden
+      className="flex-shrink-0 w-[280px] sm:w-[340px] mx-2 bg-white border border-[#E5E7EB] rounded-[16px] overflow-hidden
         shadow-[0_4px_14px_rgba(15,23,42,0.06)] hover:shadow-[0_8px_22px_rgba(15,23,42,0.10)]
         transition-shadow duration-300 cursor-default"
     >
-      <div className="w-full h-[190px] bg-[#F3F4F6] overflow-hidden">
+      <div className="w-full h-[210px] bg-[#F3F4F6] overflow-hidden">
         <img
           src={img.src}
           alt={img.title}
           loading="lazy"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
           onError={(e) => {
             e.target.style.display = 'none';
             e.target.parentElement.classList.add('flex', 'items-center', 'justify-center');
@@ -31,6 +37,7 @@ function ImageCard({ img }) {
       </div>
       <div className="px-4 py-3">
         <div className="text-[13px] font-semibold text-[#0F172A] truncate">{img.title}</div>
+        <div className="text-[11.5px] text-[#6B7280] mt-0.5">Camera AI điểm danh</div>
       </div>
     </div>
   );
@@ -40,23 +47,38 @@ export default function DeploymentTimeline() {
   const titleRef = useFadeUp();
 
   return (
-    <section className="bg-[#F8FAFC] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={titleRef} className="fade-up mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB]
-            rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
-            Thực tế triển khai
+    <section className="bg-[#F8FAFC] overflow-hidden flex flex-col justify-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div ref={titleRef} className="fade-up">
+          {/* Title row + stats */}
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-6">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB]
+                rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
+                Thực tế triển khai
+              </div>
+              <h2 className="text-[26px] sm:text-[30px] font-extrabold text-[#0F172A] leading-tight mb-2">
+                Những trường đã triển khai
+              </h2>
+              <p className="text-[14px] text-[#4B5563] max-w-xl leading-relaxed">
+                Hình ảnh thực tế từ các điểm trường đã lắp đặt và vận hành hệ thống Camera AI điểm danh Keytech AI.
+              </p>
+            </div>
+
+            {/* Stat pills */}
+            <div className="flex gap-3 flex-shrink-0">
+              {DEPLOY_STATS.map((s, i) => (
+                <div key={i} className="bg-white border border-[#E5E7EB] rounded-xl px-4 py-3 text-center shadow-[0_1px_4px_rgba(0,0,0,0.04)]">
+                  <div className="text-[20px] font-extrabold text-[#1E3A8A] leading-none">{s.value}</div>
+                  <div className="text-[11px] text-[#6B7280] mt-1 font-medium whitespace-nowrap">{s.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
-          <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight mb-3">
-            Những trường đã triển khai
-          </h2>
-          <p className="text-[15px] text-[#4B5563] max-w-2xl leading-relaxed">
-            Hình ảnh thực tế từ các điểm trường đã lắp đặt và vận hành hệ thống Camera AI điểm danh Keytech AI.
-          </p>
         </div>
       </div>
 
-      {/* Desktop: marquee */}
+      {/* Desktop: marquee — full-width, nằm ngoài container */}
       <div className="marquee-wrapper hidden sm:block">
         <div className="marquee-track py-2">
           {marqueeImages.map((img, i) => (
@@ -76,7 +98,9 @@ export default function DeploymentTimeline() {
         </div>
       </div>
 
-      <ScrollNext href="#kiem-chung" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <ScrollNext href="#kiem-chung" />
+      </div>
     </section>
   );
 }

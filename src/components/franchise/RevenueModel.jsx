@@ -1,12 +1,11 @@
 import { useEffect, useRef } from 'react';
 import { useFadeUp } from '../../hooks/useFadeUp';
+import ScrollNext from './ScrollNext';
 
 export default function RevenueModel() {
   const titleRef = useFadeUp();
-  const barRef = useRef(null);
   const sectionRef = useRef(null);
 
-  // Animate bar fill on viewport entry
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
@@ -14,8 +13,8 @@ export default function RevenueModel() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          const bar70 = barRef.current?.querySelector('#bar-70');
-          const bar30 = barRef.current?.querySelector('#bar-30');
+          const bar70 = section.querySelector('#bar-70');
+          const bar30 = section.querySelector('#bar-30');
           if (bar70) bar70.style.width = '70%';
           if (bar30) bar30.style.width = '30%';
           observer.disconnect();
@@ -28,106 +27,100 @@ export default function RevenueModel() {
   }, []);
 
   return (
-    <section className="bg-[#F4F7FC]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#F4F7FC] flex flex-col justify-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
-        <div ref={titleRef} className="fade-up max-w-2xl mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB] rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
+        {/* Heading */}
+        <div ref={titleRef} className="fade-up max-w-2xl mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB]
+            rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
             Mô hình doanh thu
           </div>
-          <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight mb-4">
+          <h2 className="text-[26px] sm:text-[30px] font-extrabold text-[#0F172A] leading-tight mb-3">
             Đại lý hưởng <span className="text-[#166534]">70%</span> doanh thu thực thu
           </h2>
-          <p className="text-[14.5px] text-[#4B5563] leading-relaxed">
-            Mô hình chia sẻ doanh thu dựa trên phí dịch vụ tham chiếu <strong>20.000đ/học sinh/tháng</strong>.
-            Đại lý tập trung phát triển trường học và chăm sóc khách hàng địa phương, VNS/Keytech đồng hành
-            nền tảng công nghệ, phần mềm, server/cloud và quy trình vận hành.
+          <p className="text-[14px] text-[#4B5563] leading-relaxed">
+            Đại lý tập trung phát triển trường học và chăm sóc khách hàng địa phương,
+            VNS/Keytech đồng hành nền tảng công nghệ, phần mềm, server/cloud và quy trình vận hành.
           </p>
         </div>
 
-        <div ref={sectionRef} className="grid lg:grid-cols-2 gap-8 items-start">
+        {/* 2-col cards — stretch để bằng chiều cao nhau */}
+        <div ref={sectionRef} className="grid lg:grid-cols-2 gap-5 items-stretch">
 
-          {/* Revenue bar */}
-          <div ref={barRef} className="bg-white border border-[#E5E7EB] rounded-xl p-6">
-            <div className="mb-6">
-              <div className="text-[13px] font-medium text-[#6B7280] mb-3">Phân chia doanh thu thực thu</div>
-              {/* 70% bar */}
-              <div className="mb-3">
-                <div className="flex justify-between items-center mb-1.5">
-                  <span className="text-[13px] font-semibold text-[#166534]">Đại lý nhận quyền</span>
-                  <span className="text-[20px] font-extrabold text-[#166534]">70%</span>
-                </div>
-                <div className="h-3 bg-[#F0FDF4] rounded-full overflow-hidden">
-                  <div
-                    id="bar-70"
-                    className="h-full bg-[#166534] rounded-full transition-all duration-[1.2s] ease-out"
-                    style={{ width: '0%' }}
-                  />
-                </div>
+          {/* LEFT: Revenue split bars */}
+          <div className="bg-white border border-[#E5E7EB] rounded-xl p-6 flex flex-col justify-center gap-5">
+            <div className="text-[12px] font-semibold text-[#6B7280] uppercase tracking-widest">
+              Phân chia doanh thu thực thu
+            </div>
+
+            {/* 70% */}
+            <div>
+              <div className="flex justify-between items-baseline mb-2">
+                <span className="text-[14px] font-semibold text-[#166534]">Đại lý nhận quyền</span>
+                <span className="text-[28px] font-extrabold text-[#166534] leading-none">70%</span>
               </div>
-              {/* 30% bar */}
-              <div>
-                <div className="flex justify-between items-center mb-1.5">
-                  <span className="text-[13px] font-semibold text-[#64748B]">VNS / Keytech</span>
-                  <span className="text-[20px] font-extrabold text-[#64748B]">30%</span>
-                </div>
-                <div className="h-3 bg-[#F8FAFC] rounded-full overflow-hidden border border-[#E5E7EB]">
-                  <div
-                    id="bar-30"
-                    className="h-full bg-[#94A3B8] rounded-full transition-all duration-[1.2s] ease-out delay-300"
-                    style={{ width: '0%' }}
-                  />
-                </div>
+              <div className="h-3 bg-[#DCFCE7] rounded-full overflow-hidden">
+                <div
+                  id="bar-70"
+                  className="h-full bg-[#166534] rounded-full transition-all duration-[1.3s] ease-out"
+                  style={{ width: '0%' }}
+                />
               </div>
             </div>
 
-            <div className="border-t border-[#F3F4F6] pt-5">
-              <div className="text-[11.5px] text-[#9CA3AF] font-medium">
-                * Số liệu dùng để xây dựng phương án kinh doanh tham chiếu theo từng khu vực.
+            {/* 30% */}
+            <div>
+              <div className="flex justify-between items-baseline mb-2">
+                <span className="text-[14px] font-semibold text-[#64748B]">VNS / Keytech</span>
+                <span className="text-[28px] font-extrabold text-[#64748B] leading-none">30%</span>
+              </div>
+              <div className="h-3 bg-[#F1F5F9] rounded-full overflow-hidden border border-[#E5E7EB]">
+                <div
+                  id="bar-30"
+                  className="h-full bg-[#94A3B8] rounded-full transition-all duration-[1.3s] ease-out delay-300"
+                  style={{ width: '0%' }}
+                />
               </div>
             </div>
           </div>
 
-          {/* Example card */}
-          <div className="space-y-4">
-            <div className="bg-white border border-[#E5E7EB] rounded-xl p-6">
-              <div className="text-[11.5px] font-semibold text-[#1E3A8A] uppercase tracking-wide mb-4">
-                Ví dụ tham chiếu — 1 trường 1.000 học sinh
+          {/* RIGHT: Example table */}
+          <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden flex flex-col">
+            {/* Card header */}
+            <div className="bg-[#1E3A8A] px-6 py-4">
+              <div className="text-[10.5px] font-bold text-blue-200 uppercase tracking-widest mb-0.5">
+                Ví dụ tham chiếu
               </div>
-
-              <div className="space-y-3">
-                {[
-                  { label: "Phí tham chiếu", value: "20.000đ / học sinh / tháng" },
-                  { label: "Doanh thu / tháng", value: "20.000.000đ" },
-                  { label: "Doanh thu / 10 tháng", value: "200.000.000đ" },
-                  { label: "Đại lý hưởng (70%)", value: "140.000.000đ / năm học", green: true },
-                ].map((row, i) => (
-                  <div key={i} className={`flex justify-between items-center py-2.5 ${i < 3 ? 'border-b border-[#F3F4F6]' : ''}`}>
-                    <span className="text-[13px] text-[#6B7280]">{row.label}</span>
-                    <span className={`text-[13.5px] font-bold ${row.green ? 'text-[#166534]' : 'text-[#0F172A]'}`}>
-                      {row.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <div className="text-[15px] font-bold text-white">1 trường · 1.000 học sinh</div>
             </div>
 
-            <div className="bg-[#F0F4FF] border border-[#D1E2FF] rounded-xl p-5">
-              <div className="flex gap-3">
-                <svg className="flex-shrink-0 mt-0.5" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <circle cx="8" cy="8" r="7" stroke="#1E3A8A" strokeWidth="1.4"/>
-                  <circle cx="8" cy="5" r="0.75" fill="#1E3A8A"/>
-                  <path d="M8 8v3" stroke="#1E3A8A" strokeWidth="1.6" strokeLinecap="round"/>
-                </svg>
-                <p className="text-[12.5px] text-[#1E3A8A] leading-relaxed">
-                  Các con số trên là cơ sở xây dựng phương án kinh doanh <strong>tham chiếu</strong>.
-                  Kết quả thực tế phụ thuộc số học sinh, tỷ lệ sử dụng, mức phí, khu vực và năng lực triển khai.
-                </p>
-              </div>
+            {/* Rows */}
+            <div className="flex-1 divide-y divide-[#F1F5F9]">
+              {[
+                { label: 'Phí tham chiếu', value: '20.000đ / học sinh / tháng' },
+                { label: 'Doanh thu / tháng', value: '20.000.000đ' },
+                { label: 'Doanh thu / 10 tháng', value: '200.000.000đ' },
+                { label: 'Đại lý hưởng (70%)', value: '140.000.000đ / năm học', green: true },
+              ].map((row, i) => (
+                <div
+                  key={i}
+                  className={`flex justify-between items-center px-6 py-3.5 ${row.green ? 'bg-[#F0FDF4]' : ''}`}
+                >
+                  <span className={`text-[13px] ${row.green ? 'font-semibold text-[#166534]' : 'text-[#6B7280]'}`}>
+                    {row.label}
+                  </span>
+                  <span className={`text-[13.5px] font-bold tabular-nums ${row.green ? 'text-[#166534]' : 'text-[#0F172A]'}`}>
+                    {row.value}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
 
         </div>
+
+        <ScrollNext href="#dau-tu" />
       </div>
     </section>
   );

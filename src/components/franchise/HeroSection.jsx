@@ -6,21 +6,14 @@ import { scrollToLandingTarget } from '../../utils/scrollToLandingTarget';
 
 function StatCard({ stat }) {
   return (
-    <div className="fade-up bg-white border border-[#E5E7EB] rounded-xl px-5 py-4
-      shadow-[0_1px_3px_rgba(0,0,0,0.05)] flex flex-col justify-between h-full min-h-[120px]">
-      <div>
-        <div className="text-[26px] sm:text-[30px] font-extrabold text-[#1E3A8A] leading-tight tracking-tight">
-          {stat.value}
-        </div>
-        <div className="mt-1 text-[12px] text-[#6B7280] font-medium leading-snug">
-          {stat.label}
-        </div>
+    <div className="bg-white border border-[#E5E7EB] rounded-xl px-4 py-3
+      shadow-[0_1px_3px_rgba(0,0,0,0.05)] text-center">
+      <div className="text-[26px] sm:text-[30px] font-extrabold text-[#1E3A8A] leading-tight tracking-tight">
+        {stat.value}
       </div>
-      {stat.sub && (
-        <div className="mt-2 text-[10.5px] text-[#9CA3AF] italic leading-tight">
-          {stat.sub}
-        </div>
-      )}
+      <div className="mt-1 text-[12px] text-[#6B7280] font-medium leading-snug">
+        {stat.label}
+      </div>
     </div>
   );
 }
@@ -79,10 +72,10 @@ export default function HeroSection() {
       style={{ minHeight: 'calc(100vh - 64px)', scrollMarginTop: 0 }}
     >
       <div className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full
-        flex flex-col justify-center py-10 sm:py-12 lg:py-14">
+        flex flex-col justify-center py-6 sm:py-8 lg:py-10">
 
         {/* Two-column layout */}
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-8">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-5">
 
           {/* LEFT: Text */}
           <div>

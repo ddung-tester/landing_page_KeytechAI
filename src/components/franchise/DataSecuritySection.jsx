@@ -1,5 +1,6 @@
 import { useFadeUp, useFadeUpChildren } from '../../hooks/useFadeUp';
 import { securityCards } from '../../data/franchiseLandingData';
+import ScrollNext from './ScrollNext';
 
 function Icon({ index }) {
   if (index === 0) {
@@ -33,18 +34,18 @@ export default function DataSecuritySection() {
   const listRef = useFadeUpChildren();
 
   return (
-    <section className="bg-[#F6FBF7]">
+    <section className="bg-[#F6FBF7] flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-[0.88fr_1.12fr] gap-7 lg:gap-10 items-center">
           <div ref={titleRef} className="fade-up">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB]
-              rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
+              rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
               Tiêu chuẩn dữ liệu
             </div>
-            <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight mb-4">
+            <h2 className="text-[26px] sm:text-[30px] font-extrabold text-[#0F172A] leading-tight mb-3">
               Tiêu chuẩn dữ liệu rõ ràng khi triển khai tại trường học
             </h2>
-            <p className="text-[14.5px] text-[#4B5563] leading-relaxed max-w-xl">
+            <p className="text-[13.5px] text-[#4B5563] leading-relaxed max-w-xl">
               Hệ thống được thiết kế để nhà trường, phụ huynh và đối tác vận hành dữ liệu điểm danh theo đúng vai trò, đúng mục đích và dễ kiểm soát.
             </p>
           </div>
@@ -68,6 +69,7 @@ export default function DataSecuritySection() {
             ))}
           </div>
         </div>
+        <ScrollNext href="#lien-he" />
       </div>
     </section>
   );

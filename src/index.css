@@ -126,33 +126,43 @@
     scroll-snap-align: none;
     scroll-snap-stop: normal;
     min-height: calc(100vh - 64px);
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
   }
 
   .snap-section > section {
-    min-height: calc(100vh - 64px);
+    flex: 1;
+    min-height: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: clamp(28px, 4vh, 52px);
-    padding-bottom: clamp(28px, 4vh, 52px);
-  }
-
-  #hero {
-    height: calc(100vh - 64px);
+    padding-top: clamp(16px, 2.5vh, 48px);
+    padding-bottom: 56px; /* leave room for the fixed scroll-next */
     overflow: hidden;
   }
 
-  #hero > div:first-child {
-    min-height: 0;
+  /* Hero section: fixed height, no flex centering (has its own layout) */
+  #hero {
+    height: calc(100vh - 64px);
+    min-height: calc(100vh - 64px);
+    flex: none;
+    overflow: hidden;
   }
 
   .snap-section > section h2 {
     font-size: clamp(26px, 2.35vw, 34px);
   }
 
-  .snap-section > section .scroll-next {
-    margin-top: clamp(18px, 2.5vh, 32px);
+  /* ── ScrollNext: always pinned at bottom-center of the snap-section ── */
+  .snap-section .scroll-next {
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
   }
 }
 

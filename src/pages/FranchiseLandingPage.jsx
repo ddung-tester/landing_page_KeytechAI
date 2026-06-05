@@ -8,8 +8,7 @@ import RevenueModel from '../components/franchise/RevenueModel';
 import InvestmentOverview from '../components/franchise/InvestmentOverview';
 import PartnerRoadmap from '../components/franchise/PartnerRoadmap';
 import SupportSection from '../components/franchise/SupportSection';
-import PartnerRequirements from '../components/franchise/PartnerRequirements';
-import DataSecuritySection from '../components/franchise/DataSecuritySection';
+
 import FinalCTA from '../components/franchise/FinalCTA';
 import Footer from '../components/franchise/Footer';
 import { useDesktopSectionPager } from '../hooks/useDesktopSectionPager';
@@ -102,15 +101,7 @@ export default function FranchiseLandingPage() {
           <PartnerRoadmap />
         </Section>
 
-        {/* 10. Đối tác phù hợp */}
-        <Section id="doi-tac">
-          <PartnerRequirements />
-        </Section>
 
-        {/* 11. Tiêu chuẩn vận hành dữ liệu */}
-        <Section id="du-lieu">
-          <DataSecuritySection />
-        </Section>
 
         {/* 12. Final CTA */}
         <Section id="lien-he">

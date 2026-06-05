@@ -1,67 +1,67 @@
 import { useFadeUp, useFadeUpChildren } from '../../hooks/useFadeUp';
-import { investmentHighlights, investmentBreakdown } from '../../data/franchiseLandingData';
+import { investmentHighlights } from '../../data/franchiseLandingData';
+import ScrollNext from './ScrollNext';
+
+const SCHOOL_INSTALL_IMAGE_SRC = '/assets/l%E1%BA%AFp%20%C4%91%E1%BA%B7t%20t%E1%BA%A1i%20s%C3%A2n%20tr%C6%B0%E1%BB%9Dng.jpg';
 
 export default function InvestmentOverview() {
   const titleRef = useFadeUp();
   const cardsRef = useFadeUpChildren();
+  const rightRef = useFadeUp();
 
   return (
-    <section className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-white flex flex-col justify-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
-        <div ref={titleRef} className="fade-up max-w-xl mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F7F8FA] border border-[#E5E7EB]
-            rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
-            Quy mô đầu tư
-          </div>
-          <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight">
-            Quy mô đầu tư rõ ràng, tiềm năng danh mục dễ tính toán
-          </h2>
-        </div>
+        <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 lg:gap-12 items-center">
 
-        <p className="fade-up text-[15px] text-[#4B5563] leading-relaxed max-w-2xl -mt-4 mb-8">
-          Đại lý có thể bắt đầu với danh mục trường mục tiêu, tính toán thiết bị theo từng điểm trường
-          và mở rộng theo năng lực phát triển thị trường địa phương.
-        </p>
-
-        {/* Highlight cards */}
-        <div ref={cardsRef} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          {investmentHighlights.map((item, i) => (
-            <div
-              key={i}
-              className={`fade-up fade-up-delay-${i + 1} bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl p-5`}
-            >
-              <div className="text-[22px] sm:text-[24px] font-extrabold text-[#0F172A] leading-tight tracking-tight">
-                {item.value}
+          {/* LEFT: Title + highlight cards */}
+          <div>
+            <div ref={titleRef} className="fade-up mb-5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F7F8FA] border border-[#E5E7EB]
+                rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
+                Quy mô đầu tư
               </div>
-              <div className="text-[12px] text-[#1E3A8A] font-semibold mt-0.5 mb-2">{item.unit}</div>
-              <p className="text-[12.5px] text-[#6B7280] leading-snug">{item.label}</p>
+              <h2 className="text-[26px] sm:text-[30px] font-extrabold text-[#0F172A] leading-tight mb-2">
+                Quy mô đầu tư rõ ràng, tiềm năng danh mục dễ tính toán
+              </h2>
+              <p className="text-[14px] text-[#4B5563] leading-relaxed">
+                Đại lý có thể bắt đầu với danh mục trường mục tiêu, tính toán thiết bị theo từng điểm trường
+                và mở rộng theo năng lực phát triển thị trường địa phương.
+              </p>
             </div>
-          ))}
-        </div>
 
-        {/* Breakdown table */}
-        <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl overflow-hidden">
-          <div className="px-6 py-4 border-b border-[#E5E7EB]">
-            <div className="text-[13px] font-semibold text-[#374151]">Cơ cấu đầu tư tham chiếu</div>
+            {/* 2×2 highlight cards */}
+            <div ref={cardsRef} className="grid grid-cols-2 gap-3">
+              {investmentHighlights.map((item, i) => (
+                <div
+                  key={i}
+                  className={`fade-up fade-up-delay-${i + 1} bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl p-4`}
+                >
+                  <div className="text-[20px] sm:text-[22px] font-extrabold text-[#0F172A] leading-tight tracking-tight">
+                    {item.value}
+                  </div>
+                  <div className="text-[11px] text-[#1E3A8A] font-semibold mt-0.5 mb-1.5">{item.unit}</div>
+                  <p className="text-[12px] text-[#6B7280] leading-snug">{item.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          {investmentBreakdown.map((row, i) => (
-            <div
-              key={i}
-              className={`flex items-center justify-between px-6 py-3.5 ${
-                i < investmentBreakdown.length - 1 ? 'border-b border-[#F3F4F6]' : ''
-              }`}
-            >
-              <span className="text-[13.5px] text-[#374151]">{row.item}</span>
-              <span className="text-[13px] font-semibold text-[#0F172A] text-right">{row.note}</span>
+
+          {/* RIGHT: Installation image */}
+          <div ref={rightRef} className="fade-up flex justify-center lg:justify-end">
+            <div className="w-full max-w-[680px] rounded-xl border border-[#E5E7EB] bg-white p-2 shadow-[0_4px_18px_rgba(15,23,42,0.08)]">
+              <img
+                src={SCHOOL_INSTALL_IMAGE_SRC}
+                alt="Lap dat Camera AI tai san truong"
+                className="w-full h-auto rounded-lg object-contain"
+                loading="lazy"
+              />
             </div>
-          ))}
+          </div>
         </div>
 
-        <p className="mt-4 text-[12px] text-[#9CA3AF] leading-relaxed">
-          * Mức đầu tư thực tế được tư vấn theo số học sinh, số cổng, hạ tầng mạng và phương án triển khai từng trường.
-        </p>
-
+        <ScrollNext href="#ho-tro" />
       </div>
     </section>
   );
