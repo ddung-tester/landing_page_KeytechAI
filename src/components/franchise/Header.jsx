@@ -12,13 +12,23 @@ export default function Header() {
   // ── Scroll shadow ────────────────────────────────────────────
   useEffect(() => {
     const root = document.querySelector('.landing-main');
-    const scrollTarget = root || window;
-    const getScrollTop = () => root ? root.scrollTop : window.scrollY;
-    const handleScroll = () => setScrolled(getScrollTop() > 12);
+    const handleScroll = () => {
+      const scrollTop = root ? root.scrollTop : 0;
+      const winScrollTop = window.scrollY;
+      setScrolled(scrollTop > 12 || winScrollTop > 12);
+    };
 
     handleScroll();
-    scrollTarget.addEventListener('scroll', handleScroll, { passive: true });
-    return () => scrollTarget.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    if (root) {
+      root.addEventListener('scroll', handleScroll, { passive: true });
+    }
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (root) {
+        root.removeEventListener('scroll', handleScroll);
+      }
+    };
   }, []);
 
   // ── Active section via IntersectionObserver ──────────────────
@@ -39,7 +49,7 @@ export default function Header() {
           if (entry.isIntersecting) setActiveHref(`#${id}`);
         },
         {
-          root,
+          root: window.matchMedia('(min-width: 1024px)').matches ? root : null,
           rootMargin: `-${HEADER_H}px 0px -55% 0px`,
           threshold: 0,
         }

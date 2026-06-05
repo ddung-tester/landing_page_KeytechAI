@@ -105,12 +105,12 @@ export default function RevenueModel() {
               ].map((row, i) => (
                 <div
                   key={i}
-                  className={`flex justify-between items-center px-6 py-3.5 ${row.green ? 'bg-[#F0FDF4]' : ''}`}
+                  className={`flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-4 px-4 sm:px-6 py-3 sm:py-3.5 ${row.green ? 'bg-[#F0FDF4]' : ''}`}
                 >
                   <span className={`text-[13px] ${row.green ? 'font-semibold text-[#166534]' : 'text-[#6B7280]'}`}>
                     {row.label}
                   </span>
-                  <span className={`text-[13.5px] font-bold tabular-nums ${row.green ? 'text-[#166534]' : 'text-[#0F172A]'}`}>
+                  <span className={`text-[13.5px] font-bold tabular-nums sm:text-right ${row.green ? 'text-[#166534]' : 'text-[#0F172A]'}`}>
                     {row.value}
                   </span>
                 </div>
