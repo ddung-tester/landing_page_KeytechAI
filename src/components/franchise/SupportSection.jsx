@@ -59,11 +59,11 @@ export default function SupportSection({ id }) {
         <div ref={titleRef} className="section-header--row fade-up">
           <div className="section-left">
             <span className="section-eyebrow" style={{ color: '#60A5FA' }}>Hỗ trợ đại lý</span>
-            <h2 className="section-title">Hệ thống đồng hành để đại lý dễ bắt đầu và mở rộng</h2>
+            <h2 className="section-title">Đồng hành giúp đại lý phát triển bền vững</h2>
           </div>
           <div className="section-right">
             <p className="section-desc">
-              Toàn bộ hạ tầng công nghệ, quy trình vận hành và hỗ trợ kỹ thuật được cung cấp đầy đủ cho đối tác.
+              Toàn bộ hạ tầng Cloud, phần mềm quản trị và quy trình kỹ thuật được hỗ trợ trọn gói.
             </p>
           </div>
         </div>

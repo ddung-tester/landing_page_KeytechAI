@@ -36,8 +36,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-[13px] text-[#94A3B8] leading-relaxed max-w-sm">
-              Giải pháp Camera AI điểm danh trường học theo mô hình hợp tác đầu tư,
-              chuyển giao quy trình và nhượng quyền khai thác.
+              Hệ thống Camera AI điểm danh trường học theo mô hình nhượng quyền và hợp tác đầu tư.
             </p>
           </div>
 

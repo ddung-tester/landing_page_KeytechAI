@@ -33,7 +33,7 @@ const HERO_SLIDES = [
   {
     src: '/assets/hero-conference.jpg',
     title: 'Hội nghị đối tác chiến lược',
-    desc: 'Đột phá thu nhập thụ động với cơ chế chia sẻ doanh thu 70/30 hấp dẫn hàng đầu thị trường, cam kết đồng hành và bảo vệ quyền lợi đối tác trọn đời.',
+    desc: 'Cơ chế chia sẻ doanh thu 70/30 hấp dẫn cùng chính sách đồng hành lâu dài.',
   },
   {
     src: '/assets/hero-deployment.jpg',
@@ -87,16 +87,15 @@ export default function HeroSection({ id = 'hero' }) {
               </span>
             </div>
 
-            <h1 className="text-[32px] sm:text-[40px] lg:text-[44px] font-extrabold
-              text-[#0F172A] leading-[1.15] tracking-tight mb-5">
-              Nhượng quyền<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D946EF] to-[#60A5FA]">Camera AI</span> điểm danh<br />
-              trường học
+            <h1 className="text-[36px] sm:text-[48px] lg:text-[54px] font-extrabold
+              text-[#0F172A] leading-[1.2] tracking-tight mb-6">
+              Nhượng quyền <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D946EF] to-[#60A5FA]">Camera AI</span><br />
+              điểm danh trường học
             </h1>
 
-            <p className="text-[15px] text-[#4B5563] leading-relaxed mb-8 max-w-[480px]">
-              Mô hình an ninh trường học ứng dụng AI, đã triển khai thực tế tại nhiều địa phương,
-              có quy trình chuyển giao và cơ chế doanh thu rõ ràng cho đối tác.
+            <p className="text-[15px] sm:text-[16px] text-[#4B5563] leading-relaxed mb-8 max-w-[540px]">
+              Giải pháp điểm danh &amp; an ninh thông minh ứng dụng công nghệ nhận diện khuôn mặt. 
+              Hệ thống đã triển khai thực tế trên diện rộng, chuyển giao quy trình trọn gói cùng cơ chế chia sẻ doanh thu 70/30 tối ưu cho đối tác.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -107,7 +106,7 @@ export default function HeroSection({ id = 'hero' }) {
                   const target = document.querySelector('#lien-he');
                   scrollToLandingTarget(target);
                 }}
-                className="inline-flex items-center gap-2 px-6 py-3 btn-brand-primary text-white font-semibold text-[14px] rounded-full"
+                className="inline-flex items-center gap-2 px-7 py-3.5 btn-brand-primary text-white font-semibold text-[14.5px] rounded-full"
               >
                 Nhận hồ sơ hợp tác
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -122,8 +121,8 @@ export default function HeroSection({ id = 'hero' }) {
                   const target = document.querySelector('#doanh-thu');
                   scrollToLandingTarget(target);
                 }}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white
-                  border border-[#E5E7EB] text-[#374151] font-semibold text-[14px] rounded-full
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-white
+                  border border-[#E5E7EB] text-[#374151] font-semibold text-[14.5px] rounded-full
                   hover:border-[#A855F7] hover:text-[#A855F7] hover:-translate-y-px
                   transition-all duration-200"
               >

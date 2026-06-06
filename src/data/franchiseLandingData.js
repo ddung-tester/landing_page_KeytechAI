@@ -4,9 +4,9 @@
 // ============================================================
 
 export const heroStats = [
-  { value: "250+", label: "Trường học trong danh mục triển khai" },
-  { value: "70%", label: "Doanh thu thực thu cho đại lý" },
-  { value: "1,4 tỷ/năm học", label: "Doanh thu tham chiếu danh mục đại lý" },
+  { value: "250+", label: "Trường học đã triển khai" },
+  { value: "70%", label: "Doanh thu cho đại lý" },
+  { value: "1,4 tỷ/năm", label: "Doanh thu tham chiếu danh mục" },
   { value: "5 năm", label: "Bảo hành camera AI" },
 ];
 
@@ -37,22 +37,22 @@ export const proofStats = [
   {
     icon: "check-circle",
     stat: "Hệ thống lõi ổn định",
-    desc: "Thiết bị camera AI kết nối Cloud đồng bộ thời gian thực, đáp ứng lưu lượng truy cập lớn cùng lúc.",
+    desc: "Camera AI kết nối Cloud, đồng bộ thời gian thực và đáp ứng lưu lượng truy cập lớn.",
   },
   {
     icon: "bar-chart",
     stat: "Vận hành đơn giản",
-    desc: "Giao diện quản trị tiếng Việt trực quan cho nhà trường, phụ huynh sử dụng qua mobile app tiện lợi.",
+    desc: "Giao diện tiếng Việt trực quan cho nhà trường và Mobile App tiện lợi cho phụ huynh.",
   },
   {
     icon: "clock",
-    stat: "Hiệu quả đo lường được",
-    desc: "Giảm tải 90% thời gian điểm danh thủ công, chuẩn hóa quy trình báo cáo sĩ số cho Ban giám hiệu.",
+    stat: "Hiệu quả đo lường",
+    desc: "Giảm 90% thời gian điểm danh thủ công, tự động hóa báo cáo sĩ số cho nhà trường.",
   },
   {
     icon: "document",
-    stat: "Tối ưu chi phí hạ tầng",
-    desc: "Mô hình thiết kế tiết kiệm băng thông và tài nguyên lưu trữ Cloud, tăng biên lợi nhuận cho đại lý.",
+    stat: "Tối ưu hạ tầng",
+    desc: "Thiết kế tiết kiệm băng thông và lưu trữ Cloud, tối đa hóa biên lợi nhuận cho đại lý.",
   },
 ];
 
@@ -120,22 +120,22 @@ export const investmentHighlights = [
   {
     value: "100%",
     unit: "chuyển giao công nghệ",
-    label: "Cung cấp đầy đủ công cụ kỹ thuật, kịch bản làm việc với trường và tài liệu vận hành.",
+    label: "Cung cấp đầy đủ công cụ, kịch bản làm việc và tài liệu vận hành.",
   },
   {
     value: "6",
     unit: "camera AI / trường",
-    label: "Quy mô lắp đặt camera trung bình cho một điểm trường.",
+    label: "Quy mô lắp đặt trung bình cho mỗi điểm trường.",
   },
   {
     value: "10",
     unit: "trường mục tiêu",
-    label: "Danh mục tối ưu giai đoạn đầu để xây dựng thị trường địa phương.",
+    label: "Quy mô tối ưu giai đoạn đầu để phát triển thị trường.",
   },
   {
     value: "5 năm",
     unit: "bảo hành thiết bị",
-    label: "Chính sách bảo hành phần cứng camera AI chính hãng vượt trội.",
+    label: "Chính sách bảo hành phần cứng camera AI chính hãng.",
   },
 ];
 
@@ -158,43 +158,43 @@ export const processSteps = [
 ];
 
 export const roadmapSteps = [
-  { time: "30 ngày", title: "Khởi động", desc: "Hoàn thành đào tạo, nhận bộ tài liệu và lập danh sách trường mục tiêu." },
-  { time: "60 ngày", title: "Mở thị trường", desc: "Làm việc với danh mục trường ưu tiên và tư vấn phương án triển khai phù hợp." },
-  { time: "90 ngày", title: "Triển khai đầu tiên", desc: "Chốt các điểm trường tiềm năng, chuẩn bị thiết bị và kế hoạch lắp đặt." },
-  { time: "180 ngày", title: "Mở rộng danh mục", desc: "Phát triển danh mục 10 trường theo năng lực địa phương và tiến độ thực tế." },
-  { time: "12 tháng", title: "Tăng trưởng", desc: "Mở rộng khu vực, tối ưu vận hành và phát triển doanh thu định kỳ." },
+  { time: "30 ngày", title: "Khởi động", desc: "Đào tạo quy trình, nhận tài liệu bàn giao và lập danh sách trường mục tiêu." },
+  { time: "60 ngày", title: "Mở thị trường", desc: "Tiếp cận danh mục trường ưu tiên và tư vấn phương án phù hợp." },
+  { time: "90 ngày", title: "Triển khai", desc: "Chốt các điểm trường đầu tiên, chuẩn bị thiết bị và thi công lắp đặt." },
+  { time: "180 ngày", title: "Mở rộng", desc: "Phát triển danh mục lên 10 trường theo năng lực và thực tế địa phương." },
+  { time: "12 tháng", title: "Tăng trưởng", desc: "Tối ưu vận hành toàn diện, mở rộng khu vực và tăng doanh thu." },
 ];
 
 export const supportItems = [
   {
     icon: "badge",
-    title: "Thương hiệu & hồ sơ năng lực",
-    desc: "Cung cấp tài liệu giới thiệu, nhận diện và công cụ làm việc với trường.",
+    title: "Thương hiệu & Hồ sơ năng lực",
+    desc: "Cung cấp tài liệu giới thiệu, nhận diện thương hiệu và công cụ làm việc.",
   },
   {
     icon: "training",
     title: "Đào tạo quy trình",
-    desc: "Tư vấn, khảo sát, thiết kế, thi công, nhập liệu và vận hành.",
+    desc: "Chuyển giao quy trình khảo sát, thiết kế, lắp đặt và vận hành.",
   },
   {
     icon: "support",
     title: "Hỗ trợ kỹ thuật",
-    desc: "Hỗ trợ phần mềm, cấu hình, tài khoản, dữ liệu và nền tảng.",
+    desc: "Hỗ trợ phần mềm, cấu hình thiết bị và quản trị dữ liệu.",
   },
   {
     icon: "server",
-    title: "Server, cloud, nền tảng",
-    desc: "Vận hành, duy trì, nâng cấp các thành phần công nghệ.",
+    title: "Hạ tầng Cloud & Nền tảng",
+    desc: "Duy trì, tối ưu và nâng cấp hệ thống phần mềm liên tục.",
   },
   {
     icon: "shield",
-    title: "Bảo hành camera AI 5 năm",
-    desc: "Tạo sự yên tâm cho đại lý khi tư vấn và triển khai thiết bị tại trường.",
+    title: "Bảo hành thiết bị 5 năm",
+    desc: "Chính sách bảo hành phần cứng lâu dài tạo sự an tâm tuyệt đối.",
   },
   {
     icon: "report",
     title: "Đối soát doanh thu",
-    desc: "Hỗ trợ báo cáo, đối soát và theo dõi doanh thu theo quy trình rõ ràng.",
+    desc: "Hệ thống báo cáo và đối soát doanh thu tự động, minh bạch.",
   },
 ];
 

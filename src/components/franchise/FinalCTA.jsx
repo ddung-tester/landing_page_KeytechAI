@@ -2,14 +2,14 @@ import { useFadeUp } from '../../hooks/useFadeUp';
 
 const TRUST_ITEMS = [
   { value: '250+', label: 'Trường học đã triển khai' },
-  { value: '70%', label: 'Doanh thu thực thu cho đại lý' },
+  { value: '70%', label: 'Doanh thu cho đại lý' },
   { value: '5 năm', label: 'Bảo hành camera AI' },
 ];
 
 const OFFER_LIST = [
-  'Hồ sơ hợp tác chi tiết & mô hình doanh thu tham chiếu',
-  'Tư vấn khu vực triển khai và danh mục trường tiềm năng',
-  'Hỗ trợ kỹ thuật, đào tạo quy trình và vận hành đầy đủ',
+  'Hồ sơ hợp tác & doanh thu tham chiếu',
+  'Tư vấn khu vực & danh mục trường tiềm năng',
+  'Hỗ trợ kỹ thuật, quy trình và vận hành trọn gói',
 ];
 
 export default function FinalCTA({ id }) {
@@ -35,7 +35,7 @@ export default function FinalCTA({ id }) {
               Sẵn sàng khai thác thị trường Camera AI điểm danh tại địa phương?
             </h2>
             <p className="text-[14px] text-[#4B5563] leading-relaxed mb-6">
-              Nhận hồ sơ hợp tác, mô hình doanh thu tham chiếu và tư vấn khu vực phù hợp với năng lực của bạn.
+              Đăng ký để nhận hồ sơ hợp tác, doanh thu tham chiếu và tư vấn khu vực phù hợp.
             </p>
 
             {/* Offer list */}

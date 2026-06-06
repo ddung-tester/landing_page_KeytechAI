@@ -15,7 +15,7 @@ const TECH_FEATURES = [
       </svg>
     ),
     title: 'Nhận diện tự động',
-    desc: 'Đối chiếu dữ liệu học sinh để tạo bản ghi điểm danh.',
+    desc: 'Tự động nhận diện khuôn mặt học sinh để ghi nhận điểm danh.',
   },
   {
     icon: (
@@ -27,7 +27,7 @@ const TECH_FEATURES = [
       </svg>
     ),
     title: 'Thông báo tức thời',
-    desc: 'Cập nhật thông tin đi học, tan học hoặc ra/vào trường.',
+    desc: 'Gửi kết quả điểm danh, đi học hoặc tan học tức thì cho phụ huynh.',
   },
   {
     icon: (
@@ -39,7 +39,7 @@ const TECH_FEATURES = [
       </svg>
     ),
     title: 'Quản trị tập trung',
-    desc: 'Nhà trường theo dõi dữ liệu điểm danh, lịch sử và báo cáo tập trung.',
+    desc: 'Nhà trường quản lý dữ liệu, xem lịch sử ra/vào và báo cáo tập trung.',
   },
 ];
 
@@ -93,8 +93,7 @@ export default function TechnologySection({ id }) {
           </div>
           <div>
             <p className="section-desc section-desc--wide">
-               Camera AI kết hợp phần mềm nhận diện và dashboard quản trị để tự động ghi nhận học sinh
-              ra/vào, cập nhật dữ liệu điểm danh và hỗ trợ thông báo phụ huynh.
+              Camera AI tự động ghi nhận học sinh ra/vào, đồng bộ dữ liệu điểm danh và gửi thông báo tức thời cho phụ huynh.
             </p>
           </div>
         </div>
