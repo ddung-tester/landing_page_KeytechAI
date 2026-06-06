@@ -24,6 +24,7 @@ function ImageCard({ img }) {
           src={img.src}
           alt={img.title}
           loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
           onError={(e) => {
             e.target.style.display = 'none';
@@ -53,14 +54,10 @@ export default function DeploymentTimeline() {
           {/* Title row + stats */}
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#DBEAFE]
-                rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
-                Thực tế triển khai
-              </div>
-              <h2 className="text-[26px] sm:text-[30px] font-extrabold text-[#0F172A] leading-tight mb-2">
-                Những trường đã triển khai
-              </h2>
-              <p className="text-[14px] text-[#4B5563] max-w-xl leading-relaxed">
+              <span className="section-eyebrow" style={{ color: '#1E3A8A' }}>Thực tế triển khai</span>
+              <h2 className="section-title">Những trường đã triển khai</h2>
+              <div className="section-divider" style={{ color: '#1E3A8A' }} />
+              <p className="section-desc section-desc--wide">
                 Hình ảnh thực tế từ các điểm trường đã lắp đặt và vận hành hệ thống Camera AI điểm danh Keytech AI.
               </p>
             </div>

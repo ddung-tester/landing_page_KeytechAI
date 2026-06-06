@@ -18,14 +18,10 @@ export default function InvestmentOverview() {
           {/* LEFT: Title + highlight cards */}
           <div>
             <div ref={titleRef} className="fade-up mb-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E2E8F0]
-                rounded-full text-[11px] font-semibold text-[#A855F7] uppercase tracking-widest mb-3">
-                Quy mô đầu tư
-              </div>
-              <h2 className="text-[26px] sm:text-[30px] font-extrabold text-[#0F172A] leading-tight mb-2">
-                Quy mô đầu tư rõ ràng, tiềm năng danh mục dễ tính toán
-              </h2>
-              <p className="text-[14px] text-[#4B5563] leading-relaxed">
+              <span className="section-eyebrow" style={{ color: '#A855F7' }}>Quy mô đầu tư</span>
+              <h2 className="section-title">Quy mô đầu tư rõ ràng, tiềm năng danh mục dễ tính toán</h2>
+              <div className="section-divider" style={{ color: '#A855F7' }} />
+              <p className="section-desc">
                 Đại lý có thể bắt đầu với danh mục trường mục tiêu, tính toán thiết bị theo từng điểm trường
                 và mở rộng theo năng lực phát triển thị trường địa phương.
               </p>

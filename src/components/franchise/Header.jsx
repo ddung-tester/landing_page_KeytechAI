@@ -11,29 +11,19 @@ export default function Header() {
 
   // ── Scroll shadow ────────────────────────────────────────────
   useEffect(() => {
-    const root = document.querySelector('.landing-main');
     const handleScroll = () => {
-      const scrollTop = root ? root.scrollTop : 0;
-      const winScrollTop = window.scrollY;
-      setScrolled(scrollTop > 12 || winScrollTop > 12);
+      setScrolled(window.scrollY > 12);
     };
 
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
-    if (root) {
-      root.addEventListener('scroll', handleScroll, { passive: true });
-    }
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      if (root) {
-        root.removeEventListener('scroll', handleScroll);
-      }
     };
   }, []);
 
   // ── Active section via IntersectionObserver ──────────────────
   useEffect(() => {
-    const root = document.querySelector('.landing-main');
     const sectionIds = navLinks
       .map((l) => l.href.replace('#', ''))
       .filter(Boolean);
@@ -46,11 +36,12 @@ export default function Header() {
 
       const obs = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) setActiveHref(`#${id}`);
+          if (entry.isIntersecting) {
+            setActiveHref(`#${id}`);
+          }
         },
         {
-          root: window.matchMedia('(min-width: 1024px)').matches ? root : null,
-          rootMargin: `-${HEADER_H}px 0px -55% 0px`,
+          rootMargin: `-${HEADER_H}px 0px -50% 0px`,
           threshold: 0,
         }
       );

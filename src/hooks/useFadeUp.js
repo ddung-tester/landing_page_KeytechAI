@@ -1,54 +1,40 @@
 import { useEffect, useRef } from 'react';
 
 /**
- * Hook: gán class 'visible' khi element vào viewport
- * Dùng với class CSS .fade-up
+ * Hook: Gán class 'visible' khi phần tử đi vào viewport của trình duyệt.
+ * Dùng kết hợp với class CSS .fade-up.
  */
 export function useFadeUp(threshold = 0.15) {
   const ref = useRef(null);
 
   useEffect(() => {
-    let observer;
-    let timer;
-    let retryTimer;
+    const el = ref.current;
+    if (!el) return;
 
-    const init = () => {
-      const el = ref.current;
-      if (!el) return;
-      const root = document.querySelector('.landing-main');
-      if (!root) {
-        retryTimer = window.setTimeout(init, 50);
-        return;
-      }
-
-      const ensureVisibleIfInView = () => {
-        const rootRect = root.getBoundingClientRect();
-        const rect = el.getBoundingClientRect();
-        if (rect.top < rootRect.bottom && rect.bottom > rootRect.top) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
           el.classList.add('visible');
+          observer.disconnect();
         }
-      };
+      },
+      { root: null, threshold } // root: null là viewport mặc định của trình duyệt
+    );
 
-      observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            el.classList.add('visible');
-            observer.disconnect();
-          }
-        },
-        { root, threshold }
-      );
+    observer.observe(el);
 
-      observer.observe(el);
-      timer = window.setTimeout(ensureVisibleIfInView, 80);
-    };
-
-    init();
+    // Fallback: Trong trường hợp phần tử đã nằm sẵn trong màn hình lúc load
+    const timer = setTimeout(() => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('visible');
+        observer.disconnect();
+      }
+    }, 100);
 
     return () => {
-      if (observer) observer.disconnect();
-      window.clearTimeout(timer);
-      window.clearTimeout(retryTimer);
+      observer.disconnect();
+      clearTimeout(timer);
     };
   }, [threshold]);
 
@@ -56,62 +42,47 @@ export function useFadeUp(threshold = 0.15) {
 }
 
 /**
- * Hook: observe nhiều children trong container,
- * mỗi child cần class .fade-up
+ * Hook: Quan sát nhiều phần tử con (chứa class .fade-up) bên trong một container.
  */
 export function useFadeUpChildren(threshold = 0.1) {
   const ref = useRef(null);
 
   useEffect(() => {
-    let observers = [];
-    let timer;
-    let retryTimer;
+    const container = ref.current;
+    if (!container) return;
 
-    const init = () => {
-      const container = ref.current;
-      if (!container) return;
-      const root = document.querySelector('.landing-main');
-      if (!root) {
-        retryTimer = window.setTimeout(init, 50);
-        return;
-      }
+    const children = container.querySelectorAll('.fade-up');
+    const observers = [];
 
-      const children = container.querySelectorAll('.fade-up');
-      const rootRect = root.getBoundingClientRect();
-
-      children.forEach((child) => {
-        const observer = new IntersectionObserver(
-          ([entry]) => {
-            if (entry.isIntersecting) {
-              child.classList.add('visible');
-              observer.disconnect();
-            }
-          },
-          { root, threshold }
-        );
-        observer.observe(child);
-        observers.push(observer);
-      });
-
-      timer = window.setTimeout(() => {
-        children.forEach((child) => {
-          const rect = child.getBoundingClientRect();
-          if (rect.top < rootRect.bottom && rect.bottom > rootRect.top) {
+    children.forEach((child) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
             child.classList.add('visible');
+            observer.disconnect();
           }
-        });
-      }, 80);
-    };
+        },
+        { root: null, threshold } // root: null là viewport mặc định của trình duyệt
+      );
+      observer.observe(child);
+      observers.push(observer);
+    });
 
-    init();
+    // Fallback: Trong trường hợp các con đã nằm sẵn trong màn hình lúc load
+    const timer = setTimeout(() => {
+      children.forEach((child) => {
+        const rect = child.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          child.classList.add('visible');
+        }
+      });
+    }, 100);
 
     return () => {
       observers.forEach((o) => o.disconnect());
-      window.clearTimeout(timer);
-      window.clearTimeout(retryTimer);
+      clearTimeout(timer);
     };
   }, [threshold]);
 
   return ref;
 }
-

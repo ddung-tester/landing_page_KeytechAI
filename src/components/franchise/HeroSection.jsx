@@ -162,6 +162,7 @@ export default function HeroSection() {
                         className="w-full h-full object-cover"
                         onError={() => handleImgError(index)}
                         loading={index === 0 ? 'eager' : 'lazy'}
+                        decoding="async"
                       />
                     )}
 

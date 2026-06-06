@@ -11,7 +11,6 @@ import SupportSection from '../components/franchise/SupportSection';
 
 import FinalCTA from '../components/franchise/FinalCTA';
 import Footer from '../components/franchise/Footer';
-import { useDesktopSectionPager } from '../hooks/useDesktopSectionPager';
 import { scrollToLandingTarget } from '../utils/scrollToLandingTarget';
 
 /**
@@ -31,32 +30,6 @@ function Section({ id, children, snap = true }) {
 }
 
 export default function FranchiseLandingPage() {
-  useDesktopSectionPager();
-
-  useLayoutEffect(() => {
-    const hash = window.location.hash.split('?')[0];
-    if (!hash) return;
-
-    const target = document.getElementById(decodeURIComponent(hash.slice(1)));
-    if (!target) return;
-
-    const alignTarget = () => {
-      const latestHash = window.location.hash.split('?')[0];
-      const latestTarget = document.getElementById(decodeURIComponent(latestHash.slice(1)));
-      if (!latestTarget) return;
-
-      scrollToLandingTarget(latestTarget, 'auto');
-    };
-
-    const frame = window.requestAnimationFrame(alignTarget);
-    const timers = [80, 220, 520, 900].map((delay) => window.setTimeout(alignTarget, delay));
-    window.history.scrollRestoration = 'manual';
-    return () => {
-      window.cancelAnimationFrame(frame);
-      timers.forEach((timer) => window.clearTimeout(timer));
-    };
-  }, []);
-
   return (
     <>
       {/* 1. Header — sticky top */}
@@ -100,8 +73,6 @@ export default function FranchiseLandingPage() {
         <Section id="lo-trinh">
           <PartnerRoadmap />
         </Section>
-
-
 
         {/* 12. Final CTA */}
         <Section id="lien-he">

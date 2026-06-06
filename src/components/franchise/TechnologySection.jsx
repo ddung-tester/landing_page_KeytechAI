@@ -52,16 +52,11 @@ export default function TechnologySection() {
 
         <div ref={titleRef} className="fade-up grid lg:grid-cols-[2fr_3fr] gap-8 lg:gap-12 items-end mb-8">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-gradient-to-r from-[#D946EF] to-[#60A5FA] text-white
-              rounded-full text-[11px] font-bold uppercase tracking-widest mb-3 shadow-sm">
-              Công nghệ Camera AI
-            </div>
-            <h2 className="text-[26px] sm:text-[30px] font-extrabold text-[#0F172A] leading-tight">
-              Camera AI điểm danh cho trường học
-            </h2>
+            <span className="section-eyebrow" style={{ color: '#D946EF' }}>Công nghệ Camera AI</span>
+            <h2 className="section-title">Camera AI điểm danh cho trường học</h2>
           </div>
           <div>
-            <p className="text-[14px] text-[#4B5563] leading-relaxed max-w-xl">
+            <p className="section-desc section-desc--wide">
               Camera AI kết hợp phần mềm nhận diện và dashboard quản trị để tự động ghi nhận học sinh
               ra/vào, cập nhật dữ liệu điểm danh và hỗ trợ thông báo phụ huynh.
             </p>

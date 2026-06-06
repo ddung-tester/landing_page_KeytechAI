@@ -41,14 +41,10 @@ export default function PartnerRequirements() {
 
           {/* LEFT: Title + context */}
           <div ref={titleRef} className="fade-up">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F7F8FA] border border-[#E5E7EB]
-              rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
-              Đối tác phù hợp
-            </div>
-            <h2 className="text-[26px] sm:text-[30px] font-extrabold text-[#0F172A] leading-tight mb-3">
-              Dành cho đối tác muốn phát triển thị trường giáo dục địa phương
-            </h2>
-            <p className="text-[14px] text-[#4B5563] leading-relaxed mb-5">
+            <span className="section-eyebrow" style={{ color: '#1E3A8A' }}>Đối tác phù hợp</span>
+            <h2 className="section-title">Dành cho đối tác muốn phát triển thị trường giáo dục địa phương</h2>
+            <div className="section-divider" style={{ color: '#1E3A8A' }} />
+            <p className="section-desc mb-5">
               Keytech AI phù hợp với các doanh nghiệp, hộ kinh doanh hoặc đội ngũ địa phương có năng lực
               phát triển trường học, tổ chức triển khai và chăm sóc khách hàng.
             </p>

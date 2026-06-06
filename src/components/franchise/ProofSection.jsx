@@ -30,16 +30,9 @@ const iconMap = {
   ),
 };
 
-const BIG_STATS = [
-  { value: '250+', label: 'Trường học', sub: 'trong danh mục triển khai thực tế' },
-  { value: '70%', label: 'Doanh thu', sub: 'thực thu cho đại lý mỗi năm học' },
-  { value: '5 năm', label: 'Bảo hành', sub: 'camera AI — an tâm đầu tư dài hạn' },
-];
-
 export default function ProofSection() {
   const titleRef = useFadeUp();
   const cardsRef = useFadeUpChildren();
-  const statsRef = useFadeUpChildren();
 
   return (
     <section className="page-guide border-t border-[#CFFAFE] flex flex-col justify-center">
@@ -48,36 +41,15 @@ export default function ProofSection() {
         {/* Two-column layout */}
         <div className="grid lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-12 items-center">
 
-          {/* LEFT: Title + big stats */}
+          {/* LEFT: Title only */}
           <div>
-            <div ref={titleRef} className="fade-up mb-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#CFFAFE]
-                rounded-full text-[11px] font-semibold text-[#A855F7] uppercase tracking-widest mb-3">
-                Bằng chứng triển khai
-              </div>
-              <h2 className="text-[26px] sm:text-[30px] font-extrabold text-[#0F172A] leading-tight mb-3">
-                Mô hình đã được kiểm chứng bằng triển khai thực tế
-              </h2>
-              <p className="text-[14px] text-[#4B5563] leading-relaxed">
+            <div ref={titleRef} className="fade-up">
+              <span className="section-eyebrow" style={{ color: '#A855F7' }}>Bằng chứng triển khai</span>
+              <h2 className="section-title">Mô hình đã được kiểm chứng bằng triển khai thực tế</h2>
+              <div className="section-divider" style={{ color: '#A855F7' }} />
+              <p className="section-desc">
                 Không chỉ là ý tưởng — hệ thống đã vận hành ổn định tại nhiều địa phương và tiếp tục được nhân rộng.
               </p>
-            </div>
-
-            {/* Big stats */}
-            <div ref={statsRef} className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-              {BIG_STATS.map((stat, i) => (
-                <div
-                  key={i}
-                  className="fade-up bg-white rounded-xl border border-[#CFFAFE] p-4
-                    shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
-                >
-                  <div className="text-[28px] font-extrabold text-[#A855F7] leading-none mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-[13px] font-bold text-[#0F172A] mb-0.5">{stat.label}</div>
-                  <div className="text-[11.5px] text-[#6B7280] leading-snug">{stat.sub}</div>
-                </div>
-              ))}
             </div>
           </div>
 

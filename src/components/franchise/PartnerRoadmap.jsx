@@ -20,18 +20,16 @@ export default function PartnerRoadmap() {
     <section className="page-about border-t border-[#DDD6FE] flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
-        {/* ── Header ── */}
-        <div ref={titleRef} className="fade-up mb-8 sm:mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#DDD6FE]
-            rounded-full text-[11px] font-semibold text-[#A855F7] uppercase tracking-widest mb-3">
-            Lộ trình đối tác
+        <div ref={titleRef} className="section-header--row fade-up">
+          <div className="section-left">
+            <span className="section-eyebrow" style={{ color: '#A855F7' }}>Lộ trình đối tác</span>
+            <h2 className="section-title">Lộ trình khởi động rõ ràng cho đối tác</h2>
           </div>
-          <h2 className="text-[26px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight max-w-lg">
-            Lộ trình khởi động rõ ràng cho đối tác
-          </h2>
-          <p className="mt-2 text-[13.5px] text-[#6B7280] max-w-md">
-            Từ ngày đầu ký kết đến khi vận hành danh mục 10 trường — mỗi giai đoạn đều có mục tiêu cụ thể.
-          </p>
+          <div className="section-right">
+            <p className="section-desc">
+              Từ ngày đầu ký kết đến khi vận hành danh mục 10 trường — mỗi giai đoạn đều có mục tiêu cụ thể.
+            </p>
+          </div>
         </div>
 
         {/* ── Timeline cards ── */}

@@ -31,18 +31,19 @@ export default function RevenueModel() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
         {/* Heading */}
-        <div ref={titleRef} className="fade-up max-w-2xl mb-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#DDD6FE]
-            rounded-full text-[11px] font-semibold text-[#A855F7] uppercase tracking-widest mb-3">
-            Mô hình doanh thu
+        <div ref={titleRef} className="section-header--row fade-up">
+          <div className="section-left">
+            <span className="section-eyebrow" style={{ color: '#A855F7' }}>Mô hình doanh thu</span>
+            <h2 className="section-title">
+              Đại lý hưởng <span style={{ color: '#166534' }}>70%</span> doanh thu thực thu
+            </h2>
           </div>
-          <h2 className="text-[26px] sm:text-[30px] font-extrabold text-[#0F172A] leading-tight mb-3">
-            Đại lý hưởng <span className="text-[#166534]">70%</span> doanh thu thực thu
-          </h2>
-          <p className="text-[14px] text-[#4B5563] leading-relaxed">
-            Đại lý tập trung phát triển trường học và chăm sóc khách hàng địa phương,
-            VNS/Keytech đồng hành nền tảng công nghệ, phần mềm, server/cloud và quy trình vận hành.
-          </p>
+          <div className="section-right">
+            <p className="section-desc">
+              Đại lý tập trung phát triển trường học và chăm sóc khách hàng địa phương,
+              VNS/Keytech đồng hành nền tảng công nghệ, phần mềm, server/cloud và quy trình vận hành.
+            </p>
+          </div>
         </div>
 
         {/* 2-col cards — stretch để bằng chiều cao nhau */}

@@ -38,14 +38,10 @@ export default function DataSecuritySection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-[0.88fr_1.12fr] gap-7 lg:gap-10 items-center">
           <div ref={titleRef} className="fade-up">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB]
-              rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
-              Tiêu chuẩn dữ liệu
-            </div>
-            <h2 className="text-[26px] sm:text-[30px] font-extrabold text-[#0F172A] leading-tight mb-3">
-              Tiêu chuẩn dữ liệu rõ ràng khi triển khai tại trường học
-            </h2>
-            <p className="text-[13.5px] text-[#4B5563] leading-relaxed max-w-xl">
+            <span className="section-eyebrow" style={{ color: '#1E3A8A' }}>Tiêu chuẩn dữ liệu</span>
+            <h2 className="section-title">Tiêu chuẩn dữ liệu rõ ràng khi triển khai tại trường học</h2>
+            <div className="section-divider" style={{ color: '#1E3A8A' }} />
+            <p className="section-desc section-desc--wide">
               Hệ thống được thiết kế để nhà trường, phụ huynh và đối tác vận hành dữ liệu điểm danh theo đúng vai trò, đúng mục đích và dễ kiểm soát.
             </p>
           </div>
