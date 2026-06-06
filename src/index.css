@@ -199,26 +199,13 @@
     min-height: calc(100vh - 76px);
     display: flex;
     flex-direction: column;
-    position: relative;
-  }
-
-  .snap-section > section {
-    flex: 1;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    padding-top: clamp(24px, 4vh, 64px);
-    padding-bottom: 64px;
+    position: relative;
+    padding-top: clamp(32px, 5vh, 72px);
+    padding-bottom: clamp(32px, 5vh, 72px);
   }
 
-  #hero {
-    min-height: calc(100vh - 76px);
-    display: flex;
-    flex-direction: column;
-  }
-
-  .snap-section > section h2 {
+  .snap-section h2 {
     font-size: clamp(26px, 2.35vw, 34px);
   }
 
@@ -239,9 +226,13 @@
     padding-top: 76px;
   }
 
-  .landing-section,
   .snap-section {
     min-height: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
 }
 
@@ -337,6 +328,14 @@ section + section {
   opacity: 0.7;
 }
 
+.section-eyebrow--centered {
+  padding-left: 0 !important;
+}
+.section-eyebrow--centered::before {
+  display: none !important;
+}
+
+
 .section-title {
   font-size: clamp(26px, 2.4vw, 36px);
   font-weight: 800;
@@ -365,6 +364,18 @@ section + section {
 /* Wide variant: description can be wider */
 .section-desc--wide {
   max-width: 640px;
+}
+
+/* ─── CARD STANDARD ─────────────────────────────────────── */
+.card-standard {
+  background: #ffffff;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.card-standard:hover {
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.08);
+  transform: translateY(-2px);
 }
 
 /* Side-by-side header: label+heading left | desc right */
@@ -425,3 +436,22 @@ video,
   /* Prevent layout jumps and rendering stutters on page scroll/render */
   contain: paint;
 }
+
+/* ─── AI CAMERA SCANNING EFFECT ─────────────────────────── */
+@keyframes scanLaser {
+  0% { top: 0%; opacity: 0.6; }
+  50% { top: 100%; opacity: 0.6; }
+  100% { top: 0%; opacity: 0.6; }
+}
+.animate-scan {
+  animation: scanLaser 4s linear infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+.animate-pulse-dot {
+  animation: pulseDot 1.5s ease-in-out infinite;
+}
+

@@ -15,11 +15,11 @@ const DEPLOY_STATS = [
 function ImageCard({ img }) {
   return (
     <div
-      className="flex-shrink-0 w-[280px] sm:w-[340px] mx-2 bg-white border border-[#DBEAFE] rounded-[16px] overflow-hidden
-        shadow-[0_4px_14px_rgba(30,58,138,0.04)] hover:shadow-[0_8px_22px_rgba(30,58,138,0.08)]
+      className="flex-shrink-0 w-[280px] sm:w-[320px] mx-2 bg-white border border-[#E5E7EB] rounded-2xl overflow-hidden
+        shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_22px_rgba(0,0,0,0.08)]
         transition-shadow duration-300 cursor-default"
     >
-      <div className="w-full h-[210px] bg-[#EFF6FF] overflow-hidden">
+      <div className="w-full h-[200px] bg-[#F1F5F9] overflow-hidden">
         <img
           src={img.src}
           alt={img.title}
@@ -36,7 +36,7 @@ function ImageCard({ img }) {
           }}
         />
       </div>
-      <div className="px-4 py-3">
+      <div className="px-4 py-3.5">
         <div className="text-[13px] font-semibold text-[#0F172A] truncate">{img.title}</div>
         <div className="text-[11.5px] text-[#6B7280] mt-0.5">Camera AI điểm danh</div>
       </div>
@@ -44,39 +44,40 @@ function ImageCard({ img }) {
   );
 }
 
-export default function DeploymentTimeline() {
+export default function DeploymentTimeline({ id }) {
   const titleRef = useFadeUp();
 
   return (
-    <section className="page-news border-t border-[#DBEAFE] overflow-hidden flex flex-col justify-center">
+    <section
+      id={id}
+      className="landing-section snap-section page-news border-t border-[#DBEAFE] overflow-hidden flex flex-col justify-center"
+      style={{ scrollMarginTop: 0 }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div ref={titleRef} className="fade-up">
           {/* Title row + stats */}
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-6">
-            <div>
-              <span className="section-eyebrow" style={{ color: '#1E3A8A' }}>Thực tế triển khai</span>
-              <h2 className="section-title">Những trường đã triển khai</h2>
-              <div className="section-divider" style={{ color: '#1E3A8A' }} />
-              <p className="section-desc section-desc--wide">
-                Hình ảnh thực tế từ các điểm trường đã lắp đặt và vận hành hệ thống Camera AI điểm danh Keytech AI.
-              </p>
+          <div className="section-header--row">
+            <div className="section-left">
+              <span className="section-eyebrow" style={{ color: '#60A5FA' }}>Thực tế triển khai</span>
+              <h2 className="section-title">Những trường đã triển khai thực tế</h2>
             </div>
-
-            {/* Stat pills */}
-            <div className="flex gap-3 flex-shrink-0">
-              {DEPLOY_STATS.map((s, i) => (
-                <div key={i} className="bg-white border border-[#DBEAFE] rounded-xl px-4 py-3 text-center shadow-[0_1px_4px_rgba(0,0,0,0.04)]">
-                  <div className="text-[20px] font-extrabold text-[#1E3A8A] leading-none">{s.value}</div>
-                  <div className="text-[11px] text-[#6B7280] mt-1 font-medium whitespace-nowrap">{s.label}</div>
-                </div>
-              ))}
+            {/* Stat pills — right column */}
+            <div className="section-right">
+              <div className="flex gap-3 flex-wrap">
+                {DEPLOY_STATS.map((s, i) => (
+                  <div key={i} className="bg-white border border-[#DBEAFE] rounded-2xl px-4 py-3 text-center shadow-[0_1px_4px_rgba(0,0,0,0.04)] hover:border-[#60A5FA] transition-colors">
+                    <div className="text-[20px] font-extrabold text-[#1E3A8A] leading-none">{s.value}</div>
+                    <div className="text-[11px] text-[#6B7280] mt-1 font-medium whitespace-nowrap">{s.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Desktop: marquee — full-width, nằm ngoài container */}
-      <div className="marquee-wrapper hidden sm:block">
+      <div className="marquee-wrapper hidden sm:block mb-2">
         <div className="marquee-track py-2">
           {marqueeImages.map((img, i) => (
             <ImageCard key={i} img={img} />

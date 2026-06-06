@@ -12,12 +12,16 @@ const OFFER_LIST = [
   'Hỗ trợ kỹ thuật, đào tạo quy trình và vận hành đầy đủ',
 ];
 
-export default function FinalCTA() {
+export default function FinalCTA({ id }) {
   const leftRef = useFadeUp();
   const formRef = useFadeUp();
 
   return (
-    <section className="page-auth border-t border-[#E2E8F0] flex flex-col justify-center">
+    <section
+      id={id}
+      className="landing-section snap-section page-auth border-t border-[#E2E8F0] flex flex-col justify-center"
+      style={{ scrollMarginTop: 0 }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-14 items-center">
 
@@ -86,7 +90,7 @@ export default function FinalCTA() {
 
                 {/* Phone */}
                 <div className="flex items-start gap-3.5 group">
-                  <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-[#F0FDF4] text-[#166534] flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                  <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-[#EFF6FF] text-[#1E3A8A] flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                     </svg>
@@ -97,7 +101,7 @@ export default function FinalCTA() {
                       <a href="tel:0386100833" className="text-[16px] font-extrabold text-[#1E3A8A] hover:text-[#3B82F6] transition-colors">
                         0386 100 833
                       </a>
-                      <span className="text-[11px] px-2 py-0.5 bg-[#F0FDF4] text-[#166534] font-semibold rounded-md border border-[#DCFCE7]">
+                      <span className="text-[11px] px-2 py-0.5 bg-[#EFF6FF] text-[#1E3A8A] font-semibold rounded-md border border-[#DBEAFE]">
                         Mở cuộc gọi
                       </span>
                     </div>

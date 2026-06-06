@@ -6,12 +6,12 @@ import { scrollToLandingTarget } from '../../utils/scrollToLandingTarget';
 
 function StatCard({ stat }) {
   return (
-    <div className="bg-white border border-[#E5E7EB] rounded-xl px-4 py-3
-      shadow-[0_1px_3px_rgba(0,0,0,0.05)] text-center">
-      <div className="text-[26px] sm:text-[30px] font-extrabold text-[#1E3A8A] leading-tight tracking-tight">
+    <div className="bg-white border border-[#E5E7EB] rounded-2xl px-4 py-3.5
+      shadow-[0_2px_8px_rgba(0,0,0,0.04)] text-center hover:border-[#DDD6FE] hover:shadow-[0_4px_12px_rgba(168,85,247,0.06)] transition-all duration-300">
+      <div className="text-[24px] sm:text-[28px] font-extrabold text-[#1E3A8A] leading-tight tracking-tight">
         {stat.value}
       </div>
-      <div className="mt-1 text-[12px] text-[#6B7280] font-medium leading-snug">
+      <div className="mt-1 text-[11.5px] text-[#6B7280] font-medium leading-snug">
         {stat.label}
       </div>
     </div>
@@ -49,7 +49,7 @@ function ScrollIndicator() {
   );
 }
 
-export default function HeroSection() {
+export default function HeroSection({ id = 'hero' }) {
   const statsRef = useFadeUpChildren(0.1);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [imgErrors, setImgErrors] = useState({});
@@ -67,12 +67,12 @@ export default function HeroSection() {
 
   return (
     <section
-      id="hero"
+      id={id}
       className="landing-section snap-section page-home flex flex-col"
-      style={{ minHeight: 'calc(100vh - 76px)', scrollMarginTop: 0 }}
+      style={{ scrollMarginTop: 0 }}
     >
       <div className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full
-        flex flex-col justify-center py-6 sm:py-8 lg:py-10">
+        flex flex-col justify-center">
 
         {/* Two-column layout */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-5">
@@ -134,8 +134,8 @@ export default function HeroSection() {
 
           {/* RIGHT: Slideshow */}
           <div className="relative mt-8 lg:mt-0">
-            {/* Border box: solid #E5E7EB, bo góc 20px, shadow nhẹ */}
-            <div className="rounded-[20px] border border-[#E5E7EB] shadow-[0_4px_24px_rgba(0,0,0,0.10)] overflow-hidden">
+            {/* Border box: solid, bo góc 20px, shadow nhẹ */}
+            <div className="rounded-2xl border border-[#E5E7EB] shadow-[0_8px_30px_rgba(0,0,0,0.10)] overflow-hidden">
               <div className="bg-slate-900 aspect-[4/3] relative">
                 {HERO_SLIDES.map((slide, index) => (
                   <div

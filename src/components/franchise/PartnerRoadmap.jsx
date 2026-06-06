@@ -3,21 +3,50 @@ import { roadmapSteps } from '../../data/franchiseLandingData';
 import ScrollNext from './ScrollNext';
 
 const STEP_COLORS = [
-  { bg: '#D946EF', light: '#FBE7F7', border: '#FCE1F5' }, // Pink
-  { bg: '#A855F7', light: '#F5F3FF', border: '#DDD6FE' }, // Purple
-  { bg: '#60A5FA', light: '#EFF6FF', border: '#BFDBFE' }, // Blue
-  { bg: '#3B82F6', light: '#EFF6FF', border: '#DBEAFE' }, // Blue accent
-  { bg: '#059669', light: '#ECFDF5', border: '#A7F3D0' }, // Green
+  { bg: '#D946EF', light: '#FDF4FF', border: '#FBE7F7' }, // Pink
+  { bg: '#A855F7', light: '#F9F5FF', border: '#F3E8FF' }, // Purple
+  { bg: '#8B5CF6', light: '#F5F3FF', border: '#DDD6FE' }, // Indigo
+  { bg: '#3B82F6', light: '#EFF6FF', border: '#DBEAFE' }, // Blue
+  { bg: '#1E3A8A', light: '#F0F4FF', border: '#D9E2FC' }, // Navy
 ];
 
-const ICONS = ['🚀', '📣', '🏗️', '📈', '🌏'];
+const ICONS = [
+  // Rocket/Launch
+  <svg key="1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4.5 16.5c-1.5 1.26-2 3.42-2 3.42s2.16-.5 3.42-2M15 9l-9 9M16 5l3 3" />
+    <path d="M12 12l9-9-3 12-6-3z" />
+  </svg>,
+  // Megaphone
+  <svg key="2" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 0 1 0 7.07" />
+  </svg>,
+  // Target
+  <svg key="3" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10" />
+    <circle cx="12" cy="12" r="6" />
+    <circle cx="12" cy="12" r="2" />
+  </svg>,
+  // Trend
+  <svg key="4" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M23 6l-9.5 9.5-5-5L1 18M17 6h6v6" />
+  </svg>,
+  // Globe
+  <svg key="5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10" />
+    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+  </svg>
+];
 
-export default function PartnerRoadmap() {
+export default function PartnerRoadmap({ id }) {
   const titleRef = useFadeUp();
   const stepsRef = useFadeUpChildren();
 
   return (
-    <section className="page-about border-t border-[#DDD6FE] flex flex-col justify-center">
+    <section
+      id={id}
+      className="landing-section snap-section page-about border-t border-[#DDD6FE] flex flex-col justify-center"
+      style={{ scrollMarginTop: 0 }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
         <div ref={titleRef} className="section-header--row fade-up">
@@ -50,11 +79,11 @@ export default function PartnerRoadmap() {
                   <div className="flex items-center gap-3 mb-3 lg:flex-col lg:items-center lg:gap-2">
                     <div
                       className="w-10 h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center
-                        flex-shrink-0 shadow-lg ring-4 ring-white text-[18px] lg:text-[20px]
+                        flex-shrink-0 shadow-lg ring-4 ring-white
                         transition-transform duration-300 group-hover:-translate-y-1"
                       style={{ backgroundColor: color.bg }}
                     >
-                      <span>{ICONS[i]}</span>
+                      {ICONS[i]}
                     </div>
                     <span
                       className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wide lg:text-center"

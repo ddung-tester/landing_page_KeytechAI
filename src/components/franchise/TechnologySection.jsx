@@ -43,7 +43,7 @@ const TECH_FEATURES = [
   },
 ];
 
-export default function TechnologySection() {
+export default function TechnologySection({ id }) {
   const titleRef = useFadeUp();
   const cardsRef = useFadeUpChildren();
   const videoRef = useRef(null);
@@ -79,7 +79,11 @@ export default function TechnologySection() {
   }, []);
 
   return (
-    <section className="page-products border-t border-[#FBE7F7] flex flex-col justify-center">
+    <section
+      id={id}
+      className="landing-section snap-section page-products border-t border-[#FBE7F7] flex flex-col justify-center"
+      style={{ scrollMarginTop: 0 }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
         <div ref={titleRef} className="fade-up grid lg:grid-cols-[2fr_3fr] gap-8 lg:gap-12 items-end mb-8">

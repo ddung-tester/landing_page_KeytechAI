@@ -4,10 +4,10 @@
 // ============================================================
 
 export const heroStats = [
-  { value: "250+",     label: "Trường học trong danh mục triển khai" },
-  { value: "70%",      label: "Doanh thu thực thu cho đại lý" },
+  { value: "250+", label: "Trường học trong danh mục triển khai" },
+  { value: "70%", label: "Doanh thu thực thu cho đại lý" },
   { value: "1,4 tỷ/năm học", label: "Doanh thu tham chiếu danh mục đại lý" },
-  { value: "5 năm",    label: "Bảo hành camera AI" },
+  { value: "5 năm", label: "Bảo hành camera AI" },
 ];
 
 export const opportunityItems = [
@@ -36,23 +36,23 @@ export const opportunityItems = [
 export const proofStats = [
   {
     icon: "check-circle",
-    stat: "250+ trường học",
-    desc: "Danh mục triển khai và làm việc thực tế tại nhiều địa phương.",
+    stat: "Hệ thống lõi ổn định",
+    desc: "Thiết bị camera AI kết nối Cloud đồng bộ thời gian thực, đáp ứng lưu lượng truy cập lớn cùng lúc.",
   },
   {
     icon: "bar-chart",
-    stat: "Doanh thu thực tế",
-    desc: "Một số trường đã phát sinh doanh thu phí điểm danh.",
+    stat: "Vận hành đơn giản",
+    desc: "Giao diện quản trị tiếng Việt trực quan cho nhà trường, phụ huynh sử dụng qua mobile app tiện lợi.",
   },
   {
     icon: "clock",
-    stat: "Kinh nghiệm thực chiến",
-    desc: "Đội ngũ kỹ thuật chuyên nghiệp, giàu năng lực triển khai và xử lý hạ tầng thực tế.",
+    stat: "Hiệu quả đo lường được",
+    desc: "Giảm tải 90% thời gian điểm danh thủ công, chuẩn hóa quy trình báo cáo sĩ số cho Ban giám hiệu.",
   },
   {
     icon: "document",
-    stat: "Quy trình chuyển giao",
-    desc: "Có tài liệu đào tạo, hướng dẫn vận hành và kịch bản triển khai cho đại lý.",
+    stat: "Tối ưu chi phí hạ tầng",
+    desc: "Mô hình thiết kế tiết kiệm băng thông và tài nguyên lưu trữ Cloud, tăng biên lợi nhuận cho đại lý.",
   },
 ];
 
@@ -113,7 +113,7 @@ export const solutionFeatures = [
 
 export const revenueModelItems = [
   { party: "Đại lý nhận quyền", percent: 70, color: "#166534" },
-  { party: "VNS/Keytech",       percent: 30, color: "#64748B" },
+  { party: "VNS/Keytech", percent: 30, color: "#64748B" },
 ];
 
 export const investmentHighlights = [
@@ -140,29 +140,29 @@ export const investmentHighlights = [
 ];
 
 export const investmentBreakdown = [
-  { item: "Camera AI",                      note: "~90.000.000đ / trường" },
-  { item: "Phụ kiện, cột, tay gá",          note: "Theo khảo sát thực tế" },
-  { item: "Gói mạng, dây, nguồn",           note: "Theo hạ tầng thực tế" },
-  { item: "Thi công, chụp ảnh, nhập liệu",  note: "Theo phương án triển khai" },
+  { item: "Camera AI", note: "~90.000.000đ / trường" },
+  { item: "Phụ kiện, cột, tay gá", note: "Theo khảo sát thực tế" },
+  { item: "Gói mạng, dây, nguồn", note: "Theo hạ tầng thực tế" },
+  { item: "Thi công, chụp ảnh, nhập liệu", note: "Theo phương án triển khai" },
 ];
 
 export const processSteps = [
-  { step: "01", title: "Khảo sát hiện trạng",  desc: "Đánh giá cổng trường, vị trí lắp đặt, hạ tầng mạng." },
-  { step: "02", title: "Tư vấn mô hình",        desc: "Đề xuất phương án triển khai phù hợp từng trường." },
-  { step: "03", title: "Thiết kế điểm lắp",     desc: "Xác định vị trí camera AI, góc nhận diện, vật tư." },
-  { step: "04", title: "Thi công lắp đặt",      desc: "Lắp camera, phụ kiện, dây mạng, nguồn và cấu hình." },
-  { step: "05", title: "Chụp ảnh & nhập liệu",  desc: "Chuẩn hóa dữ liệu học sinh để vận hành hệ thống." },
-  { step: "06", title: "Tập huấn nhà trường",   desc: "Hướng dẫn giáo viên/cán bộ sử dụng phần mềm." },
-  { step: "07", title: "Hướng dẫn phụ huynh",   desc: "Hỗ trợ phụ huynh/học sinh sử dụng dịch vụ." },
-  { step: "08", title: "Nghiệm thu & bảo trì",  desc: "Bàn giao, vận hành, hỗ trợ sau triển khai." },
+  { step: "01", title: "Khảo sát hiện trạng", desc: "Đánh giá cổng trường, vị trí lắp đặt, hạ tầng mạng." },
+  { step: "02", title: "Tư vấn mô hình", desc: "Đề xuất phương án triển khai phù hợp từng trường." },
+  { step: "03", title: "Thiết kế điểm lắp", desc: "Xác định vị trí camera AI, góc nhận diện, vật tư." },
+  { step: "04", title: "Thi công lắp đặt", desc: "Lắp camera, phụ kiện, dây mạng, nguồn và cấu hình." },
+  { step: "05", title: "Chụp ảnh & nhập liệu", desc: "Chuẩn hóa dữ liệu học sinh để vận hành hệ thống." },
+  { step: "06", title: "Tập huấn nhà trường", desc: "Hướng dẫn giáo viên/cán bộ sử dụng phần mềm." },
+  { step: "07", title: "Hướng dẫn phụ huynh", desc: "Hỗ trợ phụ huynh/học sinh sử dụng dịch vụ." },
+  { step: "08", title: "Nghiệm thu & bảo trì", desc: "Bàn giao, vận hành, hỗ trợ sau triển khai." },
 ];
 
 export const roadmapSteps = [
-  { time: "30 ngày",  title: "Khởi động",   desc: "Hoàn thành đào tạo, nhận bộ tài liệu và lập danh sách trường mục tiêu." },
-  { time: "60 ngày",  title: "Mở thị trường",  desc: "Làm việc với danh mục trường ưu tiên và tư vấn phương án triển khai phù hợp." },
-  { time: "90 ngày",  title: "Triển khai đầu tiên",      desc: "Chốt các điểm trường tiềm năng, chuẩn bị thiết bị và kế hoạch lắp đặt." },
-  { time: "180 ngày", title: "Mở rộng danh mục",     desc: "Phát triển danh mục 10 trường theo năng lực địa phương và tiến độ thực tế." },
-  { time: "12 tháng", title: "Tăng trưởng",  desc: "Mở rộng khu vực, tối ưu vận hành và phát triển doanh thu định kỳ." },
+  { time: "30 ngày", title: "Khởi động", desc: "Hoàn thành đào tạo, nhận bộ tài liệu và lập danh sách trường mục tiêu." },
+  { time: "60 ngày", title: "Mở thị trường", desc: "Làm việc với danh mục trường ưu tiên và tư vấn phương án triển khai phù hợp." },
+  { time: "90 ngày", title: "Triển khai đầu tiên", desc: "Chốt các điểm trường tiềm năng, chuẩn bị thiết bị và kế hoạch lắp đặt." },
+  { time: "180 ngày", title: "Mở rộng danh mục", desc: "Phát triển danh mục 10 trường theo năng lực địa phương và tiến độ thực tế." },
+  { time: "12 tháng", title: "Tăng trưởng", desc: "Mở rộng khu vực, tối ưu vận hành và phát triển doanh thu định kỳ." },
 ];
 
 export const supportItems = [
@@ -229,10 +229,10 @@ export const detailedSecurityItems = [
 ];
 
 export const navLinks = [
-  { label: "Công nghệ",            href: "#cong-nghe" },
+  { label: "Công nghệ", href: "#cong-nghe" },
   { label: "Trường đã triển khai", href: "#truong-da-trien-khai" },
-  { label: "Doanh thu",            href: "#doanh-thu" },
-  { label: "Quy mô",               href: "#dau-tu" },
-  { label: "Hỗ trợ",               href: "#ho-tro" },
-  { label: "Liên hệ",              href: "#lien-he" },
+  { label: "Doanh thu", href: "#doanh-thu" },
+  { label: "Quy mô", href: "#dau-tu" },
+  { label: "Hỗ trợ", href: "#ho-tro" },
+  { label: "Liên hệ", href: "#lien-he" },
 ];
