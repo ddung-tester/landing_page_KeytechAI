@@ -52,6 +52,7 @@ export default function InvestmentOverview() {
                 alt="Lap dat Camera AI tai san truong"
                 className="w-full h-auto rounded-lg object-contain"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

@@ -2,15 +2,10 @@ import { useEffect } from 'react';
 import Lenis from 'lenis';
 
 /**
- * Hook khởi tạo và quản lý bộ cuộn mượt Lenis cho toàn trang.
- * Tắt cuộn mượt trên mobile để giữ nguyên đà cuộn tự nhiên của hệ điều hành.
+ * Hook khởi tạo và quản lý bộ cuộn mượt Lenis cho toàn trang trên cả Desktop và Mobile.
  */
 export function useSmoothScroll() {
   useEffect(() => {
-    // Chỉ chạy mượt trên desktop (>= 1024px)
-    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
-    if (!isDesktop) return;
-
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
@@ -18,8 +13,8 @@ export function useSmoothScroll() {
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1.0,
-      touchMultiplier: 1.0,
-      smoothTouch: false, // Giữ nguyên đà cuộn native trên cảm ứng điện thoại
+      smoothTouch: true, // Kích hoạt cuộn mượt cho màn hình cảm ứng di động
+      touchMultiplier: 1.5, // Nâng độ nhạy trên di động để vuốt cực nhạy
     });
 
     let rafId;

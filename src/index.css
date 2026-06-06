@@ -105,14 +105,19 @@
 
 /* ─── SCROLLBAR ──────────────────────────────────────────── */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 10px; /* Tăng độ rộng lên 10px để dễ rê kéo */
 }
 ::-webkit-scrollbar-track {
   background: #F3F4F6;
 }
 ::-webkit-scrollbar-thumb {
   background: #CBD5E1;
-  border-radius: 3px;
+  border-radius: 5px;
+  border: 1.5px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #94A3B8; /* Đậm màu hơn khi hover để báo phản hồi */
 }
 
 /* ─── FADE-UP ANIMATION ──────────────────────────────────── */
@@ -180,6 +185,15 @@
 .fade-up-delay-4 { transition-delay: 0.4s; }
 .fade-up-delay-5 { transition-delay: 0.5s; }
 .fade-up-delay-6 { transition-delay: 0.6s; }
+/* ─── LANDING SECTIONS PERFORMANCE OPTIMIZATION ──────────── */
+.landing-section,
+.snap-section {
+  content-visibility: auto; /* Skip layout/paint for offscreen sections */
+  contain-intrinsic-size: 100vh; /* Fallback viewport height for scroll sizing */
+  transform: translate3d(0, 0, 0); /* Promote to hardware accelerated GPU layer */
+  will-change: transform;
+  backface-visibility: hidden;
+}
 
 @media (min-width: 1024px) {
   .landing-main {
