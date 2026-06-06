@@ -18,12 +18,11 @@ export default function InvestmentOverview() {
           {/* LEFT: Title + highlight cards */}
           <div>
             <div ref={titleRef} className="fade-up mb-5">
-              <span className="section-eyebrow" style={{ color: '#A855F7' }}>Quy mô đầu tư</span>
-              <h2 className="section-title">Quy mô đầu tư rõ ràng, tiềm năng danh mục dễ tính toán</h2>
+              <span className="section-eyebrow" style={{ color: '#A855F7' }}>Quy mô triển khai</span>
+              <h2 className="section-title">Quy mô triển khai tối ưu, tiềm năng danh mục dễ mở rộng</h2>
               <div className="section-divider" style={{ color: '#A855F7' }} />
               <p className="section-desc">
-                Đại lý có thể bắt đầu với danh mục trường mục tiêu, tính toán thiết bị theo từng điểm trường
-                và mở rộng theo năng lực phát triển thị trường địa phương.
+                Đại lý tập trung phát triển danh mục trường học mục tiêu tại địa phương, thiết lập cấu hình thiết bị phù hợp và mở rộng theo lộ trình tăng trưởng thực tế.
               </p>
             </div>
 

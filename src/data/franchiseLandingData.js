@@ -46,8 +46,8 @@ export const proofStats = [
   },
   {
     icon: "clock",
-    stat: "1+ năm kinh nghiệm",
-    desc: "Đội ngũ kỹ thuật và triển khai có kinh nghiệm thực tế.",
+    stat: "Kinh nghiệm thực chiến",
+    desc: "Đội ngũ kỹ thuật chuyên nghiệp, giàu năng lực triển khai và xử lý hạ tầng thực tế.",
   },
   {
     icon: "document",
@@ -118,24 +118,24 @@ export const revenueModelItems = [
 
 export const investmentHighlights = [
   {
-    value: "106.000.000đ",
-    unit: "/ trường",
-    label: "Tổng đầu tư dự kiến theo mô hình tham chiếu.",
+    value: "100%",
+    unit: "chuyển giao công nghệ",
+    label: "Cung cấp đầy đủ công cụ kỹ thuật, kịch bản làm việc với trường và tài liệu vận hành.",
   },
   {
     value: "6",
     unit: "camera AI / trường",
-    label: "Quy mô trung bình cho một điểm trường.",
+    label: "Quy mô lắp đặt camera trung bình cho một điểm trường.",
   },
   {
     value: "10",
-    unit: "trường giai đoạn đầu",
-    label: "Danh mục mục tiêu giúp đại lý tạo doanh thu tham chiếu hấp dẫn.",
+    unit: "trường mục tiêu",
+    label: "Danh mục tối ưu giai đoạn đầu để xây dựng thị trường địa phương.",
   },
   {
-    value: "1.060.000.000đ",
-    unit: "/ 10 trường",
-    label: "Tổng đầu tư tham chiếu cho giai đoạn khởi động.",
+    value: "5 năm",
+    unit: "bảo hành thiết bị",
+    label: "Chính sách bảo hành phần cứng camera AI chính hãng vượt trội.",
   },
 ];
 
@@ -232,7 +232,7 @@ export const navLinks = [
   { label: "Công nghệ",            href: "#cong-nghe" },
   { label: "Trường đã triển khai", href: "#truong-da-trien-khai" },
   { label: "Doanh thu",            href: "#doanh-thu" },
-  { label: "Đầu tư",               href: "#dau-tu" },
+  { label: "Quy mô",               href: "#dau-tu" },
   { label: "Hỗ trợ",               href: "#ho-tro" },
   { label: "Liên hệ",              href: "#lien-he" },
 ];
