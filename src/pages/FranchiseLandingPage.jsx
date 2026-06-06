@@ -11,6 +11,7 @@ import SupportSection from '../components/franchise/SupportSection';
 
 import FinalCTA from '../components/franchise/FinalCTA';
 import Footer from '../components/franchise/Footer';
+import { useSmoothScroll } from '../hooks/useSmoothScroll';
 import { scrollToLandingTarget } from '../utils/scrollToLandingTarget';
 
 /**
@@ -30,6 +31,8 @@ function Section({ id, children, snap = true }) {
 }
 
 export default function FranchiseLandingPage() {
+  useSmoothScroll();
+
   return (
     <>
       {/* 1. Header — sticky top */}
