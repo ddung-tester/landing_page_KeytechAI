@@ -18,23 +18,13 @@ export function useFadeUp(threshold = 0.15) {
           observer.disconnect();
         }
       },
-      { root: null, threshold } // root: null là viewport mặc định của trình duyệt
+      { root: null, threshold } // Sử dụng viewport của trình duyệt
     );
 
     observer.observe(el);
 
-    // Fallback: Trong trường hợp phần tử đã nằm sẵn trong màn hình lúc load
-    const timer = setTimeout(() => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        el.classList.add('visible');
-        observer.disconnect();
-      }
-    }, 100);
-
     return () => {
       observer.disconnect();
-      clearTimeout(timer);
     };
   }, [threshold]);
 
@@ -62,25 +52,14 @@ export function useFadeUpChildren(threshold = 0.1) {
             observer.disconnect();
           }
         },
-        { root: null, threshold } // root: null là viewport mặc định của trình duyệt
+        { root: null, threshold } // Sử dụng viewport của trình duyệt
       );
       observer.observe(child);
       observers.push(observer);
     });
 
-    // Fallback: Trong trường hợp các con đã nằm sẵn trong màn hình lúc load
-    const timer = setTimeout(() => {
-      children.forEach((child) => {
-        const rect = child.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          child.classList.add('visible');
-        }
-      });
-    }, 100);
-
     return () => {
       observers.forEach((o) => o.disconnect());
-      clearTimeout(timer);
     };
   }, [threshold]);
 

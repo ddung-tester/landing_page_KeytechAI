@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { useFadeUp, useFadeUpChildren } from '../../hooks/useFadeUp';
 import ScrollNext from './ScrollNext';
 
@@ -45,6 +46,37 @@ const TECH_FEATURES = [
 export default function TechnologySection() {
   const titleRef = useFadeUp();
   const cardsRef = useFadeUpChildren();
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Play video only when it is close to entering or is inside the viewport
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch((err) => {
+            // Catch error if play request is interrupted or blocked by browser autoplay policy
+            console.log('Video autoplay interrupted or deferred:', err);
+          });
+        } else {
+          video.pause();
+        }
+      },
+      {
+        root: null,
+        rootMargin: '150px 0px', // Buffer to start loading/playing 150px before entering viewport
+        threshold: 0,
+      }
+    );
+
+    observer.observe(video);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <section className="page-products border-t border-[#FBE7F7] flex flex-col justify-center">
@@ -57,7 +89,7 @@ export default function TechnologySection() {
           </div>
           <div>
             <p className="section-desc section-desc--wide">
-              Camera AI kết hợp phần mềm nhận diện và dashboard quản trị để tự động ghi nhận học sinh
+               Camera AI kết hợp phần mềm nhận diện và dashboard quản trị để tự động ghi nhận học sinh
               ra/vào, cập nhật dữ liệu điểm danh và hỗ trợ thông báo phụ huynh.
             </p>
           </div>
@@ -86,15 +118,24 @@ export default function TechnologySection() {
 
           {/* RIGHT: Video */}
           <div className="flex items-center justify-center">
-            <div className="w-full rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-[0_4px_24px_rgba(30,58,138,0.08)]">
+            <div 
+              className="video-container w-full rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-[0_4px_24px_rgba(30,58,138,0.08)]"
+              style={{ transform: 'translate3d(0,0,0)' }}
+            >
               <video
+                ref={videoRef}
                 src={VIDEO_SRC}
-                autoPlay
                 loop
                 muted
                 playsInline
+                preload="auto"
                 className="w-full block"
-                style={{ minHeight: 'clamp(300px, 50vh, 520px)', objectFit: 'cover' }}
+                style={{ 
+                  minHeight: 'clamp(300px, 50vh, 520px)', 
+                  objectFit: 'cover',
+                  transform: 'translate3d(0,0,0)',
+                  willChange: 'transform'
+                }}
               />
             </div>
           </div>

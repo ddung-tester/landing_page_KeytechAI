@@ -185,13 +185,8 @@
 .fade-up-delay-4 { transition-delay: 0.4s; }
 .fade-up-delay-5 { transition-delay: 0.5s; }
 .fade-up-delay-6 { transition-delay: 0.6s; }
-/* ─── LANDING SECTIONS PERFORMANCE OPTIMIZATION ──────────── */
 .landing-section,
 .snap-section {
-  content-visibility: auto; /* Skip layout/paint for offscreen sections */
-  contain-intrinsic-size: 100vh; /* Fallback viewport height for scroll sizing */
-  transform: translate3d(0, 0, 0); /* Promote to hardware accelerated GPU layer */
-  will-change: transform;
   backface-visibility: hidden;
 }
 
@@ -418,4 +413,15 @@ html.lenis, html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
+}
+
+/* ─── VIDEO PERFORMANCE OPTIMIZATIONS ────────────────────── */
+video,
+.video-container {
+  transform: translate3d(0, 0, 0); /* Promote to GPU composite layer */
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  /* Prevent layout jumps and rendering stutters on page scroll/render */
+  contain: paint;
 }
