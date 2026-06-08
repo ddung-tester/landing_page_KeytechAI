@@ -121,7 +121,7 @@ export default function TechnologySection({ id }) {
 
           {/* RIGHT: Video */}
           <div className="flex items-center justify-center">
-            <div 
+            <div
               className="video-container w-full rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-[0_4px_24px_rgba(30,58,138,0.08)]"
               style={{ transform: 'translate3d(0,0,0)' }}
             >
@@ -133,8 +133,8 @@ export default function TechnologySection({ id }) {
                 playsInline
                 preload="auto"
                 className="w-full block"
-                style={{ 
-                  minHeight: 'clamp(300px, 50vh, 520px)', 
+                style={{
+                  minHeight: 'clamp(300px, 50vh, 520px)',
                   objectFit: 'cover',
                   transform: 'translate3d(0,0,0)',
                   willChange: 'transform'
