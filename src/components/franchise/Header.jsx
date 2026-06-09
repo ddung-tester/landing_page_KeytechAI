@@ -68,19 +68,19 @@ export default function Header() {
       transition-shadow duration-300 ${scrolled ? 'shadow-md' : 'shadow-none'}`}
       style={{ height: `${HEADER_H}px` }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex items-center justify-between h-full">
 
           {/* Logo */}
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, '#hero')}
-            className="flex items-center gap-3 flex-shrink-0 focus:outline-none"
+            className="flex items-center gap-3 flex-shrink-0 min-w-0 focus:outline-none"
             aria-label="Về trang chủ"
           >
             <img src="/keytech_logo.png" alt="Keytech Logo" className="h-14 w-auto object-contain" />
             <div className="h-5 w-px bg-[#E5E7EB]" />
-            <span className="text-[10px] font-extrabold tracking-widest text-[#A855F7] uppercase bg-[#FCE1F5] px-2 py-0.5 rounded-md">
+            <span className="text-[10px] font-extrabold tracking-widest text-[#A855F7] uppercase bg-[#FCE1F5] px-2 py-0.5 rounded-md max-[360px]:hidden">
               Partnership
             </span>
           </a>
@@ -120,7 +120,7 @@ export default function Header() {
             {/* Hamburger */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden p-2 rounded-md text-[#4B5563] hover:bg-[#F3F4F6] transition-colors"
+              className="lg:hidden shrink-0 p-2 rounded-md text-[#4B5563] hover:bg-[#F3F4F6] transition-colors"
               aria-label="Mở menu"
               aria-expanded={menuOpen}
             >

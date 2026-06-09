@@ -6,12 +6,12 @@ import { scrollToLandingTarget } from '../../utils/scrollToLandingTarget';
 
 function StatCard({ stat }) {
   return (
-    <div className="bg-white border border-[#E5E7EB] rounded-2xl px-4 py-3.5
+    <div className="min-w-0 bg-white border border-[#E5E7EB] rounded-2xl px-3.5 py-2.5 lg:px-4 lg:py-3.5
       shadow-[0_2px_8px_rgba(0,0,0,0.04)] text-center hover:border-[#DDD6FE] hover:shadow-[0_4px_12px_rgba(168,85,247,0.06)] transition-all duration-300">
-      <div className="text-[24px] sm:text-[28px] font-extrabold text-[#1E3A8A] leading-tight tracking-tight">
+      <div className="text-[22px] sm:text-[26px] xl:text-[28px] font-extrabold text-[#1E3A8A] leading-tight tracking-tight">
         {stat.value}
       </div>
-      <div className="mt-1 text-[11.5px] text-[#6B7280] font-medium leading-snug">
+      <div className="mt-1 text-[11px] lg:text-[11.5px] text-[#6B7280] font-medium leading-snug">
         {stat.label}
       </div>
     </div>
@@ -45,7 +45,7 @@ const HERO_SLIDES = [
 // Scroll indicator arrow SVG
 function ScrollIndicator() {
   return (
-    <ScrollNext href="#cong-nghe" />
+    <ScrollNext href="#thi-truong" />
   );
 }
 
@@ -80,7 +80,7 @@ export default function HeroSection({ id = 'hero' }) {
           {/* LEFT: Text */}
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5
-              bg-white border border-[#E5E7EB] rounded-full mb-6 shadow-sm">
+              bg-white border border-[#E5E7EB] rounded-full mb-4 shadow-sm">
               <div className="w-1.5 h-1.5 rounded-full bg-[#A855F7]" />
               <span className="text-[11.5px] font-semibold text-[#A855F7] tracking-wide uppercase">
                 Cơ hội hợp tác &amp; nhượng quyền khai thác
@@ -88,12 +88,12 @@ export default function HeroSection({ id = 'hero' }) {
             </div>
 
             <h1 className="text-[36px] sm:text-[48px] lg:text-[54px] font-extrabold
-              text-[#0F172A] leading-[1.2] tracking-tight mb-6">
+              text-[#0F172A] leading-[1.2] tracking-tight mb-4">
               Nhượng quyền <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D946EF] to-[#60A5FA]">Camera AI</span><br />
               điểm danh trường học
             </h1>
 
-            <p className="text-[15px] sm:text-[16px] text-[#4B5563] leading-relaxed mb-8 max-w-[540px]">
+            <p className="text-[15px] sm:text-[16px] text-[#4B5563] leading-relaxed mb-6 max-w-[540px]">
               Giải pháp điểm danh &amp; an ninh thông minh ứng dụng công nghệ nhận diện khuôn mặt. 
               Hệ thống đã triển khai thực tế trên diện rộng, chuyển giao quy trình trọn gói cùng cơ chế chia sẻ doanh thu 70/30 tối ưu cho đối tác.
             </p>
@@ -135,7 +135,7 @@ export default function HeroSection({ id = 'hero' }) {
           <div className="relative mt-8 lg:mt-0">
             {/* Border box: solid, bo góc 20px, shadow nhẹ */}
             <div className="rounded-2xl border border-[#E5E7EB] shadow-[0_8px_30px_rgba(0,0,0,0.10)] overflow-hidden">
-              <div className="bg-slate-900 aspect-[4/3] relative">
+              <div className="bg-slate-900 aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/10] relative max-h-[280px] lg:max-h-[340px] xl:max-h-[380px] overflow-hidden">
                 {HERO_SLIDES.map((slide, index) => (
                   <div
                     key={index}

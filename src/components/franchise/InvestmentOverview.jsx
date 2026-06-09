@@ -21,28 +21,29 @@ export default function InvestmentOverview({ id }) {
 
           {/* LEFT: Title + highlight cards */}
           <div>
-            <div ref={titleRef} className="fade-up mb-5">
+            <div ref={titleRef} className="fade-up section-header">
               <span className="section-eyebrow" style={{ color: '#A855F7' }}>Quy mô triển khai</span>
               <h2 className="section-title">Quy mô tối ưu, tiềm năng mở rộng theo danh mục</h2>
-              <div className="section-divider" style={{ color: '#A855F7' }} />
               <p className="section-desc">
                 Đại lý tập trung phát triển danh mục trường học mục tiêu tại địa phương và mở rộng theo lộ trình tăng trưởng thực tế.
               </p>
             </div>
 
-            {/* 2×2 highlight cards */}
             <div ref={cardsRef} className="grid grid-cols-2 gap-3">
               {investmentHighlights.map((item, i) => (
                 <div
                   key={i}
-                  className={`fade-up fade-up-delay-${i + 1} bg-white border border-[#E2E8F0] rounded-2xl p-4 shadow-sm
-                    hover:border-[#A855F7] hover:shadow-[0_4px_16px_rgba(168,85,247,0.06)] transition-all duration-300`}
+                  className={`fade-up fade-up-delay-${i + 1} card-standard flex flex-col`}
+                  style={{
+                    '--card-border': '#E2E8F0',
+                    '--card-hover-border': '#A855F7'
+                  }}
                 >
-                  <div className="text-[22px] sm:text-[24px] font-extrabold text-[#0F172A] leading-tight tracking-tight">
+                  <div className="text-[22px] sm:text-[25px] xl:text-[28px] font-extrabold text-[#0F172A] leading-tight tracking-tight">
                     {item.value}
                   </div>
-                  <div className="text-[11px] text-[#A855F7] font-bold mt-0.5 mb-1.5 uppercase tracking-wide">{item.unit}</div>
-                  <p className="text-[12px] text-[#6B7280] leading-snug">{item.label}</p>
+                  <div className="text-[11px] xl:text-[12px] text-[#A855F7] font-bold mt-0.5 mb-1.5 uppercase tracking-wide">{item.unit}</div>
+                  <p className="text-[12px] xl:text-[13px] text-[#6B7280] leading-snug">{item.label}</p>
                 </div>
               ))}
             </div>
@@ -54,7 +55,7 @@ export default function InvestmentOverview({ id }) {
               <img
                 src={SCHOOL_INSTALL_IMAGE_SRC}
                 alt="Lap dat Camera AI tai san truong"
-                className="w-full h-auto rounded-xl object-contain"
+                className="w-full aspect-[4/3] lg:aspect-[16/10] xl:aspect-[4/3] rounded-xl object-cover max-h-[300px] sm:max-h-[340px] lg:max-h-[380px] xl:max-h-[420px]"
                 loading="lazy"
                 decoding="async"
               />

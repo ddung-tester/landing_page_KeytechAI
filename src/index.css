@@ -8,16 +8,21 @@
 /* ─── GLOBAL RESET & BASE ─────────────────────────────────── */
 /* Must be inside @layer base so Tailwind utilities take priority */
 @layer base {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
 
   html {
-    scroll-behavior: smooth; /* Trình duyệt cuộn mượt tự nhiên */
+    scroll-behavior: smooth;
+    /* Trình duyệt cuộn mượt tự nhiên */
     font-size: 16px;
-    scroll-padding-top: 76px; /* Chừa khoảng trống cho header sticky */
+    scroll-padding-top: 76px;
+    /* Chừa khoảng trống cho header sticky */
   }
 
   body {
@@ -35,7 +40,7 @@
   --primary-blue: #1E3A8A;
   --primary-pink: #EC4899;
   --soft-border: rgba(229, 231, 235, 0.8);
-  
+
   --brand-gradient: linear-gradient(90deg, #D946EF 0%, #60A5FA 100%);
   --brand-purple: #A855F7;
   --brand-pink: #D946EF;
@@ -53,6 +58,7 @@
   border: none !important;
   transition: all 0.2s ease-in-out !important;
 }
+
 .btn-brand-primary:hover {
   filter: brightness(1.05) !important;
   transform: translateY(-1px) !important;
@@ -105,19 +111,24 @@
 
 /* ─── SCROLLBAR ──────────────────────────────────────────── */
 ::-webkit-scrollbar {
-  width: 10px; /* Tăng độ rộng lên 10px để dễ rê kéo */
+  width: 10px;
+  /* Tăng độ rộng lên 10px để dễ rê kéo */
 }
+
 ::-webkit-scrollbar-track {
   background: #F3F4F6;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #CBD5E1;
   border-radius: 5px;
   border: 1.5px solid transparent;
   background-clip: padding-box;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #94A3B8; /* Đậm màu hơn khi hover để báo phản hồi */
+  background-color: #94A3B8;
+  /* Đậm màu hơn khi hover để báo phản hồi */
 }
 
 /* ─── FADE-UP ANIMATION ──────────────────────────────────── */
@@ -126,6 +137,7 @@
     opacity: 0;
     transform: translateY(24px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -134,26 +146,44 @@
 
 
 @keyframes fillBar {
-  from { width: 0%; }
-  to   { width: var(--target-width); }
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: var(--target-width);
+  }
 }
 
 @keyframes countUp {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ─── MARQUEE ────────────────────────────────────────────── */
 @keyframes marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .marquee-track {
   display: flex;
   width: max-content;
   animation: marquee 40s linear infinite;
-  transform: translate3d(0, 0, 0); /* Ép đẩy qua xử lý GPU */
+  transform: translate3d(0, 0, 0);
+  /* Ép đẩy qua xử lý GPU */
   will-change: transform;
   backface-visibility: hidden;
 }
@@ -179,19 +209,27 @@
     opacity: 0;
     transform: scale(0.97) translateY(12px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
   }
 }
+
 .animate-zoom-in {
   animation: zoomIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
+
 .animate-fade-in {
   animation: fadeIn 0.2s ease-out forwards;
 }
@@ -201,12 +239,30 @@
   transform: translateY(0);
 }
 
-.fade-up-delay-1 { transition-delay: 0.1s; }
-.fade-up-delay-2 { transition-delay: 0.2s; }
-.fade-up-delay-3 { transition-delay: 0.3s; }
-.fade-up-delay-4 { transition-delay: 0.4s; }
-.fade-up-delay-5 { transition-delay: 0.5s; }
-.fade-up-delay-6 { transition-delay: 0.6s; }
+.fade-up-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.fade-up-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.fade-up-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.fade-up-delay-4 {
+  transition-delay: 0.4s;
+}
+
+.fade-up-delay-5 {
+  transition-delay: 0.5s;
+}
+
+.fade-up-delay-6 {
+  transition-delay: 0.6s;
+}
+
 .landing-section,
 .snap-section {
   backface-visibility: hidden;
@@ -223,18 +279,27 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
-    padding-top: clamp(32px, 5vh, 72px);
-    padding-bottom: clamp(32px, 5vh, 72px);
+    /* Balanced vertical padding to place main content at Visual Center */
+    padding-top: clamp(40px, 6vh, 64px);
+    padding-bottom: clamp(40px, 6vh, 64px);
+  }
+
+  /* When viewport height is tight, scroll-next is hidden, so reduce padding to give maximum room to content */
+  @media (max-height: 820px) {
+    .snap-section {
+      padding-top: clamp(24px, 4vh, 40px);
+      padding-bottom: clamp(24px, 4vh, 40px);
+    }
   }
 
   .snap-section h2 {
-    font-size: clamp(26px, 2.35vw, 34px);
+    font-size: clamp(24px, 2.2vw, 32px);
   }
 
-  /* ScrollNext: pinned at bottom-center */
+  /* ScrollNext: pinned at bottom-center of each section */
   .snap-section .scroll-next {
     position: absolute;
-    bottom: 24px;
+    bottom: 20px;
     left: 0;
     right: 0;
     display: flex;
@@ -253,8 +318,8 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
+    padding-top: 2.75rem;
+    padding-bottom: 2.75rem;
   }
 }
 
@@ -284,25 +349,39 @@
 
 /* ─── SLIDE PROGRESS ANIMATION ────────────────────────────── */
 @keyframes slideProgress {
-  from { width: 0%; }
-  to   { width: 100%; }
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
 }
+
 .animate-slide-progress {
   animation: slideProgress linear forwards;
 }
 
 /* ─── SCROLL INDICATOR BOUNCE ───────────────────────────── */
 @keyframes bounceSlow {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(5px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
 }
+
 .animate-bounce-slow {
   animation: bounceSlow 2s ease-in-out infinite;
 }
 
 /* ─── SECTION DIVIDERS ───────────────────────────────────── */
 /* Thin top border between alternating sections */
-section + section {
+section+section {
   border-top: 1px solid #EEF2F7;
 }
 
@@ -320,7 +399,7 @@ section + section {
   display: flex;
   flex-direction: column;
   gap: 0;
-  margin-bottom: 2.5rem;
+  margin-bottom: clamp(24px, 4vh, 32px);
 }
 
 .section-eyebrow {
@@ -332,7 +411,7 @@ section + section {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: inherit;
-  margin-bottom: 12px;
+  margin-bottom: clamp(12px, 2vh, 16px);
   position: relative;
   padding-left: 14px;
 }
@@ -353,10 +432,10 @@ section + section {
 .section-eyebrow--centered {
   padding-left: 0 !important;
 }
+
 .section-eyebrow--centered::before {
   display: none !important;
 }
-
 
 .section-title {
   font-size: clamp(26px, 2.4vw, 36px);
@@ -364,7 +443,7 @@ section + section {
   color: #0F172A;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  margin-bottom: 0;
+  margin-bottom: clamp(12px, 2vh, 16px);
 }
 
 .section-divider {
@@ -380,7 +459,7 @@ section + section {
   font-size: 14.5px;
   color: #4B5563;
   line-height: 1.75;
-  max-width: 520px;
+  max-width: 640px;
 }
 
 /* Wide variant: description can be wider */
@@ -391,25 +470,30 @@ section + section {
 /* ─── CARD STANDARD ─────────────────────────────────────── */
 .card-standard {
   background: #ffffff;
-  border: 1px solid #E5E7EB;
+  border: 1px solid var(--card-border, #E5E7EB);
   border-radius: 16px;
-  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  padding: clamp(16px, 2.8vh, 24px);
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .card-standard:hover {
-  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.08);
-  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  border-color: var(--card-hover-border, #A855F7);
+  transform: translateY(-3px);
 }
 
 /* Side-by-side header: label+heading left | desc right */
 .section-header--row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem 4rem;
+  gap: 1.5rem 3.5rem;
   align-items: end;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
-.section-header--row .section-left { }
+.section-header--row .section-left {}
+
 .section-header--row .section-right {
   display: flex;
   align-items: flex-end;
@@ -421,6 +505,7 @@ section + section {
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }
+
   .section-header--row .section-right {
     align-items: flex-start;
     padding-bottom: 0;
@@ -428,7 +513,8 @@ section + section {
 }
 
 /* ─── LENIS SMOOTH SCROLL INTEGRATION ─────────────────────── */
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 
@@ -451,7 +537,8 @@ html.lenis, html.lenis body {
 /* ─── VIDEO PERFORMANCE OPTIMIZATIONS ────────────────────── */
 video,
 .video-container {
-  transform: translate3d(0, 0, 0); /* Promote to GPU composite layer */
+  transform: translate3d(0, 0, 0);
+  /* Promote to GPU composite layer */
   will-change: transform;
   backface-visibility: hidden;
   perspective: 1000px;
@@ -461,19 +548,47 @@ video,
 
 /* ─── AI CAMERA SCANNING EFFECT ─────────────────────────── */
 @keyframes scanLaser {
-  0% { top: 0%; opacity: 0.6; }
-  50% { top: 100%; opacity: 0.6; }
-  100% { top: 0%; opacity: 0.6; }
+  0% {
+    top: 0%;
+    opacity: 0.6;
+  }
+
+  50% {
+    top: 100%;
+    opacity: 0.6;
+  }
+
+  100% {
+    top: 0%;
+    opacity: 0.6;
+  }
 }
+
 .animate-scan {
   animation: scanLaser 4s linear infinite;
 }
 
 @keyframes pulseDot {
-  0%, 100% { transform: scale(1); opacity: 0.5; }
-  50% { transform: scale(1.2); opacity: 1; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
 }
+
 .animate-pulse-dot {
   animation: pulseDot 1.5s ease-in-out infinite;
 }
 
+/* Hide scroll-next indicator on small viewports to prevent overlapping with content */
+@media (max-height: 820px) {
+  .scroll-next {
+    display: none !important;
+  }
+}

@@ -5,9 +5,9 @@
 
 export const heroStats = [
   { value: "250+", label: "Trường học đã triển khai" },
-  { value: "70%", label: "Doanh thu cho đại lý" },
-  { value: "1,4 tỷ/năm", label: "Doanh thu tham chiếu danh mục" },
-  { value: "5 năm", label: "Bảo hành camera AI" },
+  { value: "70%", label: "Doanh thu cho đối tác" },
+  { value: "1,4 tỷ/năm", label: "Doanh thu tham chiếu" },
+  { value: "5 năm", label: "Bảo hành thiết bị" },
 ];
 
 export const opportunityItems = [
@@ -120,22 +120,22 @@ export const investmentHighlights = [
   {
     value: "100%",
     unit: "chuyển giao công nghệ",
-    label: "Cung cấp đầy đủ công cụ, kịch bản làm việc và tài liệu vận hành.",
+    label: "Công cụ, tài liệu và quy trình làm việc.",
   },
   {
     value: "6",
     unit: "camera AI / trường",
-    label: "Quy mô lắp đặt trung bình cho mỗi điểm trường.",
+    label: "Quy mô lắp đặt trung bình mỗi điểm trường.",
   },
   {
     value: "10",
     unit: "trường mục tiêu",
-    label: "Quy mô tối ưu giai đoạn đầu để phát triển thị trường.",
+    label: "Danh mục khởi động để kiểm chứng thị trường.",
   },
   {
     value: "5 năm",
     unit: "bảo hành thiết bị",
-    label: "Chính sách bảo hành phần cứng camera AI chính hãng.",
+    label: "Bảo hành phần cứng camera AI chính hãng.",
   },
 ];
 
@@ -168,33 +168,23 @@ export const roadmapSteps = [
 export const supportItems = [
   {
     icon: "badge",
-    title: "Thương hiệu & Hồ sơ năng lực",
-    desc: "Cung cấp tài liệu giới thiệu, nhận diện thương hiệu và công cụ làm việc.",
+    title: "Hồ sơ bán hàng",
+    desc: "Tài liệu giới thiệu, demo và kịch bản làm việc với trường.",
   },
   {
     icon: "training",
-    title: "Đào tạo quy trình",
-    desc: "Chuyển giao quy trình khảo sát, thiết kế, lắp đặt và vận hành.",
+    title: "Đào tạo triển khai",
+    desc: "Quy trình khảo sát, lắp đặt, bàn giao và tập huấn.",
   },
   {
     icon: "support",
     title: "Hỗ trợ kỹ thuật",
-    desc: "Hỗ trợ phần mềm, cấu hình thiết bị và quản trị dữ liệu.",
+    desc: "Đồng hành cấu hình thiết bị, phần mềm và dữ liệu.",
   },
   {
     icon: "server",
-    title: "Hạ tầng Cloud & Nền tảng",
-    desc: "Duy trì, tối ưu và nâng cấp hệ thống phần mềm liên tục.",
-  },
-  {
-    icon: "shield",
-    title: "Bảo hành thiết bị 5 năm",
-    desc: "Chính sách bảo hành phần cứng lâu dài tạo sự an tâm tuyệt đối.",
-  },
-  {
-    icon: "report",
-    title: "Đối soát doanh thu",
-    desc: "Hệ thống báo cáo và đối soát doanh thu tự động, minh bạch.",
+    title: "Hạ tầng Cloud",
+    desc: "Duy trì nền tảng, tối ưu vận hành và cập nhật hệ thống.",
   },
 ];
 
@@ -229,10 +219,11 @@ export const detailedSecurityItems = [
 ];
 
 export const navLinks = [
+  { label: "Thị trường", href: "#thi-truong" },
   { label: "Công nghệ", href: "#cong-nghe" },
-  { label: "Trường đã triển khai", href: "#truong-da-trien-khai" },
+  { label: "Triển khai", href: "#truong-da-trien-khai" },
+  { label: "Hợp tác", href: "#kiem-chung" },
   { label: "Doanh thu", href: "#doanh-thu" },
   { label: "Quy mô", href: "#dau-tu" },
-  { label: "Hỗ trợ", href: "#ho-tro" },
   { label: "Liên hệ", href: "#lien-he" },
 ];

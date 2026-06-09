@@ -1,92 +1,201 @@
 import { useFadeUp, useFadeUpChildren } from '../../hooks/useFadeUp';
-import { supportItems } from '../../data/franchiseLandingData';
 import ScrollNext from './ScrollNext';
 
-const iconMap = {
-  badge: (
-    <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
-      <path d="M11 2l2 4 4.5.7-3.25 3.15.77 4.5L11 12.2l-4.02 2.15.77-4.5L4.5 6.7 9 6 11 2z" stroke="#FFFFFF" strokeWidth="1.4" strokeLinejoin="round" />
-    </svg>
-  ),
-  training: (
-    <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
-      <rect x="2" y="4" width="18" height="12" rx="2" stroke="#FFFFFF" strokeWidth="1.4" />
-      <path d="M8 19h6M11 16v3" stroke="#FFFFFF" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M7 9l3 3 5-5" stroke="#FFFFFF" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  ),
-  support: (
-    <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
-      <circle cx="11" cy="11" r="9" stroke="#FFFFFF" strokeWidth="1.4" />
-      <path d="M8 9a3 3 0 016 0c0 2.5-3 3-3 3" stroke="#FFFFFF" strokeWidth="1.4" strokeLinecap="round" />
-      <circle cx="11" cy="16" r="0.8" fill="#FFFFFF" />
-    </svg>
-  ),
-  server: (
-    <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
-      <rect x="2" y="3" width="18" height="6" rx="1.5" stroke="#FFFFFF" strokeWidth="1.4" />
-      <rect x="2" y="13" width="18" height="6" rx="1.5" stroke="#FFFFFF" strokeWidth="1.4" />
-      <circle cx="17" cy="6" r="1.2" fill="#FFFFFF" opacity="0.5" />
-      <circle cx="17" cy="16" r="1.2" fill="#FFFFFF" opacity="0.5" />
-    </svg>
-  ),
-  shield: (
-    <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
-      <path d="M11 2l8 3.5v5.5c0 4.5-3.5 7.5-8 9-4.5-1.5-8-4.5-8-9V5.5L11 2z" stroke="#FFFFFF" strokeWidth="1.4" strokeLinejoin="round" />
-      <path d="M8 11l2 2 4-4" stroke="#FFFFFF" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  ),
-  report: (
-    <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
-      <rect x="3" y="2" width="16" height="18" rx="2" stroke="#FFFFFF" strokeWidth="1.4" />
-      <path d="M7 7h8M7 11h8M7 15h5" stroke="#FFFFFF" strokeWidth="1.4" strokeLinecap="round" />
-    </svg>
-  ),
-};
+const JOURNEY_STEPS = [
+  {
+    title: 'Khảo sát',
+    desc: 'Đánh giá nhu cầu và lập phương án triển khai.',
+    color: '#3B82F6',
+    bg: '#EFF6FF',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="11" cy="11" r="8" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Triển khai',
+    desc: 'Lắp đặt và cấu hình hệ thống tại điểm trường.',
+    color: '#8B5CF6',
+    bg: '#F5F3FF',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+        <line x1="8" y1="21" x2="16" y2="21" />
+        <line x1="12" y1="17" x2="12" y2="21" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Đào tạo',
+    desc: 'Hướng dẫn vận hành cho nhà trường và đội ngũ.',
+    color: '#EC4899',
+    bg: '#FDF4FF',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 10 12 5 2 10l10 5 10-5Z" />
+        <path d="M6 12.5V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Vận hành',
+    desc: 'Hỗ trợ kỹ thuật và bảo trì liên tục.',
+    color: '#06B6D4',
+    bg: '#ECFEFF',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="3" />
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Mở rộng',
+    desc: 'Nhân rộng mô hình sang các trường mới.',
+    color: '#10B981',
+    bg: '#ECFDF5',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 3H21V6" />
+        <path d="M3 21L10 14L14 18L21 10" />
+      </svg>
+    ),
+  },
+];
 
 export default function SupportSection({ id }) {
   const titleRef = useFadeUp();
-  const cardsRef = useFadeUpChildren();
+  const journeyRef = useFadeUpChildren();
+  const statsRef = useFadeUpChildren();
 
   return (
     <section
       id={id}
-      className="landing-section snap-section page-news border-t border-[#DBEAFE] flex flex-col justify-center"
+      className="landing-section snap-section page-news border-t border-[#DBEAFE] flex flex-col justify-center animate-fade-in"
       style={{ scrollMarginTop: 0 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col">
+        
+        <div ref={titleRef} className="fade-up section-header">
+          <span className="section-eyebrow" style={{ color: '#2563EB' }}>MÔ HÌNH ĐỒNG HÀNH</span>
+          <h2 className="section-title">Keytech hỗ trợ trọn gói từ Khảo sát đến Mở rộng</h2>
+          <p className="section-desc">
+            Hợp tác tin cậy, quy trình 5 bước đã được chuẩn hóa giúp đối tác làm chủ thị trường địa phương một cách hiệu quả và an toàn nhất.
+          </p>
+        </div>
 
-        <div ref={titleRef} className="section-header--row fade-up">
-          <div className="section-left">
-            <span className="section-eyebrow" style={{ color: '#60A5FA' }}>Hỗ trợ đại lý</span>
-            <h2 className="section-title">Đồng hành giúp đại lý phát triển bền vững</h2>
-          </div>
-          <div className="section-right">
-            <p className="section-desc">
-              Toàn bộ hạ tầng Cloud, phần mềm quản trị và quy trình kỹ thuật được hỗ trợ trọn gói.
-            </p>
+        {/* Horizontal Timeline Flow (Desktop) */}
+        <div ref={journeyRef} className="w-full relative z-10 py-4 hidden lg:block">
+          {/* Background Line Connector */}
+          <div className="absolute left-[10%] right-[10%] top-[24px] h-[2px] -translate-y-[1px] bg-gradient-to-r from-blue-300 via-purple-300 to-emerald-300 opacity-60" />
+
+          <div className="grid grid-cols-5 gap-6">
+            {JOURNEY_STEPS.map((step, i) => (
+              <div key={i} className="flex flex-col items-center text-center group relative">
+                {/* Node circle */}
+                <div
+                  className="w-12 h-12 rounded-2xl bg-white border-2 flex items-center justify-center relative z-10 transition-all duration-300 group-hover:scale-105 shadow-xs"
+                  style={{
+                    borderColor: step.color,
+                    boxShadow: `0 6px 16px -4px ${step.color}12`
+                  }}
+                >
+                  <div
+                    className="w-8 h-8 rounded-xl flex items-center justify-center"
+                    style={{ backgroundColor: step.bg, color: step.color }}
+                  >
+                    {step.icon}
+                  </div>
+                </div>
+
+                {/* Step label */}
+                <span 
+                  className="text-[10px] font-extrabold uppercase tracking-widest mt-2.5 mb-0.5"
+                  style={{ color: step.color }}
+                >
+                  Bước 0{i + 1}
+                </span>
+
+                {/* Title */}
+                <h3 className="text-[16.5px] font-extrabold text-[#0F172A] mb-1 transition-colors group-hover:text-[#2563EB]">
+                  {step.title}
+                </h3>
+
+                {/* Desc */}
+                <p className="text-[12.5px] text-[#4B5563] leading-relaxed max-w-[185px]">
+                  {step.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* 6-card grid: 3 columns on lg */}
-        <div ref={cardsRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {supportItems.map((item, i) => (
-            <div
-              key={i}
-              className={`fade-up fade-up-delay-${(i % 3) + 1} group bg-white border border-[#DBEAFE] rounded-2xl p-5
-                hover:border-[#60A5FA] hover:shadow-[0_6px_20px_rgba(96,165,250,0.08)] transition-all duration-300`}
-            >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#D946EF] to-[#60A5FA] flex items-center justify-center mb-3.5
-                group-hover:scale-105 transition-transform duration-300 shadow-[0_2px_8px_rgba(217,70,239,0.15)]">
-                {iconMap[item.icon]}
+        {/* Vertical Timeline Flow (Mobile/Tablet) */}
+        <div className="w-full max-w-md relative z-10 space-y-6 py-4 lg:hidden">
+          {/* Vertical line connector */}
+          <div className="absolute left-[24px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-blue-500 via-[#A855F7] to-emerald-500 opacity-55" />
+
+          {JOURNEY_STEPS.map((step, i) => (
+            <div key={i} className="flex gap-4 relative items-start group">
+              {/* Node */}
+              <div
+                className="w-12 h-12 rounded-xl bg-white border flex items-center justify-center shrink-0 relative z-10 shadow-xs"
+                style={{ borderColor: step.color }}
+              >
+                <div
+                  className="w-9 h-9 rounded-lg flex items-center justify-center"
+                  style={{ backgroundColor: step.bg, color: step.color }}
+                >
+                  {step.icon}
+                </div>
               </div>
-              <h3 className="text-[14px] font-bold text-[#0F172A] mb-1.5">{item.title}</h3>
-              <p className="text-[12.5px] text-[#6B7280] leading-snug">{item.desc}</p>
+
+              {/* Text */}
+              <div className="pt-1">
+                <span 
+                  className="text-[10px] font-extrabold uppercase tracking-wider"
+                  style={{ color: step.color }}
+                >
+                  Bước 0{i + 1}
+                </span>
+                <h3 className="text-[15.5px] font-bold text-[#0F172A] mt-0.5 mb-1">
+                  {step.title}
+                </h3>
+                <p className="text-[12.5px] text-[#4B5563] leading-relaxed">
+                  {step.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>
 
-        <ScrollNext href="#lo-trinh" />
+        {/* Supplementary Statistics Footer */}
+        <div ref={statsRef} className="w-full max-w-4xl mt-4 lg:mt-5 pt-3 border-t border-slate-200/80 flex flex-col sm:flex-row justify-between items-center gap-4 text-center z-10">
+          
+          <div className="flex flex-col items-center w-full sm:w-auto">
+            <span className="text-[26px] lg:text-[30px] font-black text-blue-600 leading-none">24/7</span>
+            <span className="text-[10.5px] lg:text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mt-1.5">Hỗ trợ kỹ thuật</span>
+          </div>
+
+          <div className="hidden sm:block w-[1px] h-6 bg-slate-200" />
+
+          <div className="flex flex-col items-center w-full sm:w-auto">
+            <span className="text-[26px] lg:text-[30px] font-black text-[#A855F7] leading-none">100%</span>
+            <span className="text-[10.5px] lg:text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mt-1.5">Quy trình chuẩn hóa</span>
+          </div>
+
+          <div className="hidden sm:block w-[1px] h-6 bg-slate-200" />
+
+          <div className="flex flex-col items-center w-full sm:w-auto">
+            <span className="text-[26px] lg:text-[30px] font-black text-emerald-600 leading-none">250+</span>
+            <span className="text-[10.5px] lg:text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mt-1.5">Trường đã triển khai</span>
+          </div>
+
+        </div>
+
+        <ScrollNext href="#lien-he" />
       </div>
     </section>
   );

@@ -26,10 +26,14 @@ export function useSmoothScroll() {
 
     // Lắng nghe tín hiệu scroll-to từ Header, ScrollNext hoặc Footer
     const handleScrollTo = (e) => {
-      const { target } = e.detail;
+      const { target, immediate = false } = e.detail;
       if (target) {
         // Offset để chừa khoảng cách 76px cho header sticky
-        lenis.scrollTo(target, { offset: -76, duration: 1.0 });
+        lenis.scrollTo(target, {
+          offset: -76,
+          duration: immediate ? 0 : 1.0,
+          immediate,
+        });
       }
     };
 

@@ -1,11 +1,11 @@
 import { scrollToLandingTarget } from '../../utils/scrollToLandingTarget';
 
 const footerLinks = [
-  { label: "Công nghệ Camera AI",       href: "#cong-nghe" },
+  { label: "Công nghệ Camera AI", href: "#cong-nghe" },
   { label: "Trường đã triển khai", href: "#truong-da-trien-khai" },
-  { label: "Mô hình doanh thu",   href: "#doanh-thu" },
-  { label: "Tiêu chuẩn dữ liệu", href: "#du-lieu" },
-  { label: "Liên hệ",            href: "#lien-he" },
+  { label: "Mô hình hợp tác", href: "#kiem-chung" },
+  { label: "Mô hình doanh thu", href: "#doanh-thu" },
+  { label: "Liên hệ", href: "#lien-he" },
 ];
 
 export default function Footer() {
@@ -68,7 +68,7 @@ export default function Footer() {
             © {year} Keytech AI / VNS. Toàn bộ nội dung mang tính tham chiếu.
           </p>
           <p className="text-[12px] text-[#64748B]">
-            Số liệu tài chính dùng để tham khảo khi xây dựng phương án hợp tác.
+            Số liệu tài chính trên website là phương án tham khảo phục vụ đánh giá cơ hội hợp tác, không phải cam kết lợi nhuận.
           </p>
         </div>
 

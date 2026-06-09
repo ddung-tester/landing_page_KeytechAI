@@ -67,7 +67,7 @@ export default function PartnerRoadmap({ id }) {
           {/* Connector line — desktop only */}
           <div className="hidden lg:block absolute top-[52px] left-0 right-0 h-0.5 bg-gradient-to-r from-[#D946EF]/20 via-[#A855F7]/40 to-[#60A5FA]/20 z-0" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 relative z-10">
             {roadmapSteps.map((step, i) => {
               const color = STEP_COLORS[i] || STEP_COLORS[0];
               return (

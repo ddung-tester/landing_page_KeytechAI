@@ -14,8 +14,8 @@ const TECH_FEATURES = [
         <path d="M14.5 3.5l1 1 1.5-1.5" stroke="#FFFFFF" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    title: 'Nhận diện tự động',
-    desc: 'Tự động nhận diện khuôn mặt học sinh để ghi nhận điểm danh.',
+    title: 'An toàn học sinh',
+    desc: 'Nhận diện học sinh ra/vào trường qua camera AI.',
   },
   {
     icon: (
@@ -26,8 +26,8 @@ const TECH_FEATURES = [
         <path d="M14.5 5.5l.7.7 1.3-1.3" stroke="#D946EF" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    title: 'Thông báo tức thời',
-    desc: 'Gửi kết quả điểm danh, đi học hoặc tan học tức thì cho phụ huynh.',
+    title: 'Kết nối phụ huynh thời gian thực',
+    desc: 'Thông báo đi học, tan học và qua cổng tức thì.',
   },
   {
     icon: (
@@ -38,8 +38,8 @@ const TECH_FEATURES = [
         <rect x="12.5" y="5" width="2.5" height="10" rx="0.4" fill="#FFFFFF" />
       </svg>
     ),
-    title: 'Quản trị tập trung',
-    desc: 'Nhà trường quản lý dữ liệu, xem lịch sử ra/vào và báo cáo tập trung.',
+    title: 'Quản trị tập trung bằng AI',
+    desc: 'Dữ liệu điểm danh và báo cáo nằm trên một nền tảng.',
   },
 ];
 
@@ -86,35 +86,33 @@ export default function TechnologySection({ id }) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
-        <div ref={titleRef} className="fade-up grid lg:grid-cols-[2fr_3fr] gap-8 lg:gap-12 items-end mb-8">
-          <div>
-            <span className="section-eyebrow" style={{ color: '#D946EF' }}>Công nghệ Camera AI</span>
-            <h2 className="section-title">Camera AI điểm danh cho trường học</h2>
-          </div>
-          <div>
-            <p className="section-desc section-desc--wide">
-              Camera AI tự động ghi nhận học sinh ra/vào, đồng bộ dữ liệu điểm danh và gửi thông báo tức thời cho phụ huynh.
-            </p>
-          </div>
+        <div ref={titleRef} className="fade-up section-header">
+          <span className="section-eyebrow" style={{ color: '#D946EF' }}>Thị trường & Giải pháp</span>
+          <h2 className="section-title">Nền tảng công nghệ vận hành dịch vụ an ninh trường học</h2>
+          <p className="section-desc">
+            Camera AI, Cloud và ứng dụng phụ huynh được đóng gói thành một nền tảng dịch vụ sẵn sàng chuyển giao.
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-[2fr_3fr] gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-10 items-center">
 
           {/* LEFT: Feature cards */}
-          <div ref={cardsRef} className="grid sm:grid-cols-3 lg:grid-cols-1 gap-3">
+          <div ref={cardsRef} className="grid sm:grid-cols-3 lg:grid-cols-1 gap-4.5">
             {TECH_FEATURES.map((feat, i) => (
               <div
                 key={i}
-                className={`fade-up fade-up-delay-${i + 1} group bg-white border border-[#FBE7F7]
-                  rounded-2xl p-4 hover:border-[#D946EF] hover:shadow-[0_4px_16px_rgba(217,70,239,0.06)]
-                  transition-all duration-300`}
+                className={`fade-up fade-up-delay-${i + 1} group card-standard flex flex-col`}
+                style={{
+                  '--card-border': '#FBE7F7',
+                  '--card-hover-border': '#D946EF'
+                }}
               >
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#D946EF] to-[#60A5FA] flex items-center justify-center
-                  mb-3 group-hover:scale-105 transition-transform duration-300 shadow-[0_2px_8px_rgba(217,70,239,0.2)]">
+                <div className="w-11 h-11 rounded-full bg-gradient-to-r from-[#D946EF] to-[#60A5FA] flex items-center justify-center
+                  mb-3.5 group-hover:scale-105 transition-transform duration-300 shadow-[0_3px_10px_rgba(217,70,239,0.2)]">
                   {feat.icon}
                 </div>
-                <h3 className="text-[13px] font-bold text-[#0F172A] mb-1 leading-snug">{feat.title}</h3>
-                <p className="text-[12px] text-[#6B7280] leading-relaxed">{feat.desc}</p>
+                <h3 className="text-[15px] sm:text-[16px] font-bold text-[#0F172A] mb-1.5 leading-snug">{feat.title}</h3>
+                <p className="text-[13px] sm:text-[13.5px] text-[#4B5563] leading-relaxed">{feat.desc}</p>
               </div>
             ))}
           </div>
@@ -134,7 +132,7 @@ export default function TechnologySection({ id }) {
                 preload="auto"
                 className="w-full block"
                 style={{
-                  minHeight: 'clamp(300px, 50vh, 520px)',
+                  minHeight: 'clamp(280px, 42vh, 480px)',
                   objectFit: 'cover',
                   transform: 'translate3d(0,0,0)',
                   willChange: 'transform'

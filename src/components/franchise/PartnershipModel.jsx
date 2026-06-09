@@ -1,97 +1,156 @@
-import { useFadeUp } from '../../hooks/useFadeUp';
+import { useFadeUp, useFadeUpChildren } from '../../hooks/useFadeUp';
+import ScrollNext from './ScrollNext';
 
-const roles = [
+const ROLE_CARDS = [
   {
-    tag: "Công nghệ & Vận hành",
-    title: "VNS / Keytech AI",
-    color: "border-[#1E3A8A]",
-    tagColor: "bg-[#F0F4FF] text-[#1E3A8A]",
-    revenue: "30%",
-    revenueLabel: "doanh thu thực thu",
-    items: [
-      "Sở hữu công nghệ, thương hiệu, phần mềm, quy trình.",
-      "Vận hành nền tảng, đào tạo, bảo hành, hỗ trợ kỹ thuật.",
-      "Hưởng 30% doanh thu thực thu, chưa VAT.",
-    ],
+    label: 'Đối tác',
+    title: 'Mở thị trường địa phương',
+    desc: 'Tiếp cận trường học, khảo sát nhu cầu, phối hợp triển khai và chăm sóc quan hệ tại khu vực.',
+    tone: 'blue',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+        <circle cx="9.5" cy="7" r="4" />
+        <path d="M22 21v-2a4 4 0 0 0-3-3.7" />
+        <path d="M16 3.3a4 4 0 0 1 0 7.4" />
+      </svg>
+    ),
   },
   {
-    tag: "Đầu tư & Triển khai",
-    title: "Đại lý nhận quyền",
-    color: "border-[#166534]",
-    tagColor: "bg-[#F0FDF4] text-[#166534]",
-    revenue: "70%",
-    revenueLabel: "doanh thu thực thu",
-    highlight: true,
-    items: [
-      "Đầu tư thiết bị, phát triển trường học, triển khai tại địa phương.",
-      "Thu phí, chăm sóc nhà trường/phụ huynh, báo cáo doanh thu.",
-      "Hưởng 70% doanh thu thực thu, chưa VAT.",
-    ],
+    label: 'Keytech',
+    title: 'Cung cấp nền tảng vận hành',
+    desc: 'Chuyển giao Camera AI, Cloud, phần mềm, đào tạo quy trình và hỗ trợ kỹ thuật.',
+    tone: 'purple',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="4" width="18" height="14" rx="3" />
+        <path d="M8 20h8" />
+        <path d="M12 18v2" />
+        <path d="M8 10h.01M12 10h.01M16 10h.01" />
+      </svg>
+    ),
   },
   {
-    tag: "Người dùng cuối",
-    title: "Nhà trường & Phụ huynh",
-    color: "border-[#64748B]",
-    tagColor: "bg-[#F8FAFC] text-[#64748B]",
-    items: [
-      "Sử dụng dịch vụ điểm danh/an ninh trường học.",
-      "Phối hợp cung cấp dữ liệu cần thiết.",
-      "Nhận lợi ích quản lý an toàn, thông tin kịp thời.",
-    ],
+    label: 'Nhà trường',
+    title: 'Nhận hệ thống sẵn dùng',
+    desc: 'Có công cụ điểm danh, thông báo phụ huynh và dữ liệu quản trị rõ ràng trong vận hành hằng ngày.',
+    tone: 'green',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 10 12 5 2 10l10 5 10-5Z" />
+        <path d="M6 12.5V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5" />
+      </svg>
+    ),
   },
 ];
 
-export default function PartnershipModel() {
+const FLOW_STEPS = ['Khảo sát', 'Thiết kế điểm lắp', 'Bàn giao hệ thống', 'Vận hành cùng trường'];
+
+const toneClass = {
+  blue: {
+    icon: 'bg-[#EFF6FF] text-[#2563EB]',
+    border: 'border-[#DBEAFE]',
+    text: 'text-[#2563EB]',
+  },
+  purple: {
+    icon: 'bg-[#F5F3FF] text-[#7C3AED]',
+    border: 'border-[#DDD6FE]',
+    text: 'text-[#7C3AED]',
+  },
+  green: {
+    icon: 'bg-[#ECFDF5] text-[#059669]',
+    border: 'border-[#A7F3D0]',
+    text: 'text-[#059669]',
+  },
+};
+
+export default function PartnershipModel({ id = 'kiem-chung' }) {
   const titleRef = useFadeUp();
+  const cardsRef = useFadeUpChildren();
+  const flowRef = useFadeUp();
 
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div ref={titleRef} className="fade-up max-w-xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F7F8FA] border border-[#E5E7EB]
-            rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
-            Mô hình hợp tác
-          </div>
-          <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight">
-            Rõ vai trò, rõ quyền lợi
-          </h2>
+    <section
+      id={id}
+      className="landing-section snap-section bg-gradient-to-br from-[#F8FAFC] via-white to-[#EFF6FF] border-t border-[#DBEAFE] flex flex-col justify-center"
+      style={{ scrollMarginTop: 0 }}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div ref={titleRef} className="fade-up section-header">
+          <span className="section-eyebrow" style={{ color: '#2563EB' }}>Mô hình hợp tác</span>
+          <h2 className="section-title">Cách hai bên phối hợp triển khai</h2>
+          <p className="section-desc">
+            Một mô hình rõ trách nhiệm: đối tác mở thị trường, Keytech vận hành nền tảng, nhà trường nhận giải pháp sẵn dùng.
+          </p>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-5">
-          {roles.map((role, i) => (
-            <div
-              key={i}
-              className={`relative bg-white border-t-4 ${role.color} border border-[#E5E7EB] rounded-xl p-6
-                hover:shadow-[0_6px_24px_rgba(0,0,0,0.08)] transition-shadow duration-300`}
-            >
-              <span className={`inline-block px-2.5 py-1 rounded-full text-[10.5px] font-semibold mb-4 ${role.tagColor}`}>
-                {role.tag}
-              </span>
-              <h3 className="text-[17px] font-extrabold text-[#0F172A] mb-1">{role.title}</h3>
+        <div ref={cardsRef} className="grid lg:grid-cols-3 gap-4 lg:gap-5">
+          {ROLE_CARDS.map((role, i) => {
+            const tone = toneClass[role.tone];
 
-              {role.revenue && (
-                <div className="flex items-baseline gap-1 mb-5">
-                  <span className="text-[28px] font-extrabold text-[#0F172A]">{role.revenue}</span>
-                  <span className="text-[12px] text-[#6B7280]">{role.revenueLabel}</span>
+            return (
+              <article
+                key={role.label}
+                className={`fade-up fade-up-delay-${i + 1} group card-standard flex flex-col`}
+                style={{
+                  '--card-border': role.tone === 'blue' ? '#DBEAFE' : role.tone === 'purple' ? '#DDD6FE' : '#A7F3D0',
+                  '--card-hover-border': role.tone === 'blue' ? '#2563EB' : role.tone === 'purple' ? '#7C3AED' : '#059669'
+                }}
+              >
+                <div className={`w-12 h-12 rounded-xl ${tone.icon} flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300`}>
+                  {role.icon}
                 </div>
-              )}
-
-              <ul className="space-y-2.5">
-                {role.items.map((item, j) => (
-                  <li key={j} className="flex items-start gap-2.5">
-                    <svg className="flex-shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                      <circle cx="7" cy="7" r="6" stroke="#CBD5E1" strokeWidth="1.2"/>
-                      <path d="M4.5 7l2 2 3-3" stroke="#1E3A8A" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    <span className="text-[13px] text-[#374151] leading-snug">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                <div className={`text-[11px] font-black uppercase tracking-[0.16em] mb-2 ${tone.text}`}>
+                  {role.label}
+                </div>
+                <h3 className="text-[20px] font-extrabold text-[#0F172A] leading-tight mb-3">
+                  {role.title}
+                </h3>
+                <p className="text-[13.5px] text-[#4B5563] leading-relaxed">
+                  {role.desc}
+                </p>
+              </article>
+            );
+          })}
         </div>
 
+        <div
+          ref={flowRef}
+          className="fade-up mt-5 bg-white border border-[#E5E7EB] rounded-2xl px-5 py-5 lg:px-6 shadow-[0_4px_18px_rgba(15,23,42,0.02)] relative overflow-hidden"
+        >
+          {/* Subtle brand top border line */}
+          <div className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[#2563EB] via-[#60A5FA] to-[#A855F7] opacity-70" />
+
+          <div className="flex flex-col lg:flex-row lg:items-center gap-4 relative z-10">
+            <div className="lg:w-[190px] shrink-0">
+              <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#2563EB]">Luồng phối hợp</div>
+              <div className="text-[14px] font-extrabold text-[#0F172A] mt-1">Từ khảo sát đến vận hành</div>
+            </div>
+
+            <div className="flex-1 grid sm:grid-cols-4 gap-3">
+              {FLOW_STEPS.map((step, i) => (
+                <div
+                  key={step}
+                  className="relative flex items-center gap-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl px-3.5 py-2.5
+                    hover:border-[#2563EB]/50 hover:bg-[#EFF6FF] hover:shadow-[0_2px_8px_rgba(37,99,235,0.04)]
+                    transition-all duration-300 group cursor-default"
+                >
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full 
+                    bg-[#2563EB]/10 text-[#2563EB] text-[11px] font-extrabold
+                    group-hover:bg-[#2563EB] group-hover:text-white transition-colors duration-300"
+                  >
+                    0{i + 1}
+                  </span>
+                  <span className="text-[12.5px] font-bold text-[#4B5563] group-hover:text-[#0F172A] transition-colors leading-snug">
+                    {step}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <ScrollNext href="#doanh-thu" />
       </div>
     </section>
   );

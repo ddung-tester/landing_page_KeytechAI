@@ -17,11 +17,11 @@ function ImageCard({ img, onClick }) {
   return (
     <div
       onClick={onClick}
-      className="flex-shrink-0 w-[280px] sm:w-[320px] mx-2 bg-white border border-[#E5E7EB] rounded-2xl overflow-hidden
+      className="flex-shrink-0 w-[240px] sm:w-[280px] xl:w-[300px] mx-2 bg-white border border-[#E5E7EB] rounded-2xl overflow-hidden
         shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_22px_rgba(0,0,0,0.08)]
         transition-all duration-300 cursor-pointer hover:border-[#60A5FA]/60 group"
     >
-      <div className="w-full h-[200px] bg-[#F1F5F9] overflow-hidden">
+      <div className="w-full h-[140px] sm:h-[150px] xl:h-[160px] bg-[#F1F5F9] overflow-hidden">
         <img
           src={img.src}
           alt={img.title}
@@ -75,23 +75,19 @@ export default function DeploymentTimeline({ id }) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div ref={titleRef} className="fade-up">
-          {/* Title row + stats */}
-          <div className="section-header--row">
-            <div className="section-left">
-              <span className="section-eyebrow" style={{ color: '#60A5FA' }}>Thực tế triển khai</span>
-              <h2 className="section-title">Những trường đã triển khai thực tế</h2>
-            </div>
-            {/* Stat pills — right column */}
-            <div className="section-right">
-              <div className="flex gap-3 flex-wrap">
-                {DEPLOY_STATS.map((s, i) => (
-                  <div key={i} className="bg-white border border-[#DBEAFE] rounded-2xl px-4 py-3 text-center shadow-[0_1px_4px_rgba(0,0,0,0.04)] hover:border-[#60A5FA] transition-colors">
-                    <div className="text-[20px] font-extrabold text-[#1E3A8A] leading-none">{s.value}</div>
-                    <div className="text-[11px] text-[#6B7280] mt-1 font-medium whitespace-nowrap">{s.label}</div>
-                  </div>
-                ))}
+          <div className="section-header">
+            <span className="section-eyebrow" style={{ color: '#60A5FA' }}>Thực tế triển khai</span>
+            <h2 className="section-title">Những trường đã triển khai thực tế</h2>
+            <p className="section-desc">Đã triển khai thực tế tại nhiều địa phương và đang vận hành mỗi ngày.</p>
+          </div>
+          {/* Stat pills — horizontal row below the header */}
+          <div className="flex gap-3 flex-wrap mb-4">
+            {DEPLOY_STATS.map((s, i) => (
+              <div key={i} className="bg-white border border-[#DBEAFE] rounded-2xl px-5 py-3 text-center shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-[#60A5FA] hover:shadow-md transition-all duration-300">
+                <div className="text-[20px] sm:text-[22px] font-extrabold text-[#1E3A8A] leading-none">{s.value}</div>
+                <div className="text-[11px] sm:text-[11.5px] text-[#6B7280] mt-1.5 font-medium whitespace-nowrap">{s.label}</div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
