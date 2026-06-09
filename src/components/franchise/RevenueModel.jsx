@@ -111,7 +111,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
                 Tỷ lệ chia sẻ doanh thu
               </div>
               <h3 className="text-[28px] lg:text-[32px] font-black leading-tight tracking-tight text-[#0F172A]">
-                70% cho đối tác triển khai
+                Phần lớn doanh thu thuộc về đối tác
               </h3>
             </div>
 
