@@ -94,7 +94,7 @@ export default function HeroSection({ id = 'hero' }) {
             </h1>
 
             <p className="text-[15px] sm:text-[16px] text-[#4B5563] leading-relaxed mb-6 max-w-[540px]">
-              Giải pháp điểm danh &amp; an ninh thông minh ứng dụng công nghệ nhận diện khuôn mặt. 
+              Giải pháp điểm danh &amp; an ninh thông minh ứng dụng công nghệ nhận diện khuôn mặt.
               Hệ thống đã triển khai thực tế trên diện rộng, chuyển giao quy trình trọn gói cùng cơ chế chia sẻ doanh thu 70/30 tối ưu cho đối tác.
             </p>
 
@@ -106,7 +106,7 @@ export default function HeroSection({ id = 'hero' }) {
                   const target = document.querySelector('#lien-he');
                   scrollToLandingTarget(target);
                 }}
-                className="inline-flex items-center gap-2 px-7 py-3.5 btn-brand-primary text-white font-semibold text-[14.5px] rounded-full"
+                className="inline-flex items-center gap-2 px-5 sm:px-7 py-3 sm:py-3.5 btn-brand-primary text-white font-semibold text-[14.5px] rounded-full"
               >
                 Nhận hồ sơ hợp tác
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -121,7 +121,7 @@ export default function HeroSection({ id = 'hero' }) {
                   const target = document.querySelector('#doanh-thu');
                   scrollToLandingTarget(target);
                 }}
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-white
+                className="inline-flex items-center gap-2 px-5 sm:px-7 py-3 sm:py-3.5 bg-white
                   border border-[#E5E7EB] text-[#374151] font-semibold text-[14.5px] rounded-full
                   hover:border-[#A855F7] hover:text-[#A855F7] hover:-translate-y-px
                   transition-all duration-200"

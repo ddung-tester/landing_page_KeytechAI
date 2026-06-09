@@ -112,7 +112,8 @@ export default function FinalCTA({ id = 'lien-he' }) {
 
             <div className="grid sm:grid-cols-2 gap-3">
               <a
-                href="mailto:info@keytechai.com?subject=Keytech AI - Dang ky nhan ho so hop tac"
+                href="/CS%C4%90L%20NH%E1%BA%ACN%20QUY%E1%BB%80N%20VNS%20VNS_06_2026_CHINH_THUC.pdf"
+                download="CSĐL NHẬN QUYỀN VNS VNS_06_2026_CHINH_THUC.pdf"
                 className="inline-flex items-center justify-center gap-2 px-4 py-3 btn-brand-primary text-white text-[13.5px] font-bold text-center"
               >
                 Nhận hồ sơ
