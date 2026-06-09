@@ -102,39 +102,39 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
 
           <aside
             ref={splitRef}
-            className="fade-up bg-[#0F172A] text-white rounded-xl p-6 lg:p-7 flex flex-col justify-between overflow-hidden relative"
+            className="fade-up bg-white text-[#0F172A] border border-[#E5E7EB] rounded-2xl p-6 lg:p-7 flex flex-col justify-between overflow-hidden relative shadow-[0_4px_18px_rgba(15,23,42,0.02)]"
           >
             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#D946EF] via-[#A855F7] to-[#60A5FA]" />
 
             <div>
-              <div className="text-[11px] font-black uppercase tracking-[0.18em] text-[#CBD5E1] mb-3">
+              <div className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#8B5CF6] mb-3">
                 Tỷ lệ chia sẻ doanh thu
               </div>
-              <h3 className="text-[28px] lg:text-[32px] font-black leading-tight tracking-tight">
+              <h3 className="text-[28px] lg:text-[32px] font-black leading-tight tracking-tight text-[#0F172A]">
                 70% cho đối tác triển khai
               </h3>
             </div>
 
             <div className="my-4 lg:my-6 xl:my-7">
-              <div className="h-5 w-full rounded-full overflow-hidden bg-white/10 flex">
+              <div className="h-5 w-full rounded-full overflow-hidden bg-slate-100 flex">
                 <div className="h-full bg-gradient-to-r from-[#D946EF] to-[#A855F7]" style={{ width: '70%' }} />
                 <div className="h-full bg-[#60A5FA]" style={{ width: '30%' }} />
               </div>
               <div className="mt-4 grid grid-cols-[7fr_3fr] gap-3">
-                <div className="rounded-lg bg-white/10 border border-white/10 p-4">
-                  <div className="text-[42px] font-black leading-none">70%</div>
-                  <div className="text-[12px] font-bold text-white/70 uppercase tracking-wider mt-2">Đối tác</div>
+                <div className="rounded-xl bg-[#FAF9FF] border border-[#EAE6F8] p-4 hover:shadow-[0_2px_8px_rgba(139,92,246,0.03)] transition-all duration-300">
+                  <div className="text-[42px] font-black leading-none text-[#8B5CF6]">70%</div>
+                  <div className="text-[12px] font-bold text-[#64748B] uppercase tracking-wider mt-2">Đối tác</div>
                 </div>
-                <div className="rounded-lg bg-white/10 border border-white/10 p-4">
-                  <div className="text-[42px] font-black leading-none text-white/75">30%</div>
-                  <div className="text-[12px] font-bold text-white/55 uppercase tracking-wider mt-2">Keytech</div>
+                <div className="rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] p-4 hover:shadow-[0_2px_8px_rgba(59,130,246,0.03)] transition-all duration-300">
+                  <div className="text-[42px] font-black leading-none text-[#3B82F6]">30%</div>
+                  <div className="text-[12px] font-bold text-[#64748B] uppercase tracking-wider mt-2">Keytech</div>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-lg bg-white text-[#0F172A] p-4">
-              <div className="text-[11px] font-black uppercase tracking-[0.16em] text-[#7C3AED] mb-1">Khả năng mở rộng</div>
-              <div className="text-[15px] font-extrabold leading-snug">
+            <div className="rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] p-4 text-[#4B5563]">
+              <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#8B5CF6] mb-1">Khả năng mở rộng</div>
+              <div className="text-[14.5px] font-bold leading-snug text-[#374151]">
                 Một danh mục nhiều trường giúp dòng thu duy trì đều hơn qua từng năm học.
               </div>
             </div>
