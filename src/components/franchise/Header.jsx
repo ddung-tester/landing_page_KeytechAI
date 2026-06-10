@@ -65,7 +65,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 bg-[#F1F5F9]/95 backdrop-blur-md border-b border-[#CBD5E1]
-      transition-shadow duration-300 ${scrolled ? 'shadow-md' : 'shadow-none'}`}
+      transition-shadow duration-300 ${scrolled ? 'shadow-md' : 'shadow-none'} animate-premium-header-enter`}
       style={{ height: `${HEADER_H}px` }}
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
@@ -126,11 +126,11 @@ export default function Header() {
             >
               {menuOpen ? (
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M5 5L15 15M15 5L5 15" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+                  <path d="M5 5L15 15M15 5L5 15" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                 </svg>
               ) : (
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+                  <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                 </svg>
               )}
             </button>

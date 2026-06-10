@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import ScrollNext from './ScrollNext';
 import { scrollToLandingTarget } from '../../utils/scrollToLandingTarget';
 
@@ -8,6 +9,25 @@ function handleAnchorClick(event, selector) {
 }
 
 export default function HeroStory({ id = 'hero' }) {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    // Check if background image has loaded
+    const img = new Image();
+    img.src = '/assets/background-hero1.png';
+    
+    const handleLoad = () => {
+      // Small timeout to ensure the browser has painted and is ready
+      setTimeout(() => setLoaded(true), 50);
+    };
+
+    if (img.complete) {
+      handleLoad();
+    } else {
+      img.onload = handleLoad;
+      img.onerror = handleLoad; // fallback if image fails
+    }
+  }, []);
 
   return (
     <section
@@ -21,9 +41,12 @@ export default function HeroStory({ id = 'hero' }) {
       <img
         src="/assets/background-hero1.png"
         alt=""
-        className="absolute inset-y-0 left-0 lg:left-auto lg:right-0 -z-20 h-full w-full lg:w-[82%] object-cover"
+        className={`absolute inset-y-0 left-0 lg:left-auto lg:right-0 -z-20 h-full w-full lg:w-[82%] object-cover ${
+          loaded ? 'animate-premium-hero-bg' : 'opacity-0'
+        }`}
         style={{ objectPosition: '58% 22%' }}
         aria-hidden="true"
+        onLoad={() => setLoaded(true)}
       />
 
       {/* ── Overlay layers ─────────────────────────────────────────────
@@ -31,21 +54,29 @@ export default function HeroStory({ id = 'hero' }) {
           Desktop: horizontal gradient — 100% white left → transparent ~60%
                    Breakpoint is wider (60% vs old 44%) to give text more room
           Bottom:  soft vignette to anchor the section                    */}
-      <div className="absolute inset-0 -z-10
-        bg-[linear-gradient(180deg,rgba(247,242,255,0.95)_0%,rgba(247,242,255,0.85)_50%,rgba(239,247,255,0.60)_100%)]
-        lg:bg-[linear-gradient(90deg,rgba(247,242,255,1)_0%,rgba(247,242,255,0.96)_20%,rgba(247,242,255,0.85)_33%,rgba(239,247,255,0.45)_47%,rgba(239,247,255,0.10)_58%,rgba(239,247,255,0)_68%)]" />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-[28%]
-        bg-gradient-to-t from-[#EFF7FF]/60 via-[#EFF7FF]/15 to-transparent" />
+      <div 
+        className={`absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(247,242,255,0.95)_0%,rgba(247,242,255,0.85)_50%,rgba(239,247,255,0.60)_100%)] lg:bg-[linear-gradient(90deg,rgba(247,242,255,1)_0%,rgba(247,242,255,0.96)_20%,rgba(247,242,255,0.85)_33%,rgba(239,247,255,0.45)_47%,rgba(239,247,255,0.10)_58%,rgba(239,247,255,0)_68%)] ${
+          loaded ? 'animate-premium-hero-bg' : 'opacity-0'
+        }`} 
+      />
+      <div 
+        className={`absolute inset-x-0 bottom-0 -z-10 h-[28%] bg-gradient-to-t from-[#EFF7FF]/60 via-[#EFF7FF]/15 to-transparent ${
+          loaded ? 'animate-premium-hero-bg' : 'opacity-0'
+        }`} 
+      />
 
       {/* ── Content wrapper ────────────────────────────────────────── */}
-      <div className="flex-1 w-full max-w-[1440px] mx-auto
-        px-4 sm:px-6 lg:px-10 xl:px-14 flex items-center">
+      <div className="flex-1 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 flex items-center">
 
         {/* Grid: 44% text | 56% photo (desktop) */}
         <div className="w-full grid lg:grid-cols-[44%_56%] items-center gap-8 lg:gap-0">
 
           {/* ── LEFT: Text column ─────────────────────────────────── */}
-          <div className="relative z-10 min-w-0 lg:pt-3 lg:pb-9 lg:-mt-5">
+          <div 
+            className={`relative z-10 min-w-0 lg:pt-3 lg:pb-9 lg:-mt-5 ${
+              loaded ? 'animate-premium-hero-content' : 'opacity-0'
+            }`}
+          >
 
             {/* Eyebrow badge */}
             <div className="inline-flex items-center gap-2.5">
@@ -114,7 +145,6 @@ export default function HeroStory({ id = 'hero' }) {
               </a>
             </div>
 
-
           </div>
 
           {/* ── RIGHT: empty — background photo bleeds through ─────── */}
@@ -123,7 +153,11 @@ export default function HeroStory({ id = 'hero' }) {
       </div>
 
       {/* ── Scroll indicator ─────────────────────────────────────────── */}
-      <div className="pb-6 sm:pb-8 flex justify-center relative z-10">
+      <div 
+        className={`pb-6 sm:pb-8 flex justify-center relative z-10 ${
+          loaded ? 'animate-premium-hero-scroll' : 'opacity-0'
+        }`}
+      >
         <ScrollNext href="#kiem-chung" />
       </div>
     </section>

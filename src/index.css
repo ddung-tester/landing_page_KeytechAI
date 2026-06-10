@@ -592,3 +592,67 @@ video,
     display: none !important;
   }
 }
+
+/* ─── APP INITIAL LOAD PREMIUM ANIMATIONS ───────────────── */
+@keyframes premiumHeaderSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes premiumHeroContentSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes premiumHeroBackgroundFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-premium-header-enter {
+  opacity: 0;
+  animation: premiumHeaderSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-premium-hero-content {
+  opacity: 0;
+  animation: premiumHeroContentSlideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+
+.animate-premium-hero-bg {
+  opacity: 0;
+  animation: premiumHeroBackgroundFadeIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-premium-hero-scroll {
+  opacity: 0;
+  animation: premiumHeroBackgroundFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-premium-header-enter,
+  .animate-premium-hero-content,
+  .animate-premium-hero-bg,
+  .animate-premium-hero-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
