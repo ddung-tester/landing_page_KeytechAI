@@ -5,8 +5,8 @@ const JOURNEY_STEPS = [
   {
     title: 'Khảo sát',
     desc: 'Đánh giá nhu cầu và lập phương án triển khai.',
-    color: '#3B82F6',
-    bg: '#EFF6FF',
+    color: '#1D4ED8',
+    bg: '#EEF6FF',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="11" cy="11" r="8" />
@@ -17,8 +17,8 @@ const JOURNEY_STEPS = [
   {
     title: 'Triển khai',
     desc: 'Lắp đặt và cấu hình hệ thống tại điểm trường.',
-    color: '#8B5CF6',
-    bg: '#F5F3FF',
+    color: '#6D28D9',
+    bg: '#F3EEFF',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
@@ -30,8 +30,8 @@ const JOURNEY_STEPS = [
   {
     title: 'Đào tạo',
     desc: 'Hướng dẫn vận hành cho nhà trường và đội ngũ.',
-    color: '#EC4899',
-    bg: '#FDF4FF',
+    color: '#2563EB',
+    bg: '#EEF6FF',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 10 12 5 2 10l10 5 10-5Z" />
@@ -42,8 +42,8 @@ const JOURNEY_STEPS = [
   {
     title: 'Vận hành',
     desc: 'Hỗ trợ kỹ thuật và bảo trì liên tục.',
-    color: '#06B6D4',
-    bg: '#ECFEFF',
+    color: '#6D28D9',
+    bg: '#F3EEFF',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="3" />
@@ -54,8 +54,8 @@ const JOURNEY_STEPS = [
   {
     title: 'Mở rộng',
     desc: 'Nhân rộng mô hình sang các trường mới.',
-    color: '#10B981',
-    bg: '#ECFDF5',
+    color: '#1D4ED8',
+    bg: '#EEF6FF',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M18 3H21V6" />
@@ -73,23 +73,24 @@ export default function SupportSection({ id }) {
   return (
     <section
       id={id}
-      className="landing-section snap-section page-news border-t border-[#DBEAFE] flex flex-col justify-center animate-fade-in"
+      className="landing-section snap-section bg-white border-t border-[#EEF2F7] flex flex-col justify-center animate-fade-in"
       style={{ scrollMarginTop: 0 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col">
         
         <div ref={titleRef} className="fade-up section-header">
-          <span className="section-eyebrow" style={{ color: '#2563EB' }}>MÔ HÌNH ĐỒNG HÀNH</span>
-          <h2 className="section-title">Keytech hỗ trợ trọn gói từ Khảo sát đến Mở rộng</h2>
+          <span className="section-eyebrow" style={{ color: '#1D4ED8' }}>ĐỒNG HÀNH TRỌN GÓI</span>
+          <h2 className="section-title">Chúng tôi không để bạn một mình trên hành trình này</h2>
           <p className="section-desc">
-            Hợp tác tin cậy, quy trình 5 bước đã được chuẩn hóa giúp đối tác làm chủ thị trường địa phương một cách hiệu quả và an toàn nhất.
+            Từ ngày đầu khảo sát đến khi bạn vận hành điểm trường thứ 10,
+            Keytech đồng hành từng bước — quy trình, kỹ thuật, tài liệu và con người.
           </p>
         </div>
 
         {/* Horizontal Timeline Flow (Desktop) */}
         <div ref={journeyRef} className="w-full relative z-10 py-4 hidden lg:block">
           {/* Background Line Connector */}
-          <div className="absolute left-[10%] right-[10%] top-[24px] h-[2px] -translate-y-[1px] bg-gradient-to-r from-blue-300 via-purple-300 to-emerald-300 opacity-60" />
+          <div className="absolute left-[10%] right-[10%] top-[24px] h-[2px] -translate-y-[1px] bg-gradient-to-r from-[#1D4ED8]/30 via-[#2563EB]/30 to-[#6D28D9]/30 opacity-60" />
 
           <div className="grid grid-cols-5 gap-6">
             {JOURNEY_STEPS.map((step, i) => (
@@ -119,7 +120,7 @@ export default function SupportSection({ id }) {
                 </span>
 
                 {/* Title */}
-                <h3 className="text-[16.5px] font-extrabold text-[#0F172A] mb-1 transition-colors group-hover:text-[#2563EB]">
+                <h3 className="text-[16.5px] font-extrabold text-[#0F172A] mb-1 transition-colors group-hover:text-[#1D4ED8]">
                   {step.title}
                 </h3>
 
@@ -135,7 +136,7 @@ export default function SupportSection({ id }) {
         {/* Vertical Timeline Flow (Mobile/Tablet) */}
         <div className="w-full max-w-md relative z-10 space-y-6 py-4 lg:hidden">
           {/* Vertical line connector */}
-          <div className="absolute left-[24px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-blue-500 via-[#A855F7] to-emerald-500 opacity-55" />
+          <div className="absolute left-[24px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-[#1D4ED8]/60 via-[#2563EB]/60 to-[#6D28D9]/60 opacity-55" />
 
           {JOURNEY_STEPS.map((step, i) => (
             <div key={i} className="flex gap-4 relative items-start group">
@@ -172,24 +173,24 @@ export default function SupportSection({ id }) {
         </div>
 
         {/* Supplementary Statistics Footer */}
-        <div ref={statsRef} className="w-full max-w-4xl mt-4 lg:mt-5 pt-3 border-t border-slate-200/80 flex flex-col sm:flex-row justify-between items-center gap-4 text-center z-10">
+        <div ref={statsRef} className="w-full max-w-4xl mt-4 lg:mt-5 pt-3 border-t border-[#EEF2F7] flex flex-col sm:flex-row justify-between items-center gap-4 text-center z-10">
           
           <div className="flex flex-col items-center w-full sm:w-auto">
-            <span className="text-[26px] lg:text-[30px] font-black text-blue-600 leading-none">24/7</span>
+            <span className="text-[26px] lg:text-[30px] font-black text-[#1D4ED8] leading-none">24/7</span>
             <span className="text-[10.5px] lg:text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mt-1.5">Hỗ trợ kỹ thuật</span>
           </div>
 
-          <div className="hidden sm:block w-[1px] h-6 bg-slate-200" />
+          <div className="hidden sm:block w-[1px] h-6 bg-[#D8E2F0]" />
 
           <div className="flex flex-col items-center w-full sm:w-auto">
-            <span className="text-[26px] lg:text-[30px] font-black text-[#A855F7] leading-none">100%</span>
+            <span className="text-[26px] lg:text-[30px] font-black text-[#6D28D9] leading-none">100%</span>
             <span className="text-[10.5px] lg:text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mt-1.5">Quy trình chuẩn hóa</span>
           </div>
 
-          <div className="hidden sm:block w-[1px] h-6 bg-slate-200" />
+          <div className="hidden sm:block w-[1px] h-6 bg-[#D8E2F0]" />
 
           <div className="flex flex-col items-center w-full sm:w-auto">
-            <span className="text-[26px] lg:text-[30px] font-black text-emerald-600 leading-none">250+</span>
+            <span className="text-[26px] lg:text-[30px] font-black text-[#2563EB] leading-none">250+</span>
             <span className="text-[10.5px] lg:text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mt-1.5">Trường đã triển khai</span>
           </div>
 

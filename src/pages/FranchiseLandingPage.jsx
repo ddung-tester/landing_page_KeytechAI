@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Header from '../components/franchise/Header';
-import HeroSection from '../components/franchise/HeroSection';
-import MarketDemandSection from '../components/franchise/MarketDemandSection';
+import HeroStory from '../components/franchise/HeroStory';
+import ExistingModelSection from '../components/franchise/ExistingModelSection';
 import TechnologySection from '../components/franchise/TechnologySection';
 import DeploymentTimeline from '../components/franchise/DeploymentTimeline';
 import PartnershipModel from '../components/franchise/PartnershipModel';
@@ -36,11 +36,11 @@ export default function FranchiseLandingPage() {
       <Header />
 
       <main className="landing-main">
-        <HeroSection id="hero" />
-        <MarketDemandSection id="thi-truong" />
+        <HeroStory id="hero" />
+        <ExistingModelSection id="kiem-chung" />
         <TechnologySection id="cong-nghe" />
         <DeploymentTimeline id="truong-da-trien-khai" />
-        <PartnershipModel id="kiem-chung" />
+        <PartnershipModel id="hop-tac" />
         <RevenueModel id="doanh-thu" />
         <InvestmentOverview id="dau-tu" />
         <SupportSection id="ho-tro" />

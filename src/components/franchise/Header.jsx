@@ -64,7 +64,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#E5E7EB]
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#F1F5F9]/95 backdrop-blur-md border-b border-[#CBD5E1]
       transition-shadow duration-300 ${scrolled ? 'shadow-md' : 'shadow-none'}`}
       style={{ height: `${HEADER_H}px` }}
     >
@@ -79,8 +79,8 @@ export default function Header() {
             aria-label="Về trang chủ"
           >
             <img src="/keytech_logo.png" alt="Keytech Logo" className="h-14 w-auto object-contain" />
-            <div className="h-5 w-px bg-[#E5E7EB]" />
-            <span className="text-[10px] font-extrabold tracking-widest text-[#A855F7] uppercase bg-[#FCE1F5] px-2 py-0.5 rounded-md max-[360px]:hidden">
+            <div className="h-5 w-px bg-[#CBD5E1]" />
+            <span className="text-[10px] font-extrabold tracking-widest text-[#2563EB] uppercase bg-[#EFF6FF] border border-[#DBEAFE] px-2 py-0.5 rounded-md max-[360px]:hidden">
               Partnership
             </span>
           </a>
@@ -94,10 +94,10 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`px-3 py-1.5 rounded-md text-[13.5px] font-semibold transition-colors duration-200
+                  className={`px-3 py-1.5 rounded-md text-[13.5px] font-bold transition-all duration-200 border
                     ${isActive
-                      ? 'text-[#A855F7] bg-[#FBE7F7]'
-                      : 'text-[#4B5563] hover:text-[#A855F7] hover:bg-[#FBE7F7]/50'
+                      ? 'text-[#1D4ED8] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.05)] border-[#E2E8F0]'
+                      : 'text-[#1E293B] hover:text-[#1D4ED8] hover:bg-white/50 border-transparent'
                     }`}
                 >
                   {link.label}
@@ -120,7 +120,7 @@ export default function Header() {
             {/* Hamburger */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden shrink-0 p-2 rounded-md text-[#4B5563] hover:bg-[#F3F4F6] transition-colors"
+              className="lg:hidden shrink-0 p-2 rounded-md text-[#1E293B] hover:bg-white/60 transition-colors"
               aria-label="Mở menu"
               aria-expanded={menuOpen}
             >
@@ -140,7 +140,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="lg:hidden border-t border-[#E5E7EB] bg-white shadow-lg">
+        <div className="lg:hidden border-t border-[#CBD5E1] bg-[#F1F5F9] shadow-lg">
           <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-0.5">
             {navLinks.map((link) => {
               const isActive = activeHref === link.href;
@@ -149,10 +149,10 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`py-2.5 px-3 text-[14px] font-semibold rounded-md transition-colors
+                  className={`py-2.5 px-3 text-[14px] font-bold rounded-md transition-colors
                     ${isActive
-                      ? 'text-[#A855F7] bg-[#FBE7F7]'
-                      : 'text-[#374151] hover:text-[#A855F7] hover:bg-[#FBE7F7]/50'
+                      ? 'text-[#1D4ED8] bg-white shadow-xs'
+                      : 'text-[#1E293B] hover:text-[#1D4ED8] hover:bg-white/60'
                     }`}
                 >
                   {link.label}

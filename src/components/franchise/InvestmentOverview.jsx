@@ -12,7 +12,7 @@ export default function InvestmentOverview({ id }) {
   return (
     <section
       id={id}
-      className="landing-section snap-section page-auth border-t border-[#E2E8F0] flex flex-col justify-center"
+      className="landing-section snap-section page-home border-t border-[#E5E7EB] flex flex-col justify-center"
       style={{ scrollMarginTop: 0 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -22,7 +22,7 @@ export default function InvestmentOverview({ id }) {
           {/* LEFT: Title + highlight cards */}
           <div>
             <div ref={titleRef} className="fade-up section-header">
-              <span className="section-eyebrow" style={{ color: '#A855F7' }}>Quy mô triển khai</span>
+              <span className="section-eyebrow" style={{ color: '#2563EB' }}>Quy mô triển khai</span>
               <h2 className="section-title">Quy mô tối ưu, tiềm năng mở rộng theo danh mục</h2>
               <p className="section-desc">
                 Đại lý tập trung phát triển danh mục trường học mục tiêu tại địa phương và mở rộng theo lộ trình tăng trưởng thực tế.
@@ -36,13 +36,13 @@ export default function InvestmentOverview({ id }) {
                   className={`fade-up fade-up-delay-${i + 1} card-standard flex flex-col`}
                   style={{
                     '--card-border': '#E2E8F0',
-                    '--card-hover-border': '#A855F7'
+                    '--card-hover-border': '#2563EB'
                   }}
                 >
                   <div className="text-[22px] sm:text-[25px] xl:text-[28px] font-extrabold text-[#0F172A] leading-tight tracking-tight">
                     {item.value}
                   </div>
-                  <div className="text-[11px] xl:text-[12px] text-[#A855F7] font-bold mt-0.5 mb-1.5 uppercase tracking-wide">{item.unit}</div>
+                  <div className="text-[11px] xl:text-[12px] text-[#2563EB] font-bold mt-0.5 mb-1.5 uppercase tracking-wide">{item.unit}</div>
                   <p className="text-[12px] xl:text-[13px] text-[#6B7280] leading-snug">{item.label}</p>
                 </div>
               ))}

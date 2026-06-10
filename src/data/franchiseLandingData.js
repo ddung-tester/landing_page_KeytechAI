@@ -219,10 +219,10 @@ export const detailedSecurityItems = [
 ];
 
 export const navLinks = [
-  { label: "Thị trường", href: "#thi-truong" },
+  { label: "Kiểm chứng", href: "#kiem-chung" },
   { label: "Công nghệ", href: "#cong-nghe" },
   { label: "Triển khai", href: "#truong-da-trien-khai" },
-  { label: "Hợp tác", href: "#kiem-chung" },
+  { label: "Hợp tác", href: "#hop-tac" },
   { label: "Doanh thu", href: "#doanh-thu" },
   { label: "Quy mô", href: "#dau-tu" },
   { label: "Liên hệ", href: "#lien-he" },

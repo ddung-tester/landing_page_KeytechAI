@@ -17,9 +17,9 @@ function ImageCard({ img, onClick }) {
   return (
     <div
       onClick={onClick}
-      className="flex-shrink-0 w-[240px] sm:w-[280px] xl:w-[300px] mx-2 bg-white border border-[#E5E7EB] rounded-2xl overflow-hidden
-        shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_22px_rgba(0,0,0,0.08)]
-        transition-all duration-300 cursor-pointer hover:border-[#60A5FA]/60 group"
+      className="flex-shrink-0 w-[240px] sm:w-[280px] xl:w-[300px] mx-2 bg-white border border-[#BFDBFE] rounded-2xl overflow-hidden
+        shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_22px_rgba(0,0,0,0.06)]
+        transition-all duration-300 cursor-pointer hover:border-[#2563EB] group"
     >
       <div className="w-full h-[140px] sm:h-[150px] xl:h-[160px] bg-[#F1F5F9] overflow-hidden">
         <img
@@ -39,7 +39,7 @@ function ImageCard({ img, onClick }) {
         />
       </div>
       <div className="px-4 py-3.5">
-        <div className="text-[13px] font-semibold text-[#0F172A] truncate group-hover:text-[#60A5FA] transition-colors">{img.title}</div>
+        <div className="text-[13px] font-semibold text-[#0F172A] truncate group-hover:text-[#2563EB] transition-colors">{img.title}</div>
         <div className="text-[11.5px] text-[#6B7280] mt-0.5">Đã triển khai</div>
       </div>
     </div>
@@ -70,21 +70,21 @@ export default function DeploymentTimeline({ id }) {
   return (
     <section
       id={id}
-      className="landing-section snap-section page-news border-t border-[#DBEAFE] overflow-hidden flex flex-col justify-center"
+      className="landing-section snap-section bg-white border-t border-[#EEF2F7] overflow-hidden flex flex-col justify-center"
       style={{ scrollMarginTop: 0 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div ref={titleRef} className="fade-up">
           <div className="section-header">
-            <span className="section-eyebrow" style={{ color: '#60A5FA' }}>Thực tế triển khai</span>
-            <h2 className="section-title">Những trường đã triển khai thực tế</h2>
-            <p className="section-desc">Đã triển khai thực tế tại nhiều địa phương và đang vận hành mỗi ngày.</p>
+            <span className="section-eyebrow" style={{ color: '#1D4ED8' }}>THỰC TẾ TRIỂN KHAI</span>
+            <h2 className="section-title">Những trường học đã tin tưởng Keytech trước bạn</h2>
+            <p className="section-desc">250+ điểm trường trải dài nhiều tỉnh thành — mỗi cái tên là một cam kết đã được thực hiện.</p>
           </div>
           {/* Stat pills — horizontal row below the header */}
           <div className="flex gap-3 flex-wrap mb-4">
             {DEPLOY_STATS.map((s, i) => (
-              <div key={i} className="bg-white border border-[#DBEAFE] rounded-2xl px-5 py-3 text-center shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-[#60A5FA] hover:shadow-md transition-all duration-300">
-                <div className="text-[20px] sm:text-[22px] font-extrabold text-[#1E3A8A] leading-none">{s.value}</div>
+              <div key={i} className="bg-white border border-[#BFDBFE] rounded-2xl px-5 py-3 text-center shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-[#2563EB] hover:shadow-md transition-all duration-300">
+                <div className="text-[20px] sm:text-[22px] font-extrabold text-[#1D4ED8] leading-none">{s.value}</div>
                 <div className="text-[11px] sm:text-[11.5px] text-[#6B7280] mt-1.5 font-medium whitespace-nowrap">{s.label}</div>
               </div>
             ))}
@@ -116,7 +116,7 @@ export default function DeploymentTimeline({ id }) {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <ScrollNext href="#kiem-chung" />
+        <ScrollNext href="#hop-tac" />
       </div>
 
       {/* Lightbox Modal for zooming image with smooth fade-in/out transitions */}
@@ -155,11 +155,11 @@ export default function DeploymentTimeline({ id }) {
             </div>
 
             {/* Caption (Title and School Name) */}
-            <div className="px-6 py-5 bg-white border-t border-[#E5E7EB]">
+            <div className="px-6 py-5 bg-white border-t border-[#BFDBFE]">
               <h3 className="text-[18px] font-extrabold text-[#0F172A] leading-tight">
                 {activeImage.title}
               </h3>
-              <p className="text-[13px] text-[#A855F7] font-semibold mt-1 uppercase tracking-wider">
+              <p className="text-[13px] text-[#1D4ED8] font-semibold mt-1 uppercase tracking-wider">
                 Đã triển khai
               </p>
             </div>

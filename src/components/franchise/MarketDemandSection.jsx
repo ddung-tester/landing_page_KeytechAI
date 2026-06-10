@@ -12,9 +12,9 @@ const DEMAND_CARDS = [
       </svg>
     ),
     title: 'Nhà trường cần',
-    desc: 'Kiểm soát ra vào, minh bạch điểm danh và tăng an toàn cổng trường.',
-    iconColor: 'bg-[#EFF6FF] text-[#3B82F6]',
-    borderColor: 'hover:border-[#3B82F6]'
+    desc: 'Kiểm soát cổng tự động, điểm danh minh bạch — giảm áp lực vận hành.',
+    iconColor: 'bg-[#EEF6FF] text-[#1D4ED8]',
+    accentColor: '#1D4ED8',
   },
   {
     icon: (
@@ -26,22 +26,29 @@ const DEMAND_CARDS = [
       </svg>
     ),
     title: 'Phụ huynh cần',
-    desc: 'Nhận thông tin khi con đến trường, tan học và qua cổng.',
-    iconColor: 'bg-[#F5F3FF] text-[#7C3AED]',
-    borderColor: 'hover:border-[#7C3AED]'
+    desc: 'Biết con đã đến trường, đã ra về — không gọi điện hỏi, không lo lắng.',
+    iconColor: 'bg-[#EEF6FF] text-[#2563EB]',
+    accentColor: '#2563EB',
   },
   {
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="12" y1="1" x2="12" y2="23" />
-        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+        <path d="M2 17l10 5 10-5" />
+        <path d="M2 12l10 5 10-5" />
       </svg>
     ),
-    title: 'Nhà đầu tư cần',
-    desc: 'Một mô hình có nhu cầu thật, đã triển khai và có thể nhân rộng.',
-    iconColor: 'bg-[#ECFDF5] text-[#10B981]',
-    borderColor: 'hover:border-[#10B981]'
-  }
+    title: 'Bạn — đối tác địa phương',
+    desc: 'Có mối quan hệ, có thị trường — cần một mô hình dịch vụ bền vững để khai thác.',
+    iconColor: 'bg-[#F3EEFF] text-[#6D28D9]',
+    accentColor: '#6D28D9',
+  },
+];
+
+const MARKET_NUMBERS = [
+  { value: '25.000+', label: 'Trường học toàn quốc' },
+  { value: '22 triệu', label: 'Học sinh cần bảo vệ' },
+  { value: '<5%', label: 'Đã có giải pháp AI' },
 ];
 
 export default function MarketDemandSection({ id = 'thi-truong' }) {
@@ -51,7 +58,7 @@ export default function MarketDemandSection({ id = 'thi-truong' }) {
   return (
     <section
       id={id}
-      className="landing-section snap-section bg-gradient-to-tr from-[#FAF5FF] via-[#FFFFFF] to-[#EFF6FF] border-t border-[#E5E7EB] flex flex-col justify-center"
+      className="landing-section snap-section bg-gradient-to-tr from-[#FBF7F0] via-[#FFFFFF] to-[#F5EFE6] border-t border-[#D8E2F0] flex flex-col justify-center"
       style={{ scrollMarginTop: 0 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -59,54 +66,72 @@ export default function MarketDemandSection({ id = 'thi-truong' }) {
 
           {/* LEFT: Market demand banner */}
           <div ref={leftRef} className="fade-up order-2 lg:order-1 flex items-stretch justify-center h-full">
-            <div className="w-full max-w-[620px] rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-[0_8px_30px_rgba(0,0,0,0.04)] bg-white transition-all duration-300 hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-0.5 flex">
+            <div className="w-full max-w-[620px] rounded-2xl overflow-hidden border border-[#D8E2F0] shadow-[0_8px_30px_rgba(15,23,42,0.04)] bg-white flex flex-col">
               <img
                 src={BANNER_SRC}
-                alt="Nhu cầu thị trường điểm danh an ninh trường học"
-                className="w-full h-full object-cover object-left min-h-[320px] lg:min-h-[360px] xl:min-h-[420px]"
+                alt="Thị trường an ninh trường học Việt Nam"
+                className="w-full h-full object-cover object-left min-h-[280px] lg:min-h-[340px] xl:min-h-[380px]"
                 loading="lazy"
               />
+              {/* Market numbers strip */}
+              <div className="grid grid-cols-3 divide-x divide-[#D8E2F0] border-t border-[#D8E2F0] bg-[#FBF7F0]/40">
+                {MARKET_NUMBERS.map((n) => (
+                  <div key={n.label} className="px-3 py-3.5 text-center">
+                    <div className="text-[18px] sm:text-[20px] font-extrabold text-[#0F172A] leading-tight">{n.value}</div>
+                    <div className="text-[10px] sm:text-[10.5px] text-[#6B7280] font-medium mt-0.5 leading-snug">{n.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* RIGHT: Text & Cards */}
           <div ref={rightRef} className="fade-up order-1 lg:order-2 flex flex-col justify-center gap-5">
             <div className="section-header">
-              <span className="section-eyebrow" style={{ color: '#7C3AED' }}>THỊ TRƯỜNG THỰC TẾ</span>
+              <span className="section-eyebrow" style={{ color: '#1D4ED8' }}>CƠ HỘI ĐANG MỞ RA</span>
               <h2 className="section-title">
-                An ninh trường học đang trở thành nhu cầu cấp thiết
+                Hàng nghìn trường học đang cần — nhưng chưa ai mang đến cho họ
               </h2>
               <p className="section-desc">
-                Điểm danh và an toàn cổng trường đang chuyển từ nhu cầu vận hành sang tiêu chuẩn dịch vụ mà nhà trường và phụ huynh cùng kỳ vọng.
+                Mỗi buổi sáng, hàng triệu phụ huynh chờ tin nhắn xác nhận con đã đến trường.
+                Đây là thị trường thực sự — đang chờ người tiên phong khai thác.
               </p>
             </div>
 
             {/* 3 cards */}
-            <div className="space-y-3 lg:space-y-4">
+            <div className="space-y-3">
               {DEMAND_CARDS.map((card, i) => (
                 <div
                   key={i}
-                  className="card-standard flex items-center gap-4 xl:gap-4.5"
+                  className="card-standard flex items-start gap-4"
                   style={{
-                    '--card-border': '#E5E7EB',
-                    '--card-hover-border': i === 0 ? '#3B82F6' : i === 1 ? '#7C3AED' : '#10B981'
+                    '--card-border': '#D8E2F0',
+                    '--card-hover-border': card.accentColor,
                   }}
                 >
-                  <div className={`flex-shrink-0 w-10 h-10 xl:w-11 h-11 rounded-lg flex items-center justify-center ${card.iconColor} shadow-sm`}>
+                  <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${card.iconColor} shadow-sm mt-0.5`}>
                     {card.icon}
                   </div>
                   <div>
-                    <h3 className="text-[13.5px] xl:text-[15px] font-extrabold text-[#0F172A] mb-0.5">{card.title}</h3>
-                    <p className="text-[12px] xl:text-[13px] text-[#6B7280] leading-relaxed">{card.desc}</p>
+                    <h3 className="text-[14px] font-extrabold text-[#0F172A] mb-0.5">{card.title}</h3>
+                    <p className="text-[12.5px] text-[#6B7280] leading-relaxed">{card.desc}</p>
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Key insight pill */}
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-[#C4B5FD] bg-[#EEF0FF] px-4 py-2.5 w-fit">
+              <span className="text-[18px]">💡</span>
+              <p className="text-[12.5px] text-[#4C1D95] font-semibold">
+                Dưới 5% trường học Việt Nam đã có AI điểm danh — thị trường còn 95% chưa được khai thác.
+              </p>
             </div>
           </div>
 
         </div>
 
-        <ScrollNext href="#cong-nghe" />
+        <ScrollNext href="#kiem-chung" />
       </div>
     </section>
   );

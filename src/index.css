@@ -36,17 +36,17 @@
 }
 
 :root {
-  --primary-purple: #8B5CF6;
+  --primary-purple: #2563EB;
   --primary-blue: #1E3A8A;
-  --primary-pink: #EC4899;
+  --primary-pink: #0EA5E9;
   --soft-border: rgba(229, 231, 235, 0.8);
 
-  --brand-gradient: linear-gradient(90deg, #D946EF 0%, #60A5FA 100%);
-  --brand-purple: #A855F7;
-  --brand-pink: #D946EF;
-  --brand-blue: #60A5FA;
-  --brand-soft-pink: #FCE1F5;
-  --brand-soft-pink-2: #FBE7F7;
+  --brand-gradient: linear-gradient(135deg, #1D4ED8 0%, #0EA5E9 100%);
+  --brand-purple: #2563EB;
+  --brand-pink: #0EA5E9;
+  --brand-blue: #38BDF8;
+  --brand-soft-pink: #EFF6FF;
+  --brand-soft-pink-2: #DBEAFE;
 }
 
 /* Brand Button Utility */
@@ -54,15 +54,15 @@
   background: var(--brand-gradient) !important;
   color: #ffffff !important;
   border-radius: 9999px !important;
-  box-shadow: 0 4px 14px rgba(217, 70, 239, 0.15), 0 4px 14px rgba(96, 165, 250, 0.15) !important;
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.20), 0 4px 14px rgba(14, 165, 233, 0.15) !important;
   border: none !important;
   transition: all 0.2s ease-in-out !important;
 }
 
 .btn-brand-primary:hover {
-  filter: brightness(1.05) !important;
+  filter: brightness(1.07) !important;
   transform: translateY(-1px) !important;
-  box-shadow: 0 6px 20px rgba(217, 70, 239, 0.25), 0 6px 20px rgba(96, 165, 250, 0.25) !important;
+  box-shadow: 0 6px 20px rgba(29, 78, 216, 0.30), 0 6px 20px rgba(14, 165, 233, 0.20) !important;
 }
 
 /* Page themes mapping */
@@ -74,10 +74,10 @@
 }
 
 .page-products {
-  background: var(--brand-soft-pink) !important;
-  --page-accent: #D946EF;
+  background: linear-gradient(135deg, #EFF6FF 0%, #F0F9FF 100%) !important;
+  --page-accent: #2563EB;
   --card-bg: #ffffff;
-  --soft-border: #FBE7F7;
+  --soft-border: #DBEAFE;
 }
 
 .page-news {
@@ -95,10 +95,10 @@
 }
 
 .page-about {
-  background: linear-gradient(135deg, #F5F3FF 0%, #FAF5FF 100%) !important;
-  --page-accent: #8B5CF6;
+  background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 100%) !important;
+  --page-accent: #2563EB;
   --card-bg: #ffffff;
-  --soft-border: #DDD6FE;
+  --soft-border: #DBEAFE;
 }
 
 .page-auth {
@@ -479,7 +479,7 @@ section+section {
 
 .card-standard:hover {
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-  border-color: var(--card-hover-border, #A855F7);
+  border-color: var(--card-hover-border, #2563EB);
   transform: translateY(-3px);
 }
 
