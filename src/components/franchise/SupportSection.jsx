@@ -80,11 +80,7 @@ export default function SupportSection({ id }) {
 
         <div ref={titleRef} className="fade-up section-header">
           <span className="section-eyebrow" style={{ color: '#1D4ED8' }}>ĐỒNG HÀNH TRỌN GÓI</span>
-          <h2 className="section-title">Chúng tôi không để bạn một mình trên hành trình này</h2>
-          <p className="section-desc">
-            Từ ngày đầu khảo sát đến khi bạn vận hành điểm trường thứ 10,
-            Keytech đồng hành từng bước — quy trình, kỹ thuật, tài liệu và con người.
-          </p>
+          <h2 className="section-title">Keytech luôn đồng hành cùng Đối tác trên suốt hành trình</h2>
         </div>
 
         {/* Horizontal Timeline Flow (Desktop) */}

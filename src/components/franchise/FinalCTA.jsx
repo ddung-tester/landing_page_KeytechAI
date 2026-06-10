@@ -54,12 +54,8 @@ export default function FinalCTA({ id = 'lien-he' }) {
             <div className="section-header">
               <span className="section-eyebrow" style={{ color: '#1E3A8A' }}>ĐĂNG KÝ HỢP TÁC</span>
               <h2 className="section-title">
-                Khu vực của bạn đang chờ — đừng để người khác đến trước
+                Khu vực tiềm năng đang chờ — Đăng ký để giữ quyền ưu tiên
               </h2>
-              <p className="section-desc">
-                Chúng tôi giới hạn số lượng đối tác mỗi khu vực để đảm bảo chất lượng đồng hành.
-                Nếu bạn đang đọc trang này, cơ hội vẫn còn mở tại địa phương bạn.
-              </p>
             </div>
 
             {/* Trust stats */}
@@ -113,7 +109,7 @@ export default function FinalCTA({ id = 'lien-he' }) {
               Hồ sơ hợp tác &amp; phương án triển khai
             </h3>
             <p className="text-[12.5px] text-[#64748B] mb-5 leading-relaxed">
-              Tư vấn miễn phí — không ràng buộc. Chúng tôi sẽ phân tích tiềm năng khu vực và gợi ý danh mục trường phù hợp với bạn.
+              Tư vấn miễn phí — không ràng buộc. Chúng tôi sẽ phân tích tiềm năng khu vực và đề xuất phương án phù hợp nhất với Đối tác.
             </p>
 
             <div className="space-y-3 mb-5">

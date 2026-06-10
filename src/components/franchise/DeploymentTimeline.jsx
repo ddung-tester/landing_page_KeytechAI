@@ -77,8 +77,7 @@ export default function DeploymentTimeline({ id }) {
         <div ref={titleRef} className="fade-up">
           <div className="section-header">
             <span className="section-eyebrow" style={{ color: '#1D4ED8' }}>THỰC TẾ TRIỂN KHAI</span>
-            <h2 className="section-title">Những trường học đã tin tưởng Keytech trước bạn</h2>
-            <p className="section-desc">250+ điểm trường trải dài nhiều tỉnh thành — mỗi cái tên là một cam kết đã được thực hiện.</p>
+            <h2 className="section-title">Các đơn vị giáo dục đã tin tưởng đồng hành cùng Keytech</h2>
           </div>
           {/* Stat pills — horizontal row below the header */}
           <div className="flex gap-3 flex-wrap mb-4">

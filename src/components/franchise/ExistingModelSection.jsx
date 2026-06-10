@@ -61,23 +61,15 @@ export default function ExistingModelSection({ id = 'kiem-chung' }) {
   return (
     <section
       id={id}
-      className="landing-section snap-section bg-white flex flex-col justify-center"
+      className="landing-section snap-section page-home border-t border-[#E5E7EB] flex flex-col justify-center"
       style={{ scrollMarginTop: 0 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div ref={titleRef} className="fade-up section-header section-header--row">
-          <div className="section-left">
-            <span className="section-eyebrow" style={{ color: '#2563EB' }}>ĐÃ KIỂM CHỨNG THỰC TẾ</span>
-            <h2 className="section-title">
-              Không phải ý tưởng — đây là mô hình đang vận hành tại 250+ trường mỗi ngày
-            </h2>
-          </div>
-          <div className="section-right">
-            <p className="section-desc">
-              Từ Hà Nội đến các tỉnh, hàng nghìn phụ huynh đang nhận thông báo điểm danh của con
-              qua hệ thống Keytech. Không phải thí điểm — đây là thực tế vận hành ổn định.
-            </p>
-          </div>
+        <div ref={titleRef} className="fade-up section-header">
+          <span className="section-eyebrow" style={{ color: '#2563EB' }}>ĐÃ KIỂM CHỨNG THỰC TẾ</span>
+          <h2 className="section-title">
+            Không phải ý tưởng — đây là mô hình đang vận hành tại 250+ trường mỗi ngày
+          </h2>
         </div>
 
         <div className="grid lg:grid-cols-[1.08fr_0.92fr] gap-6 lg:gap-8 items-center">
@@ -148,7 +140,7 @@ export default function ExistingModelSection({ id = 'kiem-chung' }) {
           </div>
         </div>
 
-        <ScrollNext href="#cong-nghe" />
+        <ScrollNext href="#truong-da-trien-khai" />
       </div>
     </section>
   );

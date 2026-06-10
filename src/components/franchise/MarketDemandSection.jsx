@@ -38,8 +38,8 @@ const DEMAND_CARDS = [
         <path d="M2 12l10 5 10-5" />
       </svg>
     ),
-    title: 'Bạn — đối tác địa phương',
-    desc: 'Có mối quan hệ, có thị trường — cần một mô hình dịch vụ bền vững để khai thác.',
+    title: 'Đối tác địa phương',
+    desc: 'Sở hữu mối quan hệ và sự am hiểu thị trường — cần một giải pháp công nghệ bền vững để tối ưu hóa hiệu quả khai thác.',
     iconColor: 'bg-[#F3EEFF] text-[#6D28D9]',
     accentColor: '#6D28D9',
   },
@@ -92,10 +92,6 @@ export default function MarketDemandSection({ id = 'thi-truong' }) {
               <h2 className="section-title">
                 Hàng nghìn trường học đang cần — nhưng chưa ai mang đến cho họ
               </h2>
-              <p className="section-desc">
-                Mỗi buổi sáng, hàng triệu phụ huynh chờ tin nhắn xác nhận con đã đến trường.
-                Đây là thị trường thực sự — đang chờ người tiên phong khai thác.
-              </p>
             </div>
 
             {/* 3 cards */}

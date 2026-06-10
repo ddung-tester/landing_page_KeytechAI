@@ -17,7 +17,7 @@ const REVENUE_STREAMS = [
   },
   {
     title: 'Phí duy trì — Thu định kỳ',
-    desc: 'Mỗi năm học trường tiếp tục sử dụng, bạn tiếp tục thu. Đây là dòng tiền bền vững nhất của mô hình.',
+    desc: 'Mỗi năm học trường tiếp tục sử dụng, Đối tác tiếp tục nhận nguồn thu định kỳ. Đây là dòng tiền bền vững nhất của mô hình.',
     color: '#6D28D9',
     bg: '#F3EEFF',
     icon: (
@@ -67,11 +67,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div ref={titleRef} className="fade-up section-header">
           <span className="section-eyebrow" style={{ color: '#1D4ED8' }}>MÔ HÌNH DOANH THU</span>
-          <h2 className="section-title">Thu nhập của bạn tăng theo từng trường bạn phát triển</h2>
-          <p className="section-desc">
-            Không phải lương cố định — đây là danh mục tài sản.
-            Mỗi trường bạn phát triển tạo ra dòng thu định kỳ năm này qua năm khác.
-          </p>
+          <h2 className="section-title">Doanh thu tăng trưởng theo từng trường học phát triển</h2>
         </div>
 
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-5 lg:gap-6 items-stretch">
@@ -112,7 +108,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
                 Tỷ lệ chia sẻ doanh thu
               </div>
               <h3 className="text-[28px] lg:text-[32px] font-black leading-tight tracking-tight text-[#0F172A]">
-                Phần lớn nhất luôn thuộc về bạn
+                Lợi nhuận vượt trội thuộc về Đối tác
               </h3>
             </div>
 
@@ -136,7 +132,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
             <div className="rounded-xl bg-[#FBF7F0] border border-[#D8E2F0] p-4 text-[#4B5563]">
               <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#6D28D9] mb-1">Tăng theo danh mục</div>
               <div className="text-[14.5px] font-bold leading-snug text-[#374151]">
-                10 trường → ~1,4 tỷ/năm. 20 trường → gấp đôi. Không có giới hạn nào cho danh mục bạn có thể xây dựng.
+                10 trường → ~1,4 tỷ/năm. 20 trường → gấp đôi. Không giới hạn quy mô danh mục trường học Đối tác có thể xây dựng.
               </div>
             </div>
           </aside>

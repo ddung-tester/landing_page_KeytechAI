@@ -158,7 +158,7 @@ export default function HeroStory({ id = 'hero' }) {
           loaded ? 'animate-premium-hero-scroll' : 'opacity-0'
         }`}
       >
-        <ScrollNext href="#kiem-chung" />
+        <ScrollNext href="#cong-nghe" />
       </div>
     </section>
   );

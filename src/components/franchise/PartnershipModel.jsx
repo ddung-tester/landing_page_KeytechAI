@@ -3,9 +3,9 @@ import ScrollNext from './ScrollNext';
 
 const ROLE_CARDS = [
   {
-    label: 'Đối tác địa phương — Bạn',
+    label: 'Đối tác địa phương',
     title: 'Mở thị trường, kết nối trường học',
-    desc: 'Bạn hiểu địa phương, có mối quan hệ và biết đâu là cơ hội. Đó là thứ có giá trị nhất mà không ai có thể thay thế bạn.',
+    desc: 'Đối tác am hiểu địa phương, có mối quan hệ rộng và nắm rõ cơ hội kinh doanh. Đó là giá trị cốt lõi không thể thay thế.',
     tone: 'blue',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -18,8 +18,8 @@ const ROLE_CARDS = [
   },
   {
     label: 'Keytech — Đối tác chiến lược',
-    title: 'Cưng cấp nền tảng, hỗ trợ toàn trình',
-    desc: 'Công nghệ, quy trình, đào tạo và hỗ trợ kỹ thuật — Keytech lo toàn bộ phần còn lại để bạn tập trung phát triển thị trường.',
+    title: 'Cung cấp nền tảng, hỗ trợ toàn trình',
+    desc: 'Công nghệ, quy trình, đào tạo và hỗ trợ kỹ thuật — Keytech hỗ trợ trọn gói giúp Đối tác tập trung phát triển thị trường.',
     tone: 'purple',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -78,11 +78,7 @@ export default function PartnershipModel({ id = 'kiem-chung' }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div ref={titleRef} className="fade-up section-header">
           <span className="section-eyebrow" style={{ color: '#6D28D9' }}>MÔ HÌNH HỢP TÁC</span>
-          <h2 className="section-title">Bạn mang mối quan hệ — chúng tôi mang nền tảng</h2>
-          <p className="section-desc">
-            Phân chia vai trò rõ ràng: bạn khai thác thị trường địa phương, Keytech cung cấp
-            toàn bộ công nghệ và hỗ trợ vận hành. Không cạnh tranh — cùng phát triển.
-          </p>
+          <h2 className="section-title">Đối tác kết nối cơ hội — Keytech cung cấp nền tảng</h2>
         </div>
 
         <div ref={cardsRef} className="grid lg:grid-cols-3 gap-4 lg:gap-5">

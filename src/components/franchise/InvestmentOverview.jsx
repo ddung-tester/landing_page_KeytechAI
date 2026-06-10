@@ -24,9 +24,6 @@ export default function InvestmentOverview({ id }) {
             <div ref={titleRef} className="fade-up section-header">
               <span className="section-eyebrow" style={{ color: '#2563EB' }}>Quy mô triển khai</span>
               <h2 className="section-title">Quy mô tối ưu, tiềm năng mở rộng theo danh mục</h2>
-              <p className="section-desc">
-                Đại lý tập trung phát triển danh mục trường học mục tiêu tại địa phương và mở rộng theo lộ trình tăng trưởng thực tế.
-              </p>
             </div>
 
             <div ref={cardsRef} className="grid grid-cols-2 gap-3">

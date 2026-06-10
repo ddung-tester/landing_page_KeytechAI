@@ -219,8 +219,8 @@ export const detailedSecurityItems = [
 ];
 
 export const navLinks = [
-  { label: "Kiểm chứng", href: "#kiem-chung" },
   { label: "Công nghệ", href: "#cong-nghe" },
+  { label: "Kiểm chứng", href: "#kiem-chung" },
   { label: "Triển khai", href: "#truong-da-trien-khai" },
   { label: "Hợp tác", href: "#hop-tac" },
   { label: "Doanh thu", href: "#doanh-thu" },

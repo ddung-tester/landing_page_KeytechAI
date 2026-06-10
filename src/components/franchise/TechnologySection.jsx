@@ -81,18 +81,14 @@ export default function TechnologySection({ id }) {
   return (
     <section
       id={id}
-      className="landing-section snap-section page-home border-t border-[#E5E7EB] flex flex-col justify-center"
+      className="landing-section snap-section bg-white border-t border-[#EEF2F7] flex flex-col justify-center"
       style={{ scrollMarginTop: 0 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
         <div ref={titleRef} className="fade-up section-header">
           <span className="section-eyebrow" style={{ color: '#2563EB' }}>CÔNG NGHỆ LÕI</span>
-          <h2 className="section-title">Hệ thống hoàn chỉnh — bạn chuyển giao, nhà trường vận hành ngay</h2>
-          <p className="section-desc">
-            Camera AI, Cloud và App phụ huynh đóng gói sẵn trong một bộ giải pháp.
-            Bạn không cần là kỹ sư công nghệ — chỉ cần mối quan hệ và khát vọng phát triển thị trường.
-          </p>
+          <h2 className="section-title">Hệ thống hoàn chỉnh — Bàn giao trọn gói, nhà trường vận hành ngay</h2>
         </div>
 
         <div className="grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-10 items-center">
@@ -144,7 +140,7 @@ export default function TechnologySection({ id }) {
 
         </div>
 
-        <ScrollNext href="#truong-da-trien-khai" />
+        <ScrollNext href="#kiem-chung" />
       </div>
     </section>
   );
