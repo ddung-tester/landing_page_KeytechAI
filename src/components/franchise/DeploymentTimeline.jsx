@@ -94,7 +94,7 @@ export default function DeploymentTimeline({ id }) {
 
       {/* Desktop: marquee — full-width, nằm ngoài container */}
       <div className="marquee-wrapper hidden sm:block mb-2">
-        <div 
+        <div
           className="marquee-track py-2"
           style={{ animationPlayState: activeImage ? 'paused' : 'running' }}
         >
@@ -121,16 +121,14 @@ export default function DeploymentTimeline({ id }) {
 
       {/* Lightbox Modal for zooming image with smooth fade-in/out transitions */}
       {activeImage && (
-        <div 
-          className={`fixed inset-0 z-[100] flex items-center justify-center bg-black/75 backdrop-blur-sm cursor-zoom-out transition-all duration-300 ease-out ${
-            isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-          }`}
+        <div
+          className={`fixed inset-0 z-[100] flex items-center justify-center bg-black/75 backdrop-blur-sm cursor-zoom-out transition-all duration-300 ease-out ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+            }`}
           onClick={handleClose}
         >
-          <div 
-            className={`relative max-w-3xl w-[92%] bg-white rounded-2xl overflow-hidden shadow-2xl cursor-default transition-all duration-300 ease-out ${
-              isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'
-            }`}
+          <div
+            className={`relative max-w-3xl w-[92%] bg-white rounded-2xl overflow-hidden shadow-2xl cursor-default transition-all duration-300 ease-out ${isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'
+              }`}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}

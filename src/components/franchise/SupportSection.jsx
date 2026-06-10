@@ -77,7 +77,7 @@ export default function SupportSection({ id }) {
       style={{ scrollMarginTop: 0 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col">
-        
+
         <div ref={titleRef} className="fade-up section-header">
           <span className="section-eyebrow" style={{ color: '#1D4ED8' }}>ĐỒNG HÀNH TRỌN GÓI</span>
           <h2 className="section-title">Chúng tôi không để bạn một mình trên hành trình này</h2>
@@ -112,7 +112,7 @@ export default function SupportSection({ id }) {
                 </div>
 
                 {/* Step label */}
-                <span 
+                <span
                   className="text-[10px] font-extrabold uppercase tracking-widest mt-2.5 mb-0.5"
                   style={{ color: step.color }}
                 >
@@ -134,7 +134,7 @@ export default function SupportSection({ id }) {
         </div>
 
         {/* Vertical Timeline Flow (Mobile/Tablet) */}
-        <div className="w-full max-w-md relative z-10 space-y-6 py-4 lg:hidden">
+        <div className="w-full max-w-md mx-auto relative z-10 space-y-6 py-4 lg:hidden">
           {/* Vertical line connector */}
           <div className="absolute left-[24px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-[#1D4ED8]/60 via-[#2563EB]/60 to-[#6D28D9]/60 opacity-55" />
 
@@ -155,7 +155,7 @@ export default function SupportSection({ id }) {
 
               {/* Text */}
               <div className="pt-1">
-                <span 
+                <span
                   className="text-[10px] font-extrabold uppercase tracking-wider"
                   style={{ color: step.color }}
                 >
@@ -173,8 +173,8 @@ export default function SupportSection({ id }) {
         </div>
 
         {/* Supplementary Statistics Footer */}
-        <div ref={statsRef} className="w-full max-w-4xl mt-4 lg:mt-5 pt-3 border-t border-[#EEF2F7] flex flex-col sm:flex-row justify-between items-center gap-4 text-center z-10">
-          
+        <div ref={statsRef} className="w-full max-w-4xl mx-auto mt-4 lg:mt-5 pt-3 border-t border-[#EEF2F7] flex flex-col sm:flex-row justify-between items-center gap-4 text-center z-10">
+
           <div className="flex flex-col items-center w-full sm:w-auto">
             <span className="text-[26px] lg:text-[30px] font-black text-[#1D4ED8] leading-none">24/7</span>
             <span className="text-[10.5px] lg:text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mt-1.5">Hỗ trợ kỹ thuật</span>
