@@ -70,10 +70,13 @@ export default function DeploymentTimeline({ id }) {
   return (
     <section
       id={id}
-      className="landing-section snap-section bg-white border-t border-[#EEF2F7] overflow-hidden flex flex-col justify-center"
+      className="landing-section snap-section bg-section-timeline border-t border-[#EEF2F7] overflow-hidden flex flex-col justify-center relative"
       style={{ scrollMarginTop: 0 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      {/* ── Glow blobs */}
+      <div className="glow-blob glow-purple -left-20 -top-20" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div ref={titleRef} className="fade-up">
           <div className="section-header">
             <span className="section-eyebrow" style={{ color: '#1D4ED8' }}>THỰC TẾ TRIỂN KHAI</span>

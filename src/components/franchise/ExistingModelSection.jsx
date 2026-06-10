@@ -61,10 +61,13 @@ export default function ExistingModelSection({ id = 'kiem-chung' }) {
   return (
     <section
       id={id}
-      className="landing-section snap-section page-home border-t border-[#E5E7EB] flex flex-col justify-center"
+      className="landing-section snap-section bg-section-proof border-t border-[#E5E7EB] flex flex-col justify-center relative overflow-hidden"
       style={{ scrollMarginTop: 0 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      {/* ── Glow blobs */}
+      <div className="glow-blob glow-purple -left-20 -bottom-20" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div ref={titleRef} className="fade-up section-header">
           <span className="section-eyebrow" style={{ color: '#2563EB' }}>ĐÃ KIỂM CHỨNG THỰC TẾ</span>
           <h2 className="section-title">

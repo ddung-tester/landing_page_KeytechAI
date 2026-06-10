@@ -32,9 +32,13 @@ export default function HeroStory({ id = 'hero' }) {
   return (
     <section
       id={id}
-      className="landing-section snap-section page-home relative isolate overflow-hidden flex flex-col min-h-[500px] lg:min-h-[600px]"
+      className="landing-section snap-section bg-section-hero bg-tech-grid relative isolate overflow-hidden flex flex-col min-h-[500px] lg:min-h-[600px]"
       style={{ scrollMarginTop: 0 }}
     >
+      {/* ── Glow blobs */}
+      <div className="glow-blob glow-purple -left-20 -top-20 -z-10" />
+      <div className="glow-blob glow-blue right-0 bottom-10 -z-10" />
+
       {/* ── Background image
            x=58%  → image shifts right, freeing up left text area
            y=20%  → shifts the image content up slightly to reveal the parent at the bottom      */}

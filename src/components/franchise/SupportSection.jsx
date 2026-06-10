@@ -73,10 +73,13 @@ export default function SupportSection({ id }) {
   return (
     <section
       id={id}
-      className="landing-section snap-section bg-white border-t border-[#EEF2F7] flex flex-col justify-center animate-fade-in"
+      className="landing-section snap-section bg-section-support border-t border-[#EEF2F7] flex flex-col justify-center relative overflow-hidden"
       style={{ scrollMarginTop: 0 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col">
+      {/* ── Glow blobs */}
+      <div className="glow-blob glow-purple -right-20 -top-20" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 flex flex-col">
 
         <div ref={titleRef} className="fade-up section-header">
           <span className="section-eyebrow" style={{ color: '#1D4ED8' }}>ĐỒNG HÀNH TRỌN GÓI</span>

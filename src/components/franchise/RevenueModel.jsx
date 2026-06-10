@@ -61,10 +61,13 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
   return (
     <section
       id={id}
-      className="landing-section snap-section bg-white border-t border-[#EEF2F7] flex flex-col justify-center"
+      className="landing-section snap-section bg-section-revenue border-t border-[#EEF2F7] flex flex-col justify-center relative overflow-hidden"
       style={{ scrollMarginTop: 0 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      {/* ── Glow blobs */}
+      <div className="glow-blob glow-emerald -right-20 -top-20" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div ref={titleRef} className="fade-up section-header">
           <span className="section-eyebrow" style={{ color: '#1D4ED8' }}>MÔ HÌNH DOANH THU</span>
           <h2 className="section-title">Doanh thu tăng trưởng theo từng trường học phát triển</h2>
