@@ -42,9 +42,9 @@ const TIERS = [
 
 const BREAKDOWN = [
   { label: 'Camera AI (60 cam)', pct: 60, value: '~600 triệu' },
-  { label: 'Phần mềm & server', pct: 15, value: '~150 triệu' },
-  { label: 'Lắp đặt & khảo sát', pct: 12, value: '~120 triệu' },
-  { label: 'Đào tạo & dự phòng', pct: 13, value: '~130 triệu' },
+  { label: 'Phần mềm', pct: 15, value: '~150 triệu' },
+  { label: 'Lắp đặt', pct: 12, value: '~120 triệu' },
+  { label: 'Đào tạo', pct: 13, value: '~130 triệu' },
 ];
 
 export default function InvestmentScale({ id = 'quy-mo' }) {
@@ -76,10 +76,10 @@ export default function InvestmentScale({ id = 'quy-mo' }) {
             color: '#0F172A', lineHeight: 1.22,
             letterSpacing: '-0.02em', margin: '0 0 8px',
           }}>
-            Bắt đầu từ <span style={{ color: '#7C3AED' }}>100 triệu</span> — mở rộng không giới hạn
+            Bắt đầu gọn, mở rộng bền
           </h2>
           <p style={{ fontFamily: BV, fontSize: 13.5, color: '#64748B', lineHeight: 1.65 }}>
-            Chọn quy mô phù hợp năng lực. Càng nhiều trường — ROI càng cao.
+            Chọn quy mô vừa sức. Lớn dần, chắc dần.
           </p>
         </div>
 
@@ -162,7 +162,7 @@ export default function InvestmentScale({ id = 'quy-mo' }) {
               borderRadius: 12, padding: '10px 14px',
             }}>
               <p style={{ fontFamily: BV, fontSize: 12, color: '#92400E', margin: 0 }}>
-                <strong>Lưu ý:</strong> Số liệu mang tính tham khảo. Keytech sẽ phân tích cụ thể theo địa phương khi trao đổi.
+                <strong>Lưu ý:</strong> Số liệu tham khảo. Keytech sẽ cùng bạn tính kỹ hơn.
               </p>
             </div>
           </div>

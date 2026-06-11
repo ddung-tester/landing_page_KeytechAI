@@ -13,7 +13,7 @@ const TARGETS = [
       </svg>
     ),
     title: 'Doanh nghiệp địa phương',
-    desc: 'Muốn bứt phá doanh thu với mảng công nghệ giáo dục đầy tiềm năng.',
+    desc: 'Muốn thêm dòng doanh thu mới.',
     color: '#2563EB', // Blue
     border: 'rgba(37, 99, 235, 0.15)',
     bg: 'rgba(37, 99, 235, 0.03)'
@@ -25,7 +25,7 @@ const TARGETS = [
       </svg>
     ),
     title: 'Nhà đầu tư tài chính',
-    desc: 'Tìm kiếm dòng tiền thụ động dài hạn, an toàn và bền vững trọn đời.',
+    desc: 'Tìm dòng tiền dài hạn, an tâm.',
     color: '#7C3AED', // Purple
     border: 'rgba(124, 58, 237, 0.15)',
     bg: 'rgba(124, 58, 237, 0.03)'
@@ -38,7 +38,7 @@ const TARGETS = [
       </svg>
     ),
     title: 'Kết nối ngành giáo dục',
-    desc: 'Sở hữu mạng lưới uy tín với các trường học tại địa bàn.',
+    desc: 'Có niềm tin từ trường học địa phương.',
     color: '#0EA5E9', // Cyan
     border: 'rgba(14, 165, 233, 0.15)',
     bg: 'rgba(14, 165, 233, 0.03)'
@@ -50,7 +50,7 @@ const TARGETS = [
       </svg>
     ),
     title: 'Đơn vị thi công sẵn có',
-    desc: 'Có sẵn đội ngũ kinh doanh hoặc kỹ thuật tại chỗ để tối ưu chi phí.',
+    desc: 'Có đội ngũ tại chỗ, triển khai nhanh.',
     color: '#10B981', // Emerald
     border: 'rgba(16, 185, 129, 0.15)',
     bg: 'rgba(16, 185, 129, 0.03)'
@@ -60,7 +60,6 @@ const TARGETS = [
 export default function PartnerTarget({ id = 'doi-tuong' }) {
   const titleRef = useFadeUp();
   const cardsRef = useFadeUpChildren(0.08);
-  const noteRef = useFadeUp();
 
   return (
     <section
@@ -88,13 +87,13 @@ export default function PartnerTarget({ id = 'doi-tuong' }) {
             letterSpacing: '-0.02em', margin: '0 auto 12px',
             maxWidth: '800px'
           }}>
-            Bạn đã sẵn sàng đồng hành cùng Keytech?
+            Ai phù hợp để cùng đi?
           </h2>
           <p style={{
             fontFamily: BV, fontSize: '14.5px', color: '#475569',
             maxWidth: '560px', margin: '0 auto', lineHeight: 1.5,
           }}>
-            Chúng tôi tìm kiếm những đối tác có khát vọng, nguồn vốn hoặc kết nối địa phương vững chắc.
+            Keytech tìm người có kết nối, có tâm và muốn đi dài.
           </p>
         </div>
 
@@ -137,43 +136,6 @@ export default function PartnerTarget({ id = 'doi-tuong' }) {
               </p>
             </div>
           ))}
-        </div>
-
-        {/* Warning / Exclusion box - Luxury Dark Card style */}
-        <div
-          ref={noteRef}
-          className="fade-up fade-up-delay-5 bg-[#0F172A] border border-amber-500/30 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row gap-5 items-start relative overflow-hidden shadow-xl"
-        >
-          <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl" />
-          
-          <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 border border-amber-500/20 text-amber-500">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-              <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
-            </svg>
-          </div>
-          <div className="relative z-10 flex-1">
-            <div style={{
-              fontFamily: BV,
-              fontSize: '11px',
-              fontWeight: 800,
-              textTransform: 'uppercase',
-              letterSpacing: '0.15em',
-              color: '#F59E0B',
-              marginBottom: 6
-            }}>
-              Lưu ý quan trọng
-            </div>
-            <p style={{
-              fontFamily: BV,
-              fontSize: '14px',
-              color: '#E2E8F0',
-              lineHeight: 1.6,
-              fontWeight: 400
-            }}>
-              Dự án không dành cho nhà đầu tư lướt sóng ngắn hạn. Chúng tôi chỉ hợp tác với những ai muốn cùng kiến tạo giá trị dài hạn.
-            </p>
-          </div>
         </div>
 
         <ScrollNext href="#lien-he" />

@@ -8,7 +8,7 @@ const STATS = [
   {
     big: '25.000+',
     unit: 'trường học',
-    sub: 'Dư địa thị trường khổng lồ',
+    sub: 'Dư địa rất rộng',
     accent: '#2563EB',
     bg: 'linear-gradient(135deg,#EFF6FF,#DBEAFE)',
     border: '#BFDBFE',
@@ -21,7 +21,7 @@ const STATS = [
   {
     big: '70%',
     unit: 'doanh thu',
-    sub: 'Mức chia sẻ cao nhất thị trường',
+    sub: 'Chia sẻ rõ ràng',
     accent: '#7C3AED',
     bg: 'linear-gradient(135deg,#F5F3FF,#EDE9FE)',
     border: '#DDD6FE',
@@ -33,8 +33,8 @@ const STATS = [
   },
   {
     big: '100+',
-    unit: 'trường thực tế',
-    sub: 'Hệ thống thực chiến ổn định',
+    unit: 'trường đã chạy',
+    sub: 'Hệ thống ổn định',
     accent: '#059669',
     bg: 'linear-gradient(135deg,#F0FDF4,#DCFCE7)',
     border: '#BBF7D0',
@@ -47,7 +47,7 @@ const STATS = [
   {
     big: '∞',
     unit: 'mở rộng',
-    sub: 'Tiềm năng thu nhập vô hạn',
+    sub: 'Còn nhiều dư địa',
     accent: '#EA580C',
     bg: 'linear-gradient(135deg,#FFF7ED,#FFEDD5)',
     border: '#FED7AA',
@@ -60,10 +60,10 @@ const STATS = [
 ];
 
 const MESSAGES = [
-  { text: 'Nhu cầu thiết yếu', sub: 'An toàn cho con là ưu tiên số một của cha mẹ.' },
-  { text: 'Doanh thu định kỳ', sub: 'Dịch vụ thu phí đều đặn theo mỗi năm học.' },
-  { text: 'Công nghệ thực chiến', sub: 'Kế thừa giải pháp công nghệ đã vận hành thành công.' },
-  { text: 'Lợi thế địa phương', sub: 'Tận dụng thế mạnh mối quan hệ sẵn có của bạn.' },
+  { text: 'Nhu cầu thật', sub: 'Cha mẹ luôn cần an tâm.' },
+  { text: 'Doanh thu đều', sub: 'Thu theo từng năm học.' },
+  { text: 'Công nghệ thật', sub: 'Đã vận hành tại trường.' },
+  { text: 'Lợi thế của bạn', sub: 'Quan hệ địa phương là chìa khóa.' },
 ];
 
 export default function InvestmentReasons({ id = 'co-hoi' }) {
@@ -95,7 +95,7 @@ export default function InvestmentReasons({ id = 'co-hoi' }) {
             color: '#0F172A', lineHeight: 1.22,
             letterSpacing: '-0.02em', margin: '0 0 10px',
           }}>
-            Một mô hình{' '}
+            Mô hình{' '}
             <span style={{
               background: 'linear-gradient(135deg,#2563EB,#7C3AED)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
@@ -103,13 +103,13 @@ export default function InvestmentReasons({ id = 'co-hoi' }) {
             }}>
               sinh lời bền vững
             </span>
-            {' '}từ nhu cầu xã hội thực
+            {' '}từ nhu cầu thật
           </h2>
           <p style={{
             fontFamily: BV, fontSize: 14, color: '#64748B',
             maxWidth: 520, margin: '0 auto', lineHeight: 1.7,
           }}>
-            Doanh thu từ 25.000+ trường học Việt Nam — mỗi năm học là một chu kỳ tiền bền vững.
+            Mỗi năm học là một chu kỳ doanh thu bền vững.
           </p>
         </div>
 
@@ -178,7 +178,7 @@ export default function InvestmentReasons({ id = 'co-hoi' }) {
           ))}
         </div>
 
-        <ScrollNext href="#cong-nghe" />
+        <ScrollNext href="#doanh-thu" />
       </div>
     </section>
   );

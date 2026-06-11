@@ -201,7 +201,7 @@ export default function HeroStory({ id = 'hero' }) {
 
       {/* Scroll indicator */}
       <div className="pb-3 flex justify-center">
-        <ScrollNext href="#co-hoi" />
+        <ScrollNext href="#cong-nghe" />
       </div>
     </section>
   );

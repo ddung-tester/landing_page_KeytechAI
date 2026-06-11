@@ -39,10 +39,10 @@ export default function DataSecuritySection() {
         <div className="grid lg:grid-cols-[0.88fr_1.12fr] gap-7 lg:gap-10 items-center">
           <div ref={titleRef} className="fade-up">
             <span className="section-eyebrow" style={{ color: '#1E3A8A' }}>Tiêu chuẩn dữ liệu</span>
-            <h2 className="section-title">Tiêu chuẩn dữ liệu rõ ràng khi triển khai tại trường học</h2>
+            <h2 className="section-title">Dữ liệu rõ, trường an tâm</h2>
             <div className="section-divider" style={{ color: '#1E3A8A' }} />
             <p className="section-desc section-desc--wide">
-              Hệ thống được thiết kế để nhà trường, phụ huynh và đối tác vận hành dữ liệu điểm danh theo đúng vai trò, đúng mục đích và dễ kiểm soát.
+              Dữ liệu điểm danh được dùng đúng vai trò, đúng mục đích.
             </p>
           </div>
 

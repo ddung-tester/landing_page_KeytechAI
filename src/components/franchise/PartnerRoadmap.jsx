@@ -8,8 +8,8 @@ const STEPS = [
   {
     time: 'Ngày 1 - 30',
     phase: 'Giai đoạn 1',
-    title: 'Nhận chuyển giao & Onboarding',
-    desc: 'Đào tạo và bàn giao tài liệu kịch bản tiếp cận trường học.',
+    title: 'Nhận bàn giao',
+    desc: 'Đào tạo gọn, tài liệu đủ dùng.',
     color: '#8B5CF6', // Purple
     bg: 'linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(139, 92, 246, 0.1) 100%)',
     border: 'rgba(139, 92, 246, 0.15)',
@@ -24,8 +24,8 @@ const STEPS = [
   {
     time: 'Ngày 31 - 60',
     phase: 'Giai đoạn 2',
-    title: 'Tiếp cận & Khảo sát thực tế',
-    desc: 'Lên danh mục trường và đồng hành khảo sát hạ tầng.',
+    title: 'Khảo sát trường',
+    desc: 'Cùng chọn điểm trường phù hợp.',
     color: '#3B82F6', // Blue
     bg: 'linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(59, 130, 246, 0.1) 100%)',
     border: 'rgba(59, 130, 246, 0.15)',
@@ -40,8 +40,8 @@ const STEPS = [
   {
     time: 'Ngày 61 - 90',
     phase: 'Giai đoạn 3',
-    title: 'Triển khai điểm trường đầu',
-    desc: 'Ký kết hợp đồng và triển khai lắp đặt hệ thống.',
+    title: 'Lắp đặt đầu tiên',
+    desc: 'Ký kết, thi công, chạy thử.',
     color: '#10B981', // Emerald
     bg: 'linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(16, 185, 129, 0.1) 100%)',
     border: 'rgba(16, 185, 129, 0.15)',
@@ -56,8 +56,8 @@ const STEPS = [
   {
     time: 'Ngày 91 - 180',
     phase: 'Giai đoạn 4',
-    title: 'Vận hành & Kích hoạt dòng tiền',
-    desc: 'Bàn giao vận hành và bắt đầu nhận doanh thu định kỳ.',
+    title: 'Bắt đầu doanh thu',
+    desc: 'Vận hành ổn, thu phí đều.',
     color: '#EA580C', // Orange
     bg: 'linear-gradient(135deg, rgba(234, 88, 12, 0.05) 0%, rgba(234, 88, 12, 0.1) 100%)',
     border: 'rgba(234, 88, 12, 0.15)',
@@ -72,8 +72,8 @@ const STEPS = [
   {
     time: 'Tháng 6 trở đi',
     phase: 'Giai đoạn 5',
-    title: 'Nhân bản & Tối ưu hóa ROI',
-    desc: 'Mở rộng quy mô danh mục trường học tại địa phương.',
+    title: 'Mở rộng bền vững',
+    desc: 'Nhân rộng theo sức địa phương.',
     color: '#D946EF', // Magenta
     bg: 'linear-gradient(135deg, rgba(217, 70, 239, 0.05) 0%, rgba(217, 70, 239, 0.1) 100%)',
     border: 'rgba(217, 70, 239, 0.15)',
@@ -116,13 +116,13 @@ export default function PartnerRoadmap({ id }) {
             letterSpacing: '-0.02em', margin: '0 auto 12px',
             maxWidth: '800px'
           }}>
-            Đồng hành chặt chẽ từ ngày đầu đến khi dòng tiền tự động vận hành
+            Cùng đi đến dòng tiền bền vững
           </h2>
           <p style={{
             fontFamily: BV, fontSize: '14.5px', color: '#475569',
             maxWidth: '560px', margin: '0 auto', lineHeight: 1.5,
           }}>
-            Lộ trình chuẩn hóa giúp đối tác làm chủ thị trường nhanh chóng.
+            Rõ từng bước. An tâm triển khai.
           </p>
         </div>
 

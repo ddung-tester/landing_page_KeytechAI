@@ -3,32 +3,32 @@ import { useFadeUp, useFadeUpChildren } from '../../hooks/useFadeUp';
 import ScrollNext from './ScrollNext';
 
 const MODEL_STATS = [
-  { value: '250+', label: 'Trường học đã triển khai' },
-  { value: '70/30', label: 'Cơ chế chia sẻ doanh thu' },
-  { value: '1,4 tỷ/năm', label: 'Doanh thu tham chiếu theo mô hình' },
+  { value: '250+', label: 'Trường đã chạy' },
+  { value: '70/30', label: 'Chia doanh thu' },
+  { value: '1,4 tỷ/năm', label: 'Doanh thu mẫu' },
   { value: '5 năm', label: 'Bảo hành thiết bị' },
 ];
 
 const PROOF_SLIDES = [
   {
     src: '/assets/hero-launch.jpg',
-    title: 'Chuyển giao & vận hành thực tế',
-    desc: 'Đối tác được đào tạo quy trình khảo sát, lắp đặt, vận hành và khai thác dịch vụ tại địa phương.',
+    title: 'Chuyển giao thực tế',
+    desc: 'Có quy trình, có người đồng hành.',
   },
   {
     src: '/assets/hero-training.jpg',
-    title: 'Đào tạo quy trình triển khai',
-    desc: 'Từ khảo sát cổng trường, bố trí thiết bị đến hướng dẫn nhà trường và phụ huynh sử dụng hệ thống.',
+    title: 'Đào tạo triển khai',
+    desc: 'Từ khảo sát đến hướng dẫn dùng.',
   },
   {
     src: '/assets/hero-conference.jpg',
-    title: 'Làm việc cùng hệ sinh thái đối tác',
-    desc: 'Các điểm triển khai được đặt trong một quy trình hợp tác có trách nhiệm, dữ liệu và chăm sóc sau bán hàng.',
+    title: 'Đồng hành cùng đối tác',
+    desc: 'Rõ việc, rõ trách nhiệm.',
   },
   {
     src: '/assets/hero-deployment.jpg',
-    title: 'Triển khai tại trường học',
-    desc: 'Hệ thống đã được bàn giao, vận hành và tối ưu theo điều kiện thực tế của từng điểm trường.',
+    title: 'Vận hành tại trường',
+    desc: 'Lắp thật, chạy thật, tối ưu thật.',
   },
 ];
 
@@ -71,7 +71,7 @@ export default function ExistingModelSection({ id = 'kiem-chung' }) {
         <div ref={titleRef} className="fade-up section-header">
           <span className="section-eyebrow" style={{ color: '#2563EB' }}>ĐÃ KIỂM CHỨNG THỰC TẾ</span>
           <h2 className="section-title">
-            Không phải ý tưởng — đây là mô hình đang vận hành tại 250+ trường mỗi ngày
+            Mô hình thật, đang chạy mỗi ngày
           </h2>
         </div>
 
@@ -137,8 +137,7 @@ export default function ExistingModelSection({ id = 'kiem-chung' }) {
               ))}
             </div>
             <p className="mt-4 rounded-2xl border border-[#E5E7EB] bg-white/75 px-4 py-3 text-[12.5px] leading-relaxed text-[#64748B]">
-              Số liệu dùng để tham khảo mô hình hợp tác, phụ thuộc vào khu vực,
-              quy mô trường và năng lực triển khai của đối tác.
+              Số liệu tham khảo. Keytech sẽ cùng bạn tính theo từng địa phương.
             </p>
           </div>
         </div>

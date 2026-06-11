@@ -48,11 +48,10 @@ export default function BusinessOpportunity() {
             Cơ hội đầu tư
           </div>
           <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight mb-4">
-            Cơ hội từ chuyển đổi số vận hành trường học
+            Cơ hội từ trường học
           </h2>
           <p className="text-[15px] text-[#4B5563] leading-relaxed">
-            Nhà trường cần công cụ điểm danh tự động, phụ huynh cần thông tin kịp thời, trong khi
-            mô hình xã hội hóa mở ra cơ hội dịch vụ công nghệ giáo dục cho đối tác địa phương.
+            Trường cần vận hành nhẹ hơn. Phụ huynh cần an tâm hơn. Đối tác có cơ hội đồng hành.
           </p>
         </div>
 

@@ -6,33 +6,33 @@ const BV = "'Be Vietnam Pro', sans-serif";
 
 const PARTNER_SUPPORTS = [
   {
-    category: 'Tài liệu & Pháp lý',
+    category: 'Tài liệu',
     color: '#2563EB', // Blue
     bg: '#EFF6FF',
     border: 'rgba(37, 99, 235, 0.15)',
     items: [
-      'Cam kết chia sẻ 70% doanh thu minh bạch trên hợp đồng.',
-      'Cung cấp toàn bộ kịch bản và tài liệu tiếp cận nhà trường.'
+      'Chia sẻ 70% rõ trên hợp đồng.',
+      'Có sẵn tài liệu gặp trường.'
     ],
   },
   {
-    category: 'Công nghệ & Phần mềm',
+    category: 'Công nghệ',
     color: '#7C3AED', // Purple
     bg: '#F5F3FF',
     border: 'rgba(124, 58, 237, 0.15)',
     items: [
-      'Camera AI nhận diện khuôn mặt chuyên dụng.',
-      'Phần mềm quản lý & ứng dụng di động đồng bộ.'
+      'Camera AI chuyên dụng.',
+      'Phần mềm và app đồng bộ.'
     ],
   },
   {
-    category: 'Vận hành & Kỹ thuật',
+    category: 'Vận hành',
     color: '#0D9488', // Teal
     bg: '#F0FDF4',
     border: 'rgba(13, 148, 136, 0.15)',
     items: [
-      'Đào tạo kỹ thuật và chuyển giao quy trình thi công.',
-      'Giám sát hệ thống và hỗ trợ kỹ thuật liên tục 24/7.'
+      'Đào tạo kỹ thuật thực tế.',
+      'Theo dõi và hỗ trợ liên tục.'
     ],
   },
 ];
@@ -68,13 +68,13 @@ export default function SupportSection({ id = 'ho-tro' }) {
             letterSpacing: '-0.02em', margin: '0 auto 12px',
             maxWidth: '800px'
           }}>
-            Bạn phát triển thị trường — Chúng tôi làm chủ công nghệ
+            Bạn mở thị trường, Keytech lo công nghệ
           </h2>
           <p style={{
             fontFamily: BV, fontSize: '14.5px', color: '#475569',
             maxWidth: '560px', margin: '0 auto', lineHeight: 1.5,
           }}>
-            Keytech đồng hành hỗ trợ lắp đặt, cấu hình kỹ thuật và vận hành từ xa.
+            Đồng hành từ lắp đặt đến vận hành.
           </p>
         </div>
 
@@ -154,7 +154,7 @@ export default function SupportSection({ id = 'ho-tro' }) {
                 lineHeight: 1.2
               }}
             >
-              Đồng hành bền vững — Chia sẻ thịnh vượng
+              Đi cùng nhau, lớn cùng nhau
             </h3>
             <p
               style={{
@@ -165,7 +165,7 @@ export default function SupportSection({ id = 'ho-tro' }) {
                 fontWeight: 300
               }}
             >
-              Công nghệ lõi từ Keytech kết hợp với vị thế địa phương của bạn tạo nên dòng tài chính an tâm trọn đời.
+              Công nghệ của Keytech và lợi thế địa phương của bạn tạo nên dòng tiền an tâm.
             </p>
           </div>
         </div>

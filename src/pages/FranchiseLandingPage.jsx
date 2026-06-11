@@ -37,8 +37,8 @@ export default function FranchiseLandingPage() {
 
       <main className="landing-main">
         <HeroStory id="hero" />
-        <InvestmentReasons id="co-hoi" />
         <TechnologySection id="cong-nghe" />
+        <InvestmentReasons id="co-hoi" />
         <RevenueModel id="doanh-thu" />
         <KeytechProof id="keytech" />
         <PartnerRoadmap id="lo-trinh" />

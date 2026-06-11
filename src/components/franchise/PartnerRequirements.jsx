@@ -42,16 +42,16 @@ export default function PartnerRequirements() {
           {/* LEFT: Title + context */}
           <div ref={titleRef} className="fade-up">
             <span className="section-eyebrow" style={{ color: '#1E3A8A' }}>Đối tác phù hợp</span>
-            <h2 className="section-title">Dành cho đối tác muốn phát triển thị trường giáo dục địa phương</h2>
+            <h2 className="section-title">Dành cho người hiểu địa phương</h2>
             <div className="section-divider" style={{ color: '#1E3A8A' }} />
             <p className="section-desc mb-5">
-              Keytech AI phù hợp với doanh nghiệp, hộ kinh doanh hoặc đội ngũ địa phương có năng lực phát triển trường học và tổ chức triển khai.
+              Phù hợp với đội ngũ có kết nối trường học và muốn làm bài bản.
             </p>
 
             {/* Quote-style highlight */}
             <div className="bg-[#F0F4FF] border-l-4 border-[#1E3A8A] rounded-r-xl px-5 py-4">
               <p className="text-[13.5px] text-[#1E3A8A] font-medium leading-relaxed">
-                Phù hợp nhất với đối tác có mạng lưới địa phương vững chắc và hiểu rõ đặc thù từng nhà trường trong khu vực.
+                Càng hiểu trường học địa phương, càng dễ đi xa cùng Keytech.
               </p>
             </div>
           </div>
@@ -77,7 +77,7 @@ export default function PartnerRequirements() {
         </div>
 
         <p className="mt-5 text-[11.5px] text-[#9CA3AF] max-w-4xl">
-          * Các điều kiện pháp lý, tài chính và phạm vi hợp tác sẽ được tư vấn chi tiết trong quá trình làm việc.
+          * Điều kiện hợp tác sẽ được trao đổi rõ trong buổi tư vấn.
         </p>
 
         <ScrollNext href="#du-lieu" />

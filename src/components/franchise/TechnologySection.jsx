@@ -15,7 +15,7 @@ const TECH_FEATURES = [
       </svg>
     ),
     title: 'Nhận diện tức thì',
-    desc: 'Quét khuôn mặt tự động, chuẩn xác ngay tại cổng trường.',
+    desc: 'Quét nhanh, nhận đúng.',
   },
   {
     icon: (
@@ -26,8 +26,8 @@ const TECH_FEATURES = [
         <path d="M14.5 5.5l.7.7 1.3-1.3" stroke="#38BDF8" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    title: 'Cập nhật thời gian thực',
-    desc: 'Gửi thông báo trạng thái lớp/trường tức thì qua ứng dụng di động.',
+    title: 'Báo ngay',
+    desc: 'Phụ huynh yên tâm từng lần đến lớp.',
   },
   {
     icon: (
@@ -39,7 +39,7 @@ const TECH_FEATURES = [
       </svg>
     ),
     title: 'Quản trị tập trung',
-    desc: 'Theo dõi sĩ số toàn trường trực quan trên một hệ thống duy nhất.',
+    desc: 'Một màn hình, đủ dữ liệu.',
   },
 ];
 
@@ -91,17 +91,41 @@ export default function TechnologySection({ id }) {
 
         <div ref={titleRef} className="fade-up section-header">
           <span className="section-eyebrow" style={{ color: '#2563EB' }}>CÔNG NGHỆ LÕI</span>
-          <h2 className="section-title">Công nghệ đã đóng gói — Sẵn sàng chuyển giao và vận hành</h2>
+          <h2 className="section-title">Công nghệ gọn, sẵn sàng vận hành</h2>
         </div>
 
-        <div className="grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-10 items-center">
+        <div className="grid lg:grid-cols-[minmax(0,1.35fr)_minmax(340px,0.9fr)] gap-6 lg:gap-10 items-stretch">
 
-          {/* LEFT: Feature cards */}
-          <div ref={cardsRef} className="grid sm:grid-cols-3 lg:grid-cols-1 gap-4.5">
+          {/* LEFT: Video */}
+          <div className="flex items-stretch justify-center">
+            <div
+              className="video-container w-full h-full rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-[0_4px_24px_rgba(30,58,138,0.08)]"
+              style={{ transform: 'translate3d(0,0,0)' }}
+            >
+              <video
+                ref={videoRef}
+                src={VIDEO_SRC}
+                loop
+                muted
+                playsInline
+                preload="auto"
+                className="w-full h-full block"
+                style={{
+                  minHeight: 'clamp(320px, 48vh, 520px)',
+                  objectFit: 'cover',
+                  transform: 'translate3d(0,0,0)',
+                  willChange: 'transform'
+                }}
+              />
+            </div>
+          </div>
+
+          {/* RIGHT: Feature cards */}
+          <div ref={cardsRef} className="grid sm:grid-cols-3 lg:grid-cols-1 gap-4 lg:h-full">
             {TECH_FEATURES.map((feat, i) => (
               <div
                 key={i}
-                className={`fade-up fade-up-delay-${i + 1} group card-standard flex flex-col`}
+                className={`fade-up fade-up-delay-${i + 1} group card-standard flex flex-col justify-center lg:min-h-0`}
                 style={{
                   '--card-border': '#DBEAFE',
                   '--card-hover-border': '#2563EB'
@@ -117,33 +141,9 @@ export default function TechnologySection({ id }) {
             ))}
           </div>
 
-          {/* RIGHT: Video */}
-          <div className="flex items-center justify-center">
-            <div
-              className="video-container w-full rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-[0_4px_24px_rgba(30,58,138,0.08)]"
-              style={{ transform: 'translate3d(0,0,0)' }}
-            >
-              <video
-                ref={videoRef}
-                src={VIDEO_SRC}
-                loop
-                muted
-                playsInline
-                preload="auto"
-                className="w-full block"
-                style={{
-                  minHeight: 'clamp(280px, 42vh, 480px)',
-                  objectFit: 'cover',
-                  transform: 'translate3d(0,0,0)',
-                  willChange: 'transform'
-                }}
-              />
-            </div>
-          </div>
-
         </div>
 
-        <ScrollNext href="#doanh-thu" />
+        <ScrollNext href="#co-hoi" />
       </div>
     </section>
   );

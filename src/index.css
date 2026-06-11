@@ -114,7 +114,7 @@
     /* Subtle left tint for text legibility */
     linear-gradient(to right, rgba(243,238,255,0.22) 0%, rgba(243,238,255,0.08) 48%, transparent 62%),
     /* New clean background image – left is empty gradient, right is school/phone visuals */
-    url('/assets/hero-landingpage-background.jpeg') center center / cover no-repeat;
+    url('/assets/hero-landingpage-background.jpeg') right center / min(62vw, 880px) auto no-repeat;
   --page-accent: #3B82F6;
   --card-bg: #ffffff;
   --soft-border: #E5E7EB;

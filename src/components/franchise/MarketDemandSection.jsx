@@ -12,7 +12,7 @@ const DEMAND_CARDS = [
       </svg>
     ),
     title: 'Nhà trường cần',
-    desc: 'Kiểm soát cổng tự động, điểm danh minh bạch — giảm áp lực vận hành.',
+    desc: 'Cổng an toàn. Điểm danh nhẹ.',
     iconColor: 'bg-[#EEF6FF] text-[#1D4ED8]',
     accentColor: '#1D4ED8',
   },
@@ -26,7 +26,7 @@ const DEMAND_CARDS = [
       </svg>
     ),
     title: 'Phụ huynh cần',
-    desc: 'Biết con đã đến trường, đã ra về — không gọi điện hỏi, không lo lắng.',
+    desc: 'Biết con đến lớp, ra về. An tâm.',
     iconColor: 'bg-[#EEF6FF] text-[#2563EB]',
     accentColor: '#2563EB',
   },
@@ -39,7 +39,7 @@ const DEMAND_CARDS = [
       </svg>
     ),
     title: 'Đối tác địa phương',
-    desc: 'Sở hữu mối quan hệ và sự am hiểu thị trường — cần một giải pháp công nghệ bền vững để tối ưu hóa hiệu quả khai thác.',
+    desc: 'Có quan hệ địa phương. Cần mô hình đủ tốt để đi xa.',
     iconColor: 'bg-[#F3EEFF] text-[#6D28D9]',
     accentColor: '#6D28D9',
   },
@@ -90,7 +90,7 @@ export default function MarketDemandSection({ id = 'thi-truong' }) {
             <div className="section-header">
               <span className="section-eyebrow" style={{ color: '#1D4ED8' }}>CƠ HỘI ĐANG MỞ RA</span>
               <h2 className="section-title">
-                Hàng nghìn trường học đang cần — nhưng chưa ai mang đến cho họ
+                Trường học đang cần một cách làm mới
               </h2>
             </div>
 
@@ -120,7 +120,7 @@ export default function MarketDemandSection({ id = 'thi-truong' }) {
             <div className="inline-flex items-center gap-2.5 rounded-full border border-[#C4B5FD] bg-[#EEF0FF] px-4 py-2.5 w-fit">
               <span className="text-[18px]">💡</span>
               <p className="text-[12.5px] text-[#4C1D95] font-semibold">
-                Dưới 5% trường học Việt Nam đã có AI điểm danh — thị trường còn 95% chưa được khai thác.
+                Dưới 5% trường đã có AI điểm danh. Cơ hội vẫn còn rất rộng.
               </p>
             </div>
           </div>

@@ -22,23 +22,23 @@ function StatCard({ stat }) {
 const HERO_SLIDES = [
   {
     src: '/assets/hero-launch.jpg',
-    title: 'Lễ ký kết & Ra mắt giải pháp',
-    desc: 'Hệ thống Camera AI điểm danh trường học chính thức ra mắt đối tác.',
+    title: 'Ký kết và ra mắt',
+    desc: 'Camera AI sẵn sàng đến trường học.',
   },
   {
     src: '/assets/hero-training.jpg',
-    title: 'Tập huấn & Chuyển giao công nghệ',
-    desc: 'Đào tạo quy trình kỹ thuật, khảo sát và lắp đặt thực tế cho đại lý.',
+    title: 'Tập huấn chuyển giao',
+    desc: 'Học nhanh, làm được ngay.',
   },
   {
     src: '/assets/hero-conference.jpg',
     title: 'Hội nghị đối tác chiến lược',
-    desc: 'Cơ chế chia sẻ doanh thu 70/30 hấp dẫn cùng chính sách đồng hành lâu dài.',
+    desc: 'Chia sẻ rõ ràng. Đồng hành lâu dài.',
   },
   {
     src: '/assets/hero-deployment.jpg',
-    title: 'Triển khai lắp đặt thực tế',
-    desc: 'Giải pháp đã được bàn giao và vận hành ổn định tại hơn 250+ trường học.',
+    title: 'Lắp đặt thực tế',
+    desc: 'Đã vận hành tại 250+ trường.',
   },
 ];
 
@@ -83,7 +83,7 @@ export default function HeroSection({ id = 'hero' }) {
               bg-white border border-[#E5E7EB] rounded-full mb-4 shadow-sm">
               <div className="w-1.5 h-1.5 rounded-full bg-[#A855F7]" />
               <span className="text-[11.5px] font-semibold text-[#A855F7] tracking-wide uppercase">
-                Cơ hội hợp tác &amp; nhượng quyền khai thác
+                Hợp tác nhượng quyền
               </span>
             </div>
 
@@ -94,8 +94,7 @@ export default function HeroSection({ id = 'hero' }) {
             </h1>
 
             <p className="text-[15px] sm:text-[16px] text-[#4B5563] leading-relaxed mb-6 max-w-[540px]">
-              Giải pháp điểm danh &amp; an ninh thông minh ứng dụng công nghệ nhận diện khuôn mặt.
-              Hệ thống đã triển khai thực tế trên diện rộng, chuyển giao quy trình trọn gói cùng cơ chế chia sẻ doanh thu 70/30 tối ưu cho đối tác.
+              Camera AI điểm danh cho trường học. Dễ chuyển giao, vận hành thật, doanh thu chia rõ 70/30.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -126,7 +125,7 @@ export default function HeroSection({ id = 'hero' }) {
                   hover:border-[#A855F7] hover:text-[#A855F7] hover:-translate-y-px
                   transition-all duration-200"
               >
-                Xem mô hình doanh thu
+                Xem doanh thu
               </a>
             </div>
           </div>

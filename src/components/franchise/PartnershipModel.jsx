@@ -4,8 +4,8 @@ import ScrollNext from './ScrollNext';
 const ROLE_CARDS = [
   {
     label: 'Đối tác địa phương',
-    title: 'Mở thị trường, kết nối trường học',
-    desc: 'Đối tác am hiểu địa phương, có mối quan hệ rộng và nắm rõ cơ hội kinh doanh. Đó là giá trị cốt lõi không thể thay thế.',
+    title: 'Kết nối trường học',
+    desc: 'Bạn hiểu địa phương. Đó là lợi thế quý nhất.',
     tone: 'blue',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -18,8 +18,8 @@ const ROLE_CARDS = [
   },
   {
     label: 'Keytech — Đối tác chiến lược',
-    title: 'Cung cấp nền tảng, hỗ trợ toàn trình',
-    desc: 'Công nghệ, quy trình, đào tạo và hỗ trợ kỹ thuật — Keytech hỗ trợ trọn gói giúp Đối tác tập trung phát triển thị trường.',
+    title: 'Nền tảng và đồng hành',
+    desc: 'Keytech lo công nghệ, quy trình và hỗ trợ.',
     tone: 'purple',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -33,7 +33,7 @@ const ROLE_CARDS = [
   {
     label: 'Nhà trường — Khách hàng',
     title: 'Nhận hệ thống, vận hành ngay',
-    desc: 'Điểm danh tự động, thông báo phụ huynh, báo cáo sĩ số — nhà trường yêu mến, phụ huynh tin tưởng. Đó là nền tảng giữ khách hàng dài hạn.',
+    desc: 'Trường dễ dùng. Phụ huynh yên tâm. Niềm tin ở lại lâu dài.',
     tone: 'green',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -44,7 +44,7 @@ const ROLE_CARDS = [
   },
 ];
 
-const FLOW_STEPS = ['Khảo sát & ký kết', 'Thiết kế lắp đặt', 'Bàn giao & đào tạo', 'Vận hành & mở rộng'];
+const FLOW_STEPS = ['Khảo sát', 'Lắp đặt', 'Bàn giao', 'Mở rộng'];
 
 const toneClass = {
   blue: {
@@ -81,7 +81,7 @@ export default function PartnershipModel({ id = 'kiem-chung' }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div ref={titleRef} className="fade-up section-header">
           <span className="section-eyebrow" style={{ color: '#6D28D9' }}>MÔ HÌNH HỢP TÁC</span>
-          <h2 className="section-title">Đối tác kết nối cơ hội — Keytech cung cấp nền tảng</h2>
+          <h2 className="section-title">Bạn mở thị trường, Keytech đồng hành</h2>
         </div>
 
         <div ref={cardsRef} className="grid lg:grid-cols-3 gap-4 lg:gap-5">
@@ -124,7 +124,7 @@ export default function PartnershipModel({ id = 'kiem-chung' }) {
           <div className="flex flex-col lg:flex-row lg:items-center gap-4 relative z-10">
             <div className="lg:w-[190px] shrink-0">
               <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#6D28D9]">Luồng phối hợp</div>
-              <div className="text-[14px] font-extrabold text-[#0F172A] mt-1">Từ khảo sát đến vận hành</div>
+              <div className="text-[14px] font-extrabold text-[#0F172A] mt-1">Từng bước rõ ràng</div>
             </div>
 
             <div className="flex-1 grid sm:grid-cols-4 gap-3">

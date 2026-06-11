@@ -12,9 +12,9 @@ const SCALE = [
 ];
 
 const FLOW = [
-  { num: '01', label: 'Đầu tư & ký kết', color: '#2563EB' },
+  { num: '01', label: 'Ký kết', color: '#2563EB' },
   { num: '02', label: 'Keytech triển khai', color: '#7C3AED' },
-  { num: '03', label: 'Thu phí định kỳ', color: '#0EA5E9' },
+  { num: '03', label: 'Thu phí đều', color: '#0EA5E9' },
   { num: '04', label: 'Chia 70 / 30', color: '#059669' },
 ];
 
@@ -47,8 +47,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
             color: '#0F172A', lineHeight: 1.22,
             letterSpacing: '-0.02em', margin: '0 0 8px',
           }}>
-            Đầu tư một lần —{' '}
-            <span style={{ color: '#059669', fontStyle: 'italic' }}>thu mãi mãi</span>
+            Đầu tư một lần, thu đều mỗi năm
           </h2>
         </div>
 
@@ -127,11 +126,11 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
                 fontFamily: BV, fontSize: 10, fontWeight: 800,
                 letterSpacing: '0.16em', textTransform: 'uppercase',
                 color: '#059669', marginBottom: 10,
-              }}>Ví dụ: 1 trường / 1.000 học sinh</div>
+              }}>Ví dụ: 1 trường</div>
 
               {[
-                { l: 'Doanh thu tham chiếu / năm', v: '200.000.000đ' },
-                { l: 'Đối tác thực nhận (70%)', v: '140.000.000đ', accent: true },
+                { l: 'Doanh thu / năm', v: '200.000.000đ' },
+                { l: 'Bạn nhận 70%', v: '140.000.000đ', accent: true },
               ].map((row, i) => (
                 <div key={i} style={{
                   display: 'flex', justifyContent: 'space-between',
@@ -165,10 +164,10 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
                   fontFamily: BV, fontSize: 10, fontWeight: 800,
                   letterSpacing: '0.16em', textTransform: 'uppercase',
                   color: '#BBF7D0', marginBottom: 2,
-                }}>Thu nhập đối tác theo danh mục</div>
+                }}>Thu nhập theo danh mục</div>
                 <div style={{
                   fontFamily: PD, fontWeight: 800, fontSize: 18, color: '#fff',
-                }}>Nhân lên không giới hạn</div>
+                }}>Lớn dần theo số trường</div>
               </div>
               <div className="p-4">
                 <div style={{
@@ -205,7 +204,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
                 fontFamily: BV, fontSize: 10, fontWeight: 800,
                 letterSpacing: '0.16em', textTransform: 'uppercase',
                 color: '#2563EB', marginBottom: 14,
-              }}>Dòng chảy đầu tư</div>
+              }}>Dòng tiền</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 0 }}>
                 {FLOW.map((f, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', flex: 1 }}>

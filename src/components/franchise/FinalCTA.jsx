@@ -4,8 +4,8 @@ const PD = "'Playfair Display', Georgia, serif";
 const BV = "'Be Vietnam Pro', sans-serif";
 
 const TRUST = [
-  { value: '250+', label: 'Trường đã triển khai' },
-  { value: '70%', label: 'Doanh thu về tay bạn' },
+  { value: '250+', label: 'Trường đã chạy' },
+  { value: '70%', label: 'Doanh thu của bạn' },
   { value: '1-2', label: 'Đại lý mỗi tỉnh' },
 ];
 
@@ -44,13 +44,13 @@ export default function FinalCTA({ id = 'lien-he' }) {
               color: '#fff', lineHeight: 1.2,
               letterSpacing: '-0.02em', margin: '0 0 20px',
             }}>
-              Trở thành đối tác dẫn đầu tại địa phương của bạn
+              Cùng Keytech mở thị trường của bạn
             </h2>
             <p style={{
               fontFamily: BV, fontSize: '15px', color: '#94A3B8',
               maxWidth: '540px', lineHeight: 1.6, marginBottom: 28,
             }}>
-              Nhận ngay trọn bộ hồ sơ năng lực và chính sách chia sẻ lợi nhuận độc quyền.
+              Nhận hồ sơ hợp tác và chính sách chia sẻ rõ ràng.
             </p>
 
             {/* Trust stats */}
@@ -91,9 +91,9 @@ export default function FinalCTA({ id = 'lien-he' }) {
             {/* Scarcity / Rules */}
             <div className="space-y-3">
               {[
-                'Giới hạn 1–2 đối tác mỗi tỉnh để bảo vệ tối đa quyền khai thác.',
-                'Ưu tiên đơn vị có sẵn mối quan hệ trường học tại địa bàn.',
-                'Chúng tôi đồng hành khảo sát thực địa và hỗ trợ kỹ thuật trọn gói.'
+                'Giới hạn 1–2 đối tác mỗi tỉnh.',
+                'Ưu tiên người có kết nối trường học.',
+                'Keytech đồng hành khảo sát và kỹ thuật.'
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3.5">
                   <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/20">
@@ -141,7 +141,7 @@ export default function FinalCTA({ id = 'lien-he' }) {
               lineHeight: 1.3,
               marginBottom: 10
             }}>
-              Nhận tư vấn & Hồ sơ đầu tư
+              Nhận hồ sơ hợp tác
             </h3>
             <p style={{
               fontFamily: BV,
@@ -150,14 +150,14 @@ export default function FinalCTA({ id = 'lien-he' }) {
               lineHeight: 1.5,
               marginBottom: 24
             }}>
-              Nhận trọn bộ hồ sơ năng lực, chính sách và kịch bản tư vấn mẫu.
+              Gọn đủ: hồ sơ, chính sách, kịch bản tư vấn.
             </p>
 
             {/* Contact links */}
             <div className="space-y-3 mb-6">
               {[
                 {
-                  label: 'Hotline tư vấn 24/7',
+                  label: 'Hotline tư vấn',
                   value: '0386 100 833',
                   href: 'tel:0386100833',
                   icon: (
@@ -167,7 +167,7 @@ export default function FinalCTA({ id = 'lien-he' }) {
                   ),
                 },
                 {
-                  label: 'Email hỗ trợ dự án',
+                  label: 'Email hỗ trợ',
                   value: 'info@keytechai.com',
                   href: 'mailto:info@keytechai.com?subject=Dang ky nhan ho so hop tac Keytech',
                   icon: (
@@ -276,7 +276,7 @@ export default function FinalCTA({ id = 'lien-he' }) {
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.1 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/>
                 </svg>
-                Gọi tư vấn ngay
+                Gọi tư vấn
               </a>
             </div>
           </aside>

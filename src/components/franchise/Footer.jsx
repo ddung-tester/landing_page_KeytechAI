@@ -1,8 +1,8 @@
 import { scrollToLandingTarget } from '../../utils/scrollToLandingTarget';
 
 const footerLinks = [
-  { label: "Cơ hội đầu tư", href: "#co-hoi" },
   { label: "Show công nghệ", href: "#cong-nghe" },
+  { label: "Cơ hội đầu tư", href: "#co-hoi" },
   { label: "Mô hình doanh thu", href: "#doanh-thu" },
   { label: "Vì sao Keytech", href: "#keytech" },
   { label: "Lộ trình", href: "#lo-trinh" },
