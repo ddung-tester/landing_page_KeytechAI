@@ -1,39 +1,12 @@
 import { useFadeUp } from '../../hooks/useFadeUp';
 
-const TRUST_ITEMS = [
+const PD = "'Playfair Display', Georgia, serif";
+const BV = "'Be Vietnam Pro', sans-serif";
+
+const TRUST = [
   { value: '250+', label: 'Trường đã triển khai' },
-  { value: '25.000+', label: 'Trường học toàn quốc' },
-  { value: '5 năm', label: 'Bảo hành camera AI' },
-];
-
-const CONTACT_ITEMS = [
-  {
-    label: 'Hotline tư vấn',
-    value: '0386 100 833',
-    href: 'tel:0386100833',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.1 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z" />
-      </svg>
-    ),
-  },
-  {
-    label: 'Email liên hệ',
-    value: 'info@keytechai.com',
-    href: 'mailto:info@keytechai.com?subject=Keytech AI - Dang ky nhan ho so hop tac',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <rect width="20" height="16" x="2" y="4" rx="2" />
-        <path d="m22 7-8.9 5.7a2 2 0 0 1-2.2 0L2 7" />
-      </svg>
-    ),
-  },
-];
-
-const SCARCITY_ITEMS = [
-  'Giới hạn 1–2 đối tác mỗi tỉnh/thành',
-  'Ưu tiên đối tác có sẵn mối quan hệ trường học',
-  'Hỗ trợ onboarding trong 30 ngày đầu',
+  { value: '70%', label: 'Doanh thu về tay bạn' },
+  { value: '1-2', label: 'Đại lý mỗi tỉnh' },
 ];
 
 export default function FinalCTA({ id = 'lien-he' }) {
@@ -43,118 +16,265 @@ export default function FinalCTA({ id = 'lien-he' }) {
   return (
     <section
       id={id}
-      className="landing-section snap-section bg-section-cta bg-tech-grid border-t border-[#EEF2F7] flex flex-col justify-center relative overflow-hidden"
-      style={{ scrollMarginTop: 0 }}
+      className="landing-section snap-section bg-section-cta bg-tech-grid border-t border-slate-900 flex flex-col justify-center relative overflow-hidden"
+      style={{
+        scrollMarginTop: 0,
+        background: 'linear-gradient(135deg, #020617 0%, #0F172A 100%)',
+      }}
     >
-      {/* ── Glow blobs */}
-      <div className="glow-blob glow-purple -left-20 -top-20" />
-      <div className="glow-blob glow-blue -right-20 -bottom-20" />
+      {/* Visual glow blobs */}
+      <div className="absolute -left-20 -top-20 w-80 h-80 rounded-full bg-violet-500/10 blur-[100px]" />
+      <div className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-blue-500/10 blur-[100px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-white">
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-10 items-center">
-
-          {/* LEFT — Emotional headline + proof */}
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+          
+          {/* LEFT: Text & Trust metrics */}
           <div ref={leftRef} className="fade-up">
-            <div className="section-header">
-              <span className="section-eyebrow" style={{ color: '#38BDF8' }}>ĐĂNG KÝ HỢP TÁC</span>
-              <h2 className="section-title text-white">
-                Khu vực tiềm năng đang chờ — Đăng ký để giữ quyền ưu tiên
-              </h2>
-            </div>
+            <span style={{
+              fontFamily: BV, fontSize: 10.5, fontWeight: 800,
+              letterSpacing: '0.18em', textTransform: 'uppercase', color: '#38BDF8',
+              display: 'block', marginBottom: 12,
+            }}>
+              Đăng ký hợp tác
+            </span>
+            <h2 style={{
+              fontFamily: PD, fontWeight: 800,
+              fontSize: 'clamp(28px, 3vw, 42px)',
+              color: '#fff', lineHeight: 1.2,
+              letterSpacing: '-0.02em', margin: '0 0 20px',
+            }}>
+              Trở thành đối tác dẫn đầu tại địa phương của bạn
+            </h2>
+            <p style={{
+              fontFamily: BV, fontSize: '15px', color: '#94A3B8',
+              maxWidth: '540px', lineHeight: 1.6, marginBottom: 28,
+            }}>
+              Nhận ngay trọn bộ hồ sơ năng lực và chính sách chia sẻ lợi nhuận độc quyền.
+            </p>
 
             {/* Trust stats */}
-            <div className="grid grid-cols-3 gap-3 max-w-[520px] mb-6">
-              {TRUST_ITEMS.map((item) => (
+            <div className="grid grid-cols-3 gap-4 max-w-md mb-8">
+              {TRUST.map((item) => (
                 <div
                   key={item.label}
-                  className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl flex flex-col justify-center text-center p-3.5 hover:border-[#38BDF8]/60 transition-all duration-300"
+                  className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl
+                    flex flex-col items-center justify-center text-center p-4
+                    hover:border-[#38BDF8]/40 transition-all duration-300"
                 >
-                  <div className="text-[20px] sm:text-[24px] font-black text-[#38BDF8] leading-none">{item.value}</div>
-                  <div className="text-[10.5px] text-slate-300 font-semibold mt-1.5 leading-snug">{item.label}</div>
+                  <div
+                    style={{
+                      fontFamily: PD,
+                      fontSize: '28px',
+                      fontWeight: 800,
+                      color: '#38BDF8',
+                      lineHeight: 1
+                    }}
+                  >
+                    {item.value}
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: BV,
+                      fontSize: '11px',
+                      color: '#94A3B8',
+                      fontWeight: 600,
+                      marginTop: 6
+                    }}
+                  >
+                    {item.label}
+                  </div>
                 </div>
               ))}
             </div>
 
-            {/* Scarcity signals */}
-            <div className="space-y-2">
-              {SCARCITY_ITEMS.map((item, i) => (
-                <div key={i} className="flex items-start gap-2.5">
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 mt-0.5">
+            {/* Scarcity / Rules */}
+            <div className="space-y-3">
+              {[
+                'Giới hạn 1–2 đối tác mỗi tỉnh để bảo vệ tối đa quyền khai thác.',
+                'Ưu tiên đơn vị có sẵn mối quan hệ trường học tại địa bàn.',
+                'Chúng tôi đồng hành khảo sát thực địa và hỗ trợ kỹ thuật trọn gói.'
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3.5">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/20">
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                      <path d="M2 5l2 2 4-4" stroke="#34D399" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M2 5l2 2 4-4" stroke="#34D399" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
-                  <span className="text-[13px] font-medium text-slate-300 leading-snug">{item}</span>
+                  <span style={{
+                    fontFamily: BV,
+                    fontSize: '13.5px',
+                    color: '#CBD5E1',
+                    lineHeight: 1.4
+                  }}>
+                    {item}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* RIGHT — Contact card */}
+          {/* RIGHT: Action & Contact card */}
           <aside
             ref={cardRef}
-            className="fade-up fade-up-delay-2 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-6 lg:p-7 flex flex-col relative overflow-hidden shadow-xl"
+            className="fade-up fade-up-delay-2 bg-slate-900/60 backdrop-blur-md rounded-3xl
+              border border-white/10 p-8 flex flex-col relative overflow-hidden shadow-2xl"
           >
-            {/* Top gradient bar */}
-            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#1D4ED8] via-[#2563EB] to-[#0EA5E9]" />
+            <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-blue-500 via-indigo-500 to-cyan-400" />
 
-            <div className="text-[11px] font-black uppercase tracking-[0.18em] text-blue-400 mb-2 mt-1">
-              Nhận bộ tài liệu pitch
+            <div style={{
+              fontFamily: BV,
+              fontSize: '11px',
+              fontWeight: 800,
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              color: '#38BDF8',
+              marginBottom: 8
+            }}>
+              Kết nối cùng chúng tôi
             </div>
-            <h3 className="text-[22px] font-black text-white leading-tight mb-1">
-              Hồ sơ hợp tác &amp; phương án triển khai
+            <h3 style={{
+              fontFamily: PD,
+              fontSize: '22px',
+              fontWeight: 800,
+              color: '#fff',
+              lineHeight: 1.3,
+              marginBottom: 10
+            }}>
+              Nhận tư vấn & Hồ sơ đầu tư
             </h3>
-            <p className="text-[12.5px] text-slate-300 mb-5 leading-relaxed">
-              Tư vấn miễn phí — không ràng buộc. Chúng tôi sẽ phân tích tiềm năng khu vực và đề xuất phương án phù hợp nhất với Đối tác.
+            <p style={{
+              fontFamily: BV,
+              fontSize: '13px',
+              color: '#94A3B8',
+              lineHeight: 1.5,
+              marginBottom: 24
+            }}>
+              Nhận trọn bộ hồ sơ năng lực, chính sách và kịch bản tư vấn mẫu.
             </p>
 
-            <div className="space-y-3 mb-5">
-              {CONTACT_ITEMS.map((item) => (
+            {/* Contact links */}
+            <div className="space-y-3 mb-6">
+              {[
+                {
+                  label: 'Hotline tư vấn 24/7',
+                  value: '0386 100 833',
+                  href: 'tel:0386100833',
+                  icon: (
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.1 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z" />
+                    </svg>
+                  ),
+                },
+                {
+                  label: 'Email hỗ trợ dự án',
+                  value: 'info@keytechai.com',
+                  href: 'mailto:info@keytechai.com?subject=Dang ky nhan ho so hop tac Keytech',
+                  icon: (
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.9 5.7a2 2 0 0 1-2.2 0L2 7"/>
+                    </svg>
+                  ),
+                },
+              ].map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="flex items-center gap-3.5 rounded-xl border border-white/10 bg-white/5 px-4 py-3.5
-                    hover:border-blue-400 hover:bg-white/10 transition-all duration-200
-                    hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(37,99,235,0.08)]"
+                  className="flex items-center gap-4 rounded-2xl border border-white/5 bg-white/5 px-5 py-4
+                    hover:border-blue-400 hover:bg-white/10 transition-all duration-200 hover:-translate-y-0.5"
                 >
-                  <span className="w-10 h-10 rounded-lg bg-white/10 text-blue-400 flex items-center justify-center shrink-0">
+                  <span className="w-9 h-9 rounded-lg bg-white/10 text-blue-400 flex items-center justify-center shrink-0">
                     {item.icon}
                   </span>
                   <span>
-                    <span className="block text-[10.5px] font-black uppercase tracking-wider text-slate-400">{item.label}</span>
-                    <span className="block text-[15px] font-extrabold text-white mt-0.5 break-all">{item.value}</span>
+                    <span style={{
+                      fontFamily: BV,
+                      display: 'block',
+                      fontSize: '10px',
+                      fontWeight: 800,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.1em',
+                      color: '#94A3B8'
+                    }}>
+                      {item.label}
+                    </span>
+                    <span style={{
+                      fontFamily: BV,
+                      display: 'block',
+                      fontSize: '14.5px',
+                      fontWeight: 800,
+                      color: '#fff',
+                      marginTop: 2
+                    }}>
+                      {item.value}
+                    </span>
                   </span>
                 </a>
               ))}
             </div>
 
-            <div className="rounded-xl bg-white/5 border border-white/10 p-3.5 mb-5">
-              <div className="text-[10.5px] font-black uppercase tracking-[0.14em] text-blue-400 mb-1">Trụ sở chính</div>
-              <p className="text-[12.5px] text-slate-200 font-semibold leading-relaxed">
+            {/* Address */}
+            <div className="rounded-2xl bg-white/5 border border-white/5 p-4 mb-6">
+              <div style={{
+                fontFamily: BV,
+                fontSize: '9.5px',
+                fontWeight: 800,
+                textTransform: 'uppercase',
+                letterSpacing: '0.12em',
+                color: '#38BDF8',
+                marginBottom: 4
+              }}>
+                Trụ sở chính
+              </div>
+              <p style={{
+                fontFamily: BV,
+                fontSize: '12px',
+                color: '#CBD5E1',
+                lineHeight: 1.5
+              }}>
                 LK621-DV14, Khu dịch vụ Đào Đất, Hàng Bè, Kiến Hưng, Hà Đông, Hà Nội
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-3">
+            {/* Action Buttons */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <a
-                href="/CS%C4%90L%20NH%E1%BA%ACN%20QUY%E1%BB%80N%20VNS%20VNS_06_2026_CHINH_THUC.pdf"
+                href="/CSĐL NHẬN QUYỀN VNS VNS_06_2026_CHINH_THUC.pdf"
                 download="CSĐL NHẬN QUYỀN VNS VNS_06_2026_CHINH_THUC.pdf"
-                className="inline-flex items-center justify-center gap-2 px-4 py-3 btn-brand-primary text-white text-[13.5px] font-bold text-center"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full text-white text-[13.5px] font-bold"
+                style={{
+                  background: 'linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%)',
+                  boxShadow: '0 4px 14px rgba(37, 99, 235, 0.4)',
+                  fontFamily: BV,
+                  transition: 'all 0.2s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.filter = 'brightness(1.1)';
+                  e.currentTarget.style.transform = 'translateY(-1px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.filter = 'none';
+                  e.currentTarget.style.transform = 'none';
+                }}
               >
                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-                  <path d="M7.5 1v9M4 7l3.5 3.5L11 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M2 12h11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                  <path d="M7.5 1v9M4 7l3.5 3.5L11 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 12h11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
                 </svg>
-                Nhận hồ sơ ngay
+                Tải chính sách
               </a>
               <a
                 href="tel:0386100833"
-                className="inline-flex items-center justify-center gap-2 px-4 py-3 bg-white/10 border border-white/20
-                  text-white hover:text-blue-400 hover:border-blue-400 rounded-full
-                  text-[13.5px] font-bold text-center transition-all duration-200 hover:bg-white/20"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5
+                  bg-white/10 border border-white/15 text-white hover:text-blue-400
+                  hover:border-blue-400 rounded-full text-[13.5px] font-bold
+                  transition-all duration-200 hover:bg-white/20"
+                style={{
+                  fontFamily: BV,
+                }}
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.1 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z" />
+                  <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.1 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/>
                 </svg>
                 Gọi tư vấn ngay
               </a>

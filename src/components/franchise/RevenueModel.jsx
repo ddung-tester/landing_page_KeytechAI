@@ -1,147 +1,241 @@
-import { useFadeUp, useFadeUpChildren } from '../../hooks/useFadeUp';
+import { useFadeUp } from '../../hooks/useFadeUp';
 import ScrollNext from './ScrollNext';
 
-const REVENUE_STREAMS = [
-  {
-    title: 'Phí triển khai — Thu ngay',
-    desc: 'Mỗi trường được ký kết là một khoản thu gọi nờ tức thì. Chi phí lắp đặt và cài đặt được tính vào phiếu thu.',
-    color: '#1D4ED8',
-    bg: '#EEF6FF',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 21h18" />
-        <path d="M6 21V8l6-4 6 4v13" />
-        <path d="M9 21v-7h6v7" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Phí duy trì — Thu định kỳ',
-    desc: 'Mỗi năm học trường tiếp tục sử dụng, Đối tác tiếp tục nhận nguồn thu định kỳ. Đây là dòng tiền bền vững nhất của mô hình.',
-    color: '#6D28D9',
-    bg: '#F3EEFF',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 12a9 9 0 1 1-2.6-6.4" />
-        <path d="M21 4v6h-6" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Dịch vụ bổ sung — Tăng biên lợi nhuận',
-    desc: 'Ngoài gói cơ bản, phụ huynh và nhà trường có thể nâng cấp dịch vụ — tăng giá trị theo từng đương hàng.',
-    color: '#2563EB',
-    bg: '#EEF6FF',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2v20" />
-        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Mở rộng trường mới — Tăng trưởng không giới hạn',
-    desc: 'Khu vực càng nhiều trường, danh mục càng lớn, tổng doanh thu càng tăng. Không có trần.',
-    color: '#6D28D9',
-    bg: '#F3EEFF',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 17 9 11l4 4 8-8" />
-        <path d="M14 7h7v7" />
-      </svg>
-    ),
-  },
+const PD = "'Playfair Display', Georgia, serif";
+const BV = "'Be Vietnam Pro', sans-serif";
+
+const SCALE = [
+  { schools: '10 trường', partner: '~1,4 tỷ', note: 'năm học' },
+  { schools: '20 trường', partner: '~2,8 tỷ', note: 'năm học' },
+  { schools: '30 trường', partner: '~4,2 tỷ', note: 'năm học' },
+  { schools: '50 trường', partner: '~7,0 tỷ', note: 'năm học' },
+];
+
+const FLOW = [
+  { num: '01', label: 'Đầu tư & ký kết', color: '#2563EB' },
+  { num: '02', label: 'Keytech triển khai', color: '#7C3AED' },
+  { num: '03', label: 'Thu phí định kỳ', color: '#0EA5E9' },
+  { num: '04', label: 'Chia 70 / 30', color: '#059669' },
 ];
 
 export default function RevenueModel({ id = 'doanh-thu' }) {
   const titleRef = useFadeUp();
-  const cardsRef = useFadeUpChildren();
-  const splitRef = useFadeUp();
+  const leftRef = useFadeUp();
+  const rightRef = useFadeUp();
 
   return (
     <section
       id={id}
       className="landing-section snap-section bg-section-revenue border-t border-[#EEF2F7] flex flex-col justify-center relative overflow-hidden"
-      style={{ scrollMarginTop: 0 }}
     >
-      {/* ── Glow blobs */}
-      <div className="glow-blob glow-emerald -right-20 -top-20" />
+      <div className="glow-blob glow-emerald -right-20 -top-20 -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <div ref={titleRef} className="fade-up section-header">
-          <span className="section-eyebrow" style={{ color: '#1D4ED8' }}>MÔ HÌNH DOANH THU</span>
-          <h2 className="section-title">Doanh thu tăng trưởng theo từng trường học phát triển</h2>
+
+        {/* Header */}
+        <div ref={titleRef} className="fade-up text-center mb-9">
+          <span style={{
+            fontFamily: BV, fontSize: 10.5, fontWeight: 800,
+            letterSpacing: '0.18em', textTransform: 'uppercase',
+            color: '#059669', display: 'block', marginBottom: 8,
+          }}>
+            Mô hình doanh thu
+          </span>
+          <h2 style={{
+            fontFamily: PD, fontWeight: 800,
+            fontSize: 'clamp(22px, 2.4vw, 36px)',
+            color: '#0F172A', lineHeight: 1.22,
+            letterSpacing: '-0.02em', margin: '0 0 8px',
+          }}>
+            Đầu tư một lần —{' '}
+            <span style={{ color: '#059669', fontStyle: 'italic' }}>thu mãi mãi</span>
+          </h2>
         </div>
 
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-5 lg:gap-6 items-stretch">
-          <div ref={cardsRef} className="grid sm:grid-cols-2 gap-4">
-            {REVENUE_STREAMS.map((item, i) => (
-              <article
-                key={item.title}
-                className={`fade-up fade-up-delay-${i + 1} card-standard flex flex-col`}
-                style={{
-                  '--card-border': '#BFDBFE',
-                  '--card-hover-border': '#1D4ED8'
-                }}
-              >
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                  style={{ backgroundColor: item.bg, color: item.color }}
-                >
-                  {item.icon}
+        <div className="grid lg:grid-cols-[1fr_1fr] gap-6 items-stretch">
+
+          {/* LEFT: Big 70% + Revenue per school */}
+          <div ref={leftRef} className="fade-up flex flex-col gap-4">
+
+            {/* 70/30 Hero */}
+            <div className="bg-white rounded-2xl border border-[#DDD6FE] shadow-[0_8px_32px_rgba(124,58,237,0.07)] overflow-hidden flex-shrink-0">
+              <div style={{
+                height: 4,
+                background: 'linear-gradient(to right,#7C3AED,#2563EB,#0EA5E9)',
+              }} />
+              <div className="p-6">
+                <div style={{
+                  fontFamily: BV, fontSize: 10, fontWeight: 800,
+                  letterSpacing: '0.18em', textTransform: 'uppercase',
+                  color: '#7C3AED', marginBottom: 12,
+                }}>Tỷ lệ chia doanh thu</div>
+
+                {/* Bar */}
+                <div style={{
+                  height: 14, borderRadius: 100, overflow: 'hidden',
+                  background: '#F1F5F9', display: 'flex', marginBottom: 12,
+                }}>
+                  <div style={{
+                    width: '70%', height: '100%',
+                    background: 'linear-gradient(to right,#7C3AED,#2563EB)',
+                  }} />
+                  <div style={{ width: '30%', height: '100%', background: '#BFDBFE' }} />
                 </div>
-                <h3 className="text-[20px] font-extrabold text-[#0F172A] leading-tight mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-[13.5px] text-[#4B5563] leading-relaxed">
-                  {item.desc}
-                </p>
-              </article>
-            ))}
+
+                <div style={{ display: 'grid', gridTemplateColumns: '7fr 3fr', gap: 12 }}>
+                  <div style={{
+                    background: 'linear-gradient(135deg,#F5F3FF,#EDE9FE)',
+                    border: '1px solid #DDD6FE',
+                    borderRadius: 14, padding: '16px 20px',
+                  }}>
+                    <div style={{
+                      fontFamily: PD, fontWeight: 900,
+                      fontSize: 48, color: '#7C3AED', lineHeight: 1,
+                    }}>70%</div>
+                    <div style={{
+                      fontFamily: BV, fontSize: 12, fontWeight: 700,
+                      color: '#7C3AED', marginTop: 4,
+                    }}>Về tay Đối tác</div>
+                  </div>
+                  <div style={{
+                    background: '#EEF6FF',
+                    border: '1px solid #BFDBFE',
+                    borderRadius: 14, padding: '16px 12px',
+                    display: 'flex', flexDirection: 'column',
+                    alignItems: 'center', justifyContent: 'center',
+                  }}>
+                    <div style={{
+                      fontFamily: PD, fontWeight: 900,
+                      fontSize: 32, color: '#1D4ED8', lineHeight: 1,
+                    }}>30%</div>
+                    <div style={{
+                      fontFamily: BV, fontSize: 11, fontWeight: 700,
+                      color: '#1D4ED8', marginTop: 4, textAlign: 'center',
+                    }}>Keytech</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Per-school revenue */}
+            <div style={{
+              background: 'linear-gradient(135deg,#F0FDF4,#DCFCE7)',
+              border: '1px solid #BBF7D0',
+              borderRadius: 16, padding: '18px 20px',
+            }}>
+              <div style={{
+                fontFamily: BV, fontSize: 10, fontWeight: 800,
+                letterSpacing: '0.16em', textTransform: 'uppercase',
+                color: '#059669', marginBottom: 10,
+              }}>Ví dụ: 1 trường / 1.000 học sinh</div>
+
+              {[
+                { l: 'Doanh thu tham chiếu / năm', v: '200.000.000đ' },
+                { l: 'Đối tác thực nhận (70%)', v: '140.000.000đ', accent: true },
+              ].map((row, i) => (
+                <div key={i} style={{
+                  display: 'flex', justifyContent: 'space-between',
+                  padding: '6px 0',
+                  borderBottom: i < 1 ? '1px solid rgba(5,150,105,0.1)' : 'none',
+                }}>
+                  <span style={{
+                    fontFamily: BV, fontSize: 12.5,
+                    color: row.accent ? '#0F172A' : '#4B5563',
+                    fontWeight: row.accent ? 700 : 400,
+                  }}>{row.l}</span>
+                  <span style={{
+                    fontFamily: BV, fontSize: 13, fontWeight: 800,
+                    color: row.accent ? '#059669' : '#0F172A',
+                  }}>{row.v}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <aside
-            ref={splitRef}
-            className="fade-up bg-white text-[#0F172A] border border-[#BFDBFE] rounded-2xl p-6 lg:p-7 flex flex-col justify-between overflow-hidden relative shadow-[0_4px_18px_rgba(15,23,42,0.02)]"
-          >
-            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#1D4ED8] via-[#2563EB] to-[#6D28D9]" />
+          {/* RIGHT: Scale table + Flow */}
+          <div ref={rightRef} className="fade-up fade-up-delay-2 flex flex-col gap-4">
 
-            <div>
-              <div className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#6D28D9] mb-3">
-                Tỷ lệ chia sẻ doanh thu
+            {/* Scale table */}
+            <div className="bg-white rounded-2xl border border-[#E2E8F0] shadow-[0_4px_18px_rgba(15,23,42,0.05)] overflow-hidden flex-1">
+              <div style={{
+                background: 'linear-gradient(to right,#059669,#22C55E)',
+                padding: '14px 20px',
+              }}>
+                <div style={{
+                  fontFamily: BV, fontSize: 10, fontWeight: 800,
+                  letterSpacing: '0.16em', textTransform: 'uppercase',
+                  color: '#BBF7D0', marginBottom: 2,
+                }}>Thu nhập đối tác theo danh mục</div>
+                <div style={{
+                  fontFamily: PD, fontWeight: 800, fontSize: 18, color: '#fff',
+                }}>Nhân lên không giới hạn</div>
               </div>
-              <h3 className="text-[28px] lg:text-[32px] font-black leading-tight tracking-tight text-[#0F172A]">
-                Lợi nhuận vượt trội thuộc về Đối tác
-              </h3>
-            </div>
-
-            <div className="my-4 lg:my-6 xl:my-7">
-              <div className="h-5 w-full rounded-full overflow-hidden bg-slate-100 flex">
-                <div className="h-full bg-gradient-to-r from-[#1D4ED8] to-[#6D28D9]" style={{ width: '70%' }} />
-                <div className="h-full bg-[#93C5FD]" style={{ width: '30%' }} />
-              </div>
-              <div className="mt-4 grid grid-cols-[7fr_3fr] gap-3">
-                <div className="rounded-xl bg-[#F3EEFF]/40 border border-[#DDD6FE] p-4 hover:shadow-[0_2px_8px_rgba(109,40,217,0.03)] transition-all duration-300">
-                  <div className="text-[42px] font-black leading-none text-[#6D28D9]">70%</div>
-                  <div className="text-[12px] font-bold text-[#64748B] uppercase tracking-wider mt-2">Đối tác</div>
+              <div className="p-4">
+                <div style={{
+                  display: 'grid', gridTemplateColumns: '1fr 1fr',
+                  gap: '1px', background: '#F1F5F9',
+                  borderRadius: 10, overflow: 'hidden',
+                }}>
+                  {SCALE.map((s, i) => (
+                    <div key={i} style={{
+                      background: '#fff', padding: '14px 16px',
+                      textAlign: 'center',
+                    }}>
+                      <div style={{
+                        fontFamily: PD, fontWeight: 800,
+                        fontSize: 22, color: '#059669',
+                      }}>{s.partner}</div>
+                      <div style={{
+                        fontFamily: BV, fontSize: 11.5, fontWeight: 700,
+                        color: '#0F172A', marginTop: 2,
+                      }}>{s.schools}</div>
+                      <div style={{
+                        fontFamily: BV, fontSize: 10.5, color: '#94A3B8',
+                      }}>/ {s.note}</div>
+                    </div>
+                  ))}
                 </div>
-                <div className="rounded-xl bg-[#EEF6FF]/40 border border-[#BFDBFE] p-4 hover:shadow-[0_2px_8px_rgba(37,99,235,0.03)] transition-all duration-300">
-                  <div className="text-[42px] font-black leading-none text-[#1D4ED8]">30%</div>
-                  <div className="text-[12px] font-bold text-[#64748B] uppercase tracking-wider mt-2">Keytech</div>
-                </div>
+
               </div>
             </div>
 
-            <div className="rounded-xl bg-[#FBF7F0] border border-[#D8E2F0] p-4 text-[#4B5563]">
-              <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#6D28D9] mb-1">Tăng theo danh mục</div>
-              <div className="text-[14.5px] font-bold leading-snug text-[#374151]">
-                10 trường → ~1,4 tỷ/năm. 20 trường → gấp đôi. Không giới hạn quy mô danh mục trường học Đối tác có thể xây dựng.
+            {/* Investment flow */}
+            <div className="bg-white rounded-2xl border border-[#E2E8F0] shadow-[0_4px_18px_rgba(15,23,42,0.04)] p-5">
+              <div style={{
+                fontFamily: BV, fontSize: 10, fontWeight: 800,
+                letterSpacing: '0.16em', textTransform: 'uppercase',
+                color: '#2563EB', marginBottom: 14,
+              }}>Dòng chảy đầu tư</div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 0 }}>
+                {FLOW.map((f, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'center', flex: 1 }}>
+                    <div style={{ textAlign: 'center', flex: 1 }}>
+                      <div style={{
+                        width: 36, height: 36, borderRadius: '50%',
+                        background: f.color, color: '#fff',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        fontFamily: BV, fontWeight: 900, fontSize: 13,
+                        margin: '0 auto 6px',
+                      }}>{f.num}</div>
+                      <div style={{
+                        fontFamily: BV, fontSize: 11.5, fontWeight: 600,
+                        color: '#374151', lineHeight: 1.3,
+                      }}>{f.label}</div>
+                    </div>
+                    {i < FLOW.length - 1 && (
+                      <div style={{
+                        width: 20, height: 2, background: '#E2E8F0',
+                        flexShrink: 0,
+                      }} />
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
-          </aside>
+          </div>
         </div>
 
-        <ScrollNext href="#dau-tu" />
+        <ScrollNext href="#keytech" />
       </div>
     </section>
   );

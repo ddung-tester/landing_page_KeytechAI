@@ -68,7 +68,7 @@ export default function Header() {
       transition-shadow duration-300 ${scrolled ? 'shadow-md' : 'shadow-none'} animate-premium-header-enter`}
       style={{ height: `${HEADER_H}px` }}
     >
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+      <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 lg:px-4 xl:px-8 h-full">
         <div className="flex items-center justify-between h-full">
 
           {/* Logo */}
@@ -86,7 +86,7 @@ export default function Header() {
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1" role="navigation">
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5" role="navigation">
             {navLinks.map((link) => {
               const isActive = activeHref === link.href;
               return (
@@ -94,10 +94,10 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`px-3 py-1.5 rounded-md text-[13.5px] font-bold transition-all duration-200 border
+                  className={`px-1.5 xl:px-2.5 py-1 text-[11.5px] xl:text-[13px] font-bold transition-all duration-200 whitespace-nowrap
                     ${isActive
-                      ? 'text-[#1D4ED8] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.05)] border-[#E2E8F0]'
-                      : 'text-[#1E293B] hover:text-[#1D4ED8] hover:bg-white/50 border-transparent'
+                      ? 'text-[#2563EB] relative after:absolute after:-bottom-1 after:left-1 after:right-1 after:h-[2.5px] after:rounded-full after:bg-[#2563EB]'
+                      : 'text-[#475569] hover:text-[#2563EB]'
                     }`}
                 >
                   {link.label}
@@ -111,8 +111,8 @@ export default function Header() {
             <a
               href="#lien-he"
               onClick={(e) => handleNavClick(e, '#lien-he')}
-              className="hidden sm:inline-flex items-center px-4.5 py-2.5 btn-brand-primary
-                text-white text-[13px] font-semibold"
+              className="hidden sm:inline-flex items-center px-4 py-2 btn-brand-primary
+                text-white text-[12.5px] font-semibold"
             >
               Đăng ký tư vấn
             </a>

@@ -1,201 +1,176 @@
 import { useFadeUp, useFadeUpChildren } from '../../hooks/useFadeUp';
 import ScrollNext from './ScrollNext';
 
-const JOURNEY_STEPS = [
+const PD = "'Playfair Display', Georgia, serif";
+const BV = "'Be Vietnam Pro', sans-serif";
+
+const PARTNER_SUPPORTS = [
   {
-    title: 'Khảo sát',
-    desc: 'Đánh giá nhu cầu và lập phương án triển khai.',
-    color: '#1D4ED8',
-    bg: '#EEF6FF',
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="11" cy="11" r="8" />
-        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-      </svg>
-    ),
+    category: 'Tài liệu & Pháp lý',
+    color: '#2563EB', // Blue
+    bg: '#EFF6FF',
+    border: 'rgba(37, 99, 235, 0.15)',
+    items: [
+      'Cam kết chia sẻ 70% doanh thu minh bạch trên hợp đồng.',
+      'Cung cấp toàn bộ kịch bản và tài liệu tiếp cận nhà trường.'
+    ],
   },
   {
-    title: 'Triển khai',
-    desc: 'Lắp đặt và cấu hình hệ thống tại điểm trường.',
-    color: '#6D28D9',
-    bg: '#F3EEFF',
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-        <line x1="8" y1="21" x2="16" y2="21" />
-        <line x1="12" y1="17" x2="12" y2="21" />
-      </svg>
-    ),
+    category: 'Công nghệ & Phần mềm',
+    color: '#7C3AED', // Purple
+    bg: '#F5F3FF',
+    border: 'rgba(124, 58, 237, 0.15)',
+    items: [
+      'Camera AI nhận diện khuôn mặt chuyên dụng.',
+      'Phần mềm quản lý & ứng dụng di động đồng bộ.'
+    ],
   },
   {
-    title: 'Đào tạo',
-    desc: 'Hướng dẫn vận hành cho nhà trường và đội ngũ.',
-    color: '#2563EB',
-    bg: '#EEF6FF',
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 10 12 5 2 10l10 5 10-5Z" />
-        <path d="M6 12.5V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Vận hành',
-    desc: 'Hỗ trợ kỹ thuật và bảo trì liên tục.',
-    color: '#6D28D9',
-    bg: '#F3EEFF',
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Mở rộng',
-    desc: 'Nhân rộng mô hình sang các trường mới.',
-    color: '#1D4ED8',
-    bg: '#EEF6FF',
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M18 3H21V6" />
-        <path d="M3 21L10 14L14 18L21 10" />
-      </svg>
-    ),
+    category: 'Vận hành & Kỹ thuật',
+    color: '#0D9488', // Teal
+    bg: '#F0FDF4',
+    border: 'rgba(13, 148, 136, 0.15)',
+    items: [
+      'Đào tạo kỹ thuật và chuyển giao quy trình thi công.',
+      'Giám sát hệ thống và hỗ trợ kỹ thuật liên tục 24/7.'
+    ],
   },
 ];
 
-export default function SupportSection({ id }) {
+export default function SupportSection({ id = 'ho-tro' }) {
   const titleRef = useFadeUp();
-  const journeyRef = useFadeUpChildren();
-  const statsRef = useFadeUpChildren();
+  const cardsRef = useFadeUpChildren(0.08);
+  const ctaRef = useFadeUp();
 
   return (
     <section
       id={id}
-      className="landing-section snap-section bg-section-support border-t border-[#EEF2F7] flex flex-col justify-center relative overflow-hidden"
+      className="landing-section snap-section bg-white border-t border-[#EEF2F7] flex flex-col justify-center relative overflow-hidden"
       style={{ scrollMarginTop: 0 }}
     >
-      {/* ── Glow blobs */}
-      <div className="glow-blob glow-purple -right-20 -top-20" />
+      <div className="glow-blob glow-purple -right-20 -top-20 -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 flex flex-col">
-
-        <div ref={titleRef} className="fade-up section-header">
-          <span className="section-eyebrow" style={{ color: '#1D4ED8' }}>ĐỒNG HÀNH TRỌN GÓI</span>
-          <h2 className="section-title">Keytech luôn đồng hành cùng Đối tác trên suốt hành trình</h2>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+        
+        {/* Header */}
+        <div ref={titleRef} className="fade-up text-center mb-16">
+          <span style={{
+            fontFamily: BV, fontSize: 10.5, fontWeight: 800,
+            letterSpacing: '0.18em', textTransform: 'uppercase', color: '#2563EB',
+            display: 'block', marginBottom: 10,
+          }}>
+            Hỗ trợ từ Keytech
+          </span>
+          <h2 style={{
+            fontFamily: PD, fontWeight: 800,
+            fontSize: 'clamp(24px, 2.4vw, 38px)',
+            color: '#0F172A', lineHeight: 1.22,
+            letterSpacing: '-0.02em', margin: '0 auto 12px',
+            maxWidth: '800px'
+          }}>
+            Bạn phát triển thị trường — Chúng tôi làm chủ công nghệ
+          </h2>
+          <p style={{
+            fontFamily: BV, fontSize: '14.5px', color: '#475569',
+            maxWidth: '560px', margin: '0 auto', lineHeight: 1.5,
+          }}>
+            Keytech đồng hành hỗ trợ lắp đặt, cấu hình kỹ thuật và vận hành từ xa.
+          </p>
         </div>
 
-        {/* Horizontal Timeline Flow (Desktop) */}
-        <div ref={journeyRef} className="w-full relative z-10 py-4 hidden lg:block">
-          {/* Background Line Connector */}
-          <div className="absolute left-[10%] right-[10%] top-[24px] h-[2px] -translate-y-[1px] bg-gradient-to-r from-[#1D4ED8]/30 via-[#2563EB]/30 to-[#6D28D9]/30 opacity-60" />
-
-          <div className="grid grid-cols-5 gap-6">
-            {JOURNEY_STEPS.map((step, i) => (
-              <div key={i} className="flex flex-col items-center text-center group relative">
-                {/* Node circle */}
+        {/* Support Grid */}
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {PARTNER_SUPPORTS.map((group, i) => (
+            <div
+              key={i}
+              className={`fade-up fade-up-delay-${i + 1} bg-white rounded-2xl border
+                shadow-[0_4px_20px_rgba(15,23,42,0.03)] hover:shadow-[0_12px_30px_rgba(15,23,42,0.08)] 
+                hover:-translate-y-1.5 transition-all duration-300 flex flex-col overflow-hidden`}
+              style={{ borderColor: group.border }}
+            >
+              {/* Header bar */}
+              <div className="px-6 py-4" style={{ background: `${group.color}08`, borderBottom: `1px solid ${group.border}` }}>
                 <div
-                  className="w-12 h-12 rounded-2xl bg-white border-2 flex items-center justify-center relative z-10 transition-all duration-300 group-hover:scale-105 shadow-xs"
                   style={{
-                    borderColor: step.color,
-                    boxShadow: `0 6px 16px -4px ${step.color}12`
+                    fontFamily: BV,
+                    fontSize: '11px',
+                    fontWeight: 800,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.14em',
+                    color: group.color
                   }}
                 >
-                  <div
-                    className="w-8 h-8 rounded-xl flex items-center justify-center"
-                    style={{ backgroundColor: step.bg, color: step.color }}
-                  >
-                    {step.icon}
+                  {group.category}
+                </div>
+              </div>
+              {/* Items */}
+              <div className="p-6 space-y-4 flex-1 flex flex-col justify-center">
+                {group.items.map((item, j) => (
+                  <div key={j} className="flex items-start gap-3.5">
+                    <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full"
+                      style={{ background: `${group.color}15` }}
+                    >
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                        <path d="M2 5l2 2 4-4" stroke={group.color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                    <span style={{
+                      fontFamily: BV,
+                      fontSize: '13.5px',
+                      color: '#334155',
+                      fontWeight: 500,
+                      lineHeight: 1.4
+                    }}>
+                      {item}
+                    </span>
                   </div>
-                </div>
-
-                {/* Step label */}
-                <span
-                  className="text-[10px] font-extrabold uppercase tracking-widest mt-2.5 mb-0.5"
-                  style={{ color: step.color }}
-                >
-                  Bước 0{i + 1}
-                </span>
-
-                {/* Title */}
-                <h3 className="text-[16.5px] font-extrabold text-[#0F172A] mb-1 transition-colors group-hover:text-[#1D4ED8]">
-                  {step.title}
-                </h3>
-
-                {/* Desc */}
-                <p className="text-[12.5px] text-[#4B5563] leading-relaxed max-w-[185px]">
-                  {step.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Vertical Timeline Flow (Mobile/Tablet) */}
-        <div className="w-full max-w-md mx-auto relative z-10 space-y-6 py-4 lg:hidden">
-          {/* Vertical line connector */}
-          <div className="absolute left-[24px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-[#1D4ED8]/60 via-[#2563EB]/60 to-[#6D28D9]/60 opacity-55" />
-
-          {JOURNEY_STEPS.map((step, i) => (
-            <div key={i} className="flex gap-4 relative items-start group">
-              {/* Node */}
-              <div
-                className="w-12 h-12 rounded-xl bg-white border flex items-center justify-center shrink-0 relative z-10 shadow-xs"
-                style={{ borderColor: step.color }}
-              >
-                <div
-                  className="w-9 h-9 rounded-lg flex items-center justify-center"
-                  style={{ backgroundColor: step.bg, color: step.color }}
-                >
-                  {step.icon}
-                </div>
-              </div>
-
-              {/* Text */}
-              <div className="pt-1">
-                <span
-                  className="text-[10px] font-extrabold uppercase tracking-wider"
-                  style={{ color: step.color }}
-                >
-                  Bước 0{i + 1}
-                </span>
-                <h3 className="text-[15.5px] font-bold text-[#0F172A] mt-0.5 mb-1">
-                  {step.title}
-                </h3>
-                <p className="text-[12.5px] text-[#4B5563] leading-relaxed">
-                  {step.desc}
-                </p>
+                ))}
               </div>
             </div>
           ))}
         </div>
 
-        {/* Supplementary Statistics Footer */}
-        <div ref={statsRef} className="w-full max-w-4xl mx-auto mt-4 lg:mt-5 pt-3 border-t border-[#EEF2F7] flex flex-col sm:flex-row justify-between items-center gap-4 text-center z-10">
+        {/* Bottom highlight banner */}
+        <div
+          ref={ctaRef}
+          className="fade-up fade-up-delay-4 rounded-3xl p-8 text-center relative overflow-hidden shadow-xl border border-indigo-950/20"
+          style={{
+            background: 'linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%)',
+          }}
+        >
+          {/* Subtle decoration glow inside the banner */}
+          <div className="absolute -left-10 -top-10 w-40 h-40 rounded-full bg-blue-500/10 blur-2xl" />
+          <div className="absolute -right-10 -bottom-10 w-40 h-40 rounded-full bg-indigo-500/10 blur-2xl" />
 
-          <div className="flex flex-col items-center w-full sm:w-auto">
-            <span className="text-[26px] lg:text-[30px] font-black text-[#1D4ED8] leading-none">24/7</span>
-            <span className="text-[10.5px] lg:text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mt-1.5">Hỗ trợ kỹ thuật</span>
+          <div className="relative z-10 max-w-2xl mx-auto">
+            <h3
+              style={{
+                fontFamily: PD,
+                fontSize: 'clamp(20px, 2vw, 26px)',
+                fontWeight: 800,
+                color: '#fff',
+                marginBottom: 8,
+                lineHeight: 1.2
+              }}
+            >
+              Đồng hành bền vững — Chia sẻ thịnh vượng
+            </h3>
+            <p
+              style={{
+                fontFamily: BV,
+                fontSize: '14.5px',
+                color: '#CBD5E1',
+                lineHeight: 1.6,
+                fontWeight: 300
+              }}
+            >
+              Công nghệ lõi từ Keytech kết hợp với vị thế địa phương của bạn tạo nên dòng tài chính an tâm trọn đời.
+            </p>
           </div>
-
-          <div className="hidden sm:block w-[1px] h-6 bg-[#D8E2F0]" />
-
-          <div className="flex flex-col items-center w-full sm:w-auto">
-            <span className="text-[26px] lg:text-[30px] font-black text-[#6D28D9] leading-none">100%</span>
-            <span className="text-[10.5px] lg:text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mt-1.5">Quy trình chuẩn hóa</span>
-          </div>
-
-          <div className="hidden sm:block w-[1px] h-6 bg-[#D8E2F0]" />
-
-          <div className="flex flex-col items-center w-full sm:w-auto">
-            <span className="text-[26px] lg:text-[30px] font-black text-[#2563EB] leading-none">250+</span>
-            <span className="text-[10.5px] lg:text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mt-1.5">Trường đã triển khai</span>
-          </div>
-
         </div>
 
-        <ScrollNext href="#lien-he" />
+        <ScrollNext href="#doi-tuong" />
       </div>
     </section>
   );

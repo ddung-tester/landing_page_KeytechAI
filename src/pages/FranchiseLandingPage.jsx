@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import Header from '../components/franchise/Header';
 import HeroStory from '../components/franchise/HeroStory';
-import ExistingModelSection from '../components/franchise/ExistingModelSection';
+import InvestmentReasons from '../components/franchise/InvestmentReasons';
 import TechnologySection from '../components/franchise/TechnologySection';
-import DeploymentTimeline from '../components/franchise/DeploymentTimeline';
-import PartnershipModel from '../components/franchise/PartnershipModel';
 import RevenueModel from '../components/franchise/RevenueModel';
-import InvestmentOverview from '../components/franchise/InvestmentOverview';
+import KeytechProof from '../components/franchise/KeytechProof';
+import PartnerRoadmap from '../components/franchise/PartnerRoadmap';
 import SupportSection from '../components/franchise/SupportSection';
+import PartnerTarget from '../components/franchise/PartnerTarget';
 import FinalCTA from '../components/franchise/FinalCTA';
 import Footer from '../components/franchise/Footer';
 import { useSmoothScroll } from '../hooks/useSmoothScroll';
@@ -37,13 +37,13 @@ export default function FranchiseLandingPage() {
 
       <main className="landing-main">
         <HeroStory id="hero" />
+        <InvestmentReasons id="co-hoi" />
         <TechnologySection id="cong-nghe" />
-        <ExistingModelSection id="kiem-chung" />
-        <DeploymentTimeline id="truong-da-trien-khai" />
-        <PartnershipModel id="hop-tac" />
         <RevenueModel id="doanh-thu" />
-        <InvestmentOverview id="dau-tu" />
+        <KeytechProof id="keytech" />
+        <PartnerRoadmap id="lo-trinh" />
         <SupportSection id="ho-tro" />
+        <PartnerTarget id="doi-tuong" />
         <FinalCTA id="lien-he" />
         <Footer />
       </main>

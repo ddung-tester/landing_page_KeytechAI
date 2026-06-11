@@ -14,8 +14,8 @@ const TECH_FEATURES = [
         <path d="M14.5 3.5l1 1 1.5-1.5" stroke="#FFFFFF" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    title: 'Nhận diện khuôn mặt tức thì',
-    desc: 'Học sinh bước qua cổng — hệ thống ghi nhận, phụ huynh nhận tin ngay.',
+    title: 'Nhận diện tức thì',
+    desc: 'Quét khuôn mặt tự động, chuẩn xác ngay tại cổng trường.',
   },
   {
     icon: (
@@ -26,8 +26,8 @@ const TECH_FEATURES = [
         <path d="M14.5 5.5l.7.7 1.3-1.3" stroke="#38BDF8" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    title: 'Thông báo realtime tới phụ huynh',
-    desc: 'App miễn phí cho phụ huynh. Đến trường, tan học, ra khỏi trường — tức thì.',
+    title: 'Cập nhật thời gian thực',
+    desc: 'Gửi thông báo trạng thái lớp/trường tức thì qua ứng dụng di động.',
   },
   {
     icon: (
@@ -38,8 +38,8 @@ const TECH_FEATURES = [
         <rect x="12.5" y="5" width="2.5" height="10" rx="0.4" fill="#FFFFFF" />
       </svg>
     ),
-    title: 'Dashboard quản trị tập trung',
-    desc: 'Sĩ số, điểm danh, báo cáo — nhà trường xem trần một màn hình.',
+    title: 'Quản trị tập trung',
+    desc: 'Theo dõi sĩ số toàn trường trực quan trên một hệ thống duy nhất.',
   },
 ];
 
@@ -91,7 +91,7 @@ export default function TechnologySection({ id }) {
 
         <div ref={titleRef} className="fade-up section-header">
           <span className="section-eyebrow" style={{ color: '#2563EB' }}>CÔNG NGHỆ LÕI</span>
-          <h2 className="section-title">Hệ thống hoàn chỉnh — Bàn giao trọn gói, nhà trường vận hành ngay</h2>
+          <h2 className="section-title">Công nghệ đã đóng gói — Sẵn sàng chuyển giao và vận hành</h2>
         </div>
 
         <div className="grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-10 items-center">
@@ -143,7 +143,7 @@ export default function TechnologySection({ id }) {
 
         </div>
 
-        <ScrollNext href="#kiem-chung" />
+        <ScrollNext href="#doanh-thu" />
       </div>
     </section>
   );

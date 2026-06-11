@@ -1,11 +1,14 @@
 import { scrollToLandingTarget } from '../../utils/scrollToLandingTarget';
 
 const footerLinks = [
-  { label: "Công nghệ Camera AI", href: "#cong-nghe" },
-  { label: "Trường đã triển khai", href: "#truong-da-trien-khai" },
-  { label: "Mô hình hợp tác", href: "#kiem-chung" },
+  { label: "Cơ hội đầu tư", href: "#co-hoi" },
+  { label: "Show công nghệ", href: "#cong-nghe" },
   { label: "Mô hình doanh thu", href: "#doanh-thu" },
-  { label: "Liên hệ", href: "#lien-he" },
+  { label: "Vì sao Keytech", href: "#keytech" },
+  { label: "Lộ trình", href: "#lo-trinh" },
+  { label: "Hỗ trợ", href: "#ho-tro" },
+  { label: "Đối tác phù hợp", href: "#doi-tuong" },
+  { label: "Đăng ký", href: "#lien-he" },
 ];
 
 export default function Footer() {
@@ -36,7 +39,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-[13px] text-[#94A3B8] leading-relaxed max-w-sm">
-              Hệ thống Camera AI điểm danh trường học theo mô hình nhượng quyền và hợp tác đầu tư.
+              Camera AI điểm danh trường học theo mô hình hợp tác và nhượng quyền.
             </p>
           </div>
 
