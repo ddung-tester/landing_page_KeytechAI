@@ -114,10 +114,18 @@
     /* Subtle left tint for text legibility */
     linear-gradient(to right, rgba(243,238,255,0.22) 0%, rgba(243,238,255,0.08) 48%, transparent 62%),
     /* New clean background image – left is empty gradient, right is school/phone visuals */
-    url('/assets/hero-landingpage-background.jpeg') right center / min(62vw, 880px) auto no-repeat;
+    url('/assets/hero-landingpage-background.jpeg') center center / 100% auto no-repeat;
   --page-accent: #3B82F6;
   --card-bg: #ffffff;
   --soft-border: #E5E7EB;
+}
+
+@media (max-width: 1024px) {
+  .bg-section-hero {
+    background:
+      linear-gradient(180deg, rgba(248,251,255,0.98) 0%, rgba(248,251,255,0.9) 54%, rgba(248,251,255,0.38) 100%),
+      url('/assets/hero-landingpage-background.jpeg') center center / 100% auto no-repeat;
+  }
 }
 
 .bg-section-tech {
