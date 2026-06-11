@@ -75,10 +75,11 @@ export default function HeroStory({ id = 'hero' }) {
       className="landing-section snap-section bg-section-hero relative isolate overflow-hidden flex flex-col"
     >
       <div
-        className="flex-1 w-full max-w-[1440px] mx-auto flex items-center"
+        className="landing-hero-shell flex-1 w-full max-w-[1440px] mx-auto flex items-center"
         style={{ padding: '0 clamp(24px, 4vw, 72px)' }}
       >
         <div
+          className="landing-hero-copy"
           style={{
             maxWidth: 'min(56%, 780px)',
             opacity: mounted ? 1 : 0,
@@ -87,7 +88,7 @@ export default function HeroStory({ id = 'hero' }) {
           }}
         >
           {/* ── Badge ── */}
-          <div style={{
+          <div className="landing-hero-badge" style={{
             display: 'inline-flex', alignItems: 'center', gap: 7,
             padding: '5px 15px', borderRadius: 100,
             background: 'rgba(255,255,255,0.72)',
@@ -103,7 +104,7 @@ export default function HeroStory({ id = 'hero' }) {
           </div>
 
           {/* ── H1 (Playfair Display – nghệ thuật) ── */}
-          <h1 style={{
+          <h1 className="landing-hero-title" style={{
             fontFamily: PD,
             fontWeight: 800,
             fontSize: 'clamp(26px, 2.6vw, 42px)',
@@ -127,7 +128,7 @@ export default function HeroStory({ id = 'hero' }) {
           </h1>
 
           {/* ── Sub text ── */}
-          <p style={{
+          <p className="landing-hero-subtitle" style={{
             fontFamily: BV,
             fontSize: 'clamp(12px, 0.9vw, 13.5px)',
             color: '#4B5563',
@@ -139,7 +140,7 @@ export default function HeroStory({ id = 'hero' }) {
           </p>
 
           {/* ── 4 Stat Cards ── */}
-          <div style={{
+          <div className="landing-hero-stats" style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
             gap: 8,

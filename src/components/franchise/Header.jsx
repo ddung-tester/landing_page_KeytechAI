@@ -86,7 +86,7 @@ export default function Header() {
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5" role="navigation">
+          <nav className="landing-desktop-nav hidden lg:flex items-center gap-0.5 xl:gap-1.5" role="navigation">
             {navLinks.map((link) => {
               const isActive = activeHref === link.href;
               return (
@@ -111,7 +111,7 @@ export default function Header() {
             <a
               href="#lien-he"
               onClick={(e) => handleNavClick(e, '#lien-he')}
-              className="hidden sm:inline-flex items-center px-4 py-2 btn-brand-primary
+              className="landing-header-cta hidden sm:inline-flex items-center px-4 py-2 btn-brand-primary
                 text-white text-[12.5px] font-semibold"
             >
               Đăng ký tư vấn
@@ -120,7 +120,7 @@ export default function Header() {
             {/* Hamburger */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden shrink-0 p-2 rounded-md text-[#1E293B] hover:bg-white/60 transition-colors"
+              className="landing-mobile-toggle lg:hidden shrink-0 p-2 rounded-md text-[#1E293B] hover:bg-white/60 transition-colors"
               aria-label="Mở menu"
               aria-expanded={menuOpen}
             >
@@ -140,7 +140,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="lg:hidden border-t border-[#CBD5E1] bg-[#F1F5F9] shadow-lg">
+        <div className="landing-mobile-menu lg:hidden border-t border-[#CBD5E1] bg-[#F1F5F9] shadow-lg">
           <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-0.5">
             {navLinks.map((link) => {
               const isActive = activeHref === link.href;
