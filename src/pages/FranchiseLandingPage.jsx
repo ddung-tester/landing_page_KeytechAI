@@ -33,7 +33,7 @@ export default function FranchiseLandingPage() {
   }, []);
 
   return (
-    <>
+    <div className="landing-canvas">
       <Header />
 
       <main className="landing-main">
@@ -47,6 +47,6 @@ export default function FranchiseLandingPage() {
         <FinalCTA id="lien-he" />
         <Footer />
       </main>
-    </>
+    </div>
   );
 }

@@ -2029,6 +2029,10 @@ footer {
   margin-right: 0 !important;
 }
 
+.landing-canvas {
+  width: 100%;
+}
+
 header.fixed {
   left: 0 !important;
   right: auto !important;
@@ -2210,6 +2214,16 @@ footer>div {
   }
 
   #root {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    position: relative !important;
+    height: var(--landing-scaled-height, auto) !important;
+    min-height: var(--landing-scaled-height, 100vh) !important;
+  }
+
+  .landing-canvas {
     width: var(--landing-desktop-width) !important;
     min-width: var(--landing-desktop-width) !important;
     max-width: var(--landing-desktop-width) !important;

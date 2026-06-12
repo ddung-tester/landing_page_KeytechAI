@@ -4,8 +4,8 @@ const DESKTOP_WIDTH = 1440;
 
 export function useFixedCanvasScale() {
   useEffect(() => {
-    const root = document.getElementById('root');
-    if (!root) return undefined;
+    const canvas = document.querySelector('.landing-canvas');
+    if (!canvas) return undefined;
 
     let frame = 0;
 
@@ -19,7 +19,7 @@ export function useFixedCanvasScale() {
         document.documentElement.style.setProperty('--landing-scale', String(scale));
         document.documentElement.style.setProperty(
           '--landing-scaled-height',
-          `${root.scrollHeight * scale}px`
+          `${canvas.scrollHeight * scale}px`
         );
       });
     };
@@ -29,7 +29,7 @@ export function useFixedCanvasScale() {
     window.addEventListener('orientationchange', applyScale);
 
     const observer = new ResizeObserver(applyScale);
-    observer.observe(root);
+    observer.observe(canvas);
 
     return () => {
       window.cancelAnimationFrame(frame);

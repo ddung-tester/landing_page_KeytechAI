@@ -22,7 +22,7 @@ export default function InvestmentReasons({ id = 'co-hoi-doanh-thu' }) {
         <aside className="investment-revenue-panel">
           <div className="investment-panel-eyebrow">Cơ hội & doanh thu</div>
           <h2 id="investment-revenue-title" style={{ marginBottom: 24 }}>
-            Khai thác trường học, tạo dòng tiền bền vững
+            Khai thác công nghệ, tạo dòng tiền bền vững
           </h2>
 
           <div className="investment-school-card" style={{ marginBottom: 20 }}>
