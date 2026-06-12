@@ -8,20 +8,35 @@ export function useFixedCanvasScale() {
     if (!canvas) return undefined;
 
     let frame = 0;
+    let timeoutId = null;
 
     const applyScale = () => {
-      window.cancelAnimationFrame(frame);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
 
-      frame = window.requestAnimationFrame(() => {
-        const viewportWidth = window.innerWidth || DESKTOP_WIDTH;
-        const scale = viewportWidth < DESKTOP_WIDTH ? viewportWidth / DESKTOP_WIDTH : 1;
+      timeoutId = setTimeout(() => {
+        window.cancelAnimationFrame(frame);
 
-        document.documentElement.style.setProperty('--landing-scale', String(scale));
-        document.documentElement.style.setProperty(
-          '--landing-scaled-height',
-          `${canvas.scrollHeight * scale}px`
-        );
-      });
+        frame = window.requestAnimationFrame(() => {
+          const viewportWidth = window.innerWidth || DESKTOP_WIDTH;
+          const scale = viewportWidth < DESKTOP_WIDTH ? viewportWidth / DESKTOP_WIDTH : 1;
+
+          // Prevent layout recalculation if scale values haven't changed
+          const currentScale = document.documentElement.style.getPropertyValue('--landing-scale');
+          const newScaleStr = String(scale);
+          if (currentScale !== newScaleStr) {
+            document.documentElement.style.setProperty('--landing-scale', newScaleStr);
+          }
+
+          const currentHeight = document.documentElement.style.getPropertyValue('--landing-scaled-height');
+          const newHeight = canvas.scrollHeight * scale;
+          const newHeightStr = `${newHeight}px`;
+          if (currentHeight !== newHeightStr) {
+            document.documentElement.style.setProperty('--landing-scaled-height', newHeightStr);
+          }
+        });
+      }, 50);
     };
 
     applyScale();
@@ -32,6 +47,9 @@ export function useFixedCanvasScale() {
     observer.observe(canvas);
 
     return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
       window.cancelAnimationFrame(frame);
       window.removeEventListener('resize', applyScale);
       window.removeEventListener('orientationchange', applyScale);
