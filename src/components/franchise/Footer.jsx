@@ -1,13 +1,12 @@
 import { scrollToLandingTarget } from '../../utils/scrollToLandingTarget';
 
 const footerLinks = [
-  { label: "Show công nghệ", href: "#cong-nghe" },
-  { label: "Cơ hội đầu tư", href: "#co-hoi" },
-  { label: "Mô hình doanh thu", href: "#doanh-thu" },
-  { label: "Vì sao Keytech", href: "#keytech" },
+  { label: "Công nghệ", href: "#cong-nghe" },
+  { label: "Cơ hội & doanh thu", href: "#co-hoi-doanh-thu" },
+  { label: "Triển khai thực tế", href: "#keytech" },
   { label: "Lộ trình", href: "#lo-trinh" },
   { label: "Hỗ trợ", href: "#ho-tro" },
-  { label: "Đối tác phù hợp", href: "#doi-tuong" },
+  { label: "Đối tác", href: "#doi-tuong" },
   { label: "Đăng ký", href: "#lien-he" },
 ];
 
@@ -34,18 +33,18 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <img src="/keytech_logo.png" alt="Keytech Logo" className="h-14 w-auto object-contain" />
               <div className="h-5 w-px bg-[#334155]" />
-              <span className="text-[10px] font-extrabold tracking-widest text-[#FCE1F5] uppercase bg-[#A855F7]/30 px-2 py-0.5 rounded-md">
+              <span className="text-[12px] font-extrabold tracking-widest text-[#FCE1F5] uppercase bg-[#A855F7]/30 px-2.5 py-1 rounded-md">
                 Partnership
               </span>
             </div>
-            <p className="text-[13px] text-[#94A3B8] leading-relaxed max-w-sm">
+            <p className="text-[15px] text-[#94A3B8] leading-relaxed max-w-sm">
               Camera AI điểm danh trường học theo mô hình hợp tác và nhượng quyền.
             </p>
           </div>
 
           {/* Links */}
           <div className="sm:justify-self-end">
-            <div className="text-[11px] font-semibold text-[#64748B] uppercase tracking-widest mb-4">
+            <div className="text-[13px] font-semibold text-[#64748B] uppercase tracking-widest mb-4">
               Điều hướng
             </div>
             <ul className="space-y-2.5">
@@ -54,7 +53,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => handleNav(e, link.href)}
-                    className="text-[13.5px] text-[#CBD5E1] hover:text-white transition-colors duration-200"
+                    className="text-[15px] text-[#CBD5E1] hover:text-white transition-colors duration-200"
                   >
                     {link.label}
                   </a>
@@ -67,10 +66,10 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-[#1E293B] py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-[12px] text-[#64748B]">
+          <p className="text-[14px] text-[#64748B]">
             © {year} Keytech AI / VNS. Toàn bộ nội dung mang tính tham chiếu.
           </p>
-          <p className="text-[12px] text-[#64748B]">
+          <p className="text-[14px] text-[#64748B]">
             Số liệu tài chính trên website là phương án tham khảo phục vụ đánh giá cơ hội hợp tác, không phải cam kết lợi nhuận.
           </p>
         </div>

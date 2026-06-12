@@ -219,12 +219,11 @@ export const detailedSecurityItems = [
 ];
 
 export const navLinks = [
-  { label: "Show công nghệ", href: "#cong-nghe" },
-  { label: "Cơ hội đầu tư", href: "#co-hoi" },
-  { label: "Mô hình doanh thu", href: "#doanh-thu" },
-  { label: "Vì sao Keytech", href: "#keytech" },
+  { label: "Công nghệ", href: "#cong-nghe" },
+  { label: "Cơ hội & doanh thu", href: "#co-hoi-doanh-thu" },
+  { label: "Triển khai thực tế", href: "#keytech" },
   { label: "Lộ trình", href: "#lo-trinh" },
   { label: "Hỗ trợ", href: "#ho-tro" },
-  { label: "Đối tác phù hợp", href: "#doi-tuong" },
+  { label: "Đối tác", href: "#doi-tuong" },
   { label: "Đăng ký", href: "#lien-he" },
 ];

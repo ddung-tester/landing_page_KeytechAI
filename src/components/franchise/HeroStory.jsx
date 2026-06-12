@@ -1,22 +1,15 @@
 import { useState, useEffect } from 'react';
 import ScrollNext from './ScrollNext';
-import { scrollToLandingTarget } from '../../utils/scrollToLandingTarget';
 
 const PD = "'Playfair Display', Georgia, serif";
 const BV = "'Be Vietnam Pro', sans-serif";
-
-function anchor(e, sel) {
-  e.preventDefault();
-  const el = document.querySelector(sel);
-  if (el) scrollToLandingTarget(el);
-}
 
 /* ─── Stat Cards ──────────────────────────────────────────────── */
 const CARDS = [
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 3L2 8v1h20V8L12 3zM4 10v8h2V12h12v6h2v-8H4zm4 2h2v4H8v-4zm4 0h2v4h-2v-4zm4 0h2v4h-2v-4z"/>
+        <path d="M12 3L2 8v1h20V8L12 3zM4 10v8h2V12h12v6h2v-8H4zm4 2h2v4H8v-4zm4 0h2v4h-2v-4zm4 0h2v4h-2v-4z" />
       </svg>
     ),
     accent: '#9333EA', bg: 'rgba(147,51,234,0.10)',
@@ -27,7 +20,7 @@ const CARDS = [
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/>
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z" />
       </svg>
     ),
     accent: '#2563EB', bg: 'rgba(37,99,235,0.10)',
@@ -38,8 +31,8 @@ const CARDS = [
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-        <polygon points="12 2 22 8.5 12 15 2 8.5"/>
-        <path d="M6 11.5V17l6 3 6-3v-5.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+        <polygon points="12 2 22 8.5 12 15 2 8.5" />
+        <path d="M6 11.5V17l6 3 6-3v-5.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
       </svg>
     ),
     accent: '#059669', bg: 'rgba(5,150,105,0.10)',
@@ -50,13 +43,13 @@ const CARDS = [
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
-        <path d="M22 12A10 10 0 0 0 12 2v10z" opacity="0.6"/>
+        <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+        <path d="M22 12A10 10 0 0 0 12 2v10z" opacity="0.6" />
       </svg>
     ),
     accent: '#EA580C', bg: 'rgba(234,88,12,0.10)',
     primary: 'LỢI NHUẬN', primaryColor: '#111827',
-    secondary: 'Chia sẻ 70/30', secondaryColor: '#EA580C',
+    secondary: 'Lên tới 1,4 tỷ/năm', secondaryColor: '#0EA5E9',
     flip: false,
   },
 ];
@@ -73,49 +66,34 @@ export default function HeroStory({ id = 'hero' }) {
     <section
       id={id}
       className="landing-section snap-section bg-section-hero relative isolate overflow-hidden flex flex-col"
+      style={{ paddingTop: 76 }}
     >
       <div
-        className="landing-hero-shell flex-1 w-full max-w-[1440px] mx-auto flex items-center"
-        style={{ padding: '0 clamp(24px, 4vw, 72px)' }}
+        className="landing-hero-shell flex-1 w-full max-w-[1360px] mx-auto px-4 lg:px-6 xl:px-8 flex items-center"
       >
         <div
           className="landing-hero-copy"
           style={{
-            maxWidth: 'min(56%, 780px)',
+            maxWidth: 'min(45%, 520px)',
             opacity: mounted ? 1 : 0,
             transform: mounted ? 'translateY(0)' : 'translateY(22px)',
             transition: 'opacity 0.65s ease, transform 0.65s ease',
+            marginTop: 18,
           }}
         >
-          {/* ── Badge ── */}
-          <div className="landing-hero-badge" style={{
-            display: 'inline-flex', alignItems: 'center', gap: 7,
-            padding: '5px 15px', borderRadius: 100,
-            background: 'rgba(255,255,255,0.72)',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255,255,255,0.65)',
-            boxShadow: '0 1px 8px rgba(0,0,0,0.05)',
-            marginBottom: 14,
-            fontFamily: BV, fontSize: 10.5, fontWeight: 700,
-            letterSpacing: '0.13em', textTransform: 'uppercase',
-            color: '#374151',
-          }}>
-            🚀 Cơ hội đầu tư &amp; Nhượng quyền khai thác
-          </div>
-
           {/* ── H1 (Playfair Display – nghệ thuật) ── */}
           <h1 className="landing-hero-title" style={{
             fontFamily: PD,
-            fontWeight: 800,
-            fontSize: 'clamp(26px, 2.6vw, 42px)',
-            lineHeight: 1.22,
-            letterSpacing: '-0.01em',
+            fontWeight: 600,
+            fontSize: 'clamp(36px, 3.6vw, 48px)',
+            lineHeight: 1.18,
+            letterSpacing: '-0.02em',
             color: '#0F172A',
-            margin: '0 0 12px',
+            margin: '0 0 18px',
           }}>
             Chỉ từ{' '}
             <span style={{
-              background: 'linear-gradient(135deg, #F97316 20%, #DC2626 100%)',
+              background: 'linear-gradient(135deg, #2563EB 0%, #0EA5E9 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -123,80 +101,94 @@ export default function HeroStory({ id = 'hero' }) {
             }}>
               100 triệu
             </span>
-            , sở hữu mô hình&#8203;<br />
-            khai thác trường học cùng Keytech.
+            ,<br />
+            sở hữu mô hình<br />
+            khai thác trường học<br />
+            cùng Keytech.
           </h1>
 
-          {/* ── Sub text ── */}
-          <p className="landing-hero-subtitle" style={{
+          {/* ── Decorative Divider ── */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, margin: '20px 0 22px', width: '100%' }}>
+            <div style={{ height: '2.5px', background: '#3B82F6', flex: 1 }} />
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#3B82F6" style={{ flexShrink: 0 }}>
+              <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z" />
+            </svg>
+            <div style={{ height: '2.5px', background: '#3B82F6', flex: 1 }} />
+          </div>
+
+          {/* ── Sub-headline & Description ── */}
+          <div className="landing-hero-subtitle" style={{
             fontFamily: BV,
-            fontSize: 'clamp(12px, 0.9vw, 13.5px)',
-            color: '#4B5563',
-            lineHeight: 1.75,
-            margin: '0 0 18px',
-            maxWidth: 460,
+            fontWeight: 700,
+            fontSize: 17.5,
+            color: '#2563EB',
+            margin: '0 0 10px',
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em'
           }}>
-            Sở hữu mô hình kinh doanh bền vững với giải pháp Camera AI nhận diện khuôn mặt. Bàn giao trọn gói công nghệ và hỗ trợ đại lý suốt quá trình vận hành.
+            Cơ hội đầu tư &amp; Nhượng quyền
+          </div>
+          <p style={{
+            fontFamily: BV,
+            fontWeight: 400,
+            fontSize: 17.5,
+            lineHeight: 1.6,
+            color: '#4B5563',
+            margin: '0 0 32px',
+          }}>
+            Hợp tác lắp đặt hệ thống Camera AI điểm danh tự động và khai thác nguồn thu ổn định, bền vững từ trường học.
           </p>
 
-          {/* ── 4 Stat Cards ── */}
+          {/* ── 4 Stat Items ── */}
           <div className="landing-hero-stats" style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: 8,
-            marginBottom: 14,
+            gap: 0,
+            marginTop: 0,
+            marginBottom: 8,
+            width: '100%',
           }}>
             {CARDS.map((c, i) => (
               <div
                 key={i}
                 style={{
-                  display: 'flex', flexDirection: 'column',
-                  alignItems: 'center', justifyContent: 'center',
-                  textAlign: 'center', gap: 5,
-                  padding: '12px 8px', borderRadius: 14,
-                  background: 'rgba(255,255,255,0.76)',
-                  backdropFilter: 'blur(12px)',
-                  border: '1px solid rgba(255,255,255,0.68)',
-                  boxShadow: '0 2px 12px rgba(0,0,0,0.07)',
-                  minHeight: 100,
-                  cursor: 'default',
-                  transition: 'transform 0.18s, box-shadow 0.18s',
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.transform = 'translateY(-3px)';
-                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.11)';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 2px 12px rgba(0,0,0,0.07)';
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                  gap: 6,
+                  padding: '6px 8px',
+                  position: 'relative',
+                  borderRight: i < CARDS.length - 1 ? '1.5px solid rgba(226, 232, 240, 0.95)' : 'none',
                 }}
               >
                 {/* Icon */}
                 <div style={{
-                  width: 36, height: 36, borderRadius: 10,
+                  width: 38, height: 38, borderRadius: 8,
                   background: c.bg, color: c.accent,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   flexShrink: 0,
+                  marginBottom: 2,
                 }}>
                   {c.icon}
                 </div>
 
-                {c.flip ? (
-                  <>
-                    <div style={{ fontFamily: BV, fontWeight: 800, fontSize: 15, color: c.primaryColor, lineHeight: 1.1 }}>{c.primary}</div>
-                    <div style={{ fontFamily: BV, fontWeight: 500, fontSize: 10.5, color: c.secondaryColor, lineHeight: 1.2 }}>{c.secondary}</div>
-                  </>
-                ) : (
-                  <>
-                    <div style={{ fontFamily: BV, fontWeight: 800, fontSize: 11.5, color: c.primaryColor, lineHeight: 1.2, textTransform: 'uppercase', letterSpacing: '0.03em' }}>{c.primary}</div>
-                    <div style={{ fontFamily: BV, fontWeight: 700, fontSize: 13, color: c.secondaryColor, lineHeight: 1.1 }}>{c.secondary}</div>
-                  </>
-                )}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 1.5, textAlign: 'center', minWidth: 0 }}>
+                  {c.flip ? (
+                    <>
+                      <div className="numeric-display" style={{ fontWeight: 800, fontSize: 18.5, color: c.primaryColor, lineHeight: 1.15 }}>{c.primary}</div>
+                      <div style={{ fontFamily: BV, fontWeight: 500, fontSize: 13.5, color: c.secondaryColor, lineHeight: 1.15 }}>{c.secondary}</div>
+                    </>
+                  ) : (
+                    <>
+                      <div style={{ fontFamily: BV, fontWeight: 700, fontSize: 12.5, color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.15 }}>{c.primary}</div>
+                      <div className="numeric-display" style={{ fontWeight: 800, fontSize: 18.5, color: c.secondaryColor, lineHeight: 1.15 }}>{c.secondary}</div>
+                    </>
+                  )}
+                </div>
               </div>
             ))}
           </div>
-
-
         </div>
       </div>
 

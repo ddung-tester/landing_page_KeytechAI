@@ -3,17 +3,18 @@ import Header from '../components/franchise/Header';
 import HeroStory from '../components/franchise/HeroStory';
 import InvestmentReasons from '../components/franchise/InvestmentReasons';
 import TechnologySection from '../components/franchise/TechnologySection';
-import RevenueModel from '../components/franchise/RevenueModel';
 import KeytechProof from '../components/franchise/KeytechProof';
 import PartnerRoadmap from '../components/franchise/PartnerRoadmap';
 import SupportSection from '../components/franchise/SupportSection';
 import PartnerTarget from '../components/franchise/PartnerTarget';
 import FinalCTA from '../components/franchise/FinalCTA';
 import Footer from '../components/franchise/Footer';
+import { useFixedCanvasScale } from '../hooks/useFixedCanvasScale';
 import { useSmoothScroll } from '../hooks/useSmoothScroll';
 
 export default function FranchiseLandingPage() {
   useSmoothScroll();
+  useFixedCanvasScale();
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -38,8 +39,7 @@ export default function FranchiseLandingPage() {
       <main className="landing-main">
         <HeroStory id="hero" />
         <TechnologySection id="cong-nghe" />
-        <InvestmentReasons id="co-hoi" />
-        <RevenueModel id="doanh-thu" />
+        <InvestmentReasons id="co-hoi-doanh-thu" />
         <KeytechProof id="keytech" />
         <PartnerRoadmap id="lo-trinh" />
         <SupportSection id="ho-tro" />

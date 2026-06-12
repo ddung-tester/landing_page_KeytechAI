@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useFadeUp, useFadeUpChildren } from '../../hooks/useFadeUp';
 import ScrollNext from './ScrollNext';
 
+const BV = "'Be Vietnam Pro', sans-serif";
 const VIDEO_SRC = '/assets/video_show_cong_nghe.mp4';
 
 const TECH_FEATURES = [
@@ -14,8 +15,8 @@ const TECH_FEATURES = [
         <path d="M14.5 3.5l1 1 1.5-1.5" stroke="#FFFFFF" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    title: 'Nhận diện tức thì',
-    desc: 'Quét nhanh, nhận đúng.',
+    title: 'Nhận diện chạm mắt',
+    desc: 'Quét nhanh 0.2s, chính xác và an toàn tuyệt đối.',
   },
   {
     icon: (
@@ -26,8 +27,8 @@ const TECH_FEATURES = [
         <path d="M14.5 5.5l.7.7 1.3-1.3" stroke="#38BDF8" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    title: 'Báo ngay',
-    desc: 'Phụ huynh yên tâm từng lần đến lớp.',
+    title: 'Thông báo tức thì',
+    desc: 'Gửi ảnh check-in thực tế, cha mẹ trọn an lòng.',
   },
   {
     icon: (
@@ -38,8 +39,8 @@ const TECH_FEATURES = [
         <rect x="12.5" y="5" width="2.5" height="10" rx="0.4" fill="#FFFFFF" />
       </svg>
     ),
-    title: 'Quản trị tập trung',
-    desc: 'Một màn hình, đủ dữ liệu.',
+    title: 'Quản trị tinh gọn',
+    desc: 'Một màn hình quản lý, tối ưu mọi nguồn lực.',
   },
 ];
 
@@ -82,24 +83,34 @@ export default function TechnologySection({ id }) {
     <section
       id={id}
       className="landing-section snap-section bg-section-tech bg-tech-grid border-t border-[#EEF2F7] flex flex-col justify-center relative overflow-hidden"
-      style={{ scrollMarginTop: 0 }}
     >
-      {/* ── Glow blobs */}
-      <div className="glow-blob glow-blue -right-20 -top-20" />
+      <div className="tech-show-wrap">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-
-        <div ref={titleRef} className="fade-up section-header">
-          <span className="section-eyebrow" style={{ color: '#2563EB' }}>CÔNG NGHỆ LÕI</span>
-          <h2 className="section-title">Công nghệ gọn, sẵn sàng vận hành</h2>
+        <div ref={titleRef} className="fade-up tech-show-header" style={{ marginBottom: 30 }}>
+          <span style={{
+            fontFamily: BV, fontSize: 13, fontWeight: 800,
+            letterSpacing: '0.18em', textTransform: 'uppercase', color: '#2563EB',
+            display: 'block', marginBottom: 10,
+          }}>
+            CÔNG NGHỆ LÕI
+          </span>
+          <h2 style={{
+            fontFamily: BV, fontWeight: 600,
+            fontSize: 'clamp(24px, 2.4vw, 38px)',
+            color: '#0F172A', lineHeight: 1.22,
+            letterSpacing: '-0.02em', margin: '0 auto',
+            maxWidth: '800px'
+          }}>
+            Cấu trúc lõi thông minh — Tự động hóa vận hành
+          </h2>
         </div>
 
-        <div className="grid lg:grid-cols-[minmax(0,1.35fr)_minmax(340px,0.9fr)] gap-6 lg:gap-10 items-stretch">
+        <div className="tech-show-layout">
 
           {/* LEFT: Video */}
-          <div className="flex items-stretch justify-center">
+          <div className="tech-show-media-shell">
             <div
-              className="video-container w-full h-full rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-[0_4px_24px_rgba(30,58,138,0.08)]"
+              className="tech-show-media"
               style={{ transform: 'translate3d(0,0,0)' }}
             >
               <video
@@ -109,10 +120,8 @@ export default function TechnologySection({ id }) {
                 muted
                 playsInline
                 preload="auto"
-                className="w-full h-full block"
+                className="tech-show-video"
                 style={{
-                  minHeight: 'clamp(320px, 48vh, 520px)',
-                  objectFit: 'cover',
                   transform: 'translate3d(0,0,0)',
                   willChange: 'transform'
                 }}
@@ -121,29 +130,26 @@ export default function TechnologySection({ id }) {
           </div>
 
           {/* RIGHT: Feature cards */}
-          <div ref={cardsRef} className="grid sm:grid-cols-3 lg:grid-cols-1 gap-4 lg:h-full">
+          <div ref={cardsRef} className="tech-show-panel">
             {TECH_FEATURES.map((feat, i) => (
               <div
                 key={i}
-                className={`fade-up fade-up-delay-${i + 1} group card-standard flex flex-col justify-center lg:min-h-0`}
-                style={{
-                  '--card-border': '#DBEAFE',
-                  '--card-hover-border': '#2563EB'
-                }}
+                className={`fade-up fade-up-delay-${i + 1} group tech-show-card`}
               >
-                <div className="w-11 h-11 rounded-full bg-gradient-to-r from-[#2563EB] to-[#0EA5E9] flex items-center justify-center
-                  mb-3.5 group-hover:scale-105 transition-transform duration-300 shadow-[0_3px_10px_rgba(37,99,235,0.2)]">
+                <div className="tech-show-icon">
                   {feat.icon}
                 </div>
-                <h3 className="text-[15px] sm:text-[16px] font-bold text-[#0F172A] mb-1.5 leading-snug">{feat.title}</h3>
-                <p className="text-[13px] sm:text-[13.5px] text-[#4B5563] leading-relaxed">{feat.desc}</p>
+                <div className="tech-show-card-copy">
+                  <h3>{feat.title}</h3>
+                  <p>{feat.desc}</p>
+                </div>
               </div>
             ))}
           </div>
 
         </div>
 
-        <ScrollNext href="#co-hoi" />
+        <ScrollNext href="#co-hoi-doanh-thu" />
       </div>
     </section>
   );

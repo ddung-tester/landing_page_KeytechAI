@@ -42,7 +42,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
             Mô hình doanh thu
           </span>
           <h2 style={{
-            fontFamily: PD, fontWeight: 800,
+            fontFamily: PD, fontWeight: 600,
             fontSize: 'clamp(22px, 2.4vw, 36px)',
             color: '#0F172A', lineHeight: 1.22,
             letterSpacing: '-0.02em', margin: '0 0 8px',
@@ -88,7 +88,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
                     borderRadius: 14, padding: '16px 20px',
                   }}>
                     <div style={{
-                      fontFamily: PD, fontWeight: 900,
+                      fontFamily: PD, fontWeight: 700,
                       fontSize: 48, color: '#7C3AED', lineHeight: 1,
                     }}>70%</div>
                     <div style={{
@@ -104,7 +104,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
                     alignItems: 'center', justifyContent: 'center',
                   }}>
                     <div style={{
-                      fontFamily: PD, fontWeight: 900,
+                      fontFamily: PD, fontWeight: 700,
                       fontSize: 32, color: '#1D4ED8', lineHeight: 1,
                     }}>30%</div>
                     <div style={{
@@ -166,7 +166,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
                   color: '#BBF7D0', marginBottom: 2,
                 }}>Thu nhập theo danh mục</div>
                 <div style={{
-                  fontFamily: PD, fontWeight: 800, fontSize: 18, color: '#fff',
+                  fontFamily: PD, fontWeight: 600, fontSize: 18, color: '#fff',
                 }}>Lớn dần theo số trường</div>
               </div>
               <div className="p-4">
@@ -181,7 +181,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
                       textAlign: 'center',
                     }}>
                       <div style={{
-                        fontFamily: PD, fontWeight: 800,
+                        fontFamily: PD, fontWeight: 600,
                         fontSize: 22, color: '#059669',
                       }}>{s.partner}</div>
                       <div style={{

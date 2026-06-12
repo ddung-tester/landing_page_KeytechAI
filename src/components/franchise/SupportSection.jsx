@@ -17,9 +17,9 @@ const PARTNER_SUPPORTS = [
   },
   {
     category: 'Công nghệ',
-    color: '#7C3AED', // Purple
-    bg: '#F5F3FF',
-    border: 'rgba(124, 58, 237, 0.15)',
+    color: '#0EA5E9',
+    bg: '#E0F7FF',
+    border: 'rgba(14, 165, 233, 0.22)',
     items: [
       'Camera AI chuyên dụng.',
       'Phần mềm và app đồng bộ.'
@@ -27,9 +27,9 @@ const PARTNER_SUPPORTS = [
   },
   {
     category: 'Vận hành',
-    color: '#0D9488', // Teal
-    bg: '#F0FDF4',
-    border: 'rgba(13, 148, 136, 0.15)',
+    color: '#0891B2',
+    bg: '#CFFAFE',
+    border: 'rgba(8, 145, 178, 0.22)',
     items: [
       'Đào tạo kỹ thuật thực tế.',
       'Theo dõi và hỗ trợ liên tục.'
@@ -45,24 +45,23 @@ export default function SupportSection({ id = 'ho-tro' }) {
   return (
     <section
       id={id}
-      className="landing-section snap-section bg-white border-t border-[#EEF2F7] flex flex-col justify-center relative overflow-hidden"
-      style={{ scrollMarginTop: 0 }}
+      className="landing-section snap-section bg-section-support bg-tech-grid border-t border-[#EEF2F7] flex flex-col justify-center relative overflow-hidden"
     >
       <div className="glow-blob glow-purple -right-20 -top-20 -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        
+
         {/* Header */}
-        <div ref={titleRef} className="fade-up text-center mb-16">
+        <div ref={titleRef} className="fade-up text-center mb-8">
           <span style={{
-            fontFamily: BV, fontSize: 10.5, fontWeight: 800,
+            fontFamily: BV, fontSize: 13, fontWeight: 800,
             letterSpacing: '0.18em', textTransform: 'uppercase', color: '#2563EB',
             display: 'block', marginBottom: 10,
           }}>
             Hỗ trợ từ Keytech
           </span>
           <h2 style={{
-            fontFamily: PD, fontWeight: 800,
+            fontFamily: PD, fontWeight: 600,
             fontSize: 'clamp(24px, 2.4vw, 38px)',
             color: '#0F172A', lineHeight: 1.22,
             letterSpacing: '-0.02em', margin: '0 auto 12px',
@@ -71,7 +70,7 @@ export default function SupportSection({ id = 'ho-tro' }) {
             Bạn mở thị trường, Keytech lo công nghệ
           </h2>
           <p style={{
-            fontFamily: BV, fontSize: '14.5px', color: '#475569',
+            fontFamily: BV, fontSize: '17.5px', color: '#475569',
             maxWidth: '560px', margin: '0 auto', lineHeight: 1.5,
           }}>
             Đồng hành từ lắp đặt đến vận hành.
@@ -93,7 +92,7 @@ export default function SupportSection({ id = 'ho-tro' }) {
                 <div
                   style={{
                     fontFamily: BV,
-                    fontSize: '11px',
+                    fontSize: '14.5px',
                     fontWeight: 800,
                     textTransform: 'uppercase',
                     letterSpacing: '0.14em',
@@ -117,10 +116,10 @@ export default function SupportSection({ id = 'ho-tro' }) {
                     </span>
                     <span style={{
                       fontFamily: BV,
-                      fontSize: '13.5px',
+                      fontSize: '17px',
                       color: '#334155',
-                      fontWeight: 500,
-                      lineHeight: 1.4
+                      fontWeight: 505,
+                      lineHeight: 1.45
                     }}>
                       {item}
                     </span>
@@ -134,21 +133,21 @@ export default function SupportSection({ id = 'ho-tro' }) {
         {/* Bottom highlight banner */}
         <div
           ref={ctaRef}
-          className="fade-up fade-up-delay-4 rounded-3xl p-8 text-center relative overflow-hidden shadow-xl border border-indigo-950/20"
+          className="fade-up fade-up-delay-4 rounded-3xl p-8 text-center relative overflow-hidden shadow-xl border border-sky-950/20"
           style={{
-            background: 'linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%)',
+            background: 'linear-gradient(135deg, #06355A 0%, #075E73 100%)',
           }}
         >
           {/* Subtle decoration glow inside the banner */}
           <div className="absolute -left-10 -top-10 w-40 h-40 rounded-full bg-blue-500/10 blur-2xl" />
-          <div className="absolute -right-10 -bottom-10 w-40 h-40 rounded-full bg-indigo-500/10 blur-2xl" />
+          <div className="absolute -right-10 -bottom-10 w-40 h-40 rounded-full bg-cyan-400/10 blur-2xl" />
 
           <div className="relative z-10 max-w-2xl mx-auto">
             <h3
               style={{
                 fontFamily: PD,
                 fontSize: 'clamp(20px, 2vw, 26px)',
-                fontWeight: 800,
+                fontWeight: 600,
                 color: '#fff',
                 marginBottom: 8,
                 lineHeight: 1.2
@@ -159,7 +158,7 @@ export default function SupportSection({ id = 'ho-tro' }) {
             <p
               style={{
                 fontFamily: BV,
-                fontSize: '14.5px',
+                fontSize: '17.5px',
                 color: '#CBD5E1',
                 lineHeight: 1.6,
                 fontWeight: 300

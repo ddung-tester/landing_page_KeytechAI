@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useFadeUp, useFadeUpChildren } from '../../hooks/useFadeUp';
 import ScrollNext from './ScrollNext';
 
@@ -6,9 +7,9 @@ const BV = "'Be Vietnam Pro', sans-serif";
 
 const METRICS = [
   { val: '100+', label: 'Trường đã chạy', color: '#2563EB' },
-  { val: '5 năm', label: 'Bảo hành', color: '#7C3AED' },
-  { val: 'A–Z', label: 'Đồng hành', color: '#0EA5E9' },
-  { val: '70/30', label: 'Chia minh bạch', color: '#059669' },
+  { val: '5 năm', label: 'Bảo hành', color: '#0EA5E9' },
+  { val: 'A-Z', label: 'Đồng hành', color: '#0EA5E9' },
+  { val: '70/30', label: 'Chia minh bạch', color: '#0891B2' },
 ];
 
 const PROOF = [
@@ -18,100 +19,143 @@ const PROOF = [
   'Bàn giao gọn trong 30 ngày.',
 ];
 
+const SLIDES = [
+  {
+    src: '/assets/lắp đặt tại sân trường.jpg',
+    eyebrow: 'Hình ảnh thực tế',
+    title: 'Camera AI tại trường học',
+    desc: 'Lắp đặt gọn, vận hành ổn, nhà trường dễ làm quen.',
+  },
+  {
+    src: '/assets/hero-launch.jpg',
+    eyebrow: 'Khởi động dự án',
+    title: 'Bàn giao mô hình triển khai',
+    desc: 'Đối tác nắm quy trình, Keytech đồng hành từ ngày đầu.',
+  },
+  {
+    src: '/assets/hero-training.jpg',
+    eyebrow: 'Đào tạo vận hành',
+    title: 'Chuyển giao đội ngũ',
+    desc: 'Hướng dẫn vận hành hệ thống và quy trình làm việc với trường.',
+  },
+  {
+    src: '/assets/hero-deployment.jpg',
+    eyebrow: 'Triển khai thực địa',
+    title: 'Lắp đặt tại điểm trường',
+    desc: 'Camera, phần mềm và app được đồng bộ trong một quy trình.',
+  },
+  {
+    src: '/assets/hero-conference.jpg',
+    eyebrow: 'Kết nối đối tác',
+    title: 'Mở rộng cùng Keytech',
+    desc: 'Chia sẻ mô hình, chuẩn hóa cách triển khai và khai thác.',
+  },
+];
+
 export default function KeytechProof({ id = 'keytech' }) {
   const titleRef = useFadeUp();
-  const leftRef = useFadeUpChildren(0.08);
-  const rightRef = useFadeUp();
+  const listRef = useFadeUpChildren(0.08);
+  const metricsRef = useFadeUpChildren(0.08);
+  const carouselRef = useFadeUp();
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % SLIDES.length);
+    }, 3600);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
+  const currentSlide = SLIDES[activeSlide];
 
   return (
     <section
       id={id}
       className="landing-section snap-section bg-section-proof border-t border-[#EEF2F7] flex flex-col justify-center relative overflow-hidden"
     >
-      <div className="glow-blob glow-blue -left-20 -top-20 -z-10" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-
-        <div ref={titleRef} className="fade-up text-center mb-9">
-          <span style={{
-            fontFamily: BV, fontSize: 10.5, fontWeight: 800,
-            letterSpacing: '0.18em', textTransform: 'uppercase',
-            color: '#2563EB', display: 'block', marginBottom: 8,
-          }}>Vì sao chọn Keytech</span>
-          <h2 style={{
-            fontFamily: PD, fontWeight: 800,
-            fontSize: 'clamp(24px, 2.4vw, 38px)',
-            color: '#0F172A', lineHeight: 1.18,
-            letterSpacing: '-0.02em', margin: '0 auto',
-            maxWidth: 760,
-          }}>
-            Mô hình thật, triển khai thật
-          </h2>
+      <div className="keytech-proof-wrap">
+        <div ref={titleRef} className="fade-up keytech-proof-header">
+          <span>Vì sao chọn Keytech</span>
+          <h2 style={{ fontFamily: PD }}>Không chỉ là ý tưởng — Chúng tôi kiến tạo thực tế</h2>
         </div>
 
-        <div className="grid lg:grid-cols-[1.08fr_0.92fr] gap-6 lg:gap-8 items-stretch">
+        <div className="keytech-proof-layout">
+          <div ref={carouselRef} className="fade-up fade-up-delay-1 keytech-proof-carousel">
+            <div className="keytech-proof-frame">
+              {SLIDES.map((slide, index) => (
+                <img
+                  key={slide.src}
+                  src={slide.src}
+                  alt={slide.title}
+                  className={`keytech-proof-slide ${index === activeSlide ? 'is-active' : ''}`}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                />
+              ))}
 
-          {/* LEFT: Photo */}
-          <div ref={rightRef} className="fade-up fade-up-delay-1">
-            <div className="relative h-full min-h-[360px] overflow-hidden rounded-3xl border border-[#D8E2F0] bg-white shadow-[0_18px_45px_rgba(15,23,42,0.10)]">
-              <img
-                src="/assets/lắp đặt tại sân trường.jpg"
-                alt="Camera AI triển khai thực tế tại trường học"
-                className="h-full w-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/70 via-[#0F172A]/10 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-                <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.14em] text-emerald-100 backdrop-blur">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                  Hình ảnh thực tế
+              <div className="keytech-proof-shade" />
+
+              <div className="keytech-proof-caption">
+                <div className="keytech-proof-pill">
+                  <span />
+                  {currentSlide.eyebrow}
                 </div>
-                <div style={{ fontFamily: PD }} className="text-[24px] font-extrabold leading-tight">
-                  Camera AI tại trường học
-                </div>
-                <p className="mt-1 max-w-[520px] text-[13px] leading-relaxed text-slate-200">
-                  Lắp đặt gọn, vận hành ổn, nhà trường dễ làm quen.
-                </p>
+                <h3 style={{ fontFamily: PD }}>{currentSlide.title}</h3>
+                <p>{currentSlide.desc}</p>
+              </div>
+
+              <div className="keytech-proof-dots">
+                {SLIDES.map((slide, index) => (
+                  <button
+                    key={slide.src}
+                    type="button"
+                    className={index === activeSlide ? 'is-active' : ''}
+                    aria-label={`Xem ảnh ${index + 1}`}
+                    onClick={() => setActiveSlide(index)}
+                  />
+                ))}
               </div>
             </div>
           </div>
 
-          {/* RIGHT: Content */}
-          <div className="flex flex-col gap-4">
-            <div className="grid grid-cols-2 gap-3">
-              {METRICS.map((m, i) => (
+          <div className="keytech-proof-content">
+            <div ref={metricsRef} className="keytech-proof-metrics">
+              {METRICS.map((metric, index) => (
                 <div
-                  key={m.label}
-                  className={`fade-up fade-up-delay-${i + 1} rounded-2xl border border-[#E2E8F0] bg-white px-5 py-5 text-center shadow-[0_6px_20px_rgba(15,23,42,0.045)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_12px_26px_rgba(15,23,42,0.08)]`}
+                  key={metric.label}
+                  className={`fade-up fade-up-delay-${index + 1} keytech-proof-metric`}
                 >
-                  <div style={{
-                    fontFamily: PD, fontWeight: 900,
-                    fontSize: 'clamp(28px, 3vw, 38px)',
-                    color: m.color, lineHeight: 1,
-                  }}>{m.val}</div>
-                  <div style={{
-                    fontFamily: BV, fontSize: 12, color: '#64748B',
-                    fontWeight: 600, marginTop: 7,
-                  }}>{m.label}</div>
+                  <div
+                    className="numeric-display"
+                    style={{
+                      color: metric.color,
+                    }}
+                  >
+                    {metric.val}
+                  </div>
+                  <span style={{ fontFamily: BV }}>{metric.label}</span>
                 </div>
               ))}
             </div>
 
-            <div ref={leftRef} className="grid gap-3 rounded-3xl border border-[#D8E2F0] bg-white/80 p-4 shadow-[0_8px_28px_rgba(15,23,42,0.045)] backdrop-blur">
-              {PROOF.map((item, i) => (
+            <div ref={listRef} className="keytech-proof-list">
+              {PROOF.map((item, index) => (
                 <div
                   key={item}
-                  className={`fade-up fade-up-delay-${i + 1} flex items-center gap-3 rounded-2xl bg-[#F8FAFC] px-4 py-3.5`}
+                  className={`fade-up fade-up-delay-${index + 1} keytech-proof-item`}
                 >
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#DBEAFE] text-[#1D4ED8]">
+                  <span>
                     <svg width="12" height="12" viewBox="0 0 10 10" fill="none">
-                      <path d="M2 5l2 2 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                      <path
+                        d="M2 5l2 2 4-4"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </span>
-                  <span style={{
-                    fontFamily: BV, fontSize: 13.5, fontWeight: 600,
-                    color: '#334155', lineHeight: 1.45,
-                  }}>{item}</span>
+                  <p style={{ fontFamily: BV }}>{item}</p>
                 </div>
               ))}
             </div>

@@ -64,11 +64,11 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-[#F1F5F9]/95 backdrop-blur-md border-b border-[#CBD5E1]
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#FAF8FF]/92 backdrop-blur-md border-b border-[#E9D5FF]/40
       transition-shadow duration-300 ${scrolled ? 'shadow-md' : 'shadow-none'} animate-premium-header-enter`}
       style={{ height: `${HEADER_H}px` }}
     >
-      <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 lg:px-4 xl:px-8 h-full">
+      <div className="w-full max-w-[1360px] mx-auto px-4 lg:px-6 xl:px-8 h-full">
         <div className="flex items-center justify-between h-full">
 
           {/* Logo */}
@@ -80,13 +80,17 @@ export default function Header() {
           >
             <img src="/keytech_logo.png" alt="Keytech Logo" className="h-14 w-auto object-contain" />
             <div className="h-5 w-px bg-[#CBD5E1]" />
-            <span className="text-[10px] font-extrabold tracking-widest text-[#2563EB] uppercase bg-[#EFF6FF] border border-[#DBEAFE] px-2 py-0.5 rounded-md max-[360px]:hidden">
+            <span className="text-[12.5px] font-extrabold tracking-widest text-[#2563EB] uppercase bg-[#EFF6FF] border border-[#DBEAFE] px-2.5 py-1 rounded-md max-[360px]:hidden">
               Partnership
             </span>
           </a>
 
           {/* Desktop Nav */}
-          <nav className="landing-desktop-nav hidden lg:flex items-center gap-0.5 xl:gap-1.5" role="navigation">
+          <nav
+            className="landing-desktop-nav hidden lg:flex items-center gap-1 xl:gap-2"
+            role="navigation"
+            aria-label="Điều hướng chính"
+          >
             {navLinks.map((link) => {
               const isActive = activeHref === link.href;
               return (
@@ -94,9 +98,9 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`px-1.5 xl:px-2.5 py-1 text-[11.5px] xl:text-[13px] font-bold transition-all duration-200 whitespace-nowrap
+                  className={`px-2 xl:px-3 py-2 text-[13.5px] xl:text-[14.5px] font-bold transition-all duration-200 whitespace-nowrap
                     ${isActive
-                      ? 'text-[#2563EB] relative after:absolute after:-bottom-1 after:left-1 after:right-1 after:h-[2.5px] after:rounded-full after:bg-[#2563EB]'
+                      ? 'text-[#2563EB] relative after:absolute after:bottom-0 after:left-2 after:right-2 after:h-[2.5px] after:rounded-full after:bg-[#2563EB]'
                       : 'text-[#475569] hover:text-[#2563EB]'
                     }`}
                 >
@@ -107,12 +111,12 @@ export default function Header() {
           </nav>
 
           {/* CTA + Mobile toggle */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <a
               href="#lien-he"
               onClick={(e) => handleNavClick(e, '#lien-he')}
-              className="landing-header-cta hidden sm:inline-flex items-center px-4 py-2 btn-brand-primary
-                text-white text-[12.5px] font-semibold"
+              className="landing-header-cta hidden sm:inline-flex items-center px-5 py-2.5 btn-brand-primary
+                text-white text-[14px] font-bold whitespace-nowrap"
             >
               Đăng ký tư vấn
             </a>
@@ -140,7 +144,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="landing-mobile-menu lg:hidden border-t border-[#CBD5E1] bg-[#F1F5F9] shadow-lg">
+        <div className="landing-mobile-menu lg:hidden border-t border-[#E9D5FF]/40 bg-[#FAF8FF]/98 shadow-lg">
           <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-0.5">
             {navLinks.map((link) => {
               const isActive = activeHref === link.href;

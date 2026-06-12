@@ -71,7 +71,7 @@ export default function InvestmentScale({ id = 'quy-mo' }) {
             Quy mô đầu tư
           </span>
           <h2 style={{
-            fontFamily: PD, fontWeight: 800,
+            fontFamily: PD, fontWeight: 600,
             fontSize: 'clamp(22px, 2.4vw, 36px)',
             color: '#0F172A', lineHeight: 1.22,
             letterSpacing: '-0.02em', margin: '0 0 8px',
@@ -114,7 +114,7 @@ export default function InvestmentScale({ id = 'quy-mo' }) {
                   {/* Capital */}
                   <div style={{ minWidth: 110 }}>
                     <div style={{
-                      fontFamily: PD, fontWeight: 900,
+                      fontFamily: PD, fontWeight: 700,
                       fontSize: 26, color: t.accent, lineHeight: 1,
                     }}>{t.capital}</div>
                     <div style={{
@@ -177,7 +177,7 @@ export default function InvestmentScale({ id = 'quy-mo' }) {
                   textTransform: 'uppercase', marginBottom: 4,
                 }}>Cơ cấu vốn — Gói 10 trường</div>
                 <div style={{
-                  fontFamily: PD, fontWeight: 800,
+                  fontFamily: PD, fontWeight: 600,
                   fontSize: 22, color: '#fff',
                 }}>~1 tỷ đồng</div>
               </div>
@@ -221,7 +221,7 @@ export default function InvestmentScale({ id = 'quy-mo' }) {
                         textTransform: 'uppercase',
                       }}>Doanh thu đối tác (70%)</div>
                       <div style={{
-                        fontFamily: PD, fontWeight: 900,
+                        fontFamily: PD, fontWeight: 700,
                         fontSize: 22, color: '#059669', marginTop: 2,
                       }}>~1,4 tỷ / năm</div>
                     </div>

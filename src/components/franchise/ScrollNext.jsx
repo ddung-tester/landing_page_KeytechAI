@@ -12,7 +12,7 @@ export default function ScrollNext({ href }) {
       <a
         href={href}
         onClick={handleClick}
-        className="inline-flex flex-col items-center gap-1 text-[11.5px] font-medium text-[#9CA3AF]
+        className="inline-flex flex-col items-center gap-1 text-[13px] font-medium text-[#9CA3AF]
           hover:text-[#1E3A8A] transition-colors duration-200 group"
         aria-label=""
       >
