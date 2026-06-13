@@ -77,8 +77,8 @@ export default function MarketDemandSection({ id = 'thi-truong' }) {
               <div className="grid grid-cols-3 divide-x divide-[#D8E2F0] border-t border-[#D8E2F0] bg-[#FBF7F0]/40">
                 {MARKET_NUMBERS.map((n) => (
                   <div key={n.label} className="px-3 py-3.5 text-center">
-                    <div className="text-[18px] sm:text-[20px] font-extrabold text-[#0F172A] leading-tight">{n.value}</div>
-                    <div className="text-[10px] sm:text-[10.5px] text-[#6B7280] font-medium mt-0.5 leading-snug">{n.label}</div>
+                    <div className="text-[20px] sm:text-[22px] font-extrabold text-[#0F172A] leading-tight">{n.value}</div>
+                    <div className="text-[12px] sm:text-[13px] text-[#6B7280] font-medium mt-0.5 leading-snug">{n.label}</div>
                   </div>
                 ))}
               </div>
@@ -109,8 +109,8 @@ export default function MarketDemandSection({ id = 'thi-truong' }) {
                     {card.icon}
                   </div>
                   <div>
-                    <h3 className="text-[14px] font-extrabold text-[#0F172A] mb-0.5">{card.title}</h3>
-                    <p className="text-[12.5px] text-[#6B7280] leading-relaxed">{card.desc}</p>
+                    <h3 className="text-[16px] font-extrabold text-[#0F172A] mb-1">{card.title}</h3>
+                    <p className="text-[14px] text-[#6B7280] leading-relaxed">{card.desc}</p>
                   </div>
                 </div>
               ))}
@@ -119,7 +119,7 @@ export default function MarketDemandSection({ id = 'thi-truong' }) {
             {/* Key insight pill */}
             <div className="inline-flex items-center gap-2.5 rounded-full border border-[#C4B5FD] bg-[#EEF0FF] px-4 py-2.5 w-fit">
               <span className="text-[18px]">💡</span>
-              <p className="text-[12.5px] text-[#4C1D95] font-semibold">
+              <p className="text-[14px] text-[#4C1D95] font-semibold">
                 Dưới 5% trường đã có AI điểm danh. Cơ hội vẫn còn rất rộng.
               </p>
             </div>

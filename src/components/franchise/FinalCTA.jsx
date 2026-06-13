@@ -46,7 +46,7 @@ export default function FinalCTA({ id = 'lien-he' }) {
               fontFamily: BV, fontSize: '16px', color: '#94A3B8',
               maxWidth: '540px', lineHeight: 1.6, marginBottom: 28,
             }}>
-              Nhận hồ sơ hợp tác và chính sách chia sẻ rõ ràng.
+              Gọn đủ: hồ sơ, chính sách, kịch bản tư vấn.
             </p>
 
             {/* Trust stats */}

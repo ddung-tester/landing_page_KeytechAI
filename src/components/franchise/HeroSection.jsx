@@ -11,7 +11,7 @@ function StatCard({ stat }) {
       <div className="text-[22px] sm:text-[26px] xl:text-[28px] font-extrabold text-[#1E3A8A] leading-tight tracking-tight">
         {stat.value}
       </div>
-      <div className="mt-1 text-[11px] lg:text-[11.5px] text-[#6B7280] font-medium leading-snug">
+      <div className="mt-1 text-[13px] lg:text-[13.5px] text-[#6B7280] font-medium leading-snug">
         {stat.label}
       </div>
     </div>
@@ -82,7 +82,7 @@ export default function HeroSection({ id = 'hero' }) {
             <div className="inline-flex items-center gap-2 px-3 py-1.5
               bg-white border border-[#E5E7EB] rounded-full mb-4 shadow-sm">
               <div className="w-1.5 h-1.5 rounded-full bg-[#A855F7]" />
-              <span className="text-[11.5px] font-semibold text-[#A855F7] tracking-wide uppercase">
+              <span className="text-[13px] font-semibold text-[#A855F7] tracking-wide uppercase">
                 Hợp tác nhượng quyền
               </span>
             </div>
@@ -93,7 +93,7 @@ export default function HeroSection({ id = 'hero' }) {
               điểm danh trường học
             </h1>
 
-            <p className="text-[15px] sm:text-[16px] text-[#4B5563] leading-relaxed mb-6 max-w-[540px]">
+            <p className="text-[17px] sm:text-[18px] text-[#4B5563] leading-relaxed mb-6 max-w-[540px]">
               Camera AI điểm danh cho trường học. Dễ chuyển giao, vận hành thật, doanh thu chia rõ 70/30.
             </p>
 

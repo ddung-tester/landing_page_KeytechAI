@@ -39,11 +39,11 @@ export default function InvestmentOverview({ id }) {
                     '--card-hover-border': '#2563EB'
                   }}
                 >
-                  <div className="text-[22px] sm:text-[25px] xl:text-[28px] font-extrabold text-[#0F172A] leading-tight tracking-tight">
+                  <div className="text-[24px] sm:text-[27px] xl:text-[30px] font-extrabold text-[#0F172A] leading-tight tracking-tight">
                     {item.value}
                   </div>
-                  <div className="text-[11px] xl:text-[12px] text-[#2563EB] font-bold mt-0.5 mb-1.5 uppercase tracking-wide">{item.unit}</div>
-                  <p className="text-[12px] xl:text-[13px] text-[#6B7280] leading-snug">{item.label}</p>
+                  <div className="text-[13px] xl:text-[13.5px] text-[#2563EB] font-bold mt-0.5 mb-1.5 uppercase tracking-wide">{item.unit}</div>
+                  <p className="text-[13.5px] xl:text-[14.5px] text-[#6B7280] leading-snug">{item.label}</p>
                 </div>
               ))}
             </div>

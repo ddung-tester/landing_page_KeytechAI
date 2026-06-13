@@ -88,7 +88,7 @@ export default function SupportSection({ id = 'ho-tro' }) {
               style={{ borderColor: group.border }}
             >
               {/* Header bar */}
-              <div className="px-6 py-4" style={{ background: `${group.color}08`, borderBottom: `1px solid ${group.border}` }}>
+              <div className="px-6 py-4 text-center" style={{ background: `${group.color}08`, borderBottom: `1px solid ${group.border}` }}>
                 <div
                   style={{
                     fontFamily: BV,
@@ -103,11 +103,11 @@ export default function SupportSection({ id = 'ho-tro' }) {
                 </div>
               </div>
               {/* Items */}
-              <div className="p-6 space-y-4 flex-1 flex flex-col justify-center">
+              <div className="p-6 space-y-4 flex-1 flex flex-col justify-center items-center">
                 {group.items.map((item, j) => (
-                  <div key={j} className="flex items-start gap-3.5">
+                  <div key={j} className="flex items-center justify-center gap-3.5 text-center">
                     <span
-                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full"
+                      className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full"
                       style={{ background: `${group.color}15` }}
                     >
                       <svg width="10" height="10" viewBox="0 0 10 10" fill="none">

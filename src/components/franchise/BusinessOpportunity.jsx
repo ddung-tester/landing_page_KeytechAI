@@ -44,13 +44,13 @@ export default function BusinessOpportunity() {
         {/* Title */}
         <div ref={titleRef} className="fade-up max-w-2xl mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F7F8FA] border border-[#E5E7EB]
-            rounded-full text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
+            rounded-full text-[13px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-4">
             Cơ hội đầu tư
           </div>
-          <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight mb-4">
+          <h2 className="text-[30px] sm:text-[34px] font-extrabold text-[#0F172A] leading-tight mb-4">
             Cơ hội từ trường học
           </h2>
-          <p className="text-[15px] text-[#4B5563] leading-relaxed">
+          <p className="text-[16px] text-[#4B5563] leading-relaxed">
             Trường cần vận hành nhẹ hơn. Phụ huynh cần an tâm hơn. Đối tác có cơ hội đồng hành.
           </p>
         </div>
@@ -67,8 +67,8 @@ export default function BusinessOpportunity() {
                 group-hover:border-[#D1E2FF] transition-colors">
                 {iconMap[item.icon]}
               </div>
-              <h3 className="text-[15px] font-semibold text-[#0F172A] mb-2">{item.title}</h3>
-              <p className="text-[13.5px] text-[#6B7280] leading-snug">{item.desc}</p>
+              <h3 className="text-[16.5px] font-semibold text-[#0F172A] mb-2">{item.title}</h3>
+              <p className="text-[14.5px] text-[#6B7280] leading-snug">{item.desc}</p>
             </div>
           ))}
         </div>

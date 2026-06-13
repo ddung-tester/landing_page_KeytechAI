@@ -39,8 +39,8 @@ function ImageCard({ img, onClick }) {
         />
       </div>
       <div className="px-4 py-3.5">
-        <div className="text-[13px] font-semibold text-[#0F172A] truncate group-hover:text-[#2563EB] transition-colors">{img.title}</div>
-        <div className="text-[11.5px] text-[#6B7280] mt-0.5">Đã triển khai</div>
+        <div className="text-[15px] font-semibold text-[#0F172A] truncate group-hover:text-[#2563EB] transition-colors">{img.title}</div>
+        <div className="text-[13px] text-[#6B7280] mt-0.5">Đã triển khai</div>
       </div>
     </div>
   );
@@ -86,8 +86,8 @@ export default function DeploymentTimeline({ id }) {
           <div className="flex gap-3 flex-wrap mb-4">
             {DEPLOY_STATS.map((s, i) => (
               <div key={i} className="bg-white border border-[#BFDBFE] rounded-2xl px-5 py-3 text-center shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-[#2563EB] hover:shadow-md transition-all duration-300">
-                <div className="text-[20px] sm:text-[22px] font-extrabold text-[#1D4ED8] leading-none">{s.value}</div>
-                <div className="text-[11px] sm:text-[11.5px] text-[#6B7280] mt-1.5 font-medium whitespace-nowrap">{s.label}</div>
+                <div className="text-[22px] sm:text-[24px] font-extrabold text-[#1D4ED8] leading-none">{s.value}</div>
+                <div className="text-[13px] sm:text-[13.5px] text-[#6B7280] mt-1.5 font-medium whitespace-nowrap">{s.label}</div>
               </div>
             ))}
           </div>

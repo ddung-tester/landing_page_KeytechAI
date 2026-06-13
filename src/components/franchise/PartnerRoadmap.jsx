@@ -152,7 +152,7 @@ export default function PartnerRoadmap({ id }) {
                   <h3
                     style={{
                       fontFamily: BV,
-                      fontSize: '15px',
+                      fontSize: '16.5px',
                       fontWeight: 600,
                       color: '#1E293B',
                       marginBottom: 0,

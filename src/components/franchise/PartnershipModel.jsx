@@ -100,13 +100,13 @@ export default function PartnershipModel({ id = 'kiem-chung' }) {
                 <div className={`w-12 h-12 rounded-xl ${tone.icon} flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300`}>
                   {role.icon}
                 </div>
-                <div className={`text-[11px] font-black uppercase tracking-[0.16em] mb-2 ${tone.text}`}>
+                <div className={`text-[13px] font-black uppercase tracking-[0.16em] mb-2 ${tone.text}`}>
                   {role.label}
                 </div>
                 <h3 className="text-[20px] font-extrabold text-[#0F172A] leading-tight mb-3">
                   {role.title}
                 </h3>
-                <p className="text-[13.5px] text-[#4B5563] leading-relaxed">
+                <p className="text-[15.5px] text-[#4B5563] leading-relaxed">
                   {role.desc}
                 </p>
               </article>
@@ -123,8 +123,8 @@ export default function PartnershipModel({ id = 'kiem-chung' }) {
 
           <div className="flex flex-col lg:flex-row lg:items-center gap-4 relative z-10">
             <div className="lg:w-[190px] shrink-0">
-              <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#6D28D9]">Luồng phối hợp</div>
-              <div className="text-[14px] font-extrabold text-[#0F172A] mt-1">Từng bước rõ ràng</div>
+              <div className="text-[13px] font-extrabold uppercase tracking-[0.16em] text-[#6D28D9]">Luồng phối hợp</div>
+              <div className="text-[15px] font-extrabold text-[#0F172A] mt-1">Từng bước rõ ràng</div>
             </div>
 
             <div className="flex-1 grid sm:grid-cols-4 gap-3">
@@ -141,7 +141,7 @@ export default function PartnershipModel({ id = 'kiem-chung' }) {
                   >
                     0{i + 1}
                   </span>
-                  <span className="text-[12.5px] font-bold text-[#4B5563] group-hover:text-[#0F172A] transition-colors leading-snug">
+                  <span className="text-[14px] font-bold text-[#4B5563] group-hover:text-[#0F172A] transition-colors leading-snug">
                     {step}
                   </span>
                 </div>

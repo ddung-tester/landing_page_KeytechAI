@@ -35,7 +35,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
         {/* Header */}
         <div ref={titleRef} className="fade-up text-center mb-9">
           <span style={{
-            fontFamily: BV, fontSize: 10.5, fontWeight: 800,
+            fontFamily: BV, fontSize: 13, fontWeight: 800,
             letterSpacing: '0.18em', textTransform: 'uppercase',
             color: '#059669', display: 'block', marginBottom: 8,
           }}>
@@ -64,7 +64,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
               }} />
               <div className="p-6">
                 <div style={{
-                  fontFamily: BV, fontSize: 10, fontWeight: 800,
+                  fontFamily: BV, fontSize: 13, fontWeight: 800,
                   letterSpacing: '0.18em', textTransform: 'uppercase',
                   color: '#7C3AED', marginBottom: 12,
                 }}>Tỷ lệ chia doanh thu</div>
@@ -92,7 +92,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
                       fontSize: 48, color: '#7C3AED', lineHeight: 1,
                     }}>70%</div>
                     <div style={{
-                      fontFamily: BV, fontSize: 12, fontWeight: 700,
+                      fontFamily: BV, fontSize: 14, fontWeight: 700,
                       color: '#7C3AED', marginTop: 4,
                     }}>Về tay Đối tác</div>
                   </div>
@@ -108,7 +108,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
                       fontSize: 32, color: '#1D4ED8', lineHeight: 1,
                     }}>30%</div>
                     <div style={{
-                      fontFamily: BV, fontSize: 11, fontWeight: 700,
+                      fontFamily: BV, fontSize: 13, fontWeight: 700,
                       color: '#1D4ED8', marginTop: 4, textAlign: 'center',
                     }}>Keytech</div>
                   </div>
@@ -123,7 +123,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
               borderRadius: 16, padding: '18px 20px',
             }}>
               <div style={{
-                fontFamily: BV, fontSize: 10, fontWeight: 800,
+                fontFamily: BV, fontSize: 13, fontWeight: 800,
                 letterSpacing: '0.16em', textTransform: 'uppercase',
                 color: '#059669', marginBottom: 10,
               }}>Ví dụ: 1 trường</div>
@@ -138,12 +138,12 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
                   borderBottom: i < 1 ? '1px solid rgba(5,150,105,0.1)' : 'none',
                 }}>
                   <span style={{
-                    fontFamily: BV, fontSize: 12.5,
+                    fontFamily: BV, fontSize: 15,
                     color: row.accent ? '#0F172A' : '#4B5563',
                     fontWeight: row.accent ? 700 : 400,
                   }}>{row.l}</span>
                   <span style={{
-                    fontFamily: BV, fontSize: 13, fontWeight: 800,
+                    fontFamily: BV, fontSize: 16, fontWeight: 800,
                     color: row.accent ? '#059669' : '#0F172A',
                   }}>{row.v}</span>
                 </div>
@@ -161,7 +161,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
                 padding: '14px 20px',
               }}>
                 <div style={{
-                  fontFamily: BV, fontSize: 10, fontWeight: 800,
+                  fontFamily: BV, fontSize: 13, fontWeight: 800,
                   letterSpacing: '0.16em', textTransform: 'uppercase',
                   color: '#BBF7D0', marginBottom: 2,
                 }}>Thu nhập theo danh mục</div>
@@ -185,11 +185,11 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
                         fontSize: 22, color: '#059669',
                       }}>{s.partner}</div>
                       <div style={{
-                        fontFamily: BV, fontSize: 11.5, fontWeight: 700,
+                        fontFamily: BV, fontSize: 13, fontWeight: 700,
                         color: '#0F172A', marginTop: 2,
                       }}>{s.schools}</div>
                       <div style={{
-                        fontFamily: BV, fontSize: 10.5, color: '#94A3B8',
+                        fontFamily: BV, fontSize: 12, color: '#94A3B8',
                       }}>/ {s.note}</div>
                     </div>
                   ))}
@@ -201,7 +201,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
             {/* Investment flow */}
             <div className="bg-white rounded-2xl border border-[#E2E8F0] shadow-[0_4px_18px_rgba(15,23,42,0.04)] p-5">
               <div style={{
-                fontFamily: BV, fontSize: 10, fontWeight: 800,
+                fontFamily: BV, fontSize: 13, fontWeight: 800,
                 letterSpacing: '0.16em', textTransform: 'uppercase',
                 color: '#2563EB', marginBottom: 14,
               }}>Dòng tiền</div>
@@ -217,7 +217,7 @@ export default function RevenueModel({ id = 'doanh-thu' }) {
                         margin: '0 auto 6px',
                       }}>{f.num}</div>
                       <div style={{
-                        fontFamily: BV, fontSize: 11.5, fontWeight: 600,
+                        fontFamily: BV, fontSize: 13, fontWeight: 600,
                         color: '#374151', lineHeight: 1.3,
                       }}>{f.label}</div>
                     </div>

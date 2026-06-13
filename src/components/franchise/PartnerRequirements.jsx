@@ -50,7 +50,7 @@ export default function PartnerRequirements() {
 
             {/* Quote-style highlight */}
             <div className="bg-[#F0F4FF] border-l-4 border-[#1E3A8A] rounded-r-xl px-5 py-4">
-              <p className="text-[13.5px] text-[#1E3A8A] font-medium leading-relaxed">
+              <p className="text-[15px] text-[#1E3A8A] font-medium leading-relaxed">
                 Càng hiểu trường học địa phương, càng dễ đi xa cùng Keytech.
               </p>
             </div>
@@ -69,14 +69,14 @@ export default function PartnerRequirements() {
                   group-hover:border-[#D1E2FF] group-hover:bg-[#E8F0FF] transition-all duration-300">
                   {REQ_ICONS[i]}
                 </div>
-                <p className="text-[13.5px] text-[#374151] leading-relaxed font-medium">{item}</p>
+                <p className="text-[16px] text-[#374151] leading-relaxed font-medium">{item}</p>
               </div>
             ))}
           </div>
 
         </div>
 
-        <p className="mt-5 text-[11.5px] text-[#9CA3AF] max-w-4xl">
+        <p className="mt-5 text-[13px] text-[#9CA3AF] max-w-4xl">
           * Điều kiện hợp tác sẽ được trao đổi rõ trong buổi tư vấn.
         </p>
 

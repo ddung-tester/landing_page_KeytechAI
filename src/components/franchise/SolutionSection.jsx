@@ -41,10 +41,10 @@ export default function SolutionSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div ref={titleRef} className="fade-up max-w-xl mb-12">
-          <div className="text-[11px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
+          <div className="text-[13px] font-semibold text-[#1E3A8A] uppercase tracking-widest mb-3">
             Giải pháp công nghệ
           </div>
-          <h2 className="text-[28px] sm:text-[32px] font-extrabold text-[#0F172A] leading-tight">
+          <h2 className="text-[30px] sm:text-[34px] font-extrabold text-[#0F172A] leading-tight">
             Một hệ thống, nhiều điểm chạm vận hành
           </h2>
         </div>
@@ -60,8 +60,8 @@ export default function SolutionSection() {
                 group-hover:bg-[#D1E2FF] transition-colors">
                 {iconMap[item.icon]}
               </div>
-              <h3 className="text-[14.5px] font-bold text-[#0F172A] mb-2 leading-snug">{item.title}</h3>
-              <p className="text-[13px] text-[#6B7280] leading-relaxed">{item.desc}</p>
+              <h3 className="text-[16px] font-bold text-[#0F172A] mb-2 leading-snug">{item.title}</h3>
+              <p className="text-[14.5px] text-[#6B7280] leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
