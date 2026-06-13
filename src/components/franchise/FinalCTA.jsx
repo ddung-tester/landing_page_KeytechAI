@@ -42,12 +42,7 @@ export default function FinalCTA({ id = 'lien-he' }) {
             }}>
               Cùng Keytech mở thị trường của bạn
             </h2>
-            <p style={{
-              fontFamily: BV, fontSize: '16px', color: '#94A3B8',
-              maxWidth: '540px', lineHeight: 1.6, marginBottom: 28,
-            }}>
-              Gọn đủ: hồ sơ, chính sách, kịch bản tư vấn.
-            </p>
+
 
             {/* Trust stats */}
             <div className="grid grid-cols-3 gap-4 max-w-md mb-8">
@@ -138,15 +133,7 @@ export default function FinalCTA({ id = 'lien-he' }) {
             }}>
               Nhận hồ sơ hợp tác
             </h3>
-            <p style={{
-              fontFamily: BV,
-              fontSize: '15px',
-              color: '#94A3B8',
-              lineHeight: 1.5,
-              marginBottom: 24
-            }}>
-              Gọn đủ: hồ sơ, chính sách, kịch bản tư vấn.
-            </p>
+
 
             {/* Contact links */}
             <div className="space-y-3 mb-6">

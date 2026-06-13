@@ -38,7 +38,7 @@ function ModelStatCard({ stat }) {
       <div className="text-[26px] sm:text-[30px] font-extrabold leading-none text-[#2563EB]">
         {stat.value}
       </div>
-      <div className="mt-2 text-[12.5px] font-semibold leading-snug text-[#64748B]">
+      <div className="mt-2 text-[14.5px] font-semibold leading-snug text-[#64748B]">
         {stat.label}
       </div>
     </div>
@@ -107,7 +107,7 @@ export default function ExistingModelSection({ id = 'kiem-chung' }) {
                           Hình ảnh triển khai
                         </div>
                         <div className="text-[18px] font-extrabold leading-tight">{slide.title}</div>
-                        <div className="mt-1 max-w-[680px] text-[12.5px] leading-relaxed text-slate-200">{slide.desc}</div>
+                        <div className="mt-1 max-w-[680px] text-[14px] leading-relaxed text-slate-200">{slide.desc}</div>
                       </div>
                     </>
                   )}
@@ -136,7 +136,7 @@ export default function ExistingModelSection({ id = 'kiem-chung' }) {
                 </div>
               ))}
             </div>
-            <p className="mt-4 rounded-2xl border border-[#E5E7EB] bg-white/75 px-4 py-3 text-[12.5px] leading-relaxed text-[#64748B]">
+            <p className="mt-4 rounded-2xl border border-[#E5E7EB] bg-white/75 px-4 py-3 text-[14px] leading-relaxed text-[#64748B]">
               Số liệu tham khảo. Keytech sẽ cùng bạn tính theo từng địa phương.
             </p>
           </div>

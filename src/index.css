@@ -385,7 +385,7 @@
 .tech-show-card-copy p {
   margin: 0;
   color: #4b5563;
-  font-size: 16.5px;
+  font-size: 18px;
   line-height: 1.65;
 }
 
@@ -736,7 +736,7 @@
   justify-content: center;
   background:
     linear-gradient(90deg, rgba(8, 15, 35, 0.08) 0%, rgba(8, 15, 35, 0.10) 46%, rgba(8, 15, 35, 0.74) 100%),
-    url('/assets/section-co-hoi-dau-tu.jpeg') center / cover no-repeat !important;
+    url('/assets/section-co-hoi-dau-tu.jpeg') center top / cover no-repeat !important;
 }
 
 .merged-section-anchor {
@@ -2178,13 +2178,15 @@ footer>div {
 
 .investment-image-section {
   padding: 0 !important;
+  min-height: 760px !important;
+  height: 760px !important;
 }
 
 .investment-merged-content {
-  min-height: inherit !important;
+  min-height: 760px !important;
   justify-content: flex-end !important;
-  padding-top: 86px !important;
-  padding-bottom: 78px !important;
+  padding-top: 110px !important;
+  padding-bottom: 90px !important;
 }
 
 .investment-revenue-panel {
