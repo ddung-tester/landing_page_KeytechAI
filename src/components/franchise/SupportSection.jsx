@@ -54,7 +54,7 @@ export default function SupportSection({ id = 'ho-tro' }) {
         {/* Header */}
         <div ref={titleRef} className="fade-up text-center mb-8">
           <span style={{
-            fontFamily: BV, fontSize: 13, fontWeight: 800,
+            fontFamily: BV, fontSize: 18, fontWeight: 800,
             letterSpacing: '0.18em', textTransform: 'uppercase', color: '#2563EB',
             display: 'block', marginBottom: 10,
           }}>
@@ -70,7 +70,7 @@ export default function SupportSection({ id = 'ho-tro' }) {
             Bạn mở thị trường, Keytech lo công nghệ
           </h2>
           <p style={{
-            fontFamily: BV, fontSize: '17.5px', color: '#475569',
+            fontFamily: BV, fontSize: '20px', color: '#475569',
             maxWidth: '560px', margin: '0 auto', lineHeight: 1.5,
           }}>
             Đồng hành từ lắp đặt đến vận hành.
@@ -158,7 +158,7 @@ export default function SupportSection({ id = 'ho-tro' }) {
             <p
               style={{
                 fontFamily: BV,
-                fontSize: '17.5px',
+                fontSize: '20px',
                 color: '#CBD5E1',
                 lineHeight: 1.6,
                 fontWeight: 300

@@ -90,7 +90,7 @@ export default function PartnerRoadmap({ id }) {
         {/* Header */}
         <div ref={titleRef} className="fade-up roadmap-horizontal-header">
           <span style={{
-            fontFamily: BV, fontSize: 13, fontWeight: 800,
+            fontFamily: BV, fontSize: 18, fontWeight: 800,
             letterSpacing: '0.18em', textTransform: 'uppercase', color: '#2563EB',
             display: 'block', marginBottom: 10,
           }}>
@@ -106,7 +106,7 @@ export default function PartnerRoadmap({ id }) {
             Cùng đi đến dòng tiền bền vững
           </h2>
           <p style={{
-            fontFamily: BV, fontSize: '17.5px', color: '#475569',
+            fontFamily: BV, fontSize: '20px', color: '#475569',
             maxWidth: '560px', margin: '0 auto', lineHeight: 1.5,
           }}>
             Rõ từng bước. An tâm triển khai.
@@ -152,7 +152,7 @@ export default function PartnerRoadmap({ id }) {
                   <h3
                     style={{
                       fontFamily: BV,
-                      fontSize: '16.5px',
+                      fontSize: '18.5px',
                       fontWeight: 600,
                       color: '#1E293B',
                       marginBottom: 0,

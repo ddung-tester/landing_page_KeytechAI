@@ -28,7 +28,7 @@ export default function FinalCTA({ id = 'lien-he' }) {
           {/* LEFT: Text & Trust metrics */}
           <div ref={leftRef} className="fade-up">
             <span style={{
-              fontFamily: BV, fontSize: 13, fontWeight: 800,
+              fontFamily: BV, fontSize: 18, fontWeight: 800,
               letterSpacing: '0.18em', textTransform: 'uppercase', color: '#38BDF8',
               display: 'block', marginBottom: 12,
             }}>

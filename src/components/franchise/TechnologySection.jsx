@@ -88,7 +88,7 @@ export default function TechnologySection({ id }) {
 
         <div ref={titleRef} className="fade-up tech-show-header" style={{ marginBottom: 30 }}>
           <span style={{
-            fontFamily: BV, fontSize: 13, fontWeight: 800,
+            fontFamily: BV, fontSize: 18, fontWeight: 800,
             letterSpacing: '0.18em', textTransform: 'uppercase', color: '#2563EB',
             display: 'block', marginBottom: 10,
           }}>

@@ -64,7 +64,7 @@ export default function InvestmentScale({ id = 'quy-mo' }) {
         {/* Header */}
         <div ref={titleRef} className="fade-up mb-9">
           <span style={{
-            fontFamily: BV, fontSize: 10.5, fontWeight: 800,
+            fontFamily: BV, fontSize: 12.5, fontWeight: 800,
             letterSpacing: '0.18em', textTransform: 'uppercase',
             color: '#7C3AED', display: 'block', marginBottom: 8,
           }}>
@@ -78,7 +78,7 @@ export default function InvestmentScale({ id = 'quy-mo' }) {
           }}>
             Bắt đầu gọn, mở rộng bền
           </h2>
-          <p style={{ fontFamily: BV, fontSize: 13.5, color: '#64748B', lineHeight: 1.65 }}>
+          <p style={{ fontFamily: BV, fontSize: 15.5, color: '#64748B', lineHeight: 1.65 }}>
             Chọn quy mô vừa sức. Lớn dần, chắc dần.
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function InvestmentScale({ id = 'quy-mo' }) {
                     position: 'absolute', top: 12, right: 14,
                     padding: '3px 10px', borderRadius: 100,
                     background: t.accent, color: '#fff',
-                    fontFamily: BV, fontSize: 10, fontWeight: 800,
+                    fontFamily: BV, fontSize: 12, fontWeight: 800,
                     letterSpacing: '0.1em', textTransform: 'uppercase',
                   }}>
                     Phổ biến nhất
@@ -118,7 +118,7 @@ export default function InvestmentScale({ id = 'quy-mo' }) {
                       fontSize: 26, color: t.accent, lineHeight: 1,
                     }}>{t.capital}</div>
                     <div style={{
-                      fontFamily: BV, fontSize: 11, fontWeight: 700,
+                      fontFamily: BV, fontSize: 13, fontWeight: 700,
                       color: '#64748B', letterSpacing: '0.08em',
                       textTransform: 'uppercase', marginTop: 2,
                     }}>vốn đầu tư</div>
@@ -135,9 +135,9 @@ export default function InvestmentScale({ id = 'quy-mo' }) {
                     ].map((d, j) => (
                       <div key={j}>
                         <div style={{
-                          fontFamily: BV, fontWeight: 800, fontSize: 16, color: '#0F172A',
+                          fontFamily: BV, fontWeight: 800, fontSize: 18, color: '#0F172A',
                         }}>{d.v}</div>
-                        <div style={{ fontFamily: BV, fontSize: 11, color: '#94A3B8' }}>{d.l}</div>
+                        <div style={{ fontFamily: BV, fontSize: 13, color: '#94A3B8' }}>{d.l}</div>
                       </div>
                     ))}
                   </div>
@@ -146,9 +146,9 @@ export default function InvestmentScale({ id = 'quy-mo' }) {
                   <div style={{ textAlign: 'right' }}>
                     <div style={{
                       fontFamily: BV, fontWeight: 900,
-                      fontSize: 16, color: t.accent,
+                      fontSize: 18, color: t.accent,
                     }}>{t.revenue}</div>
-                    <div style={{ fontFamily: BV, fontSize: 11, color: '#94A3B8' }}>
+                    <div style={{ fontFamily: BV, fontSize: 13, color: '#94A3B8' }}>
                       doanh thu ước tính
                     </div>
                   </div>
@@ -161,7 +161,7 @@ export default function InvestmentScale({ id = 'quy-mo' }) {
               background: '#FFF7ED', border: '1px solid #FED7AA',
               borderRadius: 12, padding: '10px 14px',
             }}>
-              <p style={{ fontFamily: BV, fontSize: 12, color: '#92400E', margin: 0 }}>
+              <p style={{ fontFamily: BV, fontSize: 14, color: '#92400E', margin: 0 }}>
                 <strong>Lưu ý:</strong> Số liệu tham khảo. Keytech sẽ cùng bạn tính kỹ hơn.
               </p>
             </div>
@@ -172,7 +172,7 @@ export default function InvestmentScale({ id = 'quy-mo' }) {
             <div className="bg-white rounded-2xl border border-[#DBEAFE] shadow-[0_8px_32px_rgba(15,23,42,0.06)] overflow-hidden">
               <div className="bg-gradient-to-r from-[#1D4ED8] to-[#7C3AED] px-6 py-4">
                 <div style={{
-                  fontFamily: BV, fontSize: 10, fontWeight: 800,
+                  fontFamily: BV, fontSize: 12, fontWeight: 800,
                   letterSpacing: '0.18em', color: '#BFD8FF',
                   textTransform: 'uppercase', marginBottom: 4,
                 }}>Cơ cấu vốn — Gói 10 trường</div>
@@ -186,11 +186,11 @@ export default function InvestmentScale({ id = 'quy-mo' }) {
                 {BREAKDOWN.map((item, i) => (
                   <div key={i}>
                     <div className="flex justify-between items-center mb-1.5">
-                      <span style={{ fontFamily: BV, fontSize: 12.5, color: '#374151', fontWeight: 500 }}>
+                      <span style={{ fontFamily: BV, fontSize: 14.5, color: '#374151', fontWeight: 500 }}>
                         {item.label}
                       </span>
                       <span style={{
-                        fontFamily: BV, fontSize: 13, fontWeight: 800, color: '#1D4ED8',
+                        fontFamily: BV, fontSize: 18, fontWeight: 800, color: '#1D4ED8',
                       }}>{item.value}</span>
                     </div>
                     <div className="h-1.5 bg-[#F1F5F9] rounded-full overflow-hidden">
@@ -216,7 +216,7 @@ export default function InvestmentScale({ id = 'quy-mo' }) {
                   }}>
                     <div>
                       <div style={{
-                        fontFamily: BV, fontSize: 10, fontWeight: 800,
+                        fontFamily: BV, fontSize: 12, fontWeight: 800,
                         letterSpacing: '0.14em', color: '#059669',
                         textTransform: 'uppercase',
                       }}>Doanh thu đối tác (70%)</div>

@@ -120,24 +120,15 @@ export default function HeroStory({ id = 'hero' }) {
           <div className="landing-hero-subtitle" style={{
             fontFamily: BV,
             fontWeight: 700,
-            fontSize: 17.5,
+            fontSize: 19.5,
             color: '#2563EB',
-            margin: '0 0 10px',
+            margin: '0 0 32px',
             textTransform: 'uppercase',
             letterSpacing: '0.05em'
           }}>
             Cơ hội đầu tư &amp; Nhượng quyền
           </div>
-          <p style={{
-            fontFamily: BV,
-            fontWeight: 400,
-            fontSize: 17.5,
-            lineHeight: 1.6,
-            color: '#4B5563',
-            margin: '0 0 32px',
-          }}>
-            Hợp tác lắp đặt hệ thống Camera AI điểm danh tự động và khai thác nguồn thu ổn định, bền vững từ trường học.
-          </p>
+
 
           {/* ── 4 Stat Items ── */}
           <div className="landing-hero-stats" style={{
@@ -177,11 +168,11 @@ export default function HeroStory({ id = 'hero' }) {
                   {c.flip ? (
                     <>
                       <div className="numeric-display" style={{ fontWeight: 800, fontSize: 18.5, color: c.primaryColor, lineHeight: 1.15 }}>{c.primary}</div>
-                      <div style={{ fontFamily: BV, fontWeight: 500, fontSize: 13.5, color: c.secondaryColor, lineHeight: 1.15 }}>{c.secondary}</div>
+                      <div style={{ fontFamily: BV, fontWeight: 500, fontSize: 15.5, color: c.secondaryColor, lineHeight: 1.15 }}>{c.secondary}</div>
                     </>
                   ) : (
                     <>
-                      <div style={{ fontFamily: BV, fontWeight: 700, fontSize: 12.5, color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.15 }}>{c.primary}</div>
+                      <div style={{ fontFamily: BV, fontWeight: 700, fontSize: 14.5, color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.15 }}>{c.primary}</div>
                       <div className="numeric-display" style={{ fontWeight: 800, fontSize: 18.5, color: c.secondaryColor, lineHeight: 1.15 }}>{c.secondary}</div>
                     </>
                   )}

@@ -73,7 +73,7 @@ export default function PartnerTarget({ id = 'doi-tuong' }) {
         {/* Header */}
         <div ref={titleRef} className="fade-up text-center mb-8">
           <span style={{
-            fontFamily: BV, fontSize: 13, fontWeight: 800,
+            fontFamily: BV, fontSize: 18, fontWeight: 800,
             letterSpacing: '0.18em', textTransform: 'uppercase', color: '#2563EB',
             display: 'block', marginBottom: 12,
           }}>
@@ -89,7 +89,7 @@ export default function PartnerTarget({ id = 'doi-tuong' }) {
             Ai phù hợp để cùng đi?
           </h2>
           <p style={{
-            fontFamily: BV, fontSize: '17.5px', color: '#475569',
+            fontFamily: BV, fontSize: '20px', color: '#475569',
             maxWidth: '620px', margin: '0 auto', lineHeight: 1.6,
           }}>
             Keytech tìm người có kết nối, có tâm và muốn đi dài.
