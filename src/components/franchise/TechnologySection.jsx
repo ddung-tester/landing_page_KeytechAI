@@ -149,7 +149,7 @@ export default function TechnologySection({ id }) {
 
         </div>
 
-        <ScrollNext href="#diem-danh-thanh-cong" />
+        <ScrollNext href="#co-hoi-doanh-thu" />
       </div>
     </section>
   );
