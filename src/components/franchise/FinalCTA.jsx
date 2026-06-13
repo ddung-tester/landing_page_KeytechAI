@@ -6,7 +6,7 @@ const BV = "'Be Vietnam Pro', sans-serif";
 const TRUST = [
   { value: '250+', label: 'Trường đã chạy' },
   { value: '70%', label: 'Doanh thu của bạn' },
-  { value: '1-2', label: 'Đại lý mỗi tỉnh' },
+  { value: '5 năm', label: 'Bảo hành thiết bị' },
 ];
 
 export default function FinalCTA({ id = 'lien-he' }) {
@@ -87,7 +87,6 @@ export default function FinalCTA({ id = 'lien-he' }) {
             {/* Scarcity / Rules */}
             <div className="space-y-3">
               {[
-                'Giới hạn 1–2 đối tác mỗi tỉnh.',
                 'Ưu tiên người có kết nối trường học.',
                 'Keytech đồng hành khảo sát và kỹ thuật.'
               ].map((item, i) => (

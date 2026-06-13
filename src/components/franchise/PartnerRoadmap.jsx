@@ -6,9 +6,8 @@ const BV = "'Be Vietnam Pro', sans-serif";
 
 const STEPS = [
   {
-    time: 'Ngày 1 - 30',
-    phase: 'Giai đoạn 1',
-    title: 'Nhận bàn giao',
+    time: '30 ngày',
+    title: 'Đào tạo, nhận thiết bị & lập danh sách trường.',
     color: '#2563EB',
     bg: 'linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(6, 182, 212, 0.10) 100%)',
     border: 'rgba(37, 99, 235, 0.22)',
@@ -21,9 +20,8 @@ const STEPS = [
     )
   },
   {
-    time: 'Ngày 31 - 60',
-    phase: 'Giai đoạn 2',
-    title: 'Khảo sát trường',
+    time: '60 ngày',
+    title: 'Khảo sát & tiếp cận 10 trường.',
     color: '#3B82F6', // Blue
     bg: 'linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(59, 130, 246, 0.1) 100%)',
     border: 'rgba(59, 130, 246, 0.15)',
@@ -36,9 +34,8 @@ const STEPS = [
     )
   },
   {
-    time: 'Ngày 61 - 90',
-    phase: 'Giai đoạn 3',
-    title: 'Lắp đặt đầu tiên',
+    time: '90 ngày',
+    title: 'Ký kết & triển khai 3 trường.',
     color: '#0EA5E9',
     bg: 'linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(6, 182, 212, 0.12) 100%)',
     border: 'rgba(14, 165, 233, 0.22)',
@@ -51,9 +48,8 @@ const STEPS = [
     )
   },
   {
-    time: 'Ngày 91 - 180',
-    phase: 'Giai đoạn 4',
-    title: 'Bắt đầu doanh thu',
+    time: '180 ngày',
+    title: 'Triển khai lắp đặt 10 trường.',
     color: '#0891B2',
     bg: 'linear-gradient(135deg, rgba(8, 145, 178, 0.08) 0%, rgba(6, 182, 212, 0.12) 100%)',
     border: 'rgba(8, 145, 178, 0.22)',
@@ -66,9 +62,8 @@ const STEPS = [
     )
   },
   {
-    time: 'Tháng 6 trở đi',
-    phase: 'Giai đoạn 5',
-    title: 'Mở rộng bền vững',
+    time: '12 tháng',
+    title: 'Mở rộng theo năng lực & địa bàn.',
     color: '#2563EB',
     bg: 'linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(6, 182, 212, 0.10) 100%)',
     border: 'rgba(37, 99, 235, 0.22)',
@@ -154,27 +149,14 @@ export default function PartnerRoadmap({ id }) {
                   className="roadmap-horizontal-card"
                   style={{ borderColor: step.border }}
                 >
-                  <div
-                    style={{
-                      fontFamily: BV,
-                      fontSize: 15.5,
-                      fontWeight: 800,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.12em',
-                      color: step.color,
-                      marginBottom: 8
-                    }}
-                  >
-                    {step.phase}
-                  </div>
                   <h3
                     style={{
-                      fontFamily: PD,
-                      fontSize: '23px',
+                      fontFamily: BV,
+                      fontSize: '15px',
                       fontWeight: 600,
-                      color: '#0F172A',
+                      color: '#1E293B',
                       marginBottom: 0,
-                      lineHeight: 1.3
+                      lineHeight: 1.5
                     }}
                   >
                     {step.title}

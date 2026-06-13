@@ -101,7 +101,7 @@ export default function PartnerTarget({ id = 'doi-tuong' }) {
           {TARGETS.map((t, i) => (
             <div
               key={i}
-              className={`fade-up fade-up-delay-${i + 1} rounded-2xl border p-6 hover:-translate-y-1.5 transition-all duration-300 flex flex-col bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)]`}
+              className={`fade-up fade-up-delay-${i + 1} rounded-2xl border p-6 hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center text-center justify-center bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)]`}
               style={{ borderColor: t.border }}
             >
               <div
@@ -113,7 +113,7 @@ export default function PartnerTarget({ id = 'doi-tuong' }) {
               <h3
                 style={{
                   fontFamily: PD,
-                  fontSize: '23px',
+                  fontSize: '26px',
                   fontWeight: 600,
                   color: '#0F172A',
                   marginBottom: 10,
@@ -125,10 +125,9 @@ export default function PartnerTarget({ id = 'doi-tuong' }) {
               <p
                 style={{
                   fontFamily: BV,
-                  fontSize: '17px',
+                  fontSize: '18.5px',
                   color: '#475569',
-                  lineHeight: 1.6,
-                  marginTop: 'auto'
+                  lineHeight: 1.6
                 }}
               >
                 {t.desc}

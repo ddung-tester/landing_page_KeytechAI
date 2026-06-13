@@ -158,11 +158,11 @@ export const processSteps = [
 ];
 
 export const roadmapSteps = [
-  { time: "30 ngày", title: "Khởi động", desc: "Nhận quy trình, chọn trường mục tiêu." },
-  { time: "60 ngày", title: "Mở thị trường", desc: "Tiếp cận các trường ưu tiên." },
-  { time: "90 ngày", title: "Triển khai", desc: "Chốt điểm đầu và lắp đặt." },
-  { time: "180 ngày", title: "Mở rộng", desc: "Tăng danh mục theo năng lực." },
-  { time: "12 tháng", title: "Tăng trưởng", desc: "Vận hành gọn, doanh thu đều." },
+  { time: "30 ngày", desc: "Đào tạo, nhận thiết bị & lập danh sách trường." },
+  { time: "60 ngày", desc: "Khảo sát & tiếp cận 10 trường." },
+  { time: "90 ngày", desc: "Ký kết & triển khai 3 trường." },
+  { time: "180 ngày", desc: "Triển khai lắp đặt 10 trường." },
+  { time: "12 tháng", desc: "Mở rộng theo năng lực & địa bàn." },
 ];
 
 export const supportItems = [
